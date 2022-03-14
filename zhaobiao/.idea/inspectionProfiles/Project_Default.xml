@@ -1,0 +1,38 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="17">
+            <item index="0" class="java.lang.String" itemvalue="mysqlclient" />
+            <item index="1" class="java.lang.String" itemvalue="Scrapy" />
+            <item index="2" class="java.lang.String" itemvalue="Automat" />
+            <item index="3" class="java.lang.String" itemvalue="tabulate" />
+            <item index="4" class="java.lang.String" itemvalue="zope.interface" />
+            <item index="5" class="java.lang.String" itemvalue="Protego" />
+            <item index="6" class="java.lang.String" itemvalue="kafka-python" />
+            <item index="7" class="java.lang.String" itemvalue="redis" />
+            <item index="8" class="java.lang.String" itemvalue="pyasn1-modules" />
+            <item index="9" class="java.lang.String" itemvalue="kazoo" />
+            <item index="10" class="java.lang.String" itemvalue="certifi" />
+            <item index="11" class="java.lang.String" itemvalue="pykafka" />
+            <item index="12" class="java.lang.String" itemvalue="cchardet" />
+            <item index="13" class="java.lang.String" itemvalue="pycryptodome" />
+            <item index="14" class="java.lang.String" itemvalue="pypinyin" />
+            <item index="15" class="java.lang.String" itemvalue="pdfminer" />
+            <item index="16" class="java.lang.String" itemvalue="Pillow" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="object.datetime" />
+          <option value="object.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
