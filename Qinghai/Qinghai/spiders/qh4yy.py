@@ -94,7 +94,6 @@ class Qh4yySpider(scrapy.Spider):
         # 类型编号
         item['data_source'] = '00156'
         # 截止时间
-        # 结束时间
         item['end_time'] = ''
         item['status'] = ''
         # 采购编号
