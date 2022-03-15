@@ -26,7 +26,6 @@ class QhrchSpider(scrapy.Spider):
             {"cate": "zybecgg", "pages": 3},  # 招议标再次公告
             {"cate": "ggbg", "pages": 3},  # 公告变更
 
-
         ]
         self.t = Times()
         self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=3)

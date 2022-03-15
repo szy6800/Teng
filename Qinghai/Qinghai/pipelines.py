@@ -26,7 +26,6 @@ class QinghaiPipeline(object):
                         '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')
         """
 
-
     @classmethod
     def from_settings(cls, settings):
         params = dict(

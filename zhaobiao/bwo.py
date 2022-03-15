@@ -12,8 +12,8 @@ import pandas as pd
 
 
 def queryue(sql):
-    # engine = create_engine('mysql+pymysql://root:I0z>kp9tnavw@123.56.87.41:3306/crawler2021?charset=utf8')
-    engine = create_engine('mysql+mysqlconnector://root:@127.0.0.1:3306/test?charset=utf8')
+    engine = create_engine('mysql+pymysql://root:I0z>kp9tnavw@123.56.87.41:3306/crawler2021?charset=utf8')
+    # engine = create_engine('mysql+mysqlconnector://root:@127.0.0.1:3306/test?charset=utf8')
 
     df = pd.read_sql_query(sql, engine)
 
@@ -39,8 +39,8 @@ def id_sult():
 
 def df_to_mysql(df):
     df.to_sql(name = 'zhaobiao2021',
-            # con = 'mysql+pymysql://root:@127.0.0.1:3306/test?charset=utf8',
-            con = 'mysql+pymysql://root:I0z>kp9tnavw@123.56.87.41:3306/crawler2021?charset=utf8',
+            con = 'mysql+pymysql://root:@127.0.0.1:3306/test?charset=utf8',
+            # con = 'mysql+pymysql://root:I0z>kp9tnavw@123.56.87.41:3306/crawler2021?charset=utf8',
             if_exists = 'append',index=False,
     chunksize=20000)
 
