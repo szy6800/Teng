@@ -18,9 +18,8 @@ def job():
     start_times = datetime.datetime.now()  # 采集开始时间
     start_time = str(start_times).split('.')[0]
     print('Starting time ===>', start_time)
-
     # 采集逻辑
-    #
+
     os.system('scrapy crawl a59med')
     os.system('scrapy crawl conch')
     os.system('scrapy crawl DAV')
@@ -41,15 +40,23 @@ def job():
     os.system('scrapy crawl shipoe')
     os.system('scrapy crawl dfmbidding')
     os.system('scrapy crawl fjggzyjy')
-    os.system('scrapy crawl bjhd')
+    # os.system('scrapy crawl bjhd')
     os.system('scrapy crawl czzhzb')
     os.system('scrapy crawl bjchy')
 
     os.system('scrapy crawl ptzfcg')
     os.system('scrapy crawl miit')
-    os.system('scrapy crawl dgsy')
+    # os.system('scrapy crawl dgsy')
     os.system('scrapy crawl bzggzyjy')
 
+    os.system('scrapy crawl bankqh')
+    os.system('scrapy crawl csdsj')
+    os.system('scrapy crawl hhsd')
+    os.system('scrapy crawl sgcc')
+    os.system('scrapy crawl westmining')
+
+    os.system('scrapy crawl qhyhgf')
+    os.system('scrapy crawl xntg')
 
 
 

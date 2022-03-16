@@ -20,7 +20,7 @@ class ConchSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs ):
         super(ConchSpider, self).__init__()
         self.cates = [
-            {"cate": "catid=26", "pages": 2},  # 招中标信息
+            {"cate": "", "pages": 2},  # 招中标信息
 
         ]
         self.t = Times()
@@ -30,8 +30,8 @@ class ConchSpider(scrapy.Spider):
         for each in self.cates:
             cate = each["cate"]
             pages = each["pages"]
-            for p in range(pages):
-                p = f"{p+1}" if p else ""
+            for p in range(1, pages):
+                # p = f"{p+1}" if p else ""
                 url = f"http://www.conch.cn/xxgs/list.aspx?page={p}"
                 yield scrapy.Request(url=url, callback=self.parse,dont_filter=True)
 
@@ -56,7 +56,7 @@ class ConchSpider(scrapy.Spider):
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
                 return
-            # print(item['link'], item['publish_time'],item['title'])
+            print(item['link'], item['publish_time'],item['title'])
             yield scrapy.Request(item['link'], callback=self.parse_info, meta={'item': copy.deepcopy(item)},dont_filter=True)
 
     def parse_info(self, response):
@@ -65,9 +65,9 @@ class ConchSpider(scrapy.Spider):
         item = response.meta['item']
         # 标题
         item['uuid'] = ''
-        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'])
+        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
-        item['abs'] = ''
+        item['abs'] = '1'
         item['content'] = response.text
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))

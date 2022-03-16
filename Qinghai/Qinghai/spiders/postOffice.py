@@ -64,9 +64,9 @@ class PostOfficeSpider(scrapy.Spider):
         # 标题
         item['uuid'] = ''
         item['title'] = response.xpath('//span[@id="ReportIDname"]/text()').get().strip()
-        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'])
+        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
-        item['abs'] = ''
+        item['abs'] = '1'
         item['content'] = response.text
         item['purchaser'] = ''
         item['proxy'] = ''

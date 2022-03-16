@@ -51,9 +51,9 @@ class CcgpgovSpider(scrapy.Spider):
                 continue
             item['link'] = 'http://www.ccgp.gov.cn/cggg/' + k + count.xpath('./a/@href').get()[1:]
             # item['id'] = ''
-            item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'])
+            item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
             item['intro'] = ''
-            item['abs'] = ''
+            item['abs'] = '1'
             item['content'] = ''
             PUBLISH = self.t.datetimes(count.xpath('./em[2]/text()').get().strip())
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间

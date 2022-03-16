@@ -74,9 +74,9 @@ class Qh4yySpider(scrapy.Spider):
         item = response.meta['item']
         # 标题
         item['uuid'] = ''
-        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'])
+        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
-        item['abs'] = ''
+        item['abs'] = '1'
         item['content'] = response.text
         # 购买人
         item['purchaser'] = ''

@@ -44,9 +44,9 @@ class FsggzySpider(scrapy.Spider):
                 continue
             item['link'] = count.xpath('./div/a/@href').get()
             # item['id'] = ''
-            item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'])
+            item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
             item['intro'] = ''
-            item['abs'] = ''
+            item['abs'] = '1'
             item['content'] = ''
             PUBLISH = self.t.datetimes(count.xpath('./span/text()').get().strip())
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间

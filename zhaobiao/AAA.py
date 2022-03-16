@@ -17,7 +17,7 @@ def dbz(count):
 
     sql1 = f'''SELECT id,url,link,title,county FROM `dianping2021` WHERE county='{count}';'''
     sql2 = f'''SELECT id,url,link,title,county FROM `dianping2021_pro` WHERE county='{count}';'''
-    print(sql1)
+    #print(sql1)
     engine = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/ceshi?charset=utf8')
     engine2 = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/ceshi?charset=utf8')
     df = pd.read_sql(sql1, engine)

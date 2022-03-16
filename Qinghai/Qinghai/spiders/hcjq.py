@@ -20,9 +20,9 @@ class HcjqSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(HcjqSpider, self).__init__()
         self.cates = [
-            {"cate": "jqzb", "pages": 4},  # 招标采购公告
-            {"cate": "hqgg", "pages": 3},  # 结果公告
-            {"cate": "jqbg", "pages": 3},  # 变更公告
+            {"cate": "jqzb", "pages": 2},  # 招标采购公告
+            # {"cate": "hqgg", "pages": 3},  # 结果公告
+            # {"cate": "jqbg", "pages": 3},  # 变更公告
 
         ]
         self.t = Times()
@@ -33,7 +33,7 @@ class HcjqSpider(scrapy.Spider):
             cate = each["cate"]
             pages = each["pages"]
             for p in range(1, pages):
-                if p ==1:
+                if p == 1:
                     p = 'index'
                 url = f"http://www.hcjq.net/{cate}/{p}.html"
                 print(url)
@@ -72,9 +72,9 @@ class HcjqSpider(scrapy.Spider):
         item = response.meta['item']
         # 标题
         item['uuid'] = ''
-        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'])
+        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
-        item['abs'] = ''
+        item['abs'] = '1'
         item['content'] = response.text
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))

@@ -78,9 +78,9 @@ class CcgpQhSpider(scrapy.Spider):
                 continue
             item['link'] = 'http://www.ccgp-qinghai.gov.cn' + count['_source']['url']
             # item['id'] = ''
-            item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'])
+            item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
             item['intro'] = ''
-            item['abs'] = ''
+            item['abs'] = '1'
             # item['content'] = ''
             PUBLISH = self.t.datetimes(str(count['_source']['publishDate']))
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间

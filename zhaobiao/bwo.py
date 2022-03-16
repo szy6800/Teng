@@ -23,16 +23,18 @@ def queryue(sql):
     # print(lists)
     return lists
 
+
 # 模糊查询
 """SELECT * FROM meituan2 WHERE url LIKE '%fz.meituan.com%';"""
 
-
+# 测试数据
 def id_sult():
     sql = "SELECT * FROM `zhaobiao2021` WHERE create_time='2021-09-29';"
     result1 = queryue(sql=sql)
 
     result = []
     for i in range(len(result1)):
+        #
         result.append(result1[i][1:])
     return result
 

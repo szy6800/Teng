@@ -2,7 +2,7 @@
 
 # @Author : 石张毅
 # @Site :59医疗器械网 http://www.59med.com/news/list.php?catid=26
-
+# @introduce： 招中标信息
 
 import scrapy
 import copy
@@ -20,17 +20,17 @@ class A59medSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs ):
         super(A59medSpider, self).__init__()
         self.cates = [
-            {"cate": "catid=26", "pages": 2},  # 招中标信息
+            {"cate": "catid=26", "pages": 8},  # 招中标信息
 
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=8)
 
     def start_requests(self):
         for each in self.cates:
             cate = each["cate"]
             pages = each["pages"]
-            for p in range(1,pages):
+            for p in range(1, pages):
                 url = f"http://www.59med.com/news/list.php?{cate}&page={p}"
                 yield scrapy.Request(url=url, callback=self.parse,dont_filter=True)
 
@@ -64,9 +64,9 @@ class A59medSpider(scrapy.Spider):
         item = response.meta['item']
         # 标题
         item['uuid'] = ''
-        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'])
+        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
-        item['abs'] = ''
+        item['abs'] = '1'
         item['content'] = response.text
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
