@@ -20,8 +20,8 @@ def job():
     start_time = str(start_times).split('.')[0]
     print('Starting time ===>', start_time)
     # 采集逻辑
-
-    os.system('scrapy crawl a59med')
+    #
+    # os.system('scrapy crawl a59med')
     # os.system('scrapy crawl conch')
     # os.system('scrapy crawl DAV')
     # os.system('scrapy crawl eceg')
@@ -49,18 +49,33 @@ def job():
     # os.system('scrapy crawl miit')
     # # os.system('scrapy crawl dgsy')
     # os.system('scrapy crawl bzggzyjy')
-    #
+    # # 3/15
     # os.system('scrapy crawl bankqh')
     # os.system('scrapy crawl csdsj')
     # os.system('scrapy crawl hhsd')
     # os.system('scrapy crawl sgcc')
     # os.system('scrapy crawl westmining')
-    #
+    # # 3/16
     # os.system('scrapy crawl qhyhgf')
     # os.system('scrapy crawl xntg')
     # os.system('scrapy crawl tobacco')
     # os.system('scrapy crawl zhengpingjituan')
     # os.system('scrapy crawl icbc')
+    # 3/17
+    # os.system('scrapy crawl ccccltd')
+    # os.system('scrapy crawl zmzb')
+    # os.system('scrapy crawl xndyyljt')
+    # os.system('scrapy crawl qhssyy')
+    # os.system('scrapy crawl qhheart')
+    # 3/18
+    os.system('scrapy crawl norincogroup')
+    # os.system('scrapy crawl qhheart')
+    # os.system('scrapy crawl qhheart')
+    # os.system('scrapy crawl qhheart')
+    # os.system('scrapy crawl qhheart')
+
+
+
 
 
 

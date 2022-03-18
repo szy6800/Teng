@@ -56,7 +56,7 @@ ROBOTSTXT_OBEY = False
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'Qinghai.middlewares.RandomUserAgentMiddleware': 143,
-   'Qinghai.middlewares.RandomIPMiddleware': 40,
+   # 'Qinghai.middlewares.RandomIPMiddleware': 40,
 }
 
 # Enable or disable extensions
@@ -97,7 +97,7 @@ MYSQL_HOST = '127.0.0.1'
 MYSQL_PORT = 3306
 MYSQL_USER = 'root'
 MYSQL_PASSWD = '123456'
-MYSQL_DB = 'test'
+MYSQL_DB = 'ceshi'
 MYSQL_CHARSET = 'utf8'
 
 
