@@ -6,7 +6,7 @@
 # @File : sele.py
 # @Software: PyCharm 
 from fake_useragent import UserAgent
-
+from selenium.webdriver.common.by import By
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
@@ -41,9 +41,12 @@ browser.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
     })
   """
 })
+import time
+browser.get('https://cg.95306.cn/')
+for page in range(1,5):
+    time.sleep(2)
+    nwepage = browser.find_element(by=By.PARTIAL_LINK_TEXT, value='下一页')
+    nwepage.click()
+    time.sleep(2)
 
-browser.get("https://weibo.com/ajax/feed/hottimeline?refresh=2&group_id=102803600094&containerid=102803_ctg1_600094_-_ctg1_600094&extparam=discover%7Cnew_feed&max_id=1&count=10")
-# 隐式等待8秒
-browser.implicitly_wait(2)
-print(browser.page_source)
 

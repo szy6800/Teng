@@ -76,7 +76,7 @@ class EbnewSpider(scrapy.Spider):
                 continue
             pub_time = re.findall('\d{4}-\d{2}-\d{2}', pub_time)[0]
             # print(pub_time)
-            PUBLISH = self.t.datetimes(pub_time)
+            PUBLISH = self.t.datetimes(pub_time.strip())
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
             # # print(item['publish_time'])
             ctime = self.t.datetimes(item['publish_time'])

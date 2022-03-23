@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 # @Time : 2022/3/3 17:21
-# @Author : 石张毅
 
 import datetime
 import os
