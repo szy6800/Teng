@@ -150,12 +150,10 @@ class XinfangSpider(scrapy.Spider):
 
     def start_requests(self):
         count_list = self.result
-
-
         # print(count_list)
         x = 1
         item = {}
-        for count in count_list[700:800]:
+        for count in count_list[6000:6700]:
             # item = LoupanItem()
             # id = count[0]
             item["arch_id"] = count[0]
@@ -169,7 +167,7 @@ class XinfangSpider(scrapy.Spider):
             url = f'https://xian.newhouse.fang.com/loupan/{item["arch_id"]}/house/ajax/fixtiousPhoneGet/'
             formdata = {
                 'newcode': item["arch_id"],
-                '_csrf': 'A8S3alSKduQffA893bkRoCvQ'
+                '_csrf': 'zSHvyJ2reTIESmo91sBAtaDA'
             }
             yield scrapy.FormRequest(url=url, formdata=formdata, callback=self.parse,meta={'item': copy.deepcopy(item)}, dont_filter=True)
 
@@ -250,7 +248,6 @@ class XinfangSpider(scrapy.Spider):
         # 小区维度
         item['dispy'] = counts['baidu_coord_y']
 
-        item['json_data'] = json.dumps(item, ensure_ascii=False)
         # item['ProjDesc'] = counts['ProjDesc']
         # print(item)
         detail_urls = 'https://xian.esf.fang.com/loupan/'+item["arch_id"]+'.htm'
@@ -289,5 +286,6 @@ class XinfangSpider(scrapy.Spider):
         else:
             item['building_time'] = building_time
 
+        item['json_data'] = json.dumps(item, ensure_ascii=False)
         yield item
 
