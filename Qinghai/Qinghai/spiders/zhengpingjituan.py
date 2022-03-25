@@ -12,7 +12,6 @@ from Qinghai.tools.re_time import Times
 import datetime
 
 
-
 class ZhengpingjituanSpider(scrapy.Spider):
     name = 'zhengpingjituan'
     allowed_domains = ['zhengpingjituan']

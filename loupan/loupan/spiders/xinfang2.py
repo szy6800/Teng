@@ -153,7 +153,7 @@ class XinfangSpider(scrapy.Spider):
         # print(count_list)
         x = 1
         item = {}
-        for count in count_list[6000:6700]:
+        for count in count_list[6000:6010]:
             # item = LoupanItem()
             # id = count[0]
             item["arch_id"] = count[0]

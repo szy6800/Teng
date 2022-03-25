@@ -37,7 +37,7 @@ class CzzhzbSpider(scrapy.Spider):
             for p in range(1, pages):
                 # p = f"_{p+1}" if p else ""
                 url = f"http://www.czzhzb.com/zaobiao/{cate}-{p}.htm"
-                yield scrapy.Request(url=url, callback=self.parse,dont_filter=True)
+                yield scrapy.Request(url=url, callback=self.parse, dont_filter=True)
 
     def parse(self, response):
         # print(response.text)
@@ -69,13 +69,6 @@ class CzzhzbSpider(scrapy.Spider):
         # 标题
         item['uuid'] = ''
         item['title'] = response.xpath('//*[@class="zh_news_title"]/text()').get().strip()
-        print(item['title'])
-        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
-        item['intro'] = ''
-        item['abs'] = '1'
-        item['content'] = response.text
-        item['purchaser'] = ''
-
         pub_time = re.findall('发表时间：(\d{4}-\d{2}-\d{2})', response.text)[0]
         # print(pub_time)
         PUBLISH = self.t.datetimes(pub_time)
@@ -85,6 +78,13 @@ class CzzhzbSpider(scrapy.Spider):
         if ctime < self.c_time:
             print('文章发布时间大于规定时间，不予采集', item['link'])
             return
+        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
+        item['intro'] = ''
+        item['abs'] = '1'
+        item['content'] = response.text
+        item['purchaser'] = ''
+
+
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
         item['update_time'] = ''
