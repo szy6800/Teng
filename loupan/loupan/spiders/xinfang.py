@@ -61,7 +61,7 @@ class XinfangSpider(scrapy.Spider):
             # '浐灞': 'https://xian.newhouse.fang.com/house/s/chanba21/b96/',
             # '经开': 'https://xian.newhouse.fang.com/house/s/jingkai11/b92/',
             # '西咸新区': 'https://xian.newhouse.fang.com/house/s/xixianxinqu/b910/',
-            # '鄠邑': 'https://xian.newhouse.fang.com/house/s/huyi/',
+            # '鄠邑': 'https://xi an.newhouse.fang.com/house/s/huyi/',
             # '高陵': 'https://xian.newhouse.fang.com/house/s/gaoling/b93/',
             # '临潼': 'https://xian.newhouse.fang.com/house/s/linchong/',
             # '蓝田': 'https://xian.newhouse.fang.com/house/s/lantian/b92/',
@@ -85,7 +85,7 @@ class XinfangSpider(scrapy.Spider):
 
             yield scrapy.Request(v, callback=self.parse, meta={'page': page, 'v' : v})
 
-    def parse(self, response):
+    def parse(self, response, *args, **kwargs):
         # print(response.text)
         page = response.meta['page']
         v = response.meta['v']

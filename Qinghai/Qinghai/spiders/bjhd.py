@@ -16,7 +16,7 @@ import datetime
 class BjhdSpider(scrapy.Spider):
     name = 'bjhd'
     allowed_domains = ['bjhd.gov.cn']
-    start_urls = ['http://bjhd.gov.cn/']
+    # start_urls = ['http://www.bjhd.gov.cn/zfcg/getnewsbypageindex?xwl_{}'.format(i) for i in range(1,10) ]
 
     def __init__(self, *args, **kwargs ):
         super(BjhdSpider, self).__init__()

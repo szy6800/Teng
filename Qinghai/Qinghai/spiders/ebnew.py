@@ -74,7 +74,7 @@ class EbnewSpider(scrapy.Spider):
             item['title'] = title.strip()
             if item['title'] is None:
                 continue
-            pub_time = re.findall('\d{4}-\d{2}-\d{2}', pub_time)[0]
+            pub_time = re.findall('\d{4}-\d{2}-\d{2}', pub_time.strip())[0]
             # print(pub_time)
             PUBLISH = self.t.datetimes(pub_time.strip())
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间

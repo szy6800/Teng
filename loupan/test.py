@@ -71,7 +71,7 @@ import pandas as pd
 #
 # dbz()
 
-id = '3610192774'
+id = '3610191248'
 new_url = f'https://xian.newhouse.fang.com/loupan/{id}/house/ajax/fixtiousPhoneGet/'
 payload = {
     'newcode': id,
