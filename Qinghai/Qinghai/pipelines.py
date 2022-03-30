@@ -26,6 +26,7 @@ class QinghaiPipeline(object):
                         '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')
         """
 
+        # self.update_sql3 = """UPDATE test.arch_info_price SET dispx='{}', dispy='{}' WHERE uid='{}';"""
     @classmethod
     def from_settings(cls, settings):
         params = dict(

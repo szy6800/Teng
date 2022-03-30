@@ -8,6 +8,119 @@ https://zb.suning.com/bid-web/issueSearchTable.action?t=16482026439168615?totalR
 143-中国太平电子化采购平台 https://eps.cntaiping.com/jggg/index.jhtml
 https://eps.cntaiping.com/cggg/index.jhtml  00214
 
+163-中国一重集中采购平台 http://jzcg.cfhi.com/zbgg/index.jhtml  00215
+
+164-中国人寿招标采购网 https://cpmsx.e-chinalife.com/xycms/qycggg/index.jhtml
+https://cpmsx.e-chinalife.com/xycms/jggs/index.jhtml
+https://cpmsx.e-chinalife.com/xycms/cqgg/index.jhtml 00216
+
+173-中国金茂阳光招采平台 https://ebs.chinajinmao.cn/html/jinmao/zbgg/index.html
+https://ebs.chinajinmao.cn/html/jinmao/zmgg/
+https://ebs.chinajinmao.cn/html/jinmao/zcgg/    00217
+
+178-航空工业电子采购平台 https://ebid.eavic.com/cms/channel/ywgg1/index.htm
+https://ebid.eavic.com/cms/channel/ywgg2/index.htm
+https://ebid.eavic.com/cms/channel/ywgg3/index.htm
+https://ebid.eavic.com/cms/channel/ywgg4/index.htm 00218
+
+184-海尔招标网 http://www.haierbid.com/HomeSite/Site/NewsList?k=f86Jg1QShHaBcO1JMrNQ4e3L%2fgHxMz%2fxS8lVze5qiwRBHr%2fIeB3Q7UZiMZEOOan7
+http://www.haierbid.com/HomeSite/Site/NewsList?k=f86Jg1QShHbtYvbKo2qSTJpFOzrpZdLmOm72b2AIvLKAP%2fnewFPDDuYjflehnfB6
+http://www.haierbid.com/HomeSite/Site/NewsList?k=f86Jg1QShHaeWOfo6kk49e3L%2fgHxMz%2fxS8lVze5qiwRBHr%2fIeB3Q7UZiMZEOOan7
+http://www.haierbid.com/HomeSite/Site/NewsList?k=f86Jg1QShHb21wQ8JF6YwZpFOzrpZdLmOm72b2AIvLKAP%2fnewFPDDuYjflehnfB6        00219
+
+201-中国电建招标与采购网 https://bid.powerchina.cn/announcement/getGengDuo?menu=gcfw&typeed=7&title=&type=&start=&end=&page=1 00220
+
+209-中通服电子招标平台  https://zb.chinaccsscm.cn/zbgg/index.jhtml
+https://zb.chinaccsscm.cn/zbjg/index.jhtml
+https://zb.chinaccsscm.cn/bggg/index.jhtml
+https://zb.chinaccsscm.cn/zsgg/index.jhtml      00221
+
+215-海螺物资阳光采购平台 https://ygcg.conch.cn/webs/homepage/getRecBidding.html?areaid=&pageNumber=1&pageSize=20
+https://ygcg.conch.cn/webs/homepage/getRecWinBidding.html?areaid=&pageNumber=1&pageSize=20                            00222
 
 
+231-中铁物总国际招标网 
+ https://www.bidding-crmsc.com.cn/bid?key=&bidType=&purchaseMode=&currentPage=1&time=0
+https://www.bidding-crmsc.com.cn/bid?key=&bidType=&purchaseMode=&currentPage=2&time=0                            00223
+
+255-中国南方航空采购招标网
+https://csbidding.csair.cn/cms/channel/zbgg/index.htm?pageNo=1
+https://csbidding.csair.cn/cms/channel/pbgs/index.htm
+https://csbidding.csair.cn/cms/channel/bidzbgg/index.htm
+https://csbidding.csair.cn/cms/channel/qtgg/index.htm         00224
+
+
+294-中国中铁七局集团有限公司 
+http://www.crsg.cn/ztqjjtyxgs/56202/56484/4f6c0cf5-1.html
+http://www.crsg.cn/ztqjjtyxgs/56202/56487/index.html
+00225
    
+317-唐山三友集团 
+http://www.sanyou-group.com.cn/jtwebx/channels/1790.html
+http://www.sanyou-group.com.cn/jtwebx/channels/1804.html
+http://www.sanyou-group.com.cn/jtwebx/channels/1845.html
+00226
+
+345-中信国际招标有限公司
+http://www.bidding.citic/news_list2/newsCategoryId=18.html
+http://www.bidding.citic/news_list2/newsCategoryId=19.html
+http://www.bidding.citic/news_list2/newsCategoryId=21.html
+http://www.bidding.citic/news_list2/newsCategoryId=10.html		00227
+
+346-九三集团
+https://www.longdaoyun.com/search/opportunity/?keywords=%E4%B9%9D%E4%B8%89%E7%B2%AE%E6%B2%B9%E5%B7%A5%E4%B8%9A%E9%9B%86%E5%9B%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&pageNumber=1     00228
+
+349-中国中药控股有限公司
+http://www.china-tcm.com.cn/Tender/tender.aspx?nodecode=101010    00229
+
+
+360-中国南方电网供应链统一服务平台
+https://www.bidding.csg.cn/zbcg/index.jhtml       00230
+
+375-中铁武汉电气化局集团有限公司
+https://www.whdqhj.com/ztwh/zbgg/index.jhtml
+https://www.whdqhj.com/ztwh/jggs/index.jhtml     00231
+
+418-悦达集团阳光采购平台
+https://www.ydtender.com/zgcgg/index.jhtml
+https://www.ydtender.com/zhwgg/index.jhtml
+https://www.ydtender.com/zfwgg/index.jhtml       00232
+
+423-南水北调中线干线工程建设管理局
+https://www.nsbd.cn/zbcg/zbgg/
+https://www.nsbd.cn/zbcg/zbggg/
+https://www.nsbd.cn/zbcg/cggg/    
+https://www.nsbd.cn/zbcg/cjjgzs/    00233
+
+426-中国地质调查局
+https://www.cgs.gov.cn/tzgg/zfcg_5637/zbxx_5638/index.html   00234
+
+440-中国烟草红云红河集团
+https://www.hyhhgroup.com/htmlnew/news/news_list.php?type=7&currpage=1
+00235
+
+476-中天控股集团有限公司
+https://www.zjzhongtian.com/news/announcement.html
+00236
+
+477-中央政府采购网
+http://oa.zycg.cn/article/llist?catalog=StockAffiche&page=1
+00237
+
+507-湖南机场 http://www.hnjcjt.com/channels/60.html
+00238
+
+524-北方重工集团有限公司
+http://www.china-sz.com/zhaobiaoxinxi/1/   00239
+
+530-新疆生产建设兵团第二师
+http://www.tmg.gov.cn/info/iList.jsp?node_id=&site_id=CMSnes&catalog_id=46&cur_page=1
+00240
+
+610-中国电建集团华东勘测设计研究院有限公司
+http://ecp.ecidi.com/purchase/publicity/list-0-1.html
+00241
+
+
+
+

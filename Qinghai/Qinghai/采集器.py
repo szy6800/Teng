@@ -38,7 +38,6 @@ def id_sult():
     return result
 
 
-
 def df_to_mysql(df):
     # 入库
     df.to_sql(name = 'zhaobiao2021',
