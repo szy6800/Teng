@@ -26,7 +26,7 @@ class QinghaiPipeline(object):
                         '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')
         """
 
-        # self.update_sql3 = """UPDATE test.arch_info_price SET dispx='{}', dispy='{}' WHERE uid='{}';"""
+
     @classmethod
     def from_settings(cls, settings):
         params = dict(
@@ -48,6 +48,7 @@ class QinghaiPipeline(object):
 
     def error(self, reason):
         print('error------', reason)
+
 
     def insert(self, cursor, item):
         # 唯一id查询
@@ -85,4 +86,5 @@ class QinghaiPipeline(object):
                 item['serial']
             ))
             print(f"新增公告==== {item['uid']} ======{item['title']}")
+
 
