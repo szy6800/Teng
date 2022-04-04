@@ -56,7 +56,7 @@ DOWNLOAD_DELAY = 0.3
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'Qinghai.middlewares.RandomUserAgentMiddleware': 143,
-   # 'Qinghai.middlewares.RandomIPMiddleware': 40,
+   'Qinghai.middlewares.RandomIPMiddleware': 40,
 }
 
 # Enable or disable extensions
@@ -91,6 +91,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
 
 # # 测试
 MYSQL_HOST = '127.0.0.1'

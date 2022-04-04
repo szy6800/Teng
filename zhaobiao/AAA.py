@@ -37,4 +37,4 @@ def dbz(count):
     # print(dbz)
     return dbz
 
-print(dbz('碑林区'))
+dbz('碑林区')
