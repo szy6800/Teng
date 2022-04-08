@@ -47,6 +47,7 @@ def df_to_mysql(df):
             if_exists = 'append',index=False,
     chunksize=20000)
 
+
 def dbz():
     # 批量去重，返回去重后数据
     now = datetime.datetime.now()
@@ -79,5 +80,3 @@ def dbz():
 
 db3 = dbz()
 df_to_mysql(db3)
-
-

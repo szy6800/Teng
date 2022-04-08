@@ -15,16 +15,16 @@ class DonglouPipeline(object):
     def __init__(self, pool):
         self.dbpool = pool
         # 定义查询语句
-        self.query_sql = """SELECT * FROM arch_info_crawler_copy1 WHERE arch_id='{}'"""
+        # self.query_sql = """SELECT * FROM arch_info_crawler_copy1 WHERE arch_id='{}'"""
         # 更改语句,插入语句
-        self.insert_sql = """
-            INSERT INTO arch_info_crawler(
-                            arch_id, prov_name, city_name, country_name, arch_name, link ,arch_add, avg_price, dispx, dispy, build_category,
-                            property_fee, property_company, building_developers,building_number,source_name,crawler_time,house_number
-                        )VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}','{}', 
-                        '{}', '{}', '{}', '{}', '{}')
-        """
-
+        # self.insert_sql = """
+        #     INSERT INTO arch_info_crawler(
+        #                     arch_id, prov_name, city_name, country_name, arch_name, link ,arch_add, avg_price, dispx, dispy, build_category,
+        #                     property_fee, property_company, building_developers,building_number,source_name,crawler_time,house_number
+        #                 )VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}','{}',
+        #                 '{}', '{}', '{}', '{}', '{}')
+        # """
+        #
         self.update_sql3 = """UPDATE arch_info_crawler_copy1 SET dispx='{}', dispy='{}' WHERE arch_id='{}';"""
     @classmethod
     def from_settings(cls, settings):
