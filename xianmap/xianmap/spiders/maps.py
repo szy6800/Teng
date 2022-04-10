@@ -30,8 +30,8 @@ class MapsSpider(scrapy.Spider):
         for href, village, districts in zip(list_urls, villages, districts):
             item = dict()
             item['url'] = response.urljoin(href)
-            item['village'] = village
-            item['districts'] = districts.replace('地图', '')
+            item['village'] = village.replace('地图', '')
+            item['districts'] = districts
             item['province'] = '陕西省'
             item['provincial_capital'] = '西安'
             yield scrapy.Request(item['url'], callback=self.parse_info, meta={'item': copy.deepcopy(item)}, dont_filter=True)
