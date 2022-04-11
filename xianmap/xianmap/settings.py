@@ -93,8 +93,8 @@ ITEM_PIPELINES = {
 # MYSQL_PASSWD = '123456'
 # MYSQL_DB = 'ceshi'
 # MYSQL_CHARSET = 'utf8'
-
-
+#
+#
 MYSQL_HOST = '127.0.0.1'
 MYSQL_PORT = 3306
 MYSQL_USER = 'root'

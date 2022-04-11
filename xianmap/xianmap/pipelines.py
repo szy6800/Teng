@@ -9,7 +9,7 @@ from itemadapter import ItemAdapter
 from twisted.enterprise import adbapi
 from pymysql.converters import escape_string
 import pymysql
-
+import gne
 
 class XianmapPipeline:
     def __init__(self, pool):
@@ -23,6 +23,7 @@ class XianmapPipeline:
                         )VALUES ('{}','{}', '{}', '{}', '{}', '{}', '{}', '{}')
         """
         self.query_sql = """SELECT * FROM xian_village_quchong WHERE url_md5='{}'"""
+        # self.query_sql = """SELECT * FROM xian_village WHERE url_md5='{}'"""
         # 更改语句,插入语句
         self.qcinsert_sql = """
                      INSERT INTO xian_village_quchong(url_md5)VALUES ('{}')
@@ -57,6 +58,9 @@ class XianmapPipeline:
 
         #唯一id查询
         cursor.execute(self.query_sql.format(item['url_md5']))
+        # 执行sql语句
+        # cursor.execute(self.query_sql.format(item['url_md5']))
+        # 查看这个数据是否存在,不存在就插入
         if cursor.fetchone():
             print(f"标题 {item['village']} ==== {item['url_md5']} 已存在！！！")
         else:

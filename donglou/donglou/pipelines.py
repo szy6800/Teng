@@ -26,6 +26,7 @@ class DonglouPipeline(object):
         # """
         #
         self.update_sql3 = """UPDATE arch_info_crawler_copy1 SET dispx='{}', dispy='{}' WHERE arch_id='{}';"""
+
     @classmethod
     def from_settings(cls, settings):
         params = dict(
