@@ -22,8 +22,8 @@ class XianmapPipeline:
                             url, village, districts, province, provincial_capital,url_md5, lng,lat
                         )VALUES ('{}','{}', '{}', '{}', '{}', '{}', '{}', '{}')
         """
-        self.query_sql = """SELECT * FROM xian_village_quchong WHERE url_md5='{}'"""
-        # self.query_sql = """SELECT * FROM xian_village WHERE url_md5='{}'"""
+        # self.query_sql = """SELECT * FROM xian_village_quchong WHERE url_md5='{}'"""
+        self.query_sql = """SELECT * FROM xian_village WHERE url_md5='{}'"""
         # 更改语句,插入语句
         self.qcinsert_sql = """
                      INSERT INTO xian_village_quchong(url_md5)VALUES ('{}')

@@ -52,6 +52,8 @@ DOWNLOAD_DELAY = 0.3
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'xianmap.middlewares.RandomUserAgentMiddleware': 543,
+   'xianmap.middlewares.IPProxyDownloadMiddleware': 542,
+   # 'xianmap.middlewares.RandomIPMiddleware': 443,
 }
 
 # Enable or disable extensions
