@@ -162,6 +162,10 @@ http://www.sfcx.cn/purchase.aspx?ClassID=25
 
 
 
+pro_code
+pro_name
+pro_type
+pro_bulider
 
 
 
