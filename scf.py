@@ -6,46 +6,41 @@
 # @File : scf.py
 # @Software: PyCharm
 
-import logging
-from minio import Minio
-from minio.error import S3Error
-
-logging.basicConfig(
-    level=logging.INFO,
-    filename='../mysqlbackup_up.log',
-    filemode='a',
-    format='%(asctime)s %(name)s %(levelname)s--%(message)s'
-)
-
-# 确定要上传的文件
-file_name = "*****"
-file_path = "C:\\Users\\lpy\\Desktop\\{}".format(file_name)
+import pymysql
 
 
-def upload_file():
-    # 创建一个客户端
-    minioClient = Minio(
-        'minio.***.com',
-        access_key='admin',
-        secret_key='****',
-        secure=False
+def connect_mysql():
+    connect = pymysql.Connect(
+        host='localhost',
+        port=3306,
+        user='root',
+        password='123456',
+        db='stu',
+        charset='utf8',
     )
+    # 创建游标对象
+    cursor = connect.cursor()
+    # sql语句
+    select_sql = """SELECT * FROM student WHERE name='{}'"""
+    # delete_sql = """drop table student"""
+    # cursor.execute(delete_sql)
+    # 插入语句
+    insert_sql = """
+        INSERT INTO student(name,age)VALUES ('{}','{}')
+    """
+    name = '石张毅'
+    age = 52
+    # 执行sql 语句
+    cursor.execute(select_sql.format(name))
+    # print(cursor.fetchone())
+    # 如果存在这条数据 就提示跳过
+    if cursor.fetchone():
+        print('数据存在')
+    else:
+        #否则就插入
+        cursor.execute(insert_sql.format(name,age))
+        # 必须提交
+        cursor.connection.commit()
+        print('数据已插入')
 
-    # 判断桶是否存在
-    check_bucket = minioClient.bucket_exists("backup")
-
-    if not check_bucket:
-        minioClient.make_bucket("backup")
-    try:
-        logging.info("start upload file")
-        minioClient.fput_object(bucket_name="backup", object_name="mysql/dev/{}".format(file_name),
-                                file_path=file_path)
-        logging.info("file {0} is successfully uploaded".format(file_name))
-    except FileNotFoundError as err:
-        logging.error('upload_failed: '+ str(err))
-    except S3Error as err:
-        logging.error("upload_failed:", err)
-
-
-if __name__ == '__main__':
-    upload_file()
+connect_mysql()

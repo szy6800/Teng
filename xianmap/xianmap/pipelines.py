@@ -29,8 +29,6 @@ class XianmapPipeline:
                      INSERT INTO xian_village_quchong(url_md5)VALUES ('{}')
                  """
 
-
-
     @classmethod
     def from_settings(cls, settings):
         params = dict(
@@ -64,7 +62,6 @@ class XianmapPipeline:
         if cursor.fetchone():
             print(f"标题 {item['village']} ==== {item['url_md5']} 已存在！！！")
         else:
-
             cursor.execute(self.insert_sql.format(
                 # item['id'],
                 item['url'],
@@ -75,10 +72,8 @@ class XianmapPipeline:
                 item['url_md5'],
                 item['lng'],
                 item['lat'],
-
             ))
             cursor.execute(self.qcinsert_sql.format(
                 item['url_md5'],
-
             ))
             print(f"新增村庄==== {item['url_md5']} ======{item['village']}")

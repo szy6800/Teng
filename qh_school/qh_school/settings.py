@@ -1,4 +1,4 @@
-# Scrapy settings for xianmap project
+# Scrapy settings for qh_school project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'xianmap'
+BOT_NAME = 'qh_school'
 
-SPIDER_MODULES = ['xianmap.spiders']
-NEWSPIDER_MODULE = 'xianmap.spiders'
+SPIDER_MODULES = ['qh_school.spiders']
+NEWSPIDER_MODULE = 'qh_school.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'xianmap (+http://www.yourdomain.com)'
+#USER_AGENT = 'qh_school (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -25,7 +25,7 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 0.3
+DOWNLOAD_DELAY = 0.2
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -37,23 +37,27 @@ DOWNLOAD_DELAY = 0.3
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-#DEFAULT_REQUEST_HEADERS = {
+# DEFAULT_REQUEST_HEADERS = {
 #   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
 #   'Accept-Language': 'en',
-#}
+#     "Cookie":"JSESSIONID=33605CBC51870BFF32537A3DE90595AF",
+#     "Host":"139.170.150.135",
+#     "Origin":"http://139.170.150.135",
+#     "Referer":"http://139.170.150.135/dataservice/query/project/list",
+# }
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'xianmap.middlewares.XianmapSpiderMiddleware': 543,
+#    'qh_school.middlewares.QhSchoolSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   'xianmap.middlewares.RandomUserAgentMiddleware': 543,
-   # 'xianmap.middlewares.IPProxyDownloadMiddleware': 542,
-   # 'xianmap.middlewares.RandomIPMiddleware': 443,
+   'qh_school.middlewares.RandomUserAgentMiddleware': 543,
+   # 'qh_school.middlewares.RandomIPMiddleware': 242,
+   # 'qh_school.middlewares.IPProxyDownloadMiddleware': 242,
 }
 
 # Enable or disable extensions
@@ -65,7 +69,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'xianmap.pipelines.XianmapPipeline': 300,
+   'qh_school.pipelines.QhSchoolPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -88,22 +92,9 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-
-# MYSQL_HOST = '127.0.0.1'
-# MYSQL_PORT = 3306
-# MYSQL_USER = 'root'
-# MYSQL_PASSWD = '123456'
-# MYSQL_DB = 'ceshi'
-# MYSQL_CHARSET = 'utf8'
-#
-#
 MYSQL_HOST = '127.0.0.1'
 MYSQL_PORT = 3306
 MYSQL_USER = 'root'
 MYSQL_PASSWD = '123456'
 MYSQL_DB = 'stu'
 MYSQL_CHARSET = 'utf8'
-
-
-
-

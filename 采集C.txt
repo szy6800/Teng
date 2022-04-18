@@ -161,12 +161,47 @@ http://www.sfcx.cn/purchase.aspx?ClassID=25
 00304
 
 
+# 项目编号
+num
+# 项目名称
+name
+# 项目类别
+type
+# 建筑单位
+bulider
+# 地址
+address
+# 负责人
+leader
+# 项目用途
+purpose
+# 建筑性质
+bui_nature
+# 建筑规模
+scale
+# 建档时间
+filing_time
+# 机构代码
+code
+# 项目分类
+classification
+#资金性质
+fu_nature
+#建筑模式
+bui_mode
+#建筑面积
+bui_area
 
-pro_code
-pro_name
-pro_type
-pro_bulider
-
+立项文号： 
+立项级别： 
+批复机关： 
+批复时间：
+ 建设用地规划许可证：
+ 建设工程规划许可证：
+预算总投资：
+其他资金来源： 
+建设内容说明：
+建设项目简介
 
 
 
