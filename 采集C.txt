@@ -161,51 +161,48 @@ http://www.sfcx.cn/purchase.aspx?ClassID=25
 00304
 
 
-# 项目编号
-num
-# 项目名称
-name
-# 项目类别
-type
-# 建筑单位
-bulider
-# 地址
-address
-# 负责人
-leader
-# 项目用途
-purpose
-# 建筑性质
-bui_nature
-# 建筑规模
-scale
-# 建档时间
-filing_time
-# 机构代码
-code
-# 项目分类
-classification
-#资金性质
-fu_nature
-#建筑模式
-bui_mode
-#建筑面积
-bui_area
+582-祁连山水泥集团股份有限公司
+http://bucgdq.gyuncai.com/portal/list.do?chnlcode=tender&objtype=2&isxj=1
+http://bucgdq.gyuncai.com/portal/list.do?chnlcode=result
+00305
 
-立项文号： 
-立项级别： 
-批复机关： 
-批复时间：
- 建设用地规划许可证：
- 建设工程规划许可证：
-预算总投资：
-其他资金来源： 
-建设内容说明：
-建设项目简介
+601-中经国际招标集团有限公司
+http://www.ceitcl.com/index.php?m=content&c=index&a=lists&catid=51
+http://www.ceitcl.com/index.php?m=content&c=index&a=lists&catid=52
+http://www.ceitcl.com/index.php?m=content&c=index&a=lists&catid=53
+00306
+
+615-大成工程咨询有限公司
+http://www.dcgczx.com/zhaobiaogonggao.html
+http://www.dcgczx.com/zhongbiaogongshi.html
+00307
+
+692-瞬速网上竞价平台
+http://www.shuncai360.com/jjxq/index.chtml
+http://www.shuncai360.com/jggg/index.chtml
+00308
+
+714-东风交易中心
+https://www.dongfengtc.com/portal/central/projectNotice/2114
+https://www.dongfengtc.com/portal/central/projectNotice/2115
+00309
 
 
+723-物资网
+http://bidding.wuzi.com/jdwzcmsadmin/category/bulletinList.html?searchDate=1997-04-15&dates=300&word=&categoryId=88&tabName=%E6%8B%9B%E6%A0%87%E5%85%AC%E5%91%8A&industryName=&status=&page=1
+http://bidding.wuzi.com/jdwzcmsadmin/category/resultBulletinList.html?dates=300&categoryId=89&tabName=%E5%8F%98%E6%9B%B4%E5%85%AC%E5%91%8A&page=1
+http://bidding.wuzi.com/jdwzcmsadmin/category/belletinList.html?categoryId=90&tabName=%E4%B8%AD%E6%A0%87%E5%85%AC%E7%A4%BA&dates=300&page=1
+00310
 
 
+728-华联世纪工程咨询股份有限公司
+http://www.gdhlzj.com/invite/channel2.do?formMap.id=ff808081589030f30158a8ede2a10a79&pageNo=1&pageSize=20&index=&moreTxt=
+http://www.gdhlzj.com/invite/channel2.do?formMap.id=ff808081589030f30158a8ee36ab0a7a
+http://www.gdhlzj.com/invite/channel2.do?formMap.id=ff808081589030f30158a8ef896e0a7b
+http://www.gdhlzj.com/invite/channel2.do?formMap.id=ff808081589030f30158a8f043400a7c
+00311
 
-
-
+758-城建易采
+http://bucgdq.gyuncai.com/portal/list.do?chnlcode=tender&objtype=2&isxj=1
+http://bucgdq.gyuncai.com/portal/list.do?chnlcode=result
+00312
