@@ -1,4 +1,4 @@
-# Scrapy settings for xianmap project
+# Scrapy settings for qh_house project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'xianmap'
+BOT_NAME = 'qh_house'
 
-SPIDER_MODULES = ['xianmap.spiders']
-NEWSPIDER_MODULE = 'xianmap.spiders'
+SPIDER_MODULES = ['qh_house.spiders']
+NEWSPIDER_MODULE = 'qh_house.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'xianmap (+http://www.yourdomain.com)'
+#USER_AGENT = 'qh_house (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -25,7 +25,7 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 0.1
+DOWNLOAD_DELAY = 0.2
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -45,15 +45,13 @@ DOWNLOAD_DELAY = 0.1
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'xianmap.middlewares.XianmapSpiderMiddleware': 543,
+#    'qh_house.middlewares.QhHouseSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   'xianmap.middlewares.RandomUserAgentMiddleware': 543,
-   'xianmap.middlewares.IPProxyDownloadMiddleware': 542,
-   # 'xianmap.middlewares.RandomIPMiddleware': 443,
+   'qh_house.middlewares.RandomUserAgentMiddleware': 543,
 }
 
 # Enable or disable extensions
@@ -65,7 +63,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'xianmap.pipelines.XianmapPipeline': 300,
+   'qh_house.pipelines.QhHousePipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -88,22 +86,9 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-
-# MYSQL_HOST = '127.0.0.1'
-# MYSQL_PORT = 3306
-# MYSQL_USER = 'root'
-# MYSQL_PASSWD = '123456'
-# MYSQL_DB = 'ceshi'
-# MYSQL_CHARSET = 'utf8'
-#
-#
 MYSQL_HOST = '127.0.0.1'
 MYSQL_PORT = 3306
 MYSQL_USER = 'root'
 MYSQL_PASSWD = '123456'
 MYSQL_DB = 'stu'
 MYSQL_CHARSET = 'utf8'
-
-
-
-
