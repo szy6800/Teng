@@ -54,7 +54,7 @@ def df_to_mysql(df):
 def dbz():
     # 批量去重，返回去重后数据
     now = datetime.datetime.now()
-    otherStyleTime = now.strftime("%Y                                       -%m-%d")
+    otherStyleTime = now.strftime("%Y-%m-%d")
     sql = f'''SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `zhaobiao2021` WHERE create_time='{otherStyleTime}' AND abs='3';'''
     # sql = '''SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `zhaobiao2021` WHERE create_time='2021-10-19';'''
     # print(sql)
