@@ -1,4 +1,4 @@
-# Scrapy settings for qh_house project
+# Scrapy settings for qh_land project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'qh_house'
+BOT_NAME = 'qh_land'
 
-SPIDER_MODULES = ['qh_house.spiders']
-NEWSPIDER_MODULE = 'qh_house.spiders'
+SPIDER_MODULES = ['qh_land.spiders']
+NEWSPIDER_MODULE = 'qh_land.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'qh_house (+http://www.yourdomain.com)'
+#USER_AGENT = 'qh_land (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -25,7 +25,7 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 0.2
+DOWNLOAD_DELAY = 1
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -45,14 +45,14 @@ DOWNLOAD_DELAY = 0.2
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'qh_house.middlewares.QhHouseSpiderMiddleware': 543,
+#    'qh_land.middlewares.QhLandSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   'qh_house.middlewares.RandomUserAgentMiddleware': 543,
-   'qh_house.middlewares.IPProxyDownloadMiddleware': 542,
+   'qh_land.middlewares.RandomUserAgentMiddleware': 543,
+   # 'qh_land.middlewares.IPProxyDownloadMiddleware': 542,
 }
 
 # Enable or disable extensions
@@ -63,11 +63,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   # 'qh_house.pipelines.QhHousePipeline': 300,
-   'qh_house.pipelines.QhbuildingPipeline': 300,
-   # 'qh_house.pipelines.QhfloorPipeline': 300,
-}
+#ITEM_PIPELINES = {
+#    'qh_land.pipelines.QhLandPipeline': 300,
+#}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

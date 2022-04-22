@@ -51,12 +51,12 @@ class BuildingSpider(scrapy.Spider):
         self.result = dbz()
 
     def start_requests(self):
-        for i in dbz()[25:30]:
+        for i in dbz()[310:315]:
             #栋楼链接
             new_url = 'https://www.chinabdc.cn/Tool/Config/QueryMethodName?methodName=GetProjectInfo&projectid='+i[1]
             id = i[0]
             yield scrapy.FormRequest(url=new_url, callback=self.parse,meta={'id':id,'house_url':i[1]},)
-
+    #1003 1008
     # 栋楼数据解析
     def parse(self, response, *args, **kwargs):
         id = response.meta['id']
@@ -155,6 +155,7 @@ class BuildingSpider(scrapy.Spider):
         item = response.meta['item']
         js_text = json.loads(response.text)
         # 建筑面积
+
         item['buildarea'] = str(jsonpath.jsonpath(js_text, '$..buildarea')[0])
         # 销售状态
         item['businessvaule'] = jsonpath.jsonpath(js_text, '$..businessvaule')[0]
@@ -174,9 +175,8 @@ class BuildingSpider(scrapy.Spider):
         item['certno'] = jsonpath.jsonpath(js_text, '$..certno')[0]
         # 楼层解析
         item['description'] = str(jsonpath.jsonpath(js_text, '$..description')[0])
-
-        uid = item['url']+item['housename']
         # 去重参数
+        uid = item['url']+item['housename']
         item['uid'] = hashlib.md5(uid.encode(encoding='utf-8')).hexdigest()
 
         yield item

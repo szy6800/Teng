@@ -18,9 +18,9 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 def job():
     start_times = datetime.datetime.now()  # 采集开始时间
     start_time = str(start_times).split('.')[0]
-    print('Starting time ===>', start_time)
-    # 采集逻辑
-    # #
+    # print('Starting time ===>', start_time)
+    # # 采集逻辑
+    # # #
     # os.system('scrapy crawl a59med')
     # os.system('scrapy crawl conch')
     # os.system('scrapy crawl DAV')

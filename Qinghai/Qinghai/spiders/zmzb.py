@@ -63,7 +63,7 @@ class ZmzbSpider(scrapy.Spider):
             yield scrapy.Request(item['link'], callback=self.parse_info, meta={'item': copy.deepcopy(item)},dont_filter=True)
 
     @staticmethod
-    def parse_info(self, response):
+    def parse_info(response):
         if response.status != 200:
             return
         item = response.meta['item']
