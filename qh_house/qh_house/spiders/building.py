@@ -51,7 +51,7 @@ class BuildingSpider(scrapy.Spider):
         self.result = dbz()
 
     def start_requests(self):
-        for i in dbz()[310:315]:
+        for i in dbz()[380:381]:
             #栋楼链接
             new_url = 'https://www.chinabdc.cn/Tool/Config/QueryMethodName?methodName=GetProjectInfo&projectid='+i[1]
             id = i[0]

@@ -3,6 +3,7 @@
 # @Author : 石张毅
 # @Site :https://www.landchina.com/resultNotice
 # @introduce:青海省土地市场网
+import hashlib
 from copy import deepcopy
 
 import scrapy
@@ -55,7 +56,7 @@ class QhLandSpider(scrapy.Spider):
         for gdGuid, district,address,area,land_use,supply_mode,sign_date in zip(
                 gdGuid,district,address,area,land_use,supply_mode,sign_date):
             item = dict()
-            item['gdGuid'] = gdGuid
+            item['detail_id'] = gdGuid
             item['district'] = district
             item['address'] = address
             item['area'] = int(area)*1000
@@ -63,8 +64,8 @@ class QhLandSpider(scrapy.Spider):
             sign_date = re.findall('\\d{4}-\\d{2}-\\d{2}',sign_date)[0]
             item['sign_date'] = sign_date
             item['supply_mode'] = supply_mode
-            item['url'] = 'https://www.landchina.com/landSupplyDetail?id={}&type=%E4%BE%9B%E5%9C%B0%E7%BB%93%E6%9E%9C&path=0'.format(item['gdGuid'])
-            data = {"gdGuid":"".format(item['gdGuid'])}
+            item['url'] = 'https://www.landchina.com/landSupplyDetail?id={}&type=%E4%BE%9B%E5%9C%B0%E7%BB%93%E6%9E%9C&path=0'.format(item['detail_id'])
+            data = {"gdGuid":"".format(item['detail_id'])}
             # 发送post请求 请求详情页
             yield scrapy.FormRequest(
                 url='https://api.landchina.com/tGdxm/result/detail',
@@ -104,12 +105,15 @@ class QhLandSpider(scrapy.Spider):
         # 成交价格
         item['tran_price'] = jsonpath.jsonpath(js_text, '$..je')[0]
         # 土地权使用人
-        item['srr'] = jsonpath.jsonpath(js_text, '$..srr')[0]
+        item['land_user'] = jsonpath.jsonpath(js_text, '$..srr')[0]
         # 批准单位
-        item['pzJg'] = jsonpath.jsonpath(js_text, '$..pzJg')[0]
+        item['app_unit'] = jsonpath.jsonpath(js_text, '$..pzJg')[0]
         # 批准号
-        item['pzWh'] = jsonpath.jsonpath(js_text, '$..pzWh')[0]
-        print(item)
+        item['app_num'] = jsonpath.jsonpath(js_text, '$..pzWh')[0]
+        uid = item['detail_id']+item['app_num']
+        item['uid'] = hashlib.md5(uid.encode(encoding='utf-8')).hexdigest()
+        yield item
+        # print(item)
         # print(response.text)
 
 
