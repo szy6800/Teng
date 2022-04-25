@@ -195,7 +195,7 @@ def index():
      # {'provincial_capital': '三沙', 'url': 'sansha', 'page': 1},
      # # 吉林省
      ##{'provincial_capital': '长春', 'url': 'changchun', 'page': 37},
-     {'provincial_capital': '吉林', 'url': 'jilin', 'page': 24},
+     # {'provincial_capital': '吉林', 'url': 'jilin', 'page': 24},
      # {'provincial_capital': '四平', 'url': 'siping', 'page': 22},
      # {'provincial_capital': '延边', 'url': 'yanbian', 'page': 9},
      # {'provincial_capital': '松原', 'url': 'songyuan', 'page': 12},
@@ -206,7 +206,7 @@ def index():
      # # 江苏省
      # {'provincial_capital': '无锡', 'url': 'wuxi', 'page': 43},
      # {'provincial_capital': '镇江', 'url': 'zhenjiang', 'page': 17},
-     # {'provincial_capital': '苏州', 'url': 'suzhou', 'page': 68},
+     {'provincial_capital': '苏州', 'url': 'suzhou', 'page': 68},
      # {'provincial_capital': '南通', 'url': 'nantong', 'page': 58},
      # {'provincial_capital': '扬州', 'url': 'yangzhou', 'page': 44},
      # {'provincial_capital': '徐州', 'url': 'xuzhou', 'page': 34},

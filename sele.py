@@ -52,48 +52,53 @@ from fake_useragent import UserAgent
 import requests
 from lxml import etree
 import re
+i = 50
+a = (190, int('{}'.format(i)), 89, 16)
+print(a)
+# print(a.index())
+# a = ("aaa","bbb","ccc","ddd","eee","fff")
 
-
-def get_city():
-    url = 'http://www.iecity.com/CityList/map/'
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36'
-    }
-    res = requests.get(url, headers=headers)
-    res.encoding = res.apparent_encoding
-    html = etree.HTML(res.text)
-    provice = html.xpath('//*[@class="CityList"]//*[@class="Province"]/text()')
-
-    city = html.xpath('//*[@class="CityList"]//a/text()')
-    # print(city)
-
-    city_href = html.xpath('//*[@class="CityList"]//a/@href')
-    count = 0
-    city_list = []
-    for city,city_href, in zip(city,city_href):
-        item = {}
-        city_hrefs = re.findall(r'http://www.iecity.com/(.*?)/map/', city_href)[0]
-        city_href = 'http://www.iecity.com/'+city_hrefs+'/map/Road---b4e5d7af--1.html'
-        # print(city_href)
-        res = requests.get(city_href, headers=headers)
-        res.encoding = res.apparent_encoding
-        res = res.text
-        # print(res)
-        try:
-            pages = re.findall(r'当前在第 .* 页 共计 (.*?) 个页面 共有 .* 条记录', res)[0]
-        except:
-            item['page'] = '0'
-        else:
-            item['provincial_capital'] = city
-            item['url'] = city_hrefs
-            item['page'] = int(pages)+1
-            count += 1
-            city_list.append(item)
-            print(count,item)
-    print(city_list)
-
-
-get_city()
+#
+# def get_city():
+#     url = 'http://www.iecity.com/CityList/map/'
+#     headers = {
+#         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36'
+#     }
+#     res = requests.get(url, headers=headers)
+#     res.encoding = res.apparent_encoding
+#     html = etree.HTML(res.text)
+#     provice = html.xpath('//*[@class="CityList"]//*[@class="Province"]/text()')
+#
+#     city = html.xpath('//*[@class="CityList"]//a/text()')
+#     # print(city)
+#
+#     city_href = html.xpath('//*[@class="CityList"]//a/@href')
+#     count = 0
+#     city_list = []
+#     for city,city_href, in zip(city,city_href):
+#         item = {}
+#         city_hrefs = re.findall(r'http://www.iecity.com/(.*?)/map/', city_href)[0]
+#         city_href = 'http://www.iecity.com/'+city_hrefs+'/map/Road---b4e5d7af--1.html'
+#         # print(city_href)
+#         res = requests.get(city_href, headers=headers)
+#         res.encoding = res.apparent_encoding
+#         res = res.text
+#         # print(res)
+#         try:
+#             pages = re.findall(r'当前在第 .* 页 共计 (.*?) 个页面 共有 .* 条记录', res)[0]
+#         except:
+#             item['page'] = '0'
+#         else:
+#             item['provincial_capital'] = city
+#             item['url'] = city_hrefs
+#             item['page'] = int(pages)+1
+#             count += 1
+#             city_list.append(item)
+#             print(count,item)
+#     print(city_list)
+#
+#
+# get_city()
 
 # [{'provincial_capital': '澳门', 'url': 'http://www.iecity.com/aomen/map/Road---b4e5d7af--1.html', 'page': '1'},
 #  {'provincial_capital': '合肥', 'url': 'http://www.iecity.com/hefei/map/Road---b4e5d7af--1.html', 'page': '73'},

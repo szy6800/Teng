@@ -17,14 +17,18 @@ class QhLandSpider(scrapy.Spider):
     # start_urls = ['http://landchina.com/']
 
     # custom_settings = {
+    #     'COOKIES_ENABLED':False,
     #     'DEFAULT_REQUEST_HEADERS': {
     #         "Content-Type": "application/json",
+    #         'Cookie': 'HWWAFSESID=2f83e734536906946b; HWWAFSESTIME=1650766194249; Hm_lvt_83853859c7247c5b03b527894622d3fa=1650509361,1650550570,1650592174,1650766195; Hm_lpvt_83853859c7247c5b03b527894622d3fa=1650791825'
+    #
+    #
     # }
     # }
 
     def start_requests(self):
         #构建post请求参数
-        data = {"pageNum":6,"pageSize":10,"xzqDm":"6327","startDate":"","endDate":""}
+        data = {"pageNum":"1","pageSize":"10","xzqDm":"6322","startDate":"","endDate":""}
         #发送post请求
         yield scrapy.FormRequest(
             url='https://api.landchina.com/tGdxm/result/list',
@@ -34,7 +38,7 @@ class QhLandSpider(scrapy.Spider):
             callback=self.parse, dont_filter=True)
 
     def parse(self, response, **kwargs):
-        # print(response.text)
+        print(response.text)
         if response.status != 200:
             return
         js_text = json.loads(response.text)
@@ -55,6 +59,7 @@ class QhLandSpider(scrapy.Spider):
 
         for gdGuid, district,address,area,land_use,supply_mode,sign_date in zip(
                 gdGuid,district,address,area,land_use,supply_mode,sign_date):
+
             item = dict()
             item['detail_id'] = gdGuid
             item['district'] = district
@@ -67,6 +72,7 @@ class QhLandSpider(scrapy.Spider):
             item['url'] = 'https://www.landchina.com/landSupplyDetail?id={}&type=%E4%BE%9B%E5%9C%B0%E7%BB%93%E6%9E%9C&path=0'.format(item['detail_id'])
             data = {"gdGuid":"".format(item['detail_id'])}
             # 发送post请求 请求详情页
+
             yield scrapy.FormRequest(
                 url='https://api.landchina.com/tGdxm/result/detail',
                 method='POST',
@@ -75,8 +81,10 @@ class QhLandSpider(scrapy.Spider):
                 callback=self.parse_info, dont_filter=True,
                 meta={'item': deepcopy(item)}
             )
+            # break
 
     def parse_info(self, response):
+        print(response.text)
         if response.status != 200:
             return
         item = response.meta['item']
@@ -110,9 +118,12 @@ class QhLandSpider(scrapy.Spider):
         item['app_unit'] = jsonpath.jsonpath(js_text, '$..pzJg')[0]
         # 批准号
         item['app_num'] = jsonpath.jsonpath(js_text, '$..pzWh')[0]
+
         uid = item['detail_id']+item['app_num']
+
         item['uid'] = hashlib.md5(uid.encode(encoding='utf-8')).hexdigest()
-        yield item
+
+        # yield item
         # print(item)
         # print(response.text)
 

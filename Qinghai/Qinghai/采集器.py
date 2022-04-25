@@ -15,7 +15,6 @@ def queryue(sql):
     # print(lists)
     return lists
 
-
 def md5_encrypt(chart):
     # MD5 加密
     md = hashlib.md5(chart.encode())
