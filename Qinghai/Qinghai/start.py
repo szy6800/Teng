@@ -69,6 +69,15 @@ def job():
     # os.system('scrapy crawl qhheart')
     # # 3/18
     # os.system('scrapy crawl norincogroup')
+    #
+    # os.system('scrapy crawl gs_plsggzyjy')
+    # os.system('scrapy crawl gs_plsggzyjy1')
+    # os.system('scrapy crawl gs_gnzrmzf')
+    # os.system('scrapy crawl gs_gnzrmzf1')
+    # os.system('scrapy crawl gs_dingxi')
+    # os.system('scrapy crawl gs_gssey')
+    # os.system('scrapy crawl gs_qysggzyjy')
+    # os.system('scrapy crawl gs_tianshui')
 
     os.system('scrapy crawl ebnew')
 

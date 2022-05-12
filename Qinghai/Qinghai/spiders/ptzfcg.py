@@ -20,7 +20,7 @@ class PtzfcgSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs ):
         super(PtzfcgSpider, self).__init__()
         self.cates = [
-            {"cate": "zbgg", "pages": 20},  # 招标公告
+            {"cate": "zbgg", "pages": 5},  # 招标公告
 
 
         ]

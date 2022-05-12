@@ -5,66 +5,35 @@
 # @Site : 
 # @File : tre.py
 # @Software: PyCharm
-import re
-from time import sleep
-import time
-from selenium.webdriver.common.keys import Keys
-''' seleinum 隐形等待的包'''
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as ec
-from selenium.webdriver.common.by import By
-from selenium import webdriver
-import random,datetime
-''' 键盘输入包 '''
+import requests
+import jsonpath
+import json
+for i in range(1,5):
 
+    headers = {
+        'Connection': 'keep-alive',
+        'Accept': 'text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36',
+        'X-Requested-With': 'XMLHttpRequest',
+        'Referer': 'http://ec.custeel.com/home/markList.html',
+        'Accept-Language': 'zh-CN,zh;q=0.9',
+    }
 
+    params = (
+        ('method', 'getBidsAlls'),
+        ('tname', ''),
+        ('cname', ''),
+        ('putdate', ''),
+        ('pageNum', '{}'.format(i)),
+        ('pageSize', '20'),
+        ('_', '1651226516714'),
+    )
 
-class GuoTU_crwl:
-    #初始化对象
-    def __init__(self):
-        url = 'https://www.landchina.com/resultNotice'
-        self.url=url
-        options = webdriver.ChromeOptions()
-        ''' 让浏览器不识别被控制 '''
-        options.add_experimental_option('excludeSwitches', ['enable-automation'])
-        self.browser = webdriver.Chrome(options=options)
-        self.wait = WebDriverWait(self.browser,10) #设置隐形等待时间
-
-
-    def spider(self):
-        #打开网页
-        sleep(2)
-        trs = self.browser.find_elements_by_xpath('//table[@class="table"]/tr[@class="trHover"]')
-        next_bot = self.browser.find_element_by_class_name('btn-next')
-        try:
-            is_next_bot = next_bot.get_attribute('disabled')
-        except:
-            is_next_bot = False
-        for i in range(len(trs[0:3])):
-            trs[i].click()
-            #切换到详情页获取信息
-            self.browser.switch_to.window(self.browser.window_handles[-1])
-            title = self.browser.find_element_by_xpath('//div[@class="conTitle"]').text
-            print(title)
-
-            #关掉详情页
-            self.browser.close()
-            # #切换到首页列表
-            self.browser.switch_to.window(self.browser.window_handles[0])
-            sleep(0.5)
-
-        return next_bot,is_next_bot
-
-    def run(self):
-        self.browser.get(self.url)
-        while True:
-            next_page,is_next = self.spider()
-            if is_next:
-                break
-            next_page.click()
-
-
-
-if __name__ == '__main__':
-    a = GuoTU_crwl()
-    a.run()
+    response = requests.get('http://ec.custeel.com/cgnews.mv', headers=headers, params=params).json()
+    print(response)
+    # a = jsonpath.jsonpath(response, '$..bname')
+    # print(a)
+#NB. Original query string below. It seems impossible to parse and
+#reproduce query strings 100% accurately so the one below is given
+#in case the reproduced version is not "correct".
+# response = requests.get('http://ec.custeel.com/cgnews.mv?method=getBidsAlls&callback=jQuery17205031662021907224_1651226489091&tname=&cname=&putdate=&pageNum=4&pageSize=20&_=1651226516714', headers=headers, cookies=cookies, verify=False)
