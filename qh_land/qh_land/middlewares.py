@@ -205,3 +205,10 @@ class RandomUserAgentMiddleware(object):
             return request
 
 
+class IPProxyDownloadMiddleware(object):
+    def process_request(self, request, spider):
+        proxy = 'http://tps154.kdlapi.com:15818'
+        user_password = "t13850419481098:bdpkukjq"
+        request.meta['proxy'] = proxy
+        b64_user_password = base64.b64encode(user_password.encode('utf-8'))
+        request.headers["Proxy-Authorization"] = 'Basic ' + b64_user_password.decode('utf-8')

@@ -32,5 +32,6 @@ def get_city():
             te.append(item)
     return te
 
+
 print(get_city())
 
