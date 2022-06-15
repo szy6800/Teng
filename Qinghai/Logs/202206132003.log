@@ -1,0 +1,33 @@
+2022-06-13 20:03:05,478 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['Qinghai.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-13 20:03:05,478 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-13 20:03:05,478 - middleware.py[line:51] - INFO: Enabled item pipelines:
+['Qinghai.pipelines.QinghaiPipeline']
+2022-06-13 20:03:05,478 - engine.py[line:313] - INFO: Spider opened
+2022-06-13 20:03:05,876 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-13 20:03:05,876 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-13 20:03:05,876 - engine.py[line:358] - INFO: Closing spider (finished)
+2022-06-13 20:03:05,876 - statscollectors.py[line:46] - INFO: Dumping Scrapy stats:
+{'elapsed_time_seconds': 0.0,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 13, 12, 3, 5, 876350),
+ 'log_count/DEBUG': 1,
+ 'log_count/INFO': 10,
+ 'start_time': datetime.datetime(2022, 6, 13, 12, 3, 5, 876350)}
+2022-06-13 20:03:05,876 - engine.py[line:385] - INFO: Spider closed (finished)

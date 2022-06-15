@@ -1,0 +1,293 @@
+2022-06-14 10:20:45,275 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['Qinghai.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-14 10:20:45,278 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-14 10:20:45,280 - middleware.py[line:51] - INFO: Enabled item pipelines:
+['Qinghai.pipelines.QinghaiPipeline']
+2022-06-14 10:20:45,281 - engine.py[line:313] - INFO: Spider opened
+2022-06-14 10:20:45,503 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-14 10:20:45,504 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-14 10:20:45,885 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=> (referer: None)
+2022-06-14 10:20:46,072 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=> (referer: None)
+2022-06-14 10:20:46,623 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=> (referer: None)
+2022-06-14 10:20:46,862 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=> (referer: None)
+2022-06-14 10:20:47,285 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22902/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:47,402 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22902/flowpage?isLoad=0>
+None
+2022-06-14 10:20:47,664 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22893/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:47,777 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22893/flowpage?isLoad=0>
+None
+2022-06-14 10:20:47,908 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22858/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:48,022 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22858/flowpage?isLoad=0>
+None
+2022-06-14 10:20:48,207 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22908/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:48,317 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22908/flowpage?isLoad=0>
+None
+2022-06-14 10:20:48,580 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22891/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:48,699 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22891/flowpage?isLoad=0>
+None
+2022-06-14 10:20:49,020 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22717/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:49,131 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22717/flowpage?isLoad=0>
+None
+2022-06-14 10:20:49,429 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22911/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:49,538 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22911/flowpage?isLoad=0>
+None
+2022-06-14 10:20:49,856 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22910/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:49,965 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22910/flowpage?isLoad=0>
+None
+2022-06-14 10:20:50,266 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22909/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:50,384 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22909/flowpage?isLoad=0>
+None
+2022-06-14 10:20:50,581 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22917/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:50,692 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22917/flowpage?isLoad=0>
+None
+2022-06-14 10:20:50,939 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22912/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:51,054 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22912/flowpage?isLoad=0>
+None
+2022-06-14 10:20:51,177 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22844/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:51,288 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22844/flowpage?isLoad=0>
+None
+2022-06-14 10:20:51,596 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22918/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:51,709 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22918/flowpage?isLoad=0>
+None
+2022-06-14 10:20:51,921 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22930/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:52,074 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22930/flowpage?isLoad=0>
+None
+2022-06-14 10:20:52,278 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22874/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:52,390 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22874/flowpage?isLoad=0>
+None
+2022-06-14 10:20:52,656 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22847/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:52,763 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22847/flowpage?isLoad=0>
+None
+2022-06-14 10:20:53,039 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22787/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:53,152 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22787/flowpage?isLoad=0>
+None
+2022-06-14 10:20:53,414 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22809/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:53,525 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22809/flowpage?isLoad=0>
+None
+2022-06-14 10:20:53,788 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22817/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:53,899 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22817/flowpage?isLoad=0>
+None
+2022-06-14 10:20:54,207 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22743/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:54,319 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22743/flowpage?isLoad=0>
+None
+2022-06-14 10:20:54,651 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22805/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:54,758 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22805/flowpage?isLoad=0>
+None
+2022-06-14 10:20:55,003 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22808/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:55,113 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22808/flowpage?isLoad=0>
+None
+2022-06-14 10:20:55,453 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22822/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:55,563 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22822/flowpage?isLoad=0>
+None
+2022-06-14 10:20:55,639 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22818/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:55,755 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22818/flowpage?isLoad=0>
+None
+2022-06-14 10:20:56,096 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22816/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:56,208 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22816/flowpage?isLoad=0>
+None
+2022-06-14 10:20:56,488 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22814/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:56,609 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22814/flowpage?isLoad=0>
+None
+2022-06-14 10:20:56,827 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22813/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:56,938 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22813/flowpage?isLoad=0>
+None
+2022-06-14 10:20:57,080 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22812/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:57,199 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22812/flowpage?isLoad=0>
+None
+2022-06-14 10:20:57,510 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22823/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:57,624 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22823/flowpage?isLoad=0>
+None
+2022-06-14 10:20:57,947 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22825/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:58,067 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22825/flowpage?isLoad=0>
+None
+2022-06-14 10:20:58,363 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22827/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:58,477 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22827/flowpage?isLoad=0>
+None
+2022-06-14 10:20:58,731 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22828/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:58,839 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22828/flowpage?isLoad=0>
+None
+2022-06-14 10:20:59,236 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22838/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:59,348 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22838/flowpage?isLoad=0>
+None
+2022-06-14 10:20:59,632 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22831/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:20:59,750 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22831/flowpage?isLoad=0>
+None
+2022-06-14 10:20:59,993 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22703/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:00,110 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22703/flowpage?isLoad=0>
+None
+2022-06-14 10:21:00,357 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22834/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:00,470 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22834/flowpage?isLoad=0>
+None
+2022-06-14 10:21:00,823 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22846/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:00,936 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22846/flowpage?isLoad=0>
+None
+2022-06-14 10:21:01,101 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22835/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:01,215 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22835/flowpage?isLoad=0>
+None
+2022-06-14 10:21:01,496 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22836/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:01,617 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22836/flowpage?isLoad=0>
+None
+2022-06-14 10:21:01,959 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22842/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:02,071 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22842/flowpage?isLoad=0>
+None
+2022-06-14 10:21:02,241 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22845/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:02,351 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22845/flowpage?isLoad=0>
+None
+2022-06-14 10:21:02,450 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22802/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:02,567 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22802/flowpage?isLoad=0>
+None
+2022-06-14 10:21:02,912 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22844/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:03,031 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22844/flowpage?isLoad=0>
+None
+2022-06-14 10:21:03,357 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22850/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:03,466 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22850/flowpage?isLoad=0>
+None
+2022-06-14 10:21:03,728 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22789/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:03,842 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22789/flowpage?isLoad=0>
+None
+2022-06-14 10:21:04,084 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22849/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:04,196 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22849/flowpage?isLoad=0>
+None
+2022-06-14 10:21:04,445 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22854/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:04,563 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22854/flowpage?isLoad=0>
+None
+2022-06-14 10:21:04,873 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22857/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:04,980 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22857/flowpage?isLoad=0>
+None
+2022-06-14 10:21:05,385 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22853/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:05,497 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22853/flowpage?isLoad=0>
+None
+2022-06-14 10:21:05,866 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22855/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:05,979 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22855/flowpage?isLoad=0>
+None
+2022-06-14 10:21:06,198 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22863/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:06,310 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22863/flowpage?isLoad=0>
+None
+2022-06-14 10:21:06,648 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22865/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:06,760 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22865/flowpage?isLoad=0>
+None
+2022-06-14 10:21:07,026 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22867/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:07,147 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22867/flowpage?isLoad=0>
+None
+2022-06-14 10:21:07,441 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22861/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:07,552 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22861/flowpage?isLoad=0>
+None
+2022-06-14 10:21:07,776 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22864/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:07,894 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22864/flowpage?isLoad=0>
+None
+2022-06-14 10:21:08,078 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22870/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:08,191 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22870/flowpage?isLoad=0>
+None
+2022-06-14 10:21:08,498 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22859/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:08,613 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22859/flowpage?isLoad=0>
+None
+2022-06-14 10:21:08,762 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22875/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:08,876 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22875/flowpage?isLoad=0>
+None
+2022-06-14 10:21:09,201 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22822/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:09,313 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22822/flowpage?isLoad=0>
+None
+2022-06-14 10:21:09,568 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22883/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:09,682 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22883/flowpage?isLoad=0>
+None
+2022-06-14 10:21:09,943 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22876/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:10,055 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22876/flowpage?isLoad=0>
+None
+2022-06-14 10:21:10,306 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22871/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:10,412 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22871/flowpage?isLoad=0>
+None
+2022-06-14 10:21:10,674 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22887/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:10,789 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22887/flowpage?isLoad=0>
+None
+2022-06-14 10:21:11,112 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22884/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:11,225 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22884/flowpage?isLoad=0>
+None
+2022-06-14 10:21:11,464 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22890/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:11,583 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22890/flowpage?isLoad=0>
+None
+2022-06-14 10:21:11,862 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22820/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:11,970 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22820/flowpage?isLoad=0>
+None
+2022-06-14 10:21:12,172 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22832/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:12,282 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22832/flowpage?isLoad=0>
+None
+2022-06-14 10:21:12,599 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22895/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:12,714 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22895/flowpage?isLoad=0>
+None
+2022-06-14 10:21:13,056 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22899/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:13,167 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22899/flowpage?isLoad=0>
+None
+2022-06-14 10:21:13,412 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22904/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:13,524 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22904/flowpage?isLoad=0>
+None
+2022-06-14 10:21:13,740 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22907/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:13,848 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22907/flowpage?isLoad=0>
+None
+2022-06-14 10:21:14,186 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22903/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:14,297 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22903/flowpage?isLoad=0>
+None
+2022-06-14 10:21:14,621 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22871/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:14,735 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22871/flowpage?isLoad=0>
+None
+2022-06-14 10:21:14,841 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22906/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:14,954 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22906/flowpage?isLoad=0>
+None
+2022-06-14 10:21:15,281 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22925/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:15,401 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22925/flowpage?isLoad=0>
+None
+2022-06-14 10:21:15,459 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22855/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:15,574 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22855/flowpage?isLoad=0>
+None
+2022-06-14 10:21:15,906 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22878/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:16,022 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22878/flowpage?isLoad=0>
+None
+2022-06-14 10:21:16,334 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22922/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:16,443 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22922/flowpage?isLoad=0>
+None
+2022-06-14 10:21:16,726 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22924/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:16,834 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22924/flowpage?isLoad=0>
+None
+2022-06-14 10:21:16,985 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22931/flowpage?isLoad=0> (referer: http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId=)
+2022-06-14 10:21:17,094 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.plsggzyjy.cn/f/newservertrade/tenderprojects/22931/flowpage?isLoad=0>
+None
+2022-06-14 10:21:17,095 - engine.py[line:358] - INFO: Closing spider (finished)
+2022-06-14 10:21:17,096 - statscollectors.py[line:46] - INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 56532,
+ 'downloader/request_count': 84,
+ 'downloader/request_method_count/GET': 80,
+ 'downloader/request_method_count/POST': 4,
+ 'downloader/response_bytes': 770936,
+ 'downloader/response_count': 84,
+ 'downloader/response_status_count/200': 84,
+ 'elapsed_time_seconds': 31.593484,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 14, 2, 21, 17, 96987),
+ 'httpcompression/response_bytes': 2712611,
+ 'httpcompression/response_count': 84,
+ 'item_scraped_count': 80,
+ 'log_count/DEBUG': 165,
+ 'log_count/INFO': 10,
+ 'request_depth_max': 1,
+ 'response_received_count': 84,
+ 'scheduler/dequeued': 84,
+ 'scheduler/dequeued/memory': 84,
+ 'scheduler/enqueued': 84,
+ 'scheduler/enqueued/memory': 84,
+ 'start_time': datetime.datetime(2022, 6, 14, 2, 20, 45, 503503)}
+2022-06-14 10:21:17,096 - engine.py[line:385] - INFO: Spider closed (finished)

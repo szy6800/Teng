@@ -1,0 +1,177 @@
+2022-06-13 18:35:36,042 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'boss.middlewares.RandomIPMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'boss.middlewares.BossDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-13 18:35:36,046 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-13 18:35:36,047 - middleware.py[line:51] - INFO: Enabled item pipelines:
+[]
+2022-06-13 18:35:36,047 - engine.py[line:313] - INFO: Spider opened
+2022-06-13 18:35:36,344 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-13 18:35:36,345 - middlewares.py[line:120] - INFO: Spider opened: jishu1
+2022-06-13 18:35:36,345 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-13 18:35:36,346 - middlewares.py[line:168] - INFO: 使用代理[124.230.8.148:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:35:57,377 - retry.py[line:96] - DEBUG: Retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 1 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 18:35:57,378 - middlewares.py[line:168] - INFO: 使用代理[123.144.51.225:4246]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:35:57,542 - retry.py[line:96] - DEBUG: Retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 2 times): Could not open CONNECT tunnel with proxy 123.144.51.225:4246 [{'status': 401, 'reason': b'Authorized failed'}]
+2022-06-13 18:35:57,543 - middlewares.py[line:168] - INFO: 使用代理[42.57.89.2:4213]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:36:18,879 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 18:36:18,880 - middlewares.py[line:168] - INFO: 使用代理[175.146.98.25:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:36:21,033 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): Connection was refused by other side: 10061: 由于目标计算机积极拒绝，无法连接。.
+2022-06-13 18:36:21,033 - middlewares.py[line:168] - INFO: 使用代理[124.230.9.13:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:36:23,241 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): Connection was refused by other side: 10061: 由于目标计算机积极拒绝，无法连接。.
+2022-06-13 18:36:23,242 - middlewares.py[line:168] - INFO: 使用代理[58.243.28.208:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:36:36,356 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-13 18:36:44,282 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 18:36:44,283 - middlewares.py[line:168] - INFO: 使用代理[124.230.8.41:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:37:05,314 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 18:37:05,315 - middlewares.py[line:168] - INFO: 使用代理[110.18.152.90:4234]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:37:26,347 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 18:37:26,348 - middlewares.py[line:168] - INFO: 使用代理[123.158.97.142:4224]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:37:36,352 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-13 18:37:47,396 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 18:37:47,399 - middlewares.py[line:168] - INFO: 使用代理[101.68.201.85:4224]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:38:08,455 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 18:38:08,455 - middlewares.py[line:168] - INFO: 使用代理[123.144.51.225:4246]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:38:08,594 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): Could not open CONNECT tunnel with proxy 123.144.51.225:4246 [{'status': 401, 'reason': b'Authorized failed'}]
+2022-06-13 18:38:08,595 - middlewares.py[line:168] - INFO: 使用代理[116.115.208.242:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:38:11,066 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): Connection was refused by other side: 10061: 由于目标计算机积极拒绝，无法连接。.
+2022-06-13 18:38:11,066 - middlewares.py[line:168] - INFO: 使用代理[58.243.28.208:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:38:32,127 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 18:38:32,128 - middlewares.py[line:168] - INFO: 使用代理[153.36.72.30:4278]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:38:32,262 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): Could not open CONNECT tunnel with proxy 153.36.72.30:4278 [{'status': 401, 'reason': b'Authorized failed'}]
+2022-06-13 18:38:32,262 - middlewares.py[line:168] - INFO: 使用代理[123.155.237.8:4281]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:38:36,350 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-13 18:38:53,552 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 18:38:53,553 - middlewares.py[line:168] - INFO: 使用代理[58.243.29.141:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:09,182 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 18:39:09,182 - middlewares.py[line:168] - INFO: 使用代理[113.231.19.130:4234]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:30,243 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 18:39:30,243 - middlewares.py[line:168] - INFO: 使用代理[123.144.51.225:4246]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:30,243 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:30,243 - middlewares.py[line:168] - INFO: 使用代理[58.243.28.208:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:30,606 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:30,606 - middlewares.py[line:168] - INFO: 使用代理[42.7.89.130:4256]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:30,957 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:30,957 - middlewares.py[line:168] - INFO: 使用代理[113.231.36.23:4252]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:31,162 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:31,162 - middlewares.py[line:168] - INFO: 使用代理[175.155.51.181:4258]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:31,528 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:31,528 - middlewares.py[line:168] - INFO: 使用代理[121.29.81.245:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:31,975 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:31,975 - middlewares.py[line:168] - INFO: 使用代理[123.144.144.111:4246]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:32,421 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:32,421 - middlewares.py[line:168] - INFO: 使用代理[101.27.205.212:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:32,837 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:32,837 - middlewares.py[line:168] - INFO: 使用代理[113.237.247.173:4261]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:33,284 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:33,284 - middlewares.py[line:168] - INFO: 使用代理[112.85.232.23:4278]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:33,713 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:33,713 - middlewares.py[line:168] - INFO: 使用代理[113.231.19.130:4234]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:33,920 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:33,920 - middlewares.py[line:168] - INFO: 使用代理[123.144.144.111:4246]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:34,272 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:34,272 - middlewares.py[line:168] - INFO: 使用代理[124.230.8.148:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:34,702 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:34,702 - middlewares.py[line:168] - INFO: 使用代理[124.230.9.13:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:34,989 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:34,989 - middlewares.py[line:168] - INFO: 使用代理[101.27.205.212:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:35,180 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:35,181 - middlewares.py[line:168] - INFO: 使用代理[123.155.237.8:4281]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:35,624 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:35,624 - middlewares.py[line:168] - INFO: 使用代理[42.52.172.140:4261]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:36,054 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:36,054 - middlewares.py[line:168] - INFO: 使用代理[116.115.208.242:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:36,356 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-13 18:39:36,484 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:36,484 - middlewares.py[line:168] - INFO: 使用代理[113.231.36.23:4252]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:36,931 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:36,931 - middlewares.py[line:168] - INFO: 使用代理[112.85.232.23:4278]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:37,299 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:37,299 - middlewares.py[line:168] - INFO: 使用代理[42.7.88.117:4243]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:37,634 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:37,634 - middlewares.py[line:168] - INFO: 使用代理[42.57.89.2:4213]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:37,954 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:37,955 - middlewares.py[line:168] - INFO: 使用代理[123.144.51.225:4246]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:38,400 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:38,400 - middlewares.py[line:168] - INFO: 使用代理[175.146.97.18:4232]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:38,848 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:38,848 - middlewares.py[line:168] - INFO: 使用代理[58.243.29.136:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:39,295 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:39,295 - middlewares.py[line:168] - INFO: 使用代理[218.60.253.235:4252]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:39,679 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:39,679 - middlewares.py[line:168] - INFO: 使用代理[124.230.8.148:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:40,030 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:40,030 - middlewares.py[line:168] - INFO: 使用代理[218.60.252.217:4252]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:40,270 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:40,270 - middlewares.py[line:168] - INFO: 使用代理[112.194.91.30:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:40,558 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:40,558 - middlewares.py[line:168] - INFO: 使用代理[113.237.186.228:4213]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:40,922 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:40,922 - middlewares.py[line:168] - INFO: 使用代理[101.68.201.85:4224]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:41,314 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:41,314 - middlewares.py[line:168] - INFO: 使用代理[123.144.63.181:4235]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:41,722 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:41,722 - middlewares.py[line:168] - INFO: 使用代理[124.230.8.148:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:42,168 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:42,169 - middlewares.py[line:168] - INFO: 使用代理[101.27.205.212:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:42,456 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:42,456 - middlewares.py[line:168] - INFO: 使用代理[116.3.97.128:4278]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:42,888 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:42,888 - middlewares.py[line:168] - INFO: 使用代理[175.155.51.181:4258]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:43,207 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:43,207 - middlewares.py[line:168] - INFO: 使用代理[183.92.198.174:4215]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:43,606 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:43,606 - middlewares.py[line:168] - INFO: 使用代理[113.231.36.23:4252]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:44,053 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:44,054 - middlewares.py[line:168] - INFO: 使用代理[101.27.192.82:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:44,500 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:44,501 - middlewares.py[line:168] - INFO: 使用代理[153.36.72.30:4278]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:44,945 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:44,945 - middlewares.py[line:168] - INFO: 使用代理[123.155.237.8:4281]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:45,344 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:45,345 - middlewares.py[line:168] - INFO: 使用代理[123.155.237.8:4281]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:45,793 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:45,793 - middlewares.py[line:168] - INFO: 使用代理[112.194.91.30:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:46,234 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:46,234 - middlewares.py[line:168] - INFO: 使用代理[116.115.208.242:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:46,645 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:46,645 - middlewares.py[line:168] - INFO: 使用代理[110.18.152.90:4234]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:47,007 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:47,007 - middlewares.py[line:168] - INFO: 使用代理[112.194.91.30:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:47,368 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): An error occurred while connecting: 10065: 套接字操作尝试一个无法连接的主机。.
+2022-06-13 18:39:47,368 - middlewares.py[line:168] - INFO: 使用代理[123.144.63.181:4235]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:39:47,960 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): Could not open CONNECT tunnel with proxy 123.144.63.181:4235 [{'status': 401, 'reason': b'Authorized failed'}]
+2022-06-13 18:39:47,960 - middlewares.py[line:168] - INFO: 使用代理[42.7.88.117:4243]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:40:09,247 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 18:40:09,248 - middlewares.py[line:168] - INFO: 使用代理[175.146.209.84:4256]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:40:11,419 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): Connection was refused by other side: 10061: 由于目标计算机积极拒绝，无法连接。.
+2022-06-13 18:40:11,419 - middlewares.py[line:168] - INFO: 使用代理[123.144.63.181:4235]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:40:11,506 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): Could not open CONNECT tunnel with proxy 123.144.63.181:4235 [{'status': 401, 'reason': b'Authorized failed'}]
+2022-06-13 18:40:11,506 - middlewares.py[line:168] - INFO: 使用代理[42.63.27.123:4215]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:40:32,709 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 18:40:32,710 - middlewares.py[line:168] - INFO: 使用代理[1.31.96.4:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:40:32,854 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): Could not open CONNECT tunnel with proxy 1.31.96.4:4231 [{'status': 401, 'reason': b'Authorized failed'}]
+2022-06-13 18:40:32,854 - middlewares.py[line:168] - INFO: 使用代理[113.226.100.11:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:40:36,355 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-13 18:40:54,131 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 18:40:54,132 - middlewares.py[line:168] - INFO: 使用代理[113.237.186.228:4213]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:40:56,388 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): Connection was refused by other side: 10061: 由于目标计算机积极拒绝，无法连接。.
+2022-06-13 18:40:56,389 - middlewares.py[line:168] - INFO: 使用代理[124.230.8.41:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:40:56,968 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): Could not open CONNECT tunnel with proxy 124.230.8.41:4231 [{'status': 401, 'reason': b'Authorized failed'}]
+2022-06-13 18:40:56,969 - middlewares.py[line:168] - INFO: 使用代理[116.115.208.242:4231]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 18:40:59,148 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/c100010000-p100101/?page=2> (failed 3 times): Connection was refused by other side: 10061: 由于目标计算机积极拒绝，无法连接。.
+2022-06-13 18:40:59,148 - middlewares.py[line:168] - INFO: 使用代理[116.3.97.128:4278]访问[https://www.zhipin.com/c100010000-p100101/?page=2]

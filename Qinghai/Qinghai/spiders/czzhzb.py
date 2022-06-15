@@ -89,7 +89,7 @@ class CzzhzbSpider(scrapy.Spider):
         item['proxy'] = ''
         item['update_time'] = ''
         item['deleted'] = ''
-        item['province'] = ''
+        item['province'] = '江苏|常州'
         item['base'] = ''
         item['type'] = '招标公告'
         item['items'] = ''

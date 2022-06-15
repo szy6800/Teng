@@ -1,0 +1,244 @@
+2022-06-14 10:23:50,507 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['Qinghai.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-14 10:23:50,510 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-14 10:23:50,512 - middleware.py[line:51] - INFO: Enabled item pipelines:
+['Qinghai.pipelines.QinghaiPipeline']
+2022-06-14 10:23:50,512 - engine.py[line:313] - INFO: Spider opened
+2022-06-14 10:23:50,742 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-14 10:23:50,743 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-14 10:23:50,891 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1> (referer: None)
+2022-06-14 10:23:51,255 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2> (referer: None)
+2022-06-14 10:23:51,642 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=B&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1> (referer: None)
+2022-06-14 10:23:51,942 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=B&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2> (referer: None)
+2022-06-14 10:23:52,206 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=C&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1> (referer: None)
+2022-06-14 10:23:52,590 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=C&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2> (referer: None)
+2022-06-14 10:23:53,003 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1> (referer: None)
+2022-06-14 10:23:53,466 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2> (referer: None)
+2022-06-14 10:23:53,829 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=1> (referer: None)
+2022-06-14 10:23:54,189 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=2> (referer: None)
+2022-06-14 10:23:54,611 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3103/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:23:54,720 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3103/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:23:54,909 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3092/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:23:55,017 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3092/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:23:55,436 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3107/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:23:55,547 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3107/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:23:55,761 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3102/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:23:55,874 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3102/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:23:56,320 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3106/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:23:56,426 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3111/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:23:56,437 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3106/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:23:56,544 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3111/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:23:56,687 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3117/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:23:56,799 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3117/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:23:56,946 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3115/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:23:57,058 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3115/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:23:57,354 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3076/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:23:57,465 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3076/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:23:57,558 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/load/announcement/3024/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=B&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:23:57,717 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/load/announcement/3024/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:23:57,995 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/load/announcement/3038/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=B&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:23:58,112 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/load/announcement/3038/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:23:58,266 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/load/announcement/3061/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=C&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:23:58,378 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/load/announcement/3061/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:23:58,651 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/load/announcement/3119/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=C&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:23:58,769 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/load/announcement/3119/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:23:59,037 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3118/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:23:59,159 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3118/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:23:59,494 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3084/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:23:59,610 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3084/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:23:59,830 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3027/flowpage?pageIndex=&gsPlatformNavActive=> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=1)
+2022-06-14 10:23:59,934 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3027/flowpage?pageIndex=&gsPlatformNavActive=>
+None
+2022-06-14 10:24:00,181 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/2993/flowpage?pageIndex=&gsPlatformNavActive=> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=2)
+2022-06-14 10:24:00,295 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/2993/flowpage?pageIndex=&gsPlatformNavActive=>
+None
+2022-06-14 10:24:00,541 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3026/flowpage?pageIndex=&gsPlatformNavActive=> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=2)
+2022-06-14 10:24:00,651 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3026/flowpage?pageIndex=&gsPlatformNavActive=>
+None
+2022-06-14 10:24:00,805 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3037/flowpage?pageIndex=&gsPlatformNavActive=> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=1)
+2022-06-14 10:24:00,915 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3037/flowpage?pageIndex=&gsPlatformNavActive=>
+None
+2022-06-14 10:24:01,121 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3083/flowpage?pageIndex=&gsPlatformNavActive=> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=1)
+2022-06-14 10:24:01,227 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3083/flowpage?pageIndex=&gsPlatformNavActive=>
+None
+2022-06-14 10:24:01,402 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3082/flowpage?pageIndex=&gsPlatformNavActive=> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=1)
+2022-06-14 10:24:01,520 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3082/flowpage?pageIndex=&gsPlatformNavActive=>
+None
+2022-06-14 10:24:01,788 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3037/flowpage?pageIndex=&gsPlatformNavActive=> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=1)
+2022-06-14 10:24:01,907 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3037/flowpage?pageIndex=&gsPlatformNavActive=>
+None
+2022-06-14 10:24:02,177 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3085/flowpage?pageIndex=&gsPlatformNavActive=> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=1)
+2022-06-14 10:24:02,295 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3085/flowpage?pageIndex=&gsPlatformNavActive=>
+None
+2022-06-14 10:24:02,467 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3085/flowpage?pageIndex=&gsPlatformNavActive=> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=1)
+2022-06-14 10:24:02,588 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3085/flowpage?pageIndex=&gsPlatformNavActive=>
+None
+2022-06-14 10:24:02,875 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3041/flowpage?pageIndex=&gsPlatformNavActive=> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=1)
+2022-06-14 10:24:02,993 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3041/flowpage?pageIndex=&gsPlatformNavActive=>
+None
+2022-06-14 10:24:03,309 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3093/flowpage?pageIndex=&gsPlatformNavActive=> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=1)
+2022-06-14 10:24:03,426 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3093/flowpage?pageIndex=&gsPlatformNavActive=>
+None
+2022-06-14 10:24:03,530 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3092/flowpage?pageIndex=&gsPlatformNavActive=> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=1)
+2022-06-14 10:24:03,644 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3092/flowpage?pageIndex=&gsPlatformNavActive=>
+None
+2022-06-14 10:24:03,930 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3096/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:04,050 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3096/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:04,294 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3105/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:04,410 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3105/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:04,672 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3087/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:04,784 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3087/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:05,073 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3104/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:05,191 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3104/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:05,286 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3109/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:05,394 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3109/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:05,697 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3110/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:05,809 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3110/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:06,144 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3116/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:06,257 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3116/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:06,593 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3114/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:06,708 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3114/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:07,033 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3118/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:07,143 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3118/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:07,469 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3074/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:07,579 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3074/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:07,808 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3108/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:07,922 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3108/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:08,219 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3127/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:08,340 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3127/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:08,472 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3129/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:08,582 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3129/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:08,936 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3123/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:09,045 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3123/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:09,210 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3130/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:09,325 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3130/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:09,640 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3113/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:09,758 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3113/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:09,923 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3132/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:10,041 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3132/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:10,209 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3101/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:10,319 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3101/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:10,589 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/load/announcement/3068/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=B&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:10,706 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/load/announcement/3068/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:10,896 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/load/announcement/3067/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=B&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:11,014 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/load/announcement/3067/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:11,177 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/load/announcement/3065/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=B&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:11,290 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/load/announcement/3065/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:11,614 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/load/announcement/3066/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=B&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:11,726 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/load/announcement/3066/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:11,980 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/load/announcement/3097/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=B&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:12,087 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/load/announcement/3097/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:12,429 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/load/announcement/3098/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=B&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:12,536 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/load/announcement/3098/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:12,920 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3085/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:13,038 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3085/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:13,265 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3088/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:13,377 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3088/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:13,669 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3091/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:13,780 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3091/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:14,268 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3062/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:14,389 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3062/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:14,530 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3090/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:14,650 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3090/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:14,895 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3089/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:15,007 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3089/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:15,325 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3064/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:15,438 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3064/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:15,619 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3041/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:15,735 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3041/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:16,092 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3099/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=2)
+2022-06-14 10:24:16,214 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3099/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:16,233 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3100/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:16,350 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3100/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:16,643 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3112/flowpage?pageIndex=1&gsPlatformNavActive=1> (referer: http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=1)
+2022-06-14 10:24:16,757 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.qysggzyjy.cn/f/newtrade/tenderprojects/3112/flowpage?pageIndex=1&gsPlatformNavActive=1>
+None
+2022-06-14 10:24:16,759 - engine.py[line:358] - INFO: Closing spider (finished)
+2022-06-14 10:24:16,759 - statscollectors.py[line:46] - INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 43043,
+ 'downloader/request_count': 72,
+ 'downloader/request_method_count/GET': 72,
+ 'downloader/response_bytes': 788377,
+ 'downloader/response_count': 72,
+ 'downloader/response_status_count/200': 72,
+ 'elapsed_time_seconds': 26.016636,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 14, 2, 24, 16, 759548),
+ 'httpcompression/response_bytes': 3695676,
+ 'httpcompression/response_count': 72,
+ 'item_scraped_count': 62,
+ 'log_count/DEBUG': 135,
+ 'log_count/INFO': 10,
+ 'request_depth_max': 1,
+ 'response_received_count': 72,
+ 'scheduler/dequeued': 72,
+ 'scheduler/dequeued/memory': 72,
+ 'scheduler/enqueued': 72,
+ 'scheduler/enqueued/memory': 72,
+ 'start_time': datetime.datetime(2022, 6, 14, 2, 23, 50, 742912)}
+2022-06-14 10:24:16,759 - engine.py[line:385] - INFO: Spider closed (finished)

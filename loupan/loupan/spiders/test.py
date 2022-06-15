@@ -116,7 +116,6 @@ class XinfangSpider(scrapy.Spider):
                 item = {}
                 counts = json.loads(respon.text)['data']
                 item['uid'] = md5_encrypt(id)
-
                 item['arch_id'] = id
                 # 省份
                 item['prov_name'] = '陕西省'

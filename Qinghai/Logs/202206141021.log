@@ -1,0 +1,224 @@
+2022-06-14 10:21:53,000 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['Qinghai.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-14 10:21:53,003 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-14 10:21:53,005 - middleware.py[line:51] - INFO: Enabled item pipelines:
+['Qinghai.pipelines.QinghaiPipeline']
+2022-06-14 10:21:53,005 - engine.py[line:313] - INFO: Spider opened
+2022-06-14 10:21:53,222 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-14 10:21:53,223 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-14 10:21:53,409 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList> (referer: None)
+2022-06-14 10:21:53,654 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList> (referer: None)
+2022-06-14 10:21:54,083 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList> (referer: None)
+2022-06-14 10:21:54,505 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList> (referer: None)
+2022-06-14 10:21:54,908 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList> (referer: None)
+2022-06-14 10:21:55,351 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList> (referer: None)
+2022-06-14 10:21:55,603 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList> (referer: None)
+2022-06-14 10:21:55,962 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList> (referer: None)
+2022-06-14 10:21:56,396 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList> (referer: None)
+2022-06-14 10:21:56,810 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList> (referer: None)
+2022-06-14 10:21:57,470 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3161/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:21:57,587 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3161/flowpage>
+None
+2022-06-14 10:21:57,810 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3184/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:21:57,929 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3184/flowpage>
+None
+2022-06-14 10:21:58,226 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3185/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:21:58,347 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3185/flowpage>
+None
+2022-06-14 10:21:58,610 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3202/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:21:58,720 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3202/flowpage>
+None
+2022-06-14 10:21:58,989 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3201/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:21:59,099 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3201/flowpage>
+None
+2022-06-14 10:21:59,384 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3195/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:21:59,493 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3195/flowpage>
+None
+2022-06-14 10:21:59,659 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3191/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:21:59,770 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3191/flowpage>
+None
+2022-06-14 10:21:59,962 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3168/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:00,084 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3168/flowpage>
+None
+2022-06-14 10:22:00,164 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3161/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:00,285 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3161/flowpage>
+None
+2022-06-14 10:22:00,572 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3142/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:00,730 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3142/flowpage>
+None
+2022-06-14 10:22:00,869 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3089/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:00,986 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3089/flowpage>
+None
+2022-06-14 10:22:01,355 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3135/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:01,474 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3135/flowpage>
+None
+2022-06-14 10:22:01,624 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3030/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:01,737 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3030/flowpage>
+None
+2022-06-14 10:22:02,078 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3148/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:02,195 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3148/flowpage>
+None
+2022-06-14 10:22:02,359 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3180/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:02,475 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3180/flowpage>
+None
+2022-06-14 10:22:02,808 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3155/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:02,914 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3155/flowpage>
+None
+2022-06-14 10:22:03,143 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3164/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:03,258 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3164/flowpage>
+None
+2022-06-14 10:22:03,380 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3166/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:03,491 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3166/flowpage>
+None
+2022-06-14 10:22:03,707 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3162/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:03,815 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3162/flowpage>
+None
+2022-06-14 10:22:04,216 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3159/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:04,325 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3159/flowpage>
+None
+2022-06-14 10:22:04,503 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3181/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:04,619 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3181/flowpage>
+None
+2022-06-14 10:22:04,882 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3167/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:04,995 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3167/flowpage>
+None
+2022-06-14 10:22:05,342 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3179/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:05,446 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3179/flowpage>
+None
+2022-06-14 10:22:05,646 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3186/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:05,758 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3186/flowpage>
+None
+2022-06-14 10:22:06,046 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3184/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:06,164 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3184/flowpage>
+None
+2022-06-14 10:22:06,457 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3185/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:06,567 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3185/flowpage>
+None
+2022-06-14 10:22:06,893 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3202/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:07,003 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3202/flowpage>
+None
+2022-06-14 10:22:07,314 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3201/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:07,425 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3201/flowpage>
+None
+2022-06-14 10:22:07,743 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3195/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:07,856 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3195/flowpage>
+None
+2022-06-14 10:22:07,989 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3191/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:08,105 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3191/flowpage>
+None
+2022-06-14 10:22:08,289 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3168/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:08,399 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3168/flowpage>
+None
+2022-06-14 10:22:08,746 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3182/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:08,852 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3182/flowpage>
+None
+2022-06-14 10:22:09,058 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3169/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:09,165 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3169/flowpage>
+None
+2022-06-14 10:22:09,491 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3193/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:09,601 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3193/flowpage>
+None
+2022-06-14 10:22:09,888 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3199/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:10,006 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3199/flowpage>
+None
+2022-06-14 10:22:10,184 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3194/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:10,300 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3194/flowpage>
+None
+2022-06-14 10:22:10,538 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3203/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:10,644 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3203/flowpage>
+None
+2022-06-14 10:22:10,992 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3204/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:11,099 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3204/flowpage>
+None
+2022-06-14 10:22:11,166 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3214/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:11,272 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3214/flowpage>
+None
+2022-06-14 10:22:11,606 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3215/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:11,723 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3215/flowpage>
+None
+2022-06-14 10:22:12,087 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3219/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:12,207 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3219/flowpage>
+None
+2022-06-14 10:22:12,477 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3220/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:12,582 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3220/flowpage>
+None
+2022-06-14 10:22:12,704 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3222/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:12,812 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3222/flowpage>
+None
+2022-06-14 10:22:13,056 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3182/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:13,173 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3182/flowpage>
+None
+2022-06-14 10:22:13,489 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3169/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:13,608 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3169/flowpage>
+None
+2022-06-14 10:22:13,919 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3193/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:14,028 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3193/flowpage>
+None
+2022-06-14 10:22:14,375 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3199/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:14,492 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3199/flowpage>
+None
+2022-06-14 10:22:14,756 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3194/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:14,863 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3194/flowpage>
+None
+2022-06-14 10:22:15,112 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3203/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:15,221 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3203/flowpage>
+None
+2022-06-14 10:22:15,457 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3204/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:15,564 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3204/flowpage>
+None
+2022-06-14 10:22:15,861 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3214/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:15,969 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3214/flowpage>
+None
+2022-06-14 10:22:16,110 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3215/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:16,223 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3215/flowpage>
+None
+2022-06-14 10:22:16,545 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3219/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:16,652 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3219/flowpage>
+None
+2022-06-14 10:22:16,920 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3220/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:17,034 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3220/flowpage>
+None
+2022-06-14 10:22:17,366 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3222/flowpage> (referer: http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList)
+2022-06-14 10:22:17,483 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.gnzrmzf.gov.cn/f/newtenderproject/3222/flowpage>
+None
+2022-06-14 10:22:17,485 - engine.py[line:358] - INFO: Closing spider (finished)
+2022-06-14 10:22:17,485 - statscollectors.py[line:46] - INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 37966,
+ 'downloader/request_count': 65,
+ 'downloader/request_method_count/GET': 55,
+ 'downloader/request_method_count/POST': 10,
+ 'downloader/response_bytes': 513129,
+ 'downloader/response_count': 65,
+ 'downloader/response_status_count/200': 65,
+ 'elapsed_time_seconds': 24.263008,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 14, 2, 22, 17, 485874),
+ 'httpcompression/response_bytes': 1603705,
+ 'httpcompression/response_count': 65,
+ 'item_scraped_count': 55,
+ 'log_count/DEBUG': 121,
+ 'log_count/INFO': 10,
+ 'request_depth_max': 1,
+ 'response_received_count': 65,
+ 'scheduler/dequeued': 65,
+ 'scheduler/dequeued/memory': 65,
+ 'scheduler/enqueued': 65,
+ 'scheduler/enqueued/memory': 65,
+ 'start_time': datetime.datetime(2022, 6, 14, 2, 21, 53, 222866)}
+2022-06-14 10:22:17,485 - engine.py[line:385] - INFO: Spider closed (finished)

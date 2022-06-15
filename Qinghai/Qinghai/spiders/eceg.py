@@ -78,7 +78,7 @@ class EcegSpider(scrapy.Spider):
         item['proxy'] = ''
         item['update_time'] = ''
         item['deleted'] = ''
-        item['province'] = ''
+        item['province'] = '安徽省'
         item['base'] = ''
         item['type'] = '招标公告'
         item['items'] = ''

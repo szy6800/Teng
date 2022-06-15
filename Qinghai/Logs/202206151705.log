@@ -1,0 +1,517 @@
+2022-06-15 17:05:46,154 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['Qinghai.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-15 17:05:46,156 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-15 17:05:46,158 - middleware.py[line:51] - INFO: Enabled item pipelines:
+['Qinghai.pipelines.QinghaiPipeline']
+2022-06-15 17:05:46,158 - engine.py[line:313] - INFO: Spider opened
+2022-06-15 17:05:46,357 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-15 17:05:46,357 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-15 17:05:47,202 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList> (referer: None)
+2022-06-15 17:05:47,549 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList> (referer: None)
+2022-06-15 17:05:48,095 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList> (referer: None)
+2022-06-15 17:05:48,375 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList> (referer: None)
+2022-06-15 17:05:48,948 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList> (referer: None)
+2022-06-15 17:05:49,506 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList> (referer: None)
+2022-06-15 17:05:49,522 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=36274252-79a2-4c3d-8613-72f57a4cc70c&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:49,638 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=36274252-79a2-4c3d-8613-72f57a4cc70c&infotype=A01>
+None
+2022-06-15 17:05:49,757 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList> (referer: None)
+2022-06-15 17:05:49,805 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=144726ac-25f8-46cc-8e2c-e6cc2a6a46bc&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:49,912 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=144726ac-25f8-46cc-8e2c-e6cc2a6a46bc&infotype=A01>
+None
+2022-06-15 17:05:49,937 - engine.py[line:291] - DEBUG: Crawled (200) <POST http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList> (referer: None)
+2022-06-15 17:05:50,228 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=44b46f1c-088f-432d-8418-32ca71a51962&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:50,334 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=44b46f1c-088f-432d-8418-32ca71a51962&infotype=A01>
+None
+2022-06-15 17:05:50,613 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=c656eddc-a7c1-4b5c-86f1-ab99ee247ace&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:50,728 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=c656eddc-a7c1-4b5c-86f1-ab99ee247ace&infotype=M01>
+None
+2022-06-15 17:05:51,055 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=019a16d2-d274-43bf-8bab-ce112e8cd120&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:51,171 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=019a16d2-d274-43bf-8bab-ce112e8cd120&infotype=M01>
+None
+2022-06-15 17:05:51,360 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=bac81d58-8dd4-4443-9df3-905c75580a76&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:51,467 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=bac81d58-8dd4-4443-9df3-905c75580a76&infotype=A01>
+None
+2022-06-15 17:05:51,641 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=6fbfe7f8-d934-4136-9c91-d7e6320c7982&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:51,752 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=6fbfe7f8-d934-4136-9c91-d7e6320c7982&infotype=A01>
+None
+2022-06-15 17:05:52,064 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=d5ebd860-350f-4f83-a81c-bba3fee08abd&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:52,175 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=d5ebd860-350f-4f83-a81c-bba3fee08abd&infotype=A01>
+None
+2022-06-15 17:05:52,241 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a4593709-7898-4854-9438-8a1ecc58e049&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:52,346 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a4593709-7898-4854-9438-8a1ecc58e049&infotype=A01>
+None
+2022-06-15 17:05:52,645 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=0d7ffc86-926c-4e0d-88c6-740d762bde8a&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:52,784 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=0d7ffc86-926c-4e0d-88c6-740d762bde8a&infotype=A01>
+None
+2022-06-15 17:05:53,000 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a8876b8b-b120-40b7-a8c0-a50485fca33a&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:53,111 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a8876b8b-b120-40b7-a8c0-a50485fca33a&infotype=M01>
+None
+2022-06-15 17:05:53,410 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a511c399-6f26-4cf5-81b3-357e293c6de9&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:53,519 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a511c399-6f26-4cf5-81b3-357e293c6de9&infotype=M01>
+None
+2022-06-15 17:05:53,851 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=f0a3fb35-2592-4152-b052-e8b0db46a49a&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:54,282 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=2991797b-2dfb-4dac-8bf3-876eb810fefb&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:54,397 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=2991797b-2dfb-4dac-8bf3-876eb810fefb&infotype=A01>
+None
+2022-06-15 17:05:54,525 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=4a956dde-c836-46bb-93b5-728976fa3a6a&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:54,632 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=4a956dde-c836-46bb-93b5-728976fa3a6a&infotype=A01>
+None
+2022-06-15 17:05:54,962 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=36909c57-6dd7-41e0-a5e5-74142c4382d0&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:55,071 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=36909c57-6dd7-41e0-a5e5-74142c4382d0&infotype=M01>
+None
+2022-06-15 17:05:55,392 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=3cceb3cc-eba5-4dcb-bd9e-77e42ea379bf&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:55,496 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=3cceb3cc-eba5-4dcb-bd9e-77e42ea379bf&infotype=M01>
+None
+2022-06-15 17:05:55,796 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=8f54f9d3-9aaf-469a-8a4a-892517971379&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:55,905 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=8f54f9d3-9aaf-469a-8a4a-892517971379&infotype=M01>
+None
+2022-06-15 17:05:56,248 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=1fbc2a44-81bf-4446-b458-d5e998f0e439&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:56,360 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=1fbc2a44-81bf-4446-b458-d5e998f0e439&infotype=A01>
+None
+2022-06-15 17:05:56,702 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=e4c8847a-0b63-42e9-97dd-77e80e3ab171&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:56,816 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=e4c8847a-0b63-42e9-97dd-77e80e3ab171&infotype=A01>
+None
+2022-06-15 17:05:56,929 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=3774b99f-47af-43f8-bac5-2a70770807dd&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:57,049 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=3774b99f-47af-43f8-bac5-2a70770807dd&infotype=M01>
+None
+2022-06-15 17:05:57,340 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=e9aa307d-42ef-4140-a3e8-ae47e7cc27d2&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:57,750 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=dee4c526-9793-4813-b628-f8ced06d3987&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:57,856 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=dee4c526-9793-4813-b628-f8ced06d3987&infotype=M01>
+None
+2022-06-15 17:05:58,183 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=31ef7988-f161-4f89-b8d2-41a40e4dca1c&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:58,294 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=31ef7988-f161-4f89-b8d2-41a40e4dca1c&infotype=M01>
+None
+2022-06-15 17:05:58,525 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=0187138f-c304-4eb8-bae3-343ddf087ced&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:58,904 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=dae2fc19-b9e0-4f09-a169-162225e3c6bd&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:59,014 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=dae2fc19-b9e0-4f09-a169-162225e3c6bd&infotype=A01>
+None
+2022-06-15 17:05:59,309 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=ffa607e5-f6f6-4f08-8c18-ffecebc95731&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:59,417 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=ffa607e5-f6f6-4f08-8c18-ffecebc95731&infotype=A01>
+None
+2022-06-15 17:05:59,663 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=4aebf201-f640-48ab-96bd-932cecbbd6b5&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:05:59,766 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=4aebf201-f640-48ab-96bd-932cecbbd6b5&infotype=A01>
+None
+2022-06-15 17:05:59,993 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=be2af88a-54f2-49a7-a4ac-80d990cb2e15&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:00,098 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=be2af88a-54f2-49a7-a4ac-80d990cb2e15&infotype=A01>
+None
+2022-06-15 17:06:00,244 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=8243b6a3-0ede-4f33-8360-c2acc2831016&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:00,363 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=8243b6a3-0ede-4f33-8360-c2acc2831016&infotype=A01>
+None
+2022-06-15 17:06:00,621 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=34c7cb2f-a285-4c9c-b451-7b08d99e8abe&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:01,015 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=8599eef7-050d-4e2e-bdfb-001ac28df78e&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:01,129 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=8599eef7-050d-4e2e-bdfb-001ac28df78e&infotype=A01>
+None
+2022-06-15 17:06:01,435 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=c99e368a-c19c-4a20-b517-b378ef051d78&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:01,543 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=c99e368a-c19c-4a20-b517-b378ef051d78&infotype=A01>
+None
+2022-06-15 17:06:01,796 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=d1dc47ab-c6f2-4d7a-bf33-863d00a3e25a&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:01,905 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=d1dc47ab-c6f2-4d7a-bf33-863d00a3e25a&infotype=M01>
+None
+2022-06-15 17:06:02,129 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=145f1544-2e58-455d-a010-7e197ec3bd16&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:02,233 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=145f1544-2e58-455d-a010-7e197ec3bd16&infotype=M01>
+None
+2022-06-15 17:06:02,416 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=b48094ab-90a8-4fb5-8a45-2a5e6e7db013&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:02,530 - scraper.py[line:173] - ERROR: Spider error processing <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=b48094ab-90a8-4fb5-8a45-2a5e6e7db013&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+Traceback (most recent call last):
+  File "d:\project\venv\lib\site-packages\scrapy\utils\defer.py", line 132, in iter_errback
+    yield next(it)
+  File "d:\project\venv\lib\site-packages\scrapy\utils\python.py", line 354, in __next__
+    return next(self.data)
+  File "d:\project\venv\lib\site-packages\scrapy\utils\python.py", line 354, in __next__
+    return next(self.data)
+  File "d:\project\venv\lib\site-packages\scrapy\core\spidermw.py", line 66, in _evaluate_iterable
+    for r in iterable:
+  File "d:\project\venv\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "d:\project\venv\lib\site-packages\scrapy\core\spidermw.py", line 66, in _evaluate_iterable
+    for r in iterable:
+  File "d:\project\venv\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 342, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "d:\project\venv\lib\site-packages\scrapy\core\spidermw.py", line 66, in _evaluate_iterable
+    for r in iterable:
+  File "d:\project\venv\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 40, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\project\venv\lib\site-packages\scrapy\core\spidermw.py", line 66, in _evaluate_iterable
+    for r in iterable:
+  File "d:\project\venv\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "d:\project\venv\lib\site-packages\scrapy\core\spidermw.py", line 66, in _evaluate_iterable
+    for r in iterable:
+  File "D:\Te\Teng\Qinghai\Qinghai\spiders\gs_dingxi.py", line 75, in parse_info
+    json_text = json.loads(response.text)
+  File "C:\Users\12895\AppData\Local\Programs\Python\Python39\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\12895\AppData\Local\Programs\Python\Python39\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\12895\AppData\Local\Programs\Python\Python39\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-06-15 17:06:02,830 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=4f91e371-6deb-4125-9195-b7c66196239a&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:02,941 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=4f91e371-6deb-4125-9195-b7c66196239a&infotype=A01>
+None
+2022-06-15 17:06:03,216 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=f4944748-ca49-4744-98ea-ceafecda75ab&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:03,333 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=f4944748-ca49-4744-98ea-ceafecda75ab&infotype=M01>
+None
+2022-06-15 17:06:03,545 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=526e5aca-153e-43dc-a28b-b9cc62fc8642&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:03,663 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=526e5aca-153e-43dc-a28b-b9cc62fc8642&infotype=M01>
+None
+2022-06-15 17:06:03,945 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=df3865d1-f5a6-40ef-b127-f33e0eb27f0a&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:04,059 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=df3865d1-f5a6-40ef-b127-f33e0eb27f0a&infotype=A01>
+None
+2022-06-15 17:06:04,359 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=8c92dd8b-f409-42de-8715-d37b0c1c6230&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:04,472 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=8c92dd8b-f409-42de-8715-d37b0c1c6230&infotype=A01>
+None
+2022-06-15 17:06:04,834 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=175b988a-af3c-475c-9b38-d1c714e32b5b&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:04,944 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=175b988a-af3c-475c-9b38-d1c714e32b5b&infotype=M01>
+None
+2022-06-15 17:06:05,147 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=def3dcd8-6257-40e5-bef4-31bf4ee736be&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:05,259 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=def3dcd8-6257-40e5-bef4-31bf4ee736be&infotype=M01>
+None
+2022-06-15 17:06:05,606 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=f2734bf2-1bba-40ac-a1b8-2983aa01a48f&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:05,716 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=f2734bf2-1bba-40ac-a1b8-2983aa01a48f&infotype=M01>
+None
+2022-06-15 17:06:05,891 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=2f5dc9d9-34c5-4789-abda-5fffba3a5283&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:06,177 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=88fb100b-4e67-47d8-b097-51b9cc85254e&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:06,295 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=88fb100b-4e67-47d8-b097-51b9cc85254e&infotype=M01>
+None
+2022-06-15 17:06:06,551 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=d7b7006e-fd82-4f76-ae9f-0f371844e4fc&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:06,668 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=d7b7006e-fd82-4f76-ae9f-0f371844e4fc&infotype=M01>
+None
+2022-06-15 17:06:06,916 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=01d7f487-d357-4dd8-b99c-b47272eb07e3&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:07,026 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=01d7f487-d357-4dd8-b99c-b47272eb07e3&infotype=M01>
+None
+2022-06-15 17:06:07,298 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=3d86c67f-da33-49c9-8dd5-b59d50d5ab7d&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:07,417 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=3d86c67f-da33-49c9-8dd5-b59d50d5ab7d&infotype=A01>
+None
+2022-06-15 17:06:07,598 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=b564bae0-e5a5-495c-9039-8fe5189b83b0&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:07,715 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=b564bae0-e5a5-495c-9039-8fe5189b83b0&infotype=M01>
+None
+2022-06-15 17:06:07,955 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=eebc4bc0-4859-41c4-b243-1e99bf321d2a&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:08,073 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=eebc4bc0-4859-41c4-b243-1e99bf321d2a&infotype=M01>
+None
+2022-06-15 17:06:08,357 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=46121f85-c899-41d5-9cd4-b86a97266b6d&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:08,462 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=46121f85-c899-41d5-9cd4-b86a97266b6d&infotype=A01>
+None
+2022-06-15 17:06:08,733 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=01076aa6-4f88-42e5-a152-0a6104b81ae6&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:08,850 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=01076aa6-4f88-42e5-a152-0a6104b81ae6&infotype=A01>
+None
+2022-06-15 17:06:09,116 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=070fecab-1119-4fa9-b5ad-c6ae510e133b&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:09,223 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=070fecab-1119-4fa9-b5ad-c6ae510e133b&infotype=A01>
+None
+2022-06-15 17:06:09,559 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=4f671e5b-f559-4226-ab4d-3342321e280d&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:09,665 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=4f671e5b-f559-4226-ab4d-3342321e280d&infotype=A01>
+None
+2022-06-15 17:06:09,997 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=dba3a013-ed05-4af5-9a65-647d311026e4&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:10,106 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=dba3a013-ed05-4af5-9a65-647d311026e4&infotype=A01>
+None
+2022-06-15 17:06:10,419 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=3edce793-53e3-4f2b-9377-d0fedb197394&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:10,528 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=3edce793-53e3-4f2b-9377-d0fedb197394&infotype=M01>
+None
+2022-06-15 17:06:10,807 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=997f782c-6ca7-4feb-b6d7-70359aa0e795&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:10,920 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=997f782c-6ca7-4feb-b6d7-70359aa0e795&infotype=M01>
+None
+2022-06-15 17:06:11,250 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=d41359f0-b61c-4b4b-a494-56e8743d1eb5&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:11,354 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=d41359f0-b61c-4b4b-a494-56e8743d1eb5&infotype=A01>
+None
+2022-06-15 17:06:11,681 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=bfe38029-ce5d-43c7-a6aa-186edaac9392&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:11,793 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=bfe38029-ce5d-43c7-a6aa-186edaac9392&infotype=A01>
+None
+2022-06-15 17:06:11,924 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=fc6976fa-7241-478f-8b7c-bd478d8cef02&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:12,030 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=fc6976fa-7241-478f-8b7c-bd478d8cef02&infotype=A01>
+None
+2022-06-15 17:06:12,336 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=3410f0d1-538f-414f-bd93-9d85e56fdd29&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:12,453 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=3410f0d1-538f-414f-bd93-9d85e56fdd29&infotype=M01>
+None
+2022-06-15 17:06:12,711 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=c8ee1083-be3c-4bc2-8ac8-774e04ddfad3&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:12,816 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=c8ee1083-be3c-4bc2-8ac8-774e04ddfad3&infotype=M01>
+None
+2022-06-15 17:06:13,129 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=639a343b-e8ea-4020-b421-e144e2ef6693&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:13,239 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=639a343b-e8ea-4020-b421-e144e2ef6693&infotype=A01>
+None
+2022-06-15 17:06:13,409 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=30d62943-aa58-4c5d-a874-a31f9837aa7c&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:13,521 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=30d62943-aa58-4c5d-a874-a31f9837aa7c&infotype=M01>
+None
+2022-06-15 17:06:13,831 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=078e8244-328c-43c8-9b5a-2fda57ea805a&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:13,947 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=078e8244-328c-43c8-9b5a-2fda57ea805a&infotype=M01>
+None
+2022-06-15 17:06:14,268 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=2de47e55-7506-41c1-ad23-8dbcc8303b9b&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:14,711 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=4b7ca03c-9046-455a-abb2-69b1b8155c94&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:14,825 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=4b7ca03c-9046-455a-abb2-69b1b8155c94&infotype=A01>
+None
+2022-06-15 17:06:15,136 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=7dd4f2c4-9821-4936-b402-84d4adb7244f&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:15,249 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=7dd4f2c4-9821-4936-b402-84d4adb7244f&infotype=M01>
+None
+2022-06-15 17:06:15,479 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=bdf83688-89c4-4d7f-ad9e-1928e669e2c2&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:15,596 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=bdf83688-89c4-4d7f-ad9e-1928e669e2c2&infotype=A01>
+None
+2022-06-15 17:06:15,700 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=8b7a95fd-8ff9-4d26-b35f-d8170b0b4269&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:15,817 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=8b7a95fd-8ff9-4d26-b35f-d8170b0b4269&infotype=A01>
+None
+2022-06-15 17:06:16,032 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=5ca73b13-348a-4968-a707-b701ed4f4abb&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:16,390 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=4fca6da2-8362-407f-b2ae-2b8d40ea464b&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:16,508 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=4fca6da2-8362-407f-b2ae-2b8d40ea464b&infotype=A01>
+None
+2022-06-15 17:06:16,595 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=2323f7f3-1631-4915-87cf-56a8debd9da2&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:16,709 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=2323f7f3-1631-4915-87cf-56a8debd9da2&infotype=A01>
+None
+2022-06-15 17:06:16,894 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=4cbbd117-69ac-4f4a-a25d-d3b4c8440ed5&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:17,006 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=4cbbd117-69ac-4f4a-a25d-d3b4c8440ed5&infotype=M01>
+None
+2022-06-15 17:06:17,267 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=6edfcb19-6b53-4d54-b234-0005bcb46187&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:17,381 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=6edfcb19-6b53-4d54-b234-0005bcb46187&infotype=M01>
+None
+2022-06-15 17:06:17,583 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=8bb5a835-4c8f-4504-9ed0-d397dadc315b&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:17,694 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=8bb5a835-4c8f-4504-9ed0-d397dadc315b&infotype=M01>
+None
+2022-06-15 17:06:17,975 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=01a3bcf3-bc79-4ba6-8104-6712f37ac5bd&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:18,092 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=01a3bcf3-bc79-4ba6-8104-6712f37ac5bd&infotype=A01>
+None
+2022-06-15 17:06:18,439 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=d1737cd1-e987-4dea-87ee-ec5f6655a8c3&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:18,551 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=d1737cd1-e987-4dea-87ee-ec5f6655a8c3&infotype=A01>
+None
+2022-06-15 17:06:18,736 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=167b61ef-65e1-456a-b486-1ba368a79c32&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:18,849 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=167b61ef-65e1-456a-b486-1ba368a79c32&infotype=A01>
+None
+2022-06-15 17:06:19,161 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a38f96ef-8aa6-45ba-b425-3c0db5a3cb52&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:19,272 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a38f96ef-8aa6-45ba-b425-3c0db5a3cb52&infotype=M01>
+None
+2022-06-15 17:06:19,571 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=9d5f8c15-56d0-43b4-94ae-e439183dad51&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:19,679 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=9d5f8c15-56d0-43b4-94ae-e439183dad51&infotype=M01>
+None
+2022-06-15 17:06:19,938 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=c654d55a-3594-4201-bada-27c8393b025a&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:20,047 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=c654d55a-3594-4201-bada-27c8393b025a&infotype=M01>
+None
+2022-06-15 17:06:20,218 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a76064ef-bf80-456c-b0bc-f914167a96d7&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:20,330 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a76064ef-bf80-456c-b0bc-f914167a96d7&infotype=A01>
+None
+2022-06-15 17:06:20,601 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=cafec4a6-f984-413b-85b9-a25026543d69&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:20,709 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=cafec4a6-f984-413b-85b9-a25026543d69&infotype=A01>
+None
+2022-06-15 17:06:21,028 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=180e348b-de52-4bb9-badd-3c3ead4fc30f&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:21,134 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=180e348b-de52-4bb9-badd-3c3ead4fc30f&infotype=A01>
+None
+2022-06-15 17:06:21,360 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=1eebc986-ea0a-4a44-a07b-b40055b7c30c&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:21,466 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=1eebc986-ea0a-4a44-a07b-b40055b7c30c&infotype=A01>
+None
+2022-06-15 17:06:21,812 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=111a790c-03e5-4cdf-8726-d2c5cc8aba52&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:21,927 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=111a790c-03e5-4cdf-8726-d2c5cc8aba52&infotype=A01>
+None
+2022-06-15 17:06:22,160 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=e85d76da-b864-4c34-a4d4-55c977bacfda&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:22,270 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=e85d76da-b864-4c34-a4d4-55c977bacfda&infotype=M01>
+None
+2022-06-15 17:06:22,555 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=dd5c853a-1b09-4812-a7b6-2c27d7576f04&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:22,658 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=dd5c853a-1b09-4812-a7b6-2c27d7576f04&infotype=M01>
+None
+2022-06-15 17:06:22,804 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=de318876-9f6d-4cb8-b8e2-d905f103a0bf&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:22,909 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=de318876-9f6d-4cb8-b8e2-d905f103a0bf&infotype=A01>
+None
+2022-06-15 17:06:23,097 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=682236b0-dfb2-450b-a9e2-28749924e365&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:23,208 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=682236b0-dfb2-450b-a9e2-28749924e365&infotype=M01>
+None
+2022-06-15 17:06:23,503 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=e95740b0-1062-4003-90d0-94c439041107&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:23,617 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=e95740b0-1062-4003-90d0-94c439041107&infotype=M01>
+None
+2022-06-15 17:06:23,792 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=264d581e-cc58-4ccf-b5fe-c2b47ca12c8b&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:23,898 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=264d581e-cc58-4ccf-b5fe-c2b47ca12c8b&infotype=A01>
+None
+2022-06-15 17:06:24,214 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=09d69389-5fb1-4bc2-b516-236d53169488&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:24,323 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=09d69389-5fb1-4bc2-b516-236d53169488&infotype=A01>
+None
+2022-06-15 17:06:24,542 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=531eb469-1029-4a0f-b2cf-55cf36b3cc9c&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:24,654 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=531eb469-1029-4a0f-b2cf-55cf36b3cc9c&infotype=A01>
+None
+2022-06-15 17:06:24,902 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=0a7ff9f1-2066-4976-9309-56a9f9de794c&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:25,011 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=0a7ff9f1-2066-4976-9309-56a9f9de794c&infotype=A01>
+None
+2022-06-15 17:06:25,332 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=07faa4b4-732f-42eb-a517-9d4fc33b0ed6&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:25,451 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=07faa4b4-732f-42eb-a517-9d4fc33b0ed6&infotype=M01>
+None
+2022-06-15 17:06:25,766 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=f6f223d5-0dd6-44ca-995d-c84cbf85460d&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:25,872 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=f6f223d5-0dd6-44ca-995d-c84cbf85460d&infotype=A01>
+None
+2022-06-15 17:06:26,194 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=cdf8bb99-1353-4d1a-b14d-38ff571500a0&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:26,305 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=cdf8bb99-1353-4d1a-b14d-38ff571500a0&infotype=A01>
+None
+2022-06-15 17:06:26,601 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a7f164ac-bcc1-48c0-bb40-1eccd82aba6d&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:26,711 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a7f164ac-bcc1-48c0-bb40-1eccd82aba6d&infotype=A01>
+None
+2022-06-15 17:06:27,047 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=860c3c5e-08a7-4570-a2fc-e81cf42bd1bd&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:27,165 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=860c3c5e-08a7-4570-a2fc-e81cf42bd1bd&infotype=A01>
+None
+2022-06-15 17:06:27,342 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=ba3cffbb-fbb1-4e56-828e-51f4ed274bf3&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:27,447 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=ba3cffbb-fbb1-4e56-828e-51f4ed274bf3&infotype=M01>
+None
+2022-06-15 17:06:27,694 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=1bc1f3af-830d-45b6-a914-cdaca1c9e532&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:27,810 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=1bc1f3af-830d-45b6-a914-cdaca1c9e532&infotype=M01>
+None
+2022-06-15 17:06:28,019 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=f537bde3-788d-4a38-b1af-d70ceaf5d91b&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:28,163 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=f537bde3-788d-4a38-b1af-d70ceaf5d91b&infotype=A01>
+None
+2022-06-15 17:06:28,307 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=eb13ccb0-4f55-4ec1-9ffb-df0f0f462c07&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:28,421 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=eb13ccb0-4f55-4ec1-9ffb-df0f0f462c07&infotype=A01>
+None
+2022-06-15 17:06:28,661 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=ca1d8f5d-07de-454c-a5cf-12fee715b16b&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:28,765 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=ca1d8f5d-07de-454c-a5cf-12fee715b16b&infotype=M01>
+None
+2022-06-15 17:06:29,029 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=cd976455-69c2-4533-9d71-d325554abba6&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:29,138 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=cd976455-69c2-4533-9d71-d325554abba6&infotype=A01>
+None
+2022-06-15 17:06:29,291 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=25defbfe-88bd-4857-9ff7-f96fae2993e6&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:29,404 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=25defbfe-88bd-4857-9ff7-f96fae2993e6&infotype=M01>
+None
+2022-06-15 17:06:29,681 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=76e1c827-4f8f-4e8c-b550-f568b02e1d1e&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:29,799 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=76e1c827-4f8f-4e8c-b550-f568b02e1d1e&infotype=A01>
+None
+2022-06-15 17:06:30,042 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=b32a2fdd-a042-44ab-bd90-27e5263963c6&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:30,146 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=b32a2fdd-a042-44ab-bd90-27e5263963c6&infotype=A01>
+None
+2022-06-15 17:06:30,333 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=6c0a31f4-e785-44e2-ae1a-cb232ddd1070&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:30,445 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=6c0a31f4-e785-44e2-ae1a-cb232ddd1070&infotype=M01>
+None
+2022-06-15 17:06:30,760 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=2baa98fc-0d72-46c8-ae95-a84440a8cb45&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:30,874 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=2baa98fc-0d72-46c8-ae95-a84440a8cb45&infotype=A01>
+None
+2022-06-15 17:06:31,179 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=f4886f42-75bf-4b6a-a92e-f0aca43ea9d1&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:31,289 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=f4886f42-75bf-4b6a-a92e-f0aca43ea9d1&infotype=A01>
+None
+2022-06-15 17:06:31,609 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=7175f348-626f-40d9-8d8c-cca296d94fa4&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:31,716 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=7175f348-626f-40d9-8d8c-cca296d94fa4&infotype=M01>
+None
+2022-06-15 17:06:31,919 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=47e3906f-9523-492b-9683-7ab544d58f53&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:32,031 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=47e3906f-9523-492b-9683-7ab544d58f53&infotype=A01>
+None
+2022-06-15 17:06:32,312 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=175e108e-0bc9-4413-8917-c3b8d5bea6b6&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:32,426 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=175e108e-0bc9-4413-8917-c3b8d5bea6b6&infotype=M01>
+None
+2022-06-15 17:06:32,674 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=0aae69c7-926c-4908-94ca-be0696762e9b&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:32,791 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=0aae69c7-926c-4908-94ca-be0696762e9b&infotype=M01>
+None
+2022-06-15 17:06:32,968 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=784a75c7-8087-422a-b096-7402facda169&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:33,074 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=784a75c7-8087-422a-b096-7402facda169&infotype=A01>
+None
+2022-06-15 17:06:33,413 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=0dcf3c59-6e83-4e09-8fd6-70481f4161f1&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:33,528 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=0dcf3c59-6e83-4e09-8fd6-70481f4161f1&infotype=M01>
+None
+2022-06-15 17:06:33,839 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=748ea044-5acc-4b9b-a27d-9c8f5327fc79&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:33,954 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=748ea044-5acc-4b9b-a27d-9c8f5327fc79&infotype=M01>
+None
+2022-06-15 17:06:34,306 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=05e00ec0-3b51-48d0-ae6d-5fa96a4d2712&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:34,413 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=05e00ec0-3b51-48d0-ae6d-5fa96a4d2712&infotype=A01>
+None
+2022-06-15 17:06:34,575 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=bbc6d6aa-b9e2-4ef2-b8a6-e4b0b807adaf&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:35,028 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=236d5b32-ce8a-4ffb-bd73-b369d46089ac&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:35,140 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=236d5b32-ce8a-4ffb-bd73-b369d46089ac&infotype=A01>
+None
+2022-06-15 17:06:35,386 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=aeb37de9-9b84-4af0-94d3-d0e999ff9bb6&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:35,500 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=aeb37de9-9b84-4af0-94d3-d0e999ff9bb6&infotype=M01>
+None
+2022-06-15 17:06:35,791 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=1db3c473-05dd-434e-bd75-3377dbd931a6&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:35,897 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=1db3c473-05dd-434e-bd75-3377dbd931a6&infotype=M01>
+None
+2022-06-15 17:06:36,213 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=8bef0e01-0a4e-4c27-804f-2029d5a2831a&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:36,324 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=8bef0e01-0a4e-4c27-804f-2029d5a2831a&infotype=M01>
+None
+2022-06-15 17:06:36,475 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=598ae748-61b4-4cdb-b6a4-4ef8bba5ff7c&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:36,590 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=598ae748-61b4-4cdb-b6a4-4ef8bba5ff7c&infotype=M01>
+None
+2022-06-15 17:06:36,819 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=d0ddea86-c1bd-4419-91bd-9361c0c115ad&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:36,933 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=d0ddea86-c1bd-4419-91bd-9361c0c115ad&infotype=M01>
+None
+2022-06-15 17:06:37,257 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=7873703b-4fdb-4f44-bf02-28278c4b0922&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:37,373 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=7873703b-4fdb-4f44-bf02-28278c4b0922&infotype=M01>
+None
+2022-06-15 17:06:37,530 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=dfb8e17d-a5d1-4503-9e06-e253c6612812&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:37,640 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=dfb8e17d-a5d1-4503-9e06-e253c6612812&infotype=A01>
+None
+2022-06-15 17:06:37,855 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=03b5d203-fdcc-48af-b7cd-b7779a2b1c58&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:37,970 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=03b5d203-fdcc-48af-b7cd-b7779a2b1c58&infotype=A01>
+None
+2022-06-15 17:06:38,090 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=3a28ac99-342b-441f-8ddc-99cf4f747eec&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:38,206 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=3a28ac99-342b-441f-8ddc-99cf4f747eec&infotype=M01>
+None
+2022-06-15 17:06:38,518 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=f80a926e-926c-4669-a523-148253febfde&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:38,637 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=f80a926e-926c-4669-a523-148253febfde&infotype=A01>
+None
+2022-06-15 17:06:38,875 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a9d46ba2-5796-4cb1-8e73-5c14f70d9bc3&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:38,986 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a9d46ba2-5796-4cb1-8e73-5c14f70d9bc3&infotype=M01>
+None
+2022-06-15 17:06:39,215 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=05870407-e9e7-4514-880a-b5c9a175b6a4&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:39,319 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=05870407-e9e7-4514-880a-b5c9a175b6a4&infotype=M01>
+None
+2022-06-15 17:06:39,375 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=fb368ebd-d3e8-4f6f-a838-52271e198df6&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:39,489 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=fb368ebd-d3e8-4f6f-a838-52271e198df6&infotype=M01>
+None
+2022-06-15 17:06:39,813 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=be435afa-a27a-4b58-ba49-6cfb802830e0&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:39,917 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=be435afa-a27a-4b58-ba49-6cfb802830e0&infotype=A01>
+None
+2022-06-15 17:06:40,157 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=866b2a27-8acc-46be-bc00-75058ca393e9&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:40,264 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=866b2a27-8acc-46be-bc00-75058ca393e9&infotype=M01>
+None
+2022-06-15 17:06:40,612 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=da7cb8ec-9268-4653-aba6-87537b2f4763&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:40,720 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=da7cb8ec-9268-4653-aba6-87537b2f4763&infotype=A01>
+None
+2022-06-15 17:06:40,950 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=70916006-3c86-4390-b128-de692320d7db&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:41,066 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=70916006-3c86-4390-b128-de692320d7db&infotype=M01>
+None
+2022-06-15 17:06:41,353 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=77d92e6a-f825-4b4c-a48c-04f5a628b4c2&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:41,461 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=77d92e6a-f825-4b4c-a48c-04f5a628b4c2&infotype=A01>
+None
+2022-06-15 17:06:41,682 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=9cd525e8-c253-446c-bbd0-8725da2b671c&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:41,795 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=9cd525e8-c253-446c-bbd0-8725da2b671c&infotype=M01>
+None
+2022-06-15 17:06:42,027 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=7a1144a6-b7ce-4e96-ad8f-f5672c95147d&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:42,144 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=7a1144a6-b7ce-4e96-ad8f-f5672c95147d&infotype=M01>
+None
+2022-06-15 17:06:42,472 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=5be6ca08-eeb5-4577-9c90-1e29be8e3db1&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:42,586 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=5be6ca08-eeb5-4577-9c90-1e29be8e3db1&infotype=M01>
+None
+2022-06-15 17:06:42,871 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=66f60a37-9698-4186-a1bc-bd376d3e7a40&infotype=A01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:42,979 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=66f60a37-9698-4186-a1bc-bd376d3e7a40&infotype=A01>
+None
+2022-06-15 17:06:43,279 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a99ebb75-e000-44fb-a9a9-cfc0d7586ad3&infotype=M01> (referer: http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList)
+2022-06-15 17:06:43,388 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/getProjectinfo?infoid=a99ebb75-e000-44fb-a9a9-cfc0d7586ad3&infotype=M01>
+None
+2022-06-15 17:06:43,390 - engine.py[line:358] - INFO: Closing spider (finished)
+2022-06-15 17:06:43,390 - statscollectors.py[line:46] - INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 82025,
+ 'downloader/request_count': 155,
+ 'downloader/request_method_count/GET': 147,
+ 'downloader/request_method_count/POST': 8,
+ 'downloader/response_bytes': 326681,
+ 'downloader/response_count': 155,
+ 'downloader/response_status_count/200': 155,
+ 'elapsed_time_seconds': 57.033588,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 15, 9, 6, 43, 390826),
+ 'httpcompression/response_bytes': 472729,
+ 'httpcompression/response_count': 146,
+ 'item_scraped_count': 138,
+ 'log_count/DEBUG': 294,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'request_depth_max': 1,
+ 'response_received_count': 155,
+ 'scheduler/dequeued': 155,
+ 'scheduler/dequeued/memory': 155,
+ 'scheduler/enqueued': 155,
+ 'scheduler/enqueued/memory': 155,
+ 'spider_exceptions/JSONDecodeError': 1,
+ 'start_time': datetime.datetime(2022, 6, 15, 9, 5, 46, 357238)}
+2022-06-15 17:06:43,390 - engine.py[line:385] - INFO: Spider closed (finished)

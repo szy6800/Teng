@@ -1,0 +1,543 @@
+2022-06-14 10:12:14,676 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['Qinghai.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-14 10:12:14,676 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-14 10:12:14,676 - middleware.py[line:51] - INFO: Enabled item pipelines:
+['Qinghai.pipelines.QinghaiPipeline']
+2022-06-14 10:12:14,676 - engine.py[line:313] - INFO: Spider opened
+2022-06-14 10:12:14,912 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-14 10:12:14,912 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-14 10:12:15,178 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/detailpage.html> (referer: None)
+2022-06-14 10:12:15,414 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/2.html> (referer: None)
+2022-06-14 10:12:15,868 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/3.html> (referer: None)
+2022-06-14 10:12:16,104 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/4.html> (referer: None)
+2022-06-14 10:12:16,433 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/5.html> (referer: None)
+2022-06-14 10:12:16,793 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/6.html> (referer: None)
+2022-06-14 10:12:17,217 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/7.html> (referer: None)
+2022-06-14 10:12:17,603 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/8.html> (referer: None)
+2022-06-14 10:12:18,018 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/9.html> (referer: None)
+2022-06-14 10:12:18,358 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003002/detailpage.html> (referer: None)
+2022-06-14 10:12:18,561 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003002/2.html> (referer: None)
+2022-06-14 10:12:18,938 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003002/3.html> (referer: None)
+2022-06-14 10:12:19,314 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/detailpage.html> (referer: None)
+2022-06-14 10:12:19,707 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/2.html> (referer: None)
+2022-06-14 10:12:20,007 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/3.html> (referer: None)
+2022-06-14 10:12:20,428 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/4.html> (referer: None)
+2022-06-14 10:12:20,789 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/5.html> (referer: None)
+2022-06-14 10:12:21,181 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/0170f99a-a6f0-4261-99cb-3800dbdf219f.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:12:21,322 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/0170f99a-a6f0-4261-99cb-3800dbdf219f.html>
+None
+2022-06-14 10:12:21,495 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/ca25fc83-0aea-4de6-9414-1e5d85ecc1a0.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:21,604 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/ca25fc83-0aea-4de6-9414-1e5d85ecc1a0.html>
+None
+2022-06-14 10:12:21,966 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/0f93d919-355b-4049-b60c-27ef2df3c928.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:22,075 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/0f93d919-355b-4049-b60c-27ef2df3c928.html>
+None
+2022-06-14 10:12:22,311 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/eef92757-fc50-433c-8499-f68f8fbe9cd6.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:22,418 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/eef92757-fc50-433c-8499-f68f8fbe9cd6.html>
+None
+2022-06-14 10:12:22,715 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220611/61f70c63-0cc9-4930-936b-f708670b9b07.html> (referer: https://www.bdebid.com/gggs/003001/5.html)
+2022-06-14 10:12:22,825 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220611/61f70c63-0cc9-4930-936b-f708670b9b07.html>
+None
+2022-06-14 10:12:23,123 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220611/8990b1f5-ce9b-486e-afcc-e4bb6c09cb34.html> (referer: https://www.bdebid.com/gggs/003001/5.html)
+2022-06-14 10:12:23,233 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220611/8990b1f5-ce9b-486e-afcc-e4bb6c09cb34.html>
+None
+2022-06-14 10:12:23,531 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220611/6ed3c705-e017-45d6-9253-1530430665d0.html> (referer: https://www.bdebid.com/gggs/003001/5.html)
+2022-06-14 10:12:23,641 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220611/6ed3c705-e017-45d6-9253-1530430665d0.html>
+None
+2022-06-14 10:12:23,714 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220611/5d3b775a-e4c8-4479-8e4a-9f851036ff14.html> (referer: https://www.bdebid.com/gggs/003001/5.html)
+2022-06-14 10:12:23,829 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220611/5d3b775a-e4c8-4479-8e4a-9f851036ff14.html>
+None
+2022-06-14 10:12:24,143 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220612/573f3c52-a8c9-4cf3-80cd-629be3de0232.html> (referer: https://www.bdebid.com/gggs/003001/5.html)
+2022-06-14 10:12:24,268 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220612/573f3c52-a8c9-4cf3-80cd-629be3de0232.html>
+None
+2022-06-14 10:12:24,629 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003002/20220612/5274eee9-3c7c-4829-bf3a-063252c30218.html> (referer: https://www.bdebid.com/gggs/003002/detailpage.html)
+2022-06-14 10:12:24,739 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003002/20220612/5274eee9-3c7c-4829-bf3a-063252c30218.html>
+None
+2022-06-14 10:12:24,911 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003002/20220613/10f02e2c-8a31-439d-b35f-efc5061d4298.html> (referer: https://www.bdebid.com/gggs/003002/detailpage.html)
+2022-06-14 10:12:25,021 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003002/20220613/10f02e2c-8a31-439d-b35f-efc5061d4298.html>
+None
+2022-06-14 10:12:25,350 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003002/20220613/5bbe1dab-5b85-4c09-99f7-0602cda406a3.html> (referer: https://www.bdebid.com/gggs/003002/detailpage.html)
+2022-06-14 10:12:25,460 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003002/20220613/5bbe1dab-5b85-4c09-99f7-0602cda406a3.html>
+None
+2022-06-14 10:12:25,664 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/e3b469ad-2bec-4c4d-8ecb-14b49376df7b.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:25,789 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/e3b469ad-2bec-4c4d-8ecb-14b49376df7b.html>
+None
+2022-06-14 10:12:26,119 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220611/6d3d5114-7549-4a3a-99a1-d245bae7c19b.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:26,245 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220611/6d3d5114-7549-4a3a-99a1-d245bae7c19b.html>
+None
+2022-06-14 10:12:26,417 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220611/60a4ee8b-c931-4d18-9a47-a3c496f7d669.html> (referer: https://www.bdebid.com/gggs/003003/3.html)
+2022-06-14 10:12:26,527 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220611/60a4ee8b-c931-4d18-9a47-a3c496f7d669.html>
+None
+2022-06-14 10:12:26,842 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220611/3ce3a68b-b986-4583-9baa-f3917f7f5f98.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:26,952 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220611/3ce3a68b-b986-4583-9baa-f3917f7f5f98.html>
+None
+2022-06-14 10:12:27,219 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220611/b6e9508e-faea-4254-9241-c9a1a06a43c3.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:27,329 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220611/b6e9508e-faea-4254-9241-c9a1a06a43c3.html>
+None
+2022-06-14 10:12:27,423 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220612/6fd84b91-7c2d-4ae9-bfcf-f2c8c0148d8c.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:27,533 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220612/6fd84b91-7c2d-4ae9-bfcf-f2c8c0148d8c.html>
+None
+2022-06-14 10:12:27,878 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220612/bb504af8-0a43-4909-a49f-44be24dced8c.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:27,987 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220612/bb504af8-0a43-4909-a49f-44be24dced8c.html>
+None
+2022-06-14 10:12:28,264 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220612/79defe54-e44b-45d5-aae7-86ba5f648c0a.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:28,374 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220612/79defe54-e44b-45d5-aae7-86ba5f648c0a.html>
+None
+2022-06-14 10:12:28,688 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220612/7035187e-2fb7-4106-bd9f-7a92e9e5807c.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:28,813 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220612/7035187e-2fb7-4106-bd9f-7a92e9e5807c.html>
+None
+2022-06-14 10:12:29,159 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220612/57bf2607-6ca5-4029-9be7-014ea956d9c1.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:29,269 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220612/57bf2607-6ca5-4029-9be7-014ea956d9c1.html>
+None
+2022-06-14 10:12:29,551 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/3908f8e7-c9f1-4a53-8d86-2800c44fe384.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:29,661 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/3908f8e7-c9f1-4a53-8d86-2800c44fe384.html>
+None
+2022-06-14 10:12:30,006 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/c28873fc-c660-4850-8ec2-f191f8723610.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:30,116 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/c28873fc-c660-4850-8ec2-f191f8723610.html>
+None
+2022-06-14 10:12:30,383 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/d5b1d95f-12dd-41b6-8173-05d01398c833.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:30,493 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/d5b1d95f-12dd-41b6-8173-05d01398c833.html>
+None
+2022-06-14 10:12:30,726 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/cd95ee58-6f04-44f5-8a29-3a35e89056f5.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:30,838 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/cd95ee58-6f04-44f5-8a29-3a35e89056f5.html>
+None
+2022-06-14 10:12:31,073 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/4a8ba348-6a0f-4a75-8442-0a59184771e4.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:31,183 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/4a8ba348-6a0f-4a75-8442-0a59184771e4.html>
+None
+2022-06-14 10:12:31,497 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/8c5e670e-8932-4390-8730-9d838d59144f.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:31,607 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/8c5e670e-8932-4390-8730-9d838d59144f.html>
+None
+2022-06-14 10:12:32,564 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/d487f50e-2582-41c2-a3d4-996a623ee747.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:32,674 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/d487f50e-2582-41c2-a3d4-996a623ee747.html>
+None
+2022-06-14 10:12:32,689 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/e571cf51-39ec-4c97-afc7-a287b7dde8e7.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:32,730 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/d5c5a002-892a-4cf9-a52d-b657c19c4f02.html> (referer: https://www.bdebid.com/gggs/003003/2.html)
+2022-06-14 10:12:32,799 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/e571cf51-39ec-4c97-afc7-a287b7dde8e7.html>
+None
+2022-06-14 10:12:32,831 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/d5c5a002-892a-4cf9-a52d-b657c19c4f02.html>
+None
+2022-06-14 10:12:33,249 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/556d0a55-8532-4a2f-a3de-44e4017d9a90.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:33,375 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/556d0a55-8532-4a2f-a3de-44e4017d9a90.html>
+None
+2022-06-14 10:12:34,331 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/a518a083-5330-42a7-8f67-573e35eba58b.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:34,394 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/c3464480-6526-40ff-bd5a-aef284ec7d42.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:34,442 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/a518a083-5330-42a7-8f67-573e35eba58b.html>
+None
+2022-06-14 10:12:34,504 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/c3464480-6526-40ff-bd5a-aef284ec7d42.html>
+None
+2022-06-14 10:12:35,194 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/4eb450e7-818b-466f-af12-a55967dc115e.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:35,304 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/4eb450e7-818b-466f-af12-a55967dc115e.html>
+None
+2022-06-14 10:12:35,413 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/19b1921c-534d-482f-94ef-8379659e30b2.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:35,461 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/8cfd7ec1-7494-4f49-9245-87cfddafeacf.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:35,523 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/19b1921c-534d-482f-94ef-8379659e30b2.html>
+None
+2022-06-14 10:12:35,570 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/8cfd7ec1-7494-4f49-9245-87cfddafeacf.html>
+None
+2022-06-14 10:12:35,790 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/9e903f47-6551-4079-831f-c6bca1914baa.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:35,916 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/9e903f47-6551-4079-831f-c6bca1914baa.html>
+None
+2022-06-14 10:12:36,230 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/71c22b91-7415-47f5-9181-042398037463.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:36,340 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/71c22b91-7415-47f5-9181-042398037463.html>
+None
+2022-06-14 10:12:36,436 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/28b2a4ab-62e1-45d0-b276-52dc5a9d98af.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:36,560 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/28b2a4ab-62e1-45d0-b276-52dc5a9d98af.html>
+None
+2022-06-14 10:12:36,591 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/69d0ef11-0e7e-4f83-af02-34ac7e2eb9ee.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:36,701 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/69d0ef11-0e7e-4f83-af02-34ac7e2eb9ee.html>
+None
+2022-06-14 10:12:37,015 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/53283781-d6e4-42b6-927f-ecef52dcae56.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:37,125 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/53283781-d6e4-42b6-927f-ecef52dcae56.html>
+None
+2022-06-14 10:12:37,470 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/bf880ee3-8f82-4155-9e70-30bc4a154c86.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:37,579 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/bf880ee3-8f82-4155-9e70-30bc4a154c86.html>
+None
+2022-06-14 10:12:37,893 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220613/a81468cb-2084-4b9e-8460-bf49107a4ea8.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:38,003 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220613/a81468cb-2084-4b9e-8460-bf49107a4ea8.html>
+None
+2022-06-14 10:12:38,144 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220614/27843b0d-f1f5-4fcd-8605-ded56cd07c02.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:38,254 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220614/27843b0d-f1f5-4fcd-8605-ded56cd07c02.html>
+None
+2022-06-14 10:12:38,599 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220614/e07f1ff6-9b22-4538-afb3-1f905ae57c29.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:38,709 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220614/e07f1ff6-9b22-4538-afb3-1f905ae57c29.html>
+None
+2022-06-14 10:12:39,007 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/20220614/aaff68d6-e670-470a-80b3-8dc39c103ac7.html> (referer: https://www.bdebid.com/gggs/003003/detailpage.html)
+2022-06-14 10:12:39,117 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003003/20220614/aaff68d6-e670-470a-80b3-8dc39c103ac7.html>
+None
+2022-06-14 10:12:39,415 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003002/20220613/0b988944-6581-4d28-bf41-8dd90aa1657c.html> (referer: https://www.bdebid.com/gggs/003002/detailpage.html)
+2022-06-14 10:12:39,525 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003002/20220613/0b988944-6581-4d28-bf41-8dd90aa1657c.html>
+None
+2022-06-14 10:12:39,823 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220612/67feae55-184e-4413-bc85-30c47206dcb5.html> (referer: https://www.bdebid.com/gggs/003001/5.html)
+2022-06-14 10:12:39,933 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220612/67feae55-184e-4413-bc85-30c47206dcb5.html>
+None
+2022-06-14 10:12:40,154 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220612/93a95fa2-a5ae-40c6-8d3a-0430feaa50d8.html> (referer: https://www.bdebid.com/gggs/003001/5.html)
+2022-06-14 10:12:40,264 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220612/93a95fa2-a5ae-40c6-8d3a-0430feaa50d8.html>
+None
+2022-06-14 10:12:40,596 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220612/6b682d98-66bc-4be3-b5a4-9188d1e64fbf.html> (referer: https://www.bdebid.com/gggs/003001/5.html)
+2022-06-14 10:12:40,706 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220612/6b682d98-66bc-4be3-b5a4-9188d1e64fbf.html>
+None
+2022-06-14 10:12:40,957 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220612/73ec836e-5c98-4d67-a1d4-b48b9bbf31b9.html> (referer: https://www.bdebid.com/gggs/003001/5.html)
+2022-06-14 10:12:41,067 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220612/73ec836e-5c98-4d67-a1d4-b48b9bbf31b9.html>
+None
+2022-06-14 10:12:41,303 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/1cbef943-b0af-423d-b3a8-6a201dee34c1.html> (referer: https://www.bdebid.com/gggs/003001/5.html)
+2022-06-14 10:12:41,412 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/1cbef943-b0af-423d-b3a8-6a201dee34c1.html>
+None
+2022-06-14 10:12:41,679 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/3b8f70c1-9484-405a-a21d-b94412e95880.html> (referer: https://www.bdebid.com/gggs/003001/5.html)
+2022-06-14 10:12:41,789 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/3b8f70c1-9484-405a-a21d-b94412e95880.html>
+None
+2022-06-14 10:12:42,118 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/b68433c4-ccf5-4e2d-b0e5-6ec65ea8f829.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:42,227 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/b68433c4-ccf5-4e2d-b0e5-6ec65ea8f829.html>
+None
+2022-06-14 10:12:42,510 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/2e3f378f-5f13-4e7f-8da4-eedd3bbbc696.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:42,620 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/2e3f378f-5f13-4e7f-8da4-eedd3bbbc696.html>
+None
+2022-06-14 10:12:42,950 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/fe6c0cd3-b5cc-44e5-a352-9a9f3382b536.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:43,060 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/fe6c0cd3-b5cc-44e5-a352-9a9f3382b536.html>
+None
+2022-06-14 10:12:43,373 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/6a7b7d95-c6e7-4b45-ac2e-8192407fd6e4.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:43,483 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/6a7b7d95-c6e7-4b45-ac2e-8192407fd6e4.html>
+None
+2022-06-14 10:12:43,797 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/27f5c582-3ada-4436-a5fc-431c4c4b5d9a.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:43,907 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/27f5c582-3ada-4436-a5fc-431c4c4b5d9a.html>
+None
+2022-06-14 10:12:44,487 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/7c46ecb3-2548-4954-8b0b-65f19da2b16f.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:44,597 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/7c46ecb3-2548-4954-8b0b-65f19da2b16f.html>
+None
+2022-06-14 10:12:44,597 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/c986d508-0c33-4125-95f8-6a3fae81df9f.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:44,707 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/c986d508-0c33-4125-95f8-6a3fae81df9f.html>
+None
+2022-06-14 10:12:44,926 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/9b47e3eb-6d01-4d5f-8966-3034c8dfe600.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:45,036 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/9b47e3eb-6d01-4d5f-8966-3034c8dfe600.html>
+None
+2022-06-14 10:12:45,318 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/66caa4b8-287a-4114-a97e-b622bd955f12.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:45,429 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/66caa4b8-287a-4114-a97e-b622bd955f12.html>
+None
+2022-06-14 10:12:45,632 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/61b6588f-f30e-4fe4-bebf-7c5fd03da019.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:45,742 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/61b6588f-f30e-4fe4-bebf-7c5fd03da019.html>
+None
+2022-06-14 10:12:46,072 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/23293127-ddca-48a0-b19b-7606e03781d0.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:46,182 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/23293127-ddca-48a0-b19b-7606e03781d0.html>
+None
+2022-06-14 10:12:46,480 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/bd2274d8-b6b3-4696-9ba2-64e734f87e05.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:46,590 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/bd2274d8-b6b3-4696-9ba2-64e734f87e05.html>
+None
+2022-06-14 10:12:46,793 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/52d1ac84-b390-4487-a5b8-86dbc9e0f646.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:46,903 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/52d1ac84-b390-4487-a5b8-86dbc9e0f646.html>
+None
+2022-06-14 10:12:47,217 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/ba1d5633-4bcf-4217-93d3-6ed426fee27e.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:47,327 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/ba1d5633-4bcf-4217-93d3-6ed426fee27e.html>
+None
+2022-06-14 10:12:47,609 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/1f928d9c-11d7-450d-95e2-69a5f0c639df.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:47,719 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/1f928d9c-11d7-450d-95e2-69a5f0c639df.html>
+None
+2022-06-14 10:12:48,096 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/8f57d1e3-1a04-46da-9cb7-3d7f78fced91.html> (referer: https://www.bdebid.com/gggs/003001/4.html)
+2022-06-14 10:12:48,201 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/8f57d1e3-1a04-46da-9cb7-3d7f78fced91.html>
+None
+2022-06-14 10:12:48,468 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/3c53a032-d5ae-4638-a47c-c37d813ba28b.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:48,578 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/3c53a032-d5ae-4638-a47c-c37d813ba28b.html>
+None
+2022-06-14 10:12:48,923 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/1f3e331e-054b-482a-a996-e07b77db8716.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:49,033 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/1f3e331e-054b-482a-a996-e07b77db8716.html>
+None
+2022-06-14 10:12:49,379 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/8b2d3502-b937-45ff-81ee-2ba76923cb3a.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:49,488 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/8b2d3502-b937-45ff-81ee-2ba76923cb3a.html>
+None
+2022-06-14 10:12:49,771 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/756a5084-e6d9-48cd-b724-abb9f599b54a.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:49,881 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/756a5084-e6d9-48cd-b724-abb9f599b54a.html>
+None
+2022-06-14 10:12:50,131 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/cb9f23cc-996d-4398-b918-4c9c892b4809.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:50,241 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/cb9f23cc-996d-4398-b918-4c9c892b4809.html>
+None
+2022-06-14 10:12:50,790 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/6f77a6da-7297-47f7-9205-7b988ba4e8fc.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:50,916 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/6f77a6da-7297-47f7-9205-7b988ba4e8fc.html>
+None
+2022-06-14 10:12:51,150 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/818a8b83-3510-46a2-aa19-60ca12a24207.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:51,213 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/9bcaad67-8821-412d-be89-e41eefff6fc8.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:51,260 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/818a8b83-3510-46a2-aa19-60ca12a24207.html>
+None
+2022-06-14 10:12:51,355 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/9bcaad67-8821-412d-be89-e41eefff6fc8.html>
+None
+2022-06-14 10:12:51,622 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/ecd35dd9-e7c1-4969-a1ef-bd1f530355ee.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:51,747 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/ecd35dd9-e7c1-4969-a1ef-bd1f530355ee.html>
+None
+2022-06-14 10:12:51,967 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/2fe82969-eb4c-4ca8-91f0-45bb731cc1bd.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:52,077 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/2fe82969-eb4c-4ca8-91f0-45bb731cc1bd.html>
+None
+2022-06-14 10:12:52,625 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/41d9b48c-d59e-4db0-96cc-dabf71d468a3.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:52,673 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/85ced13b-9688-4ae1-b7b8-e8470988d9ae.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:52,735 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/41d9b48c-d59e-4db0-96cc-dabf71d468a3.html>
+None
+2022-06-14 10:12:52,782 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/85ced13b-9688-4ae1-b7b8-e8470988d9ae.html>
+None
+2022-06-14 10:12:52,971 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/d1d7a4a7-983b-4a34-9b15-4f4ac9ce9d50.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:53,081 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/d1d7a4a7-983b-4a34-9b15-4f4ac9ce9d50.html>
+None
+2022-06-14 10:12:53,232 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/a67f5180-537d-4c53-b54c-39b360e651e4.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:53,342 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/a67f5180-537d-4c53-b54c-39b360e651e4.html>
+None
+2022-06-14 10:12:53,469 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/3440419e-fe44-4750-8632-e9cd01368343.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:53,578 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/3440419e-fe44-4750-8632-e9cd01368343.html>
+None
+2022-06-14 10:12:53,719 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/e9eb4570-4ba7-4338-9528-563949047803.html> (referer: https://www.bdebid.com/gggs/003001/3.html)
+2022-06-14 10:12:53,829 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/e9eb4570-4ba7-4338-9528-563949047803.html>
+None
+2022-06-14 10:12:53,986 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/191118b7-da1b-43ae-8d2a-67acab55ec20.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:54,096 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/191118b7-da1b-43ae-8d2a-67acab55ec20.html>
+None
+2022-06-14 10:12:54,285 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/29f84893-d62b-4b3d-961f-b1438b7d1fbb.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:54,395 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/29f84893-d62b-4b3d-961f-b1438b7d1fbb.html>
+None
+2022-06-14 10:12:54,725 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/34899a72-0581-41d3-bf49-720130bcc0a3.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:54,835 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/34899a72-0581-41d3-bf49-720130bcc0a3.html>
+None
+2022-06-14 10:12:55,102 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/0e6ded16-9d26-47a7-b043-313adf14f005.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:55,211 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/0e6ded16-9d26-47a7-b043-313adf14f005.html>
+None
+2022-06-14 10:12:55,541 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/c8a64ef7-1d87-4eef-b512-f834e92ff8df.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:55,651 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/c8a64ef7-1d87-4eef-b512-f834e92ff8df.html>
+None
+2022-06-14 10:12:55,949 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/2b85aa69-6651-446c-b8df-7981d6f6d152.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:56,059 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/2b85aa69-6651-446c-b8df-7981d6f6d152.html>
+None
+2022-06-14 10:12:56,279 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/3e56b21f-e596-41c8-bf6f-ac71192aff74.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:56,389 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/3e56b21f-e596-41c8-bf6f-ac71192aff74.html>
+None
+2022-06-14 10:12:56,735 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/dc1b2570-ed72-4ea4-90b7-33c36d1388c8.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:56,845 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/dc1b2570-ed72-4ea4-90b7-33c36d1388c8.html>
+None
+2022-06-14 10:12:56,986 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/f75a0c81-ca8c-4138-8a2f-0a90cb5be75e.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:57,096 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/f75a0c81-ca8c-4138-8a2f-0a90cb5be75e.html>
+None
+2022-06-14 10:12:57,660 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/51aaced6-c40e-4ce0-afef-b758f1df767f.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:57,770 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/51aaced6-c40e-4ce0-afef-b758f1df767f.html>
+None
+2022-06-14 10:12:58,248 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/02923c7c-e9ea-4bdc-a16a-5266f1f2b503.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:58,358 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/02923c7c-e9ea-4bdc-a16a-5266f1f2b503.html>
+None
+2022-06-14 10:12:58,452 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/dcbad23b-b97e-4dd9-bce3-e71c5e44b1f4.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:58,546 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/4a20a234-4ee2-4c59-974e-da44a7f52dd7.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:58,562 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/dcbad23b-b97e-4dd9-bce3-e71c5e44b1f4.html>
+None
+2022-06-14 10:12:58,656 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/4a20a234-4ee2-4c59-974e-da44a7f52dd7.html>
+None
+2022-06-14 10:12:59,158 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/7f6e6d29-1057-4277-b2d7-a21057ac4219.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:59,253 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/d82e240e-9773-479c-9d45-9b8fae828317.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:59,268 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/7f6e6d29-1057-4277-b2d7-a21057ac4219.html>
+None
+2022-06-14 10:12:59,363 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/d82e240e-9773-479c-9d45-9b8fae828317.html>
+None
+2022-06-14 10:12:59,576 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/aecb9d4a-1553-4cd3-a556-858bd4f3a96b.html> (referer: https://www.bdebid.com/gggs/003001/2.html)
+2022-06-14 10:12:59,692 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/aecb9d4a-1553-4cd3-a556-858bd4f3a96b.html>
+None
+2022-06-14 10:12:59,881 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/f81a83b5-5e7d-425b-b35c-cf94af305b7b.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:12:59,991 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/f81a83b5-5e7d-425b-b35c-cf94af305b7b.html>
+None
+2022-06-14 10:13:00,479 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/3991b850-7a05-46e1-a300-84a8164b28f0.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:13:00,588 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/3991b850-7a05-46e1-a300-84a8164b28f0.html>
+None
+2022-06-14 10:13:01,325 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/b20099f4-4ac0-405c-bd40-c08612946ceb.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:13:01,387 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/fbb053ed-2b99-4ebb-bd2b-daaed5ade07c.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:13:01,434 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/b20099f4-4ac0-405c-bd40-c08612946ceb.html>
+None
+2022-06-14 10:13:01,497 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/fbb053ed-2b99-4ebb-bd2b-daaed5ade07c.html>
+None
+2022-06-14 10:13:01,733 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/18af86b8-67f4-4a17-895b-e74058e9409a.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:13:01,796 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/a40912ab-16a8-402b-ba11-5c7c565c5c91.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:13:01,842 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/18af86b8-67f4-4a17-895b-e74058e9409a.html>
+None
+2022-06-14 10:13:01,922 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/a40912ab-16a8-402b-ba11-5c7c565c5c91.html>
+None
+2022-06-14 10:13:02,141 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/7129f3e2-daeb-4d0e-8367-316c5aa10ecc.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:13:02,251 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/7129f3e2-daeb-4d0e-8367-316c5aa10ecc.html>
+None
+2022-06-14 10:13:02,361 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/d3cfbe47-ffab-423d-b826-b1485d18ea3c.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:13:02,470 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/d3cfbe47-ffab-423d-b826-b1485d18ea3c.html>
+None
+2022-06-14 10:13:02,847 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/b1dd12c3-90b8-431c-a6c3-13ecd5a3889e.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:13:02,956 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/b1dd12c3-90b8-431c-a6c3-13ecd5a3889e.html>
+None
+2022-06-14 10:13:03,223 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/b4718f1c-1f72-4806-922f-fff2edcb43dc.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:13:03,333 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/b4718f1c-1f72-4806-922f-fff2edcb43dc.html>
+None
+2022-06-14 10:13:03,615 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220613/d0e718dc-808a-4f17-9409-4e6d6a09d763.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:13:03,725 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220613/d0e718dc-808a-4f17-9409-4e6d6a09d763.html>
+None
+2022-06-14 10:13:04,055 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220614/6f283064-b644-4929-abd7-f2613856514b.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:13:04,164 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220614/6f283064-b644-4929-abd7-f2613856514b.html>
+None
+2022-06-14 10:13:04,227 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220614/e4f7fa47-4279-467f-9f6f-63f2a2190f0a.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:13:04,337 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220614/e4f7fa47-4279-467f-9f6f-63f2a2190f0a.html>
+None
+2022-06-14 10:13:04,634 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220614/7ab8c29a-f195-4ca7-9f4a-df37ec43616a.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:13:04,745 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220614/7ab8c29a-f195-4ca7-9f4a-df37ec43616a.html>
+None
+2022-06-14 10:13:04,964 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220614/73d0e73a-dade-4fcb-a8f2-5e1185de0e1f.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:13:05,074 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220614/73d0e73a-dade-4fcb-a8f2-5e1185de0e1f.html>
+None
+2022-06-14 10:13:05,389 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003001/20220614/698ab8ad-d3d7-4988-ad3b-37d287656577.html> (referer: https://www.bdebid.com/gggs/003001/detailpage.html)
+2022-06-14 10:13:05,498 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003001/20220614/698ab8ad-d3d7-4988-ad3b-37d287656577.html>
+None
+2022-06-14 10:13:05,764 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/6.html> (referer: None)
+2022-06-14 10:13:06,172 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003003/7.html> (referer: None)
+2022-06-14 10:13:06,587 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/detailpage.html> (referer: None)
+2022-06-14 10:13:07,005 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/2.html> (referer: None)
+2022-06-14 10:13:07,444 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/3.html> (referer: None)
+2022-06-14 10:13:07,821 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/4.html> (referer: None)
+2022-06-14 10:13:08,072 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/5.html> (referer: None)
+2022-06-14 10:13:08,480 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/6.html> (referer: None)
+2022-06-14 10:13:08,873 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/7.html> (referer: None)
+2022-06-14 10:13:09,328 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/34df1fe1-d4fb-4d5d-8529-6e7e35ba9292.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:09,438 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/34df1fe1-d4fb-4d5d-8529-6e7e35ba9292.html>
+None
+2022-06-14 10:13:09,548 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/c961f0e3-1634-47f2-98d6-43fae96ced16.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:09,658 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/c961f0e3-1634-47f2-98d6-43fae96ced16.html>
+None
+2022-06-14 10:13:09,992 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/12233de5-777f-439b-ac82-a51b1b7ce896.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:10,097 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/12233de5-777f-439b-ac82-a51b1b7ce896.html>
+None
+2022-06-14 10:13:10,348 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/6e3448bf-27f2-404a-8856-edd99add67dd.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:10,458 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/6e3448bf-27f2-404a-8856-edd99add67dd.html>
+None
+2022-06-14 10:13:10,772 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/94c8242e-1461-41d1-9c80-651d7ca1e208.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:10,881 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/94c8242e-1461-41d1-9c80-651d7ca1e208.html>
+None
+2022-06-14 10:13:11,164 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/c8825d48-15a0-4e85-8996-91b45aecd002.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:11,274 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/c8825d48-15a0-4e85-8996-91b45aecd002.html>
+None
+2022-06-14 10:13:11,571 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/c7325993-1f2d-49c1-b148-f5600db6c528.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:11,681 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/c7325993-1f2d-49c1-b148-f5600db6c528.html>
+None
+2022-06-14 10:13:11,979 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/f1f73f74-f13d-4617-8cf1-546e761462ad.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:12,089 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/f1f73f74-f13d-4617-8cf1-546e761462ad.html>
+None
+2022-06-14 10:13:12,340 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/d2b9195e-8555-4447-ad42-e75cc78b4b59.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:12,450 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/d2b9195e-8555-4447-ad42-e75cc78b4b59.html>
+None
+2022-06-14 10:13:12,733 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/66e532cd-678a-473a-a212-bcc22b89c070.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:12,842 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/66e532cd-678a-473a-a212-bcc22b89c070.html>
+None
+2022-06-14 10:13:13,172 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220614/dc322eb6-c5ac-4ce9-9f5d-774b5c42b2d6.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:13,282 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220614/dc322eb6-c5ac-4ce9-9f5d-774b5c42b2d6.html>
+None
+2022-06-14 10:13:13,580 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/9e79797a-0b69-418e-87c9-add1a643f512.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:13,689 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/9e79797a-0b69-418e-87c9-add1a643f512.html>
+None
+2022-06-14 10:13:13,988 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220611/081e0e97-01c3-4dcf-98a0-8c5a5666b68a.html> (referer: https://www.bdebid.com/gggs/003004/3.html)
+2022-06-14 10:13:14,098 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220611/081e0e97-01c3-4dcf-98a0-8c5a5666b68a.html>
+None
+2022-06-14 10:13:14,208 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220611/e22cdef2-51f1-4e77-86d5-faae5dff03d5.html> (referer: https://www.bdebid.com/gggs/003004/3.html)
+2022-06-14 10:13:14,317 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220611/e22cdef2-51f1-4e77-86d5-faae5dff03d5.html>
+None
+2022-06-14 10:13:14,678 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/739b729a-1e1d-4694-92a1-833c687e3312.html> (referer: https://www.bdebid.com/gggs/003004/3.html)
+2022-06-14 10:13:14,788 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/739b729a-1e1d-4694-92a1-833c687e3312.html>
+None
+2022-06-14 10:13:14,914 - logstats.py[line:48] - INFO: Crawled 159 pages (at 159 pages/min), scraped 133 items (at 133 items/min)
+2022-06-14 10:13:15,071 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/e580de08-3320-4e4e-b806-1de9ffb8165f.html> (referer: https://www.bdebid.com/gggs/003004/3.html)
+2022-06-14 10:13:15,180 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/e580de08-3320-4e4e-b806-1de9ffb8165f.html>
+None
+2022-06-14 10:13:15,369 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/67c6cf35-24d7-46bf-b6eb-f37c3a9d239a.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:15,494 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/67c6cf35-24d7-46bf-b6eb-f37c3a9d239a.html>
+None
+2022-06-14 10:13:15,790 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/fe8d421f-34e6-44db-9f8a-bff4dab5dcbc.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:15,901 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/fe8d421f-34e6-44db-9f8a-bff4dab5dcbc.html>
+None
+2022-06-14 10:13:16,104 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/7a0fc6da-0f5e-45ff-b62b-91287ebf6b37.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:16,213 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/7a0fc6da-0f5e-45ff-b62b-91287ebf6b37.html>
+None
+2022-06-14 10:13:16,449 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/97676fcc-ee9f-4638-9502-a51f418cfbeb.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:16,574 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/97676fcc-ee9f-4638-9502-a51f418cfbeb.html>
+None
+2022-06-14 10:13:16,888 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/b6bea954-eb1d-4dc7-89d5-58d957036a73.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:16,998 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/b6bea954-eb1d-4dc7-89d5-58d957036a73.html>
+None
+2022-06-14 10:13:17,155 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/f089b0fb-61a8-4b66-82f1-70ae1885f84a.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:17,265 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/f089b0fb-61a8-4b66-82f1-70ae1885f84a.html>
+None
+2022-06-14 10:13:17,515 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/4677e3c4-b626-492f-9081-bd64ae0fc3bd.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:17,626 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/4677e3c4-b626-492f-9081-bd64ae0fc3bd.html>
+None
+2022-06-14 10:13:17,736 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/382084f1-c276-434a-9dd7-30f2f8bc678d.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:17,845 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/382084f1-c276-434a-9dd7-30f2f8bc678d.html>
+None
+2022-06-14 10:13:18,065 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/aa77ded9-e123-477f-a310-ae0b6b77a82a.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:18,172 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/aa77ded9-e123-477f-a310-ae0b6b77a82a.html>
+None
+2022-06-14 10:13:18,360 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/820ce3b3-b266-4ad0-b0d5-575f7235b385.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:18,470 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/820ce3b3-b266-4ad0-b0d5-575f7235b385.html>
+None
+2022-06-14 10:13:18,658 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/e5d6223d-fa1e-4933-a9eb-414230645b86.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:18,768 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/e5d6223d-fa1e-4933-a9eb-414230645b86.html>
+None
+2022-06-14 10:13:18,956 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/7590d270-0749-4522-9417-c211b83f4d20.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:19,066 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/7590d270-0749-4522-9417-c211b83f4d20.html>
+None
+2022-06-14 10:13:19,407 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/9ee6502a-fbc4-4b00-80fb-9ad8b1a588b6.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:19,521 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/9ee6502a-fbc4-4b00-80fb-9ad8b1a588b6.html>
+None
+2022-06-14 10:13:19,631 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/aad0b345-f9f6-45a2-8392-f18b4371dfc1.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:19,741 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/aad0b345-f9f6-45a2-8392-f18b4371dfc1.html>
+None
+2022-06-14 10:13:19,993 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/42ece5e8-35bc-4ad3-ae85-056f6bceb0c6.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:20,102 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/42ece5e8-35bc-4ad3-ae85-056f6bceb0c6.html>
+None
+2022-06-14 10:13:20,291 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220613/75db0ff7-490f-449f-a5ca-f71584a06170.html> (referer: https://www.bdebid.com/gggs/003004/2.html)
+2022-06-14 10:13:20,417 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220613/75db0ff7-490f-449f-a5ca-f71584a06170.html>
+None
+2022-06-14 10:13:20,574 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220614/5c34d593-8e90-447b-bec2-d24cfd73d619.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:20,684 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220614/5c34d593-8e90-447b-bec2-d24cfd73d619.html>
+None
+2022-06-14 10:13:21,013 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220614/c23e8a64-e8a0-4764-9833-88fdf98a1eda.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:21,122 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220614/c23e8a64-e8a0-4764-9833-88fdf98a1eda.html>
+None
+2022-06-14 10:13:21,437 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220614/488e7169-d6b0-4820-9180-c6ccfe9dc3dd.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:21,547 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220614/488e7169-d6b0-4820-9180-c6ccfe9dc3dd.html>
+None
+2022-06-14 10:13:21,766 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220614/97cbff2a-3522-48e1-8090-ee9f32b8d912.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:21,891 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220614/97cbff2a-3522-48e1-8090-ee9f32b8d912.html>
+None
+2022-06-14 10:13:22,205 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220614/0c5d0e62-74b8-49e7-952e-dfd6734925d5.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:22,315 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220614/0c5d0e62-74b8-49e7-952e-dfd6734925d5.html>
+None
+2022-06-14 10:13:22,534 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.bdebid.com/gggs/003004/20220614/1814955d-83be-4452-88f0-77003ea7a7b5.html> (referer: https://www.bdebid.com/gggs/003004/detailpage.html)
+2022-06-14 10:13:22,660 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.bdebid.com/gggs/003004/20220614/1814955d-83be-4452-88f0-77003ea7a7b5.html>
+None
+2022-06-14 10:13:22,660 - engine.py[line:358] - INFO: Closing spider (finished)
+2022-06-14 10:13:22,660 - statscollectors.py[line:46] - INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 92661,
+ 'downloader/request_count': 182,
+ 'downloader/request_method_count/GET': 182,
+ 'downloader/response_bytes': 1114189,
+ 'downloader/response_count': 182,
+ 'downloader/response_status_count/200': 182,
+ 'elapsed_time_seconds': 67.748089,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 14, 2, 13, 22, 660240),
+ 'httpcompression/response_bytes': 6070848,
+ 'httpcompression/response_count': 182,
+ 'item_scraped_count': 156,
+ 'log_count/DEBUG': 339,
+ 'log_count/INFO': 11,
+ 'request_depth_max': 1,
+ 'response_received_count': 182,
+ 'scheduler/dequeued': 182,
+ 'scheduler/dequeued/memory': 182,
+ 'scheduler/enqueued': 182,
+ 'scheduler/enqueued/memory': 182,
+ 'start_time': datetime.datetime(2022, 6, 14, 2, 12, 14, 912151)}
+2022-06-14 10:13:22,660 - engine.py[line:385] - INFO: Spider closed (finished)

@@ -18,15 +18,15 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 def job():
     start_times = datetime.datetime.now()  # 采集开始时间
     start_time = str(start_times).split('.')[0]
-    # print('Starting time ===>', start_time)
+    # print('starting time ===>', start_time)
     # # 采集逻辑
     # # # #
     os.system('scrapy crawl a59med')
     os.system('scrapy crawl conch')
-    os.system('scrapy crawl DAV')
+    os.system('scrapy crawl dav')
     os.system('scrapy crawl eceg')
     os.system('scrapy crawl zgazxxw')
-    # os.system('scrapy crawl postOffice')
+    # os.system('scrapy crawl postoffice')
     os.system('scrapy crawl bjmu')
     os.system('scrapy crawl bjx')
     os.system('scrapy crawl huanbao')
@@ -78,17 +78,17 @@ def job():
     os.system('scrapy crawl gs_gssey')
     os.system('scrapy crawl gs_qysggzyjy')
     os.system('scrapy crawl gs_tianshui')
+    os.system('scrapy crawl gs_gsei')
 
     # os.system('scrapy crawl ebnew')
-
     print('采集已完成>>>>>>>>')
 
-    print('Collect again after 1 hour!!!!')
+    print('collect again after 1 hour!!!!')
 
     end_time = str(datetime.datetime.now()).split('.')[0]  # 采集结束时间
-    print(f"Starting time ===> {start_time}, End time ===> {end_time}")
-    next_start_time = (start_times + datetime.timedelta(days=1)).strftime('%Y/%m/%d %H:%M:%S')  # 下次采集间隔时间
-    print('Next startup time =====>', next_start_time, '\n')
+    print(f"starting time ===> {start_time}, end time ===> {end_time}")
+    next_start_time = (start_times + datetime.timedelta(days=1)).strftime('%y/%m/%d %h:%m:%s')  # 下次采集间隔时间
+    print('next startup time =====>', next_start_time, '\n')
 
 
 if __name__ == "__main__":

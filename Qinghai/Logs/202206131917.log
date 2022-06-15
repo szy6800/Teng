@@ -1,0 +1,47 @@
+2022-06-13 19:17:56,064 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['Qinghai.middlewares.RandomIPMiddleware',
+ 'Qinghai.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-13 19:17:56,064 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-13 19:17:56,064 - middleware.py[line:51] - INFO: Enabled item pipelines:
+['Qinghai.pipelines.QinghaiPipeline']
+2022-06-13 19:17:56,064 - engine.py[line:313] - INFO: Spider opened
+2022-06-13 19:17:56,268 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-13 19:17:56,268 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[42.7.89.130:4256]访问[http://www.gsei.com.cn/html/1337/list-1.html]
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[113.231.36.23:4252]访问[http://www.gsei.com.cn/html/1337/list-2.html]
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[124.230.9.51:4231]访问[http://www.gsei.com.cn/html/1337/list-3.html]
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[42.84.167.0:4251]访问[http://www.gsei.com.cn/html/1337/list-4.html]
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[121.29.82.176:4242]访问[http://www.gsei.com.cn/html/1337/list-5.html]
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[116.3.97.128:4278]访问[http://www.gsei.com.cn/html/1337/list-6.html]
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[42.84.167.0:4251]访问[http://www.gsei.com.cn/html/1337/list-7.html]
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[218.60.252.217:4252]访问[http://www.gsei.com.cn/html/1337/list-8.html]
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[113.237.186.228:4213]访问[http://www.gsei.com.cn/html/1337/list-9.html]
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[116.3.97.128:4278]访问[http://www.gsei.com.cn/html/1336/list-1.html]
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[175.146.209.84:4256]访问[http://www.gsei.com.cn/html/1336/list-2.html]
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[116.115.208.242:4231]访问[http://www.gsei.com.cn/html/1336/list-3.html]
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[42.56.239.80:4216]访问[http://www.gsei.com.cn/html/1336/list-4.html]
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[112.194.91.30:4231]访问[http://www.gsei.com.cn/html/1336/list-5.html]
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[113.226.100.11:4231]访问[http://www.gsei.com.cn/html/1336/list-6.html]
+2022-06-13 19:17:56,268 - middlewares.py[line:183] - INFO: 使用代理[175.146.97.18:4232]访问[http://www.gsei.com.cn/html/1336/list-7.html]
+2022-06-13 19:17:59,342 - retry.py[line:96] - DEBUG: Retrying <GET http://www.gsei.com.cn/html/1337/list-3.html> (failed 1 times): Connection was refused by other side: 10061: 由于目标计算机积极拒绝，无法连接。.
+2022-06-13 19:17:59,342 - middlewares.py[line:183] - INFO: 使用代理[42.56.40.70:4231]访问[http://www.gsei.com.cn/html/1337/list-3.html]
+2022-06-13 19:17:59,813 - retry.py[line:96] - DEBUG: Retrying <GET http://www.gsei.com.cn/html/1337/list-5.html> (failed 1 times): Connection was refused by other side: 10061: 由于目标计算机积极拒绝，无法连接。.
+2022-06-13 19:17:59,813 - middlewares.py[line:183] - INFO: 使用代理[183.92.198.174:4215]访问[http://www.gsei.com.cn/html/1337/list-5.html]
+2022-06-13 19:17:59,923 - retry.py[line:96] - DEBUG: Retrying <GET http://www.gsei.com.cn/html/1337/list-4.html> (failed 1 times): Connection was refused by other side: 10061: 由于目标计算机积极拒绝，无法连接。.
+2022-06-13 19:17:59,923 - middlewares.py[line:183] - INFO: 使用代理[116.3.97.128:4278]访问[http://www.gsei.com.cn/html/1337/list-4.html]

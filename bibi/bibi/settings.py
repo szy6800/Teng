@@ -87,17 +87,17 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-# MYSQL_HOST = '127.0.0.1'
-# MYSQL_PORT = 3306
-# MYSQL_USER = 'root'
-# MYSQL_PASSWD = '123456'
-# MYSQL_DB = 'stu'
-# MYSQL_CHARSET = 'utf8'
-
-# # 阿里云mysql
-MYSQL_HOST = '123.126.87.123'
+MYSQL_HOST = '127.0.0.1'
 MYSQL_PORT = 3306
 MYSQL_USER = 'root'
-MYSQL_PASSWD = 'Lxp.138927!asd'
-MYSQL_DB = 'crawler2022'
+MYSQL_PASSWD = '123456'
+MYSQL_DB = 'ceshi'
 MYSQL_CHARSET = 'utf8'
+
+# # 阿里云mysql
+# MYSQL_HOST = '123.126.87.123'
+# MYSQL_PORT = 3306
+# MYSQL_USER = 'root'
+# MYSQL_PASSWD = 'Lxp.138927!asd'
+# MYSQL_DB = 'crawler2022'
+# MYSQL_CHARSET = 'utf8'

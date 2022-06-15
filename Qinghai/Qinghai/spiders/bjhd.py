@@ -67,7 +67,7 @@ class BjhdSpider(scrapy.Spider):
         item['proxy'] = ''
         item['update_time'] = ''
         item['deleted'] = ''
-        item['province'] = ''
+        item['province'] = '北京市'
         item['base'] = ''
         item['type'] = '采购公告'
         item['items'] = ''

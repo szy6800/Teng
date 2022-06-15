@@ -1,0 +1,206 @@
+2022-06-14 10:01:50,393 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['Qinghai.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-14 10:01:50,397 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-14 10:01:50,399 - middleware.py[line:51] - INFO: Enabled item pipelines:
+['Qinghai.pipelines.QinghaiPipeline']
+2022-06-14 10:01:50,400 - engine.py[line:313] - INFO: Spider opened
+2022-06-14 10:01:50,628 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-14 10:01:50,629 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-14 10:01:51,308 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.59med.com/news/list.php?catid=26&page=2> (referer: None)
+2022-06-14 10:01:51,378 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.59med.com/news/list.php?catid=26&page=1> (referer: None)
+2022-06-14 10:01:51,686 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.59med.com/news/list.php?catid=26&page=3> (referer: None)
+2022-06-14 10:01:51,950 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.59med.com/news/list.php?catid=26&page=4> (referer: None)
+2022-06-14 10:01:52,298 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.59med.com/news/list.php?catid=26&page=5> (referer: None)
+2022-06-14 10:01:52,604 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.59med.com/news/list.php?catid=26&page=6> (referer: None)
+2022-06-14 10:01:53,047 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.59med.com/news/list.php?catid=26&page=7> (referer: None)
+2022-06-14 10:01:53,649 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.59med.com/news/show.php?itemid=133650> (referer: http://www.59med.com/news/list.php?catid=26&page=2)
+2022-06-14 10:01:53,757 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.59med.com/news/show.php?itemid=133650>
+None
+2022-06-14 10:01:53,822 - _legacy.py[line:147] - CRITICAL: Unhandled error in Deferred:
+2022-06-14 10:01:53,826 - _legacy.py[line:147] - CRITICAL: 
+Traceback (most recent call last):
+  File "d:\project\venv\lib\site-packages\twisted\python\threadpool.py", line 244, in inContext
+    result = inContext.theWork()  # type: ignore[attr-defined]
+  File "d:\project\venv\lib\site-packages\twisted\python\threadpool.py", line 260, in <lambda>
+    inContext.theWork = lambda: context.call(  # type: ignore[attr-defined]
+  File "d:\project\venv\lib\site-packages\twisted\python\context.py", line 117, in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+  File "d:\project\venv\lib\site-packages\twisted\python\context.py", line 82, in callWithContext
+    return func(*args, **kw)
+  File "d:\project\venv\lib\site-packages\twisted\enterprise\adbapi.py", line 443, in _runInteraction
+    result = interaction(trans, *args, **kw)
+  File "D:\Te\Teng\Qinghai\Qinghai\pipelines.py", line 55, in insert
+    cursor.execute(self.query_sql.format(item['uid']))
+  File "d:\project\venv\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "d:\project\venv\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "d:\project\venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "d:\project\venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'crawler2022.zhaobiaoquchong' doesn't exist")
+2022-06-14 10:01:54,101 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.59med.com/news/show.php?itemid=133651> (referer: http://www.59med.com/news/list.php?catid=26&page=2)
+2022-06-14 10:01:54,218 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.59med.com/news/show.php?itemid=133651>
+None
+2022-06-14 10:01:54,234 - _legacy.py[line:147] - CRITICAL: Unhandled error in Deferred:
+2022-06-14 10:01:54,234 - _legacy.py[line:147] - CRITICAL: 
+Traceback (most recent call last):
+  File "d:\project\venv\lib\site-packages\twisted\python\threadpool.py", line 244, in inContext
+    result = inContext.theWork()  # type: ignore[attr-defined]
+  File "d:\project\venv\lib\site-packages\twisted\python\threadpool.py", line 260, in <lambda>
+    inContext.theWork = lambda: context.call(  # type: ignore[attr-defined]
+  File "d:\project\venv\lib\site-packages\twisted\python\context.py", line 117, in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+  File "d:\project\venv\lib\site-packages\twisted\python\context.py", line 82, in callWithContext
+    return func(*args, **kw)
+  File "d:\project\venv\lib\site-packages\twisted\enterprise\adbapi.py", line 443, in _runInteraction
+    result = interaction(trans, *args, **kw)
+  File "D:\Te\Teng\Qinghai\Qinghai\pipelines.py", line 55, in insert
+    cursor.execute(self.query_sql.format(item['uid']))
+  File "d:\project\venv\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "d:\project\venv\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "d:\project\venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "d:\project\venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'crawler2022.zhaobiaoquchong' doesn't exist")
+2022-06-14 10:01:54,581 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.59med.com/news/show.php?itemid=133652> (referer: http://www.59med.com/news/list.php?catid=26&page=2)
+2022-06-14 10:01:54,698 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.59med.com/news/show.php?itemid=133652>
+None
+2022-06-14 10:01:54,706 - _legacy.py[line:147] - CRITICAL: Unhandled error in Deferred:
+2022-06-14 10:01:54,707 - _legacy.py[line:147] - CRITICAL: 
+Traceback (most recent call last):
+  File "d:\project\venv\lib\site-packages\twisted\python\threadpool.py", line 244, in inContext
+    result = inContext.theWork()  # type: ignore[attr-defined]
+  File "d:\project\venv\lib\site-packages\twisted\python\threadpool.py", line 260, in <lambda>
+    inContext.theWork = lambda: context.call(  # type: ignore[attr-defined]
+  File "d:\project\venv\lib\site-packages\twisted\python\context.py", line 117, in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+  File "d:\project\venv\lib\site-packages\twisted\python\context.py", line 82, in callWithContext
+    return func(*args, **kw)
+  File "d:\project\venv\lib\site-packages\twisted\enterprise\adbapi.py", line 443, in _runInteraction
+    result = interaction(trans, *args, **kw)
+  File "D:\Te\Teng\Qinghai\Qinghai\pipelines.py", line 55, in insert
+    cursor.execute(self.query_sql.format(item['uid']))
+  File "d:\project\venv\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "d:\project\venv\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "d:\project\venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "d:\project\venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'crawler2022.zhaobiaoquchong' doesn't exist")
+2022-06-14 10:01:54,962 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.59med.com/news/show.php?itemid=133653> (referer: http://www.59med.com/news/list.php?catid=26&page=2)
+2022-06-14 10:01:55,069 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.59med.com/news/show.php?itemid=133653>
+None
+2022-06-14 10:01:55,085 - _legacy.py[line:147] - CRITICAL: Unhandled error in Deferred:
+2022-06-14 10:01:55,085 - _legacy.py[line:147] - CRITICAL: 
+Traceback (most recent call last):
+  File "d:\project\venv\lib\site-packages\twisted\python\threadpool.py", line 244, in inContext
+    result = inContext.theWork()  # type: ignore[attr-defined]
+  File "d:\project\venv\lib\site-packages\twisted\python\threadpool.py", line 260, in <lambda>
+    inContext.theWork = lambda: context.call(  # type: ignore[attr-defined]
+  File "d:\project\venv\lib\site-packages\twisted\python\context.py", line 117, in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+  File "d:\project\venv\lib\site-packages\twisted\python\context.py", line 82, in callWithContext
+    return func(*args, **kw)
+  File "d:\project\venv\lib\site-packages\twisted\enterprise\adbapi.py", line 443, in _runInteraction
+    result = interaction(trans, *args, **kw)
+  File "D:\Te\Teng\Qinghai\Qinghai\pipelines.py", line 55, in insert
+    cursor.execute(self.query_sql.format(item['uid']))
+  File "d:\project\venv\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "d:\project\venv\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "d:\project\venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "d:\project\venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'crawler2022.zhaobiaoquchong' doesn't exist")
+2022-06-14 10:01:55,421 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.59med.com/news/show.php?itemid=133654> (referer: http://www.59med.com/news/list.php?catid=26&page=2)
+2022-06-14 10:01:55,530 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.59med.com/news/show.php?itemid=133654>
+None
+2022-06-14 10:01:55,535 - _legacy.py[line:147] - CRITICAL: Unhandled error in Deferred:
+2022-06-14 10:01:55,535 - _legacy.py[line:147] - CRITICAL: 
+Traceback (most recent call last):
+  File "d:\project\venv\lib\site-packages\twisted\python\threadpool.py", line 244, in inContext
+    result = inContext.theWork()  # type: ignore[attr-defined]
+  File "d:\project\venv\lib\site-packages\twisted\python\threadpool.py", line 260, in <lambda>
+    inContext.theWork = lambda: context.call(  # type: ignore[attr-defined]
+  File "d:\project\venv\lib\site-packages\twisted\python\context.py", line 117, in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+  File "d:\project\venv\lib\site-packages\twisted\python\context.py", line 82, in callWithContext
+    return func(*args, **kw)
+  File "d:\project\venv\lib\site-packages\twisted\enterprise\adbapi.py", line 443, in _runInteraction
+    result = interaction(trans, *args, **kw)
+  File "D:\Te\Teng\Qinghai\Qinghai\pipelines.py", line 55, in insert
+    cursor.execute(self.query_sql.format(item['uid']))
+  File "d:\project\venv\lib\site-packages\pymysql\cursors.py", line 148, in execute
+    result = self._query(query)
+  File "d:\project\venv\lib\site-packages\pymysql\cursors.py", line 310, in _query
+    conn.query(q)
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 775, in _read_query_result
+    result.read()
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "d:\project\venv\lib\site-packages\pymysql\connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "d:\project\venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "d:\project\venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'crawler2022.zhaobiaoquchong' doesn't exist")

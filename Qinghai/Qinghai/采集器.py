@@ -29,7 +29,7 @@ def id_sult():
     # w() - datetime.timedelta(days=1)
     now = datetime.datetime.utcnow()
     otherStyleTime = now.strftime("%Y-%m-%d")
-    sql = f"SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `caijiqi` WHERE abs='3' AND create_time>'{otherStyleTime}';"
+    sql = f"SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `caijiqi` order by id  limit 200,20"
     result1 = queryue(sql=sql)
     result = []
     nows = datetime.datetime.now()

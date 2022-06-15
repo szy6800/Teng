@@ -37,9 +37,9 @@ DOWNLOAD_DELAY = 1
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-DEFAULT_REQUEST_HEADERS = {
-   "Content - Type":"application / json",
-}
+# DEFAULT_REQUEST_HEADERS = {
+#    "Content - Type":"application / json",
+# }
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html

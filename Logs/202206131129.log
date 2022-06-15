@@ -1,0 +1,52 @@
+2022-06-13 11:29:09,707 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'boss.middlewares.BossDownloaderMiddleware',
+ 'boss.middlewares.RandomIPMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-13 11:29:09,711 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-13 11:29:09,711 - middleware.py[line:51] - INFO: Enabled item pipelines:
+[]
+2022-06-13 11:29:09,711 - engine.py[line:313] - INFO: Spider opened
+2022-06-13 11:29:10,004 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-13 11:29:10,004 - middlewares.py[line:120] - INFO: Spider opened: jishu1
+2022-06-13 11:29:10,005 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6024
+2022-06-13 11:29:10,006 - middlewares.py[line:168] - INFO: 使用代理[116.113.123.18:4234]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 11:29:10,278 - redirect.py[line:55] - DEBUG: Redirecting (302) to <GET https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=> from <GET https://www.zhipin.com/c100010000-p100101/?page=2>
+2022-06-13 11:29:10,279 - middlewares.py[line:168] - INFO: 使用代理[110.18.2.133:4234]访问[https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=]
+2022-06-13 11:29:31,459 - retry.py[line:96] - DEBUG: Retrying <GET https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=> (failed 1 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 11:29:31,460 - middlewares.py[line:168] - INFO: 使用代理[42.85.235.163:4256]访问[https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=]
+2022-06-13 11:29:52,508 - retry.py[line:96] - DEBUG: Retrying <GET https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=> (failed 2 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 11:29:52,509 - middlewares.py[line:168] - INFO: 使用代理[175.146.102.173:4231]访问[https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=]
+2022-06-13 11:29:54,658 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=> (failed 3 times): Connection was refused by other side: 10061: 由于目标计算机积极拒绝，无法连接。.
+2022-06-13 11:29:54,658 - middlewares.py[line:168] - INFO: 使用代理[123.144.146.184:4235]访问[https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=]
+2022-06-13 11:29:54,741 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=> (failed 3 times): Could not open CONNECT tunnel with proxy 123.144.146.184:4235 [{'status': 401, 'reason': b'Authorized failed'}]
+2022-06-13 11:29:54,742 - middlewares.py[line:168] - INFO: 使用代理[116.115.209.177:4231]访问[https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=]
+2022-06-13 11:29:57,140 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=> (failed 3 times): Connection was refused by other side: 10061: 由于目标计算机积极拒绝，无法连接。.
+2022-06-13 11:29:57,141 - middlewares.py[line:168] - INFO: 使用代理[175.146.215.46:4256]访问[https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=]
+2022-06-13 11:29:59,290 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=> (failed 3 times): Connection was refused by other side: 10061: 由于目标计算机积极拒绝，无法连接。.
+2022-06-13 11:29:59,291 - middlewares.py[line:168] - INFO: 使用代理[42.55.180.247:4231]访问[https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=]
+2022-06-13 11:30:01,737 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=> (failed 3 times): Connection was refused by other side: 10061: 由于目标计算机积极拒绝，无法连接。.
+2022-06-13 11:30:01,738 - middlewares.py[line:168] - INFO: 使用代理[175.146.215.46:4256]访问[https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=]
+2022-06-13 11:30:03,923 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=> (failed 3 times): Connection was refused by other side: 10061: 由于目标计算机积极拒绝，无法连接。.
+2022-06-13 11:30:03,924 - middlewares.py[line:168] - INFO: 使用代理[42.84.165.227:4251]访问[https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=]
+2022-06-13 11:30:10,015 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-13 11:30:24,955 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 11:30:24,956 - middlewares.py[line:168] - INFO: 使用代理[113.235.64.200:4243]访问[https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=]
+2022-06-13 11:30:46,000 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 11:30:46,001 - middlewares.py[line:168] - INFO: 使用代理[123.158.99.245:4224]访问[https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=]
+2022-06-13 11:31:07,042 - retry.py[line:118] - ERROR: Gave up retrying <GET https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=> (failed 3 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-06-13 11:31:07,043 - middlewares.py[line:168] - INFO: 使用代理[113.228.107.76:4231]访问[https://www.zhipin.com/web/common/security-check.html?seed=NcOWU2Fz32QbHbhTR8u3zq4IaN5r4aO9FlXBGmr986E%3D&name=a8d239c0&ts=1655090949897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=]
+2022-06-13 11:31:10,007 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)

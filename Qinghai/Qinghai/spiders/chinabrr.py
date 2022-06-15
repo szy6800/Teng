@@ -79,7 +79,7 @@ class ChinabrrSpider(scrapy.Spider):
         item['proxy'] = ''
         item['update_time'] = ''
         item['deleted'] = ''
-        item['province'] = ''
+        item['province'] = '北京市'
         item['base'] = ''
         item['base'] = ''
         if 'zbdetail' in item['link']:

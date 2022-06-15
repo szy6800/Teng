@@ -79,7 +79,7 @@ class QhssyySpider(scrapy.Spider):
         item['update_time'] = ''
         item['deleted'] = ''
         # 省 份
-        item['province'] = ''
+        item['province'] = '青海省'
         # 基础
         item['base'] = ''
         # 行业

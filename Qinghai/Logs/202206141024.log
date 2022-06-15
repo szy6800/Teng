@@ -1,0 +1,744 @@
+2022-06-14 10:24:18,752 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['Qinghai.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-14 10:24:18,755 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-14 10:24:18,756 - middleware.py[line:51] - INFO: Enabled item pipelines:
+['Qinghai.pipelines.QinghaiPipeline']
+2022-06-14 10:24:18,757 - engine.py[line:313] - INFO: Spider opened
+2022-06-14 10:24:18,976 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-14 10:24:18,977 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-14 10:24:19,194 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:19,552 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:20,042 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:20,325 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:20,704 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:20,897 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:21,334 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:21,655 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A99&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:22,043 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:22,319 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:22,563 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:23,062 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:23,511 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:23,881 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:24,290 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:24,561 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:25,003 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=> (referer: None)
+2022-06-14 10:24:25,728 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2862/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:25,890 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2862/flowpage>
+None
+2022-06-14 10:24:26,163 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2818/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:26,280 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2818/flowpage>
+None
+2022-06-14 10:24:26,527 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2654/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:26,640 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2654/flowpage>
+None
+2022-06-14 10:24:27,027 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2442/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:27,145 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2442/flowpage>
+None
+2022-06-14 10:24:27,179 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2611/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:27,287 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2611/flowpage>
+None
+2022-06-14 10:24:27,601 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2662/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:27,709 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2662/flowpage>
+None
+2022-06-14 10:24:27,989 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2464/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:28,102 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2464/flowpage>
+None
+2022-06-14 10:24:28,330 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2519/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:28,443 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2519/flowpage>
+None
+2022-06-14 10:24:28,932 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2591/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:29,041 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2591/flowpage>
+None
+2022-06-14 10:24:29,133 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2609/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:29,242 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2609/flowpage>
+None
+2022-06-14 10:24:29,540 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2529/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:29,658 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2529/flowpage>
+None
+2022-06-14 10:24:29,869 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2593/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:29,988 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2593/flowpage>
+None
+2022-06-14 10:24:30,088 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2504/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:30,203 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2504/flowpage>
+None
+2022-06-14 10:24:30,520 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2863/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:30,629 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2863/flowpage>
+None
+2022-06-14 10:24:30,817 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2683/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:30,935 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2683/flowpage>
+None
+2022-06-14 10:24:31,253 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2703/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:31,370 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2703/flowpage>
+None
+2022-06-14 10:24:31,609 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2348/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:31,717 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2348/flowpage>
+None
+2022-06-14 10:24:32,062 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2413/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:32,178 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2413/flowpage>
+None
+2022-06-14 10:24:32,290 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2411/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:32,397 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2411/flowpage>
+None
+2022-06-14 10:24:32,491 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2490/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:32,600 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2490/flowpage>
+None
+2022-06-14 10:24:32,957 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2557/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:33,065 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2557/flowpage>
+None
+2022-06-14 10:24:33,390 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2564/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:33,503 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2564/flowpage>
+None
+2022-06-14 10:24:33,608 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2714/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:33,724 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2714/flowpage>
+None
+2022-06-14 10:24:33,966 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2749/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:34,080 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2749/flowpage>
+None
+2022-06-14 10:24:34,355 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2745/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:34,467 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2745/flowpage>
+None
+2022-06-14 10:24:34,792 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2744/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:34,905 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2744/flowpage>
+None
+2022-06-14 10:24:35,242 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2753/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:35,353 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2753/flowpage>
+None
+2022-06-14 10:24:35,650 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2752/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:35,762 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2752/flowpage>
+None
+2022-06-14 10:24:36,000 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2735/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:36,121 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2735/flowpage>
+None
+2022-06-14 10:24:36,440 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2739/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:36,556 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2739/flowpage>
+None
+2022-06-14 10:24:36,784 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2741/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:36,897 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2741/flowpage>
+None
+2022-06-14 10:24:37,187 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2751/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:37,300 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2751/flowpage>
+None
+2022-06-14 10:24:37,546 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2754/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:37,658 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2754/flowpage>
+None
+2022-06-14 10:24:37,965 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2745/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:38,078 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2745/flowpage>
+None
+2022-06-14 10:24:38,342 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2814/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:38,453 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2814/flowpage>
+None
+2022-06-14 10:24:38,823 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2827/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:38,936 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2827/flowpage>
+None
+2022-06-14 10:24:39,177 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2860/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:39,295 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2860/flowpage>
+None
+2022-06-14 10:24:39,593 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2857/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:39,706 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2857/flowpage>
+None
+2022-06-14 10:24:40,050 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2871/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:40,164 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2871/flowpage>
+None
+2022-06-14 10:24:40,452 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2870/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:40,571 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2870/flowpage>
+None
+2022-06-14 10:24:40,761 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2870/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=C&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:40,872 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2870/flowpage>
+None
+2022-06-14 10:24:41,158 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2645/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:41,262 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2645/flowpage>
+None
+2022-06-14 10:24:41,537 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2787/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:41,656 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2787/flowpage>
+None
+2022-06-14 10:24:41,826 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2625/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:41,940 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2625/flowpage>
+None
+2022-06-14 10:24:42,105 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2687/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:42,222 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2687/flowpage>
+None
+2022-06-14 10:24:42,399 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2746/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:42,507 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2746/flowpage>
+None
+2022-06-14 10:24:42,951 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2688/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:43,061 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2688/flowpage>
+None
+2022-06-14 10:24:43,136 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2679/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:43,252 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2679/flowpage>
+None
+2022-06-14 10:24:43,408 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2767/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:43,518 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2767/flowpage>
+None
+2022-06-14 10:24:43,783 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2696/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:43,891 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2696/flowpage>
+None
+2022-06-14 10:24:44,287 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2678/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:44,392 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2678/flowpage>
+None
+2022-06-14 10:24:44,510 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2704/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:44,624 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2704/flowpage>
+None
+2022-06-14 10:24:44,949 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2660/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:45,061 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2660/flowpage>
+None
+2022-06-14 10:24:45,239 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2698/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:45,357 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2698/flowpage>
+None
+2022-06-14 10:24:45,627 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2691/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:45,733 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2691/flowpage>
+None
+2022-06-14 10:24:46,099 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2694/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:46,211 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2694/flowpage>
+None
+2022-06-14 10:24:46,521 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2695/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:46,635 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2695/flowpage>
+None
+2022-06-14 10:24:46,854 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2697/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:46,961 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2697/flowpage>
+None
+2022-06-14 10:24:47,287 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2794/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:47,398 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2794/flowpage>
+None
+2022-06-14 10:24:47,595 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2686/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:47,712 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2686/flowpage>
+None
+2022-06-14 10:24:48,037 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2828/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:48,148 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2828/flowpage>
+None
+2022-06-14 10:24:48,462 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2840/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:48,572 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2840/flowpage>
+None
+2022-06-14 10:24:48,700 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2866/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:48,804 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2866/flowpage>
+None
+2022-06-14 10:24:49,050 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2872/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:49,162 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2872/flowpage>
+None
+2022-06-14 10:24:49,311 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2879/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:49,425 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2879/flowpage>
+None
+2022-06-14 10:24:49,675 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2876/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:49,783 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2876/flowpage>
+None
+2022-06-14 10:24:50,117 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2877/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:50,235 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2877/flowpage>
+None
+2022-06-14 10:24:50,475 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2882/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:50,591 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2882/flowpage>
+None
+2022-06-14 10:24:50,890 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2889/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:51,009 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2889/flowpage>
+None
+2022-06-14 10:24:51,326 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2885/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:51,442 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2885/flowpage>
+None
+2022-06-14 10:24:51,598 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2891/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:51,705 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2891/flowpage>
+None
+2022-06-14 10:24:52,051 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2880/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:52,156 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2880/flowpage>
+None
+2022-06-14 10:24:52,404 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2886/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:52,515 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2886/flowpage>
+None
+2022-06-14 10:24:52,665 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2903/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:52,775 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2903/flowpage>
+None
+2022-06-14 10:24:53,076 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2905/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:53,182 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2905/flowpage>
+None
+2022-06-14 10:24:53,497 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2897/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:53,618 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2897/flowpage>
+None
+2022-06-14 10:24:53,903 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2893/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:54,023 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2893/flowpage>
+None
+2022-06-14 10:24:54,316 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2902/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:54,430 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2902/flowpage>
+None
+2022-06-14 10:24:54,765 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2896/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=D&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:54,882 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2896/flowpage>
+None
+2022-06-14 10:24:55,292 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2428/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:55,411 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2428/flowpage>
+None
+2022-06-14 10:24:55,714 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2480/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:55,831 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2480/flowpage>
+None
+2022-06-14 10:24:55,872 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2553/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:55,991 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2553/flowpage>
+None
+2022-06-14 10:24:56,289 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2369/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:56,409 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2369/flowpage>
+None
+2022-06-14 10:24:56,699 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2593/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:56,816 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2593/flowpage>
+None
+2022-06-14 10:24:57,455 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2675/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:57,563 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2675/flowpage>
+None
+2022-06-14 10:24:57,566 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2559/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:57,676 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2559/flowpage>
+None
+2022-06-14 10:24:57,954 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2624/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:58,063 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2624/flowpage>
+None
+2022-06-14 10:24:58,343 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2624/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:58,453 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2624/flowpage>
+None
+2022-06-14 10:24:58,716 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2674/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:58,826 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2674/flowpage>
+None
+2022-06-14 10:24:58,946 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2676/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:59,059 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2676/flowpage>
+None
+2022-06-14 10:24:59,354 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2675/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:59,467 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2675/flowpage>
+None
+2022-06-14 10:24:59,676 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2553/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A03&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:24:59,793 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2553/flowpage>
+None
+2022-06-14 10:25:00,053 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2515/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:00,163 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2515/flowpage>
+None
+2022-06-14 10:25:00,300 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2528/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:00,412 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2528/flowpage>
+None
+2022-06-14 10:25:00,783 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2530/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:00,895 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2530/flowpage>
+None
+2022-06-14 10:25:01,108 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2538/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:01,223 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2538/flowpage>
+None
+2022-06-14 10:25:01,365 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2546/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:01,472 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2546/flowpage>
+None
+2022-06-14 10:25:01,786 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2552/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:01,905 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2552/flowpage>
+None
+2022-06-14 10:25:01,990 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2562/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:02,155 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2562/flowpage>
+None
+2022-06-14 10:25:02,355 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2549/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:02,474 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2549/flowpage>
+None
+2022-06-14 10:25:02,817 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2566/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:02,924 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2566/flowpage>
+None
+2022-06-14 10:25:03,393 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2591/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:03,500 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2591/flowpage>
+None
+2022-06-14 10:25:03,722 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2631/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:03,827 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2631/flowpage>
+None
+2022-06-14 10:25:04,110 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2609/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:04,217 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2609/flowpage>
+None
+2022-06-14 10:25:04,562 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2622/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:04,682 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2622/flowpage>
+None
+2022-06-14 10:25:04,917 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2649/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:05,026 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2649/flowpage>
+None
+2022-06-14 10:25:05,273 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2555/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:05,382 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2555/flowpage>
+None
+2022-06-14 10:25:05,781 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2712/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:05,893 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2712/flowpage>
+None
+2022-06-14 10:25:06,105 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2672/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:06,216 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2672/flowpage>
+None
+2022-06-14 10:25:06,506 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2700/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:06,620 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2700/flowpage>
+None
+2022-06-14 10:25:06,744 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2709/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:06,856 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2709/flowpage>
+None
+2022-06-14 10:25:07,270 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2631/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:07,386 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2631/flowpage>
+None
+2022-06-14 10:25:07,635 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2622/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:07,756 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2622/flowpage>
+None
+2022-06-14 10:25:07,965 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2649/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:08,085 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2649/flowpage>
+None
+2022-06-14 10:25:08,457 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2631/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:08,567 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2631/flowpage>
+None
+2022-06-14 10:25:08,726 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2555/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:08,832 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2555/flowpage>
+None
+2022-06-14 10:25:09,309 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2700/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:09,426 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2700/flowpage>
+None
+2022-06-14 10:25:09,486 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2672/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:09,598 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2672/flowpage>
+None
+2022-06-14 10:25:09,932 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2709/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:10,048 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2709/flowpage>
+None
+2022-06-14 10:25:10,329 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2712/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:10,438 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2712/flowpage>
+None
+2022-06-14 10:25:10,456 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2712/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:10,577 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2712/flowpage>
+None
+2022-06-14 10:25:10,861 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2733/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:10,979 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2733/flowpage>
+None
+2022-06-14 10:25:11,348 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2770/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:11,459 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2770/flowpage>
+None
+2022-06-14 10:25:11,607 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2777/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:11,723 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2777/flowpage>
+None
+2022-06-14 10:25:11,934 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2800/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:12,054 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2800/flowpage>
+None
+2022-06-14 10:25:12,119 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2800/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A02&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:12,240 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2800/flowpage>
+None
+2022-06-14 10:25:12,570 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2523/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:12,689 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2523/flowpage>
+None
+2022-06-14 10:25:12,953 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2507/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:13,059 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2507/flowpage>
+None
+2022-06-14 10:25:13,262 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2519/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:13,370 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2519/flowpage>
+None
+2022-06-14 10:25:13,695 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2611/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:13,802 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2611/flowpage>
+None
+2022-06-14 10:25:14,242 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2589/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:14,361 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2589/flowpage>
+None
+2022-06-14 10:25:14,435 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2657/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:14,549 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2657/flowpage>
+None
+2022-06-14 10:25:14,788 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2668/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:14,907 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2668/flowpage>
+None
+2022-06-14 10:25:15,134 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2662/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:15,247 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2662/flowpage>
+None
+2022-06-14 10:25:15,444 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2668/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:15,557 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2668/flowpage>
+None
+2022-06-14 10:25:16,049 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2589/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:16,139 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2657/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:16,163 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2589/flowpage>
+None
+2022-06-14 10:25:16,256 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2657/flowpage>
+None
+2022-06-14 10:25:16,605 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2726/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:16,724 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2726/flowpage>
+None
+2022-06-14 10:25:16,987 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2662/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:17,098 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2662/flowpage>
+None
+2022-06-14 10:25:17,345 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2750/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:17,455 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2750/flowpage>
+None
+2022-06-14 10:25:17,698 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2763/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:17,810 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2763/flowpage>
+None
+2022-06-14 10:25:17,952 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/1444/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:18,072 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/1444/flowpage>
+None
+2022-06-14 10:25:18,299 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2811/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:18,413 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2811/flowpage>
+None
+2022-06-14 10:25:18,721 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2807/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:18,837 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2807/flowpage>
+None
+2022-06-14 10:25:18,988 - logstats.py[line:48] - INFO: Crawled 161 pages (at 161 pages/min), scraped 144 items (at 144 items/min)
+2022-06-14 10:25:19,145 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2797/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:19,256 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2797/flowpage>
+None
+2022-06-14 10:25:19,480 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2798/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:19,600 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2798/flowpage>
+None
+2022-06-14 10:25:19,949 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2822/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:20,064 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2822/flowpage>
+None
+2022-06-14 10:25:20,189 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2829/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:20,299 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2829/flowpage>
+None
+2022-06-14 10:25:20,469 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2798/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:20,574 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2798/flowpage>
+None
+2022-06-14 10:25:20,830 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2797/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A99&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:20,947 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2797/flowpage>
+None
+2022-06-14 10:25:21,125 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2478/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:21,239 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2478/flowpage>
+None
+2022-06-14 10:25:21,564 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2677/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:21,673 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2677/flowpage>
+None
+2022-06-14 10:25:21,906 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2633/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:22,018 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2633/flowpage>
+None
+2022-06-14 10:25:22,249 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2720/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:22,359 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2720/flowpage>
+None
+2022-06-14 10:25:22,684 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2710/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:22,790 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2710/flowpage>
+None
+2022-06-14 10:25:23,079 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2671/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:23,195 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2671/flowpage>
+None
+2022-06-14 10:25:23,456 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2711/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:23,569 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2711/flowpage>
+None
+2022-06-14 10:25:23,784 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2692/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:23,893 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2692/flowpage>
+None
+2022-06-14 10:25:24,217 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2734/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:24,336 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2734/flowpage>
+None
+2022-06-14 10:25:24,669 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2681/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:24,786 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2681/flowpage>
+None
+2022-06-14 10:25:25,074 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2433/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:25,192 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2433/flowpage>
+None
+2022-06-14 10:25:25,512 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2718/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:25,624 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2718/flowpage>
+None
+2022-06-14 10:25:25,994 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2360/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:26,107 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2360/flowpage>
+None
+2022-06-14 10:25:26,341 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2586/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:26,449 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2586/flowpage>
+None
+2022-06-14 10:25:26,613 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2693/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:26,727 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2693/flowpage>
+None
+2022-06-14 10:25:27,008 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2580/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:27,118 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2580/flowpage>
+None
+2022-06-14 10:25:27,413 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2766/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:27,522 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2766/flowpage>
+None
+2022-06-14 10:25:27,727 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2737/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:27,848 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2737/flowpage>
+None
+2022-06-14 10:25:28,135 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2599/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:28,252 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2599/flowpage>
+None
+2022-06-14 10:25:28,500 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2432/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:28,612 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2432/flowpage>
+None
+2022-06-14 10:25:28,799 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2702/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:28,908 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2702/flowpage>
+None
+2022-06-14 10:25:29,226 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2175/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:29,344 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2175/flowpage>
+None
+2022-06-14 10:25:29,571 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2521/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:29,687 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2521/flowpage>
+None
+2022-06-14 10:25:29,988 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2743/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:30,106 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2743/flowpage>
+None
+2022-06-14 10:25:30,360 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2333/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:30,475 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2333/flowpage>
+None
+2022-06-14 10:25:30,860 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2756/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:30,972 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2756/flowpage>
+None
+2022-06-14 10:25:31,108 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2764/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:31,222 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2764/flowpage>
+None
+2022-06-14 10:25:31,413 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2684/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:31,529 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2684/flowpage>
+None
+2022-06-14 10:25:31,885 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2619/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:31,998 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2619/flowpage>
+None
+2022-06-14 10:25:32,262 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2776/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:32,370 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2776/flowpage>
+None
+2022-06-14 10:25:32,580 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2653/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:32,698 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2653/flowpage>
+None
+2022-06-14 10:25:32,974 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2511/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:33,087 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2511/flowpage>
+None
+2022-06-14 10:25:33,243 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2685/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:33,353 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2685/flowpage>
+None
+2022-06-14 10:25:33,722 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2778/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:33,836 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2778/flowpage>
+None
+2022-06-14 10:25:34,124 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2620/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:34,238 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2620/flowpage>
+None
+2022-06-14 10:25:34,494 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2775/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:34,610 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2775/flowpage>
+None
+2022-06-14 10:25:34,895 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2626/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:35,002 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2626/flowpage>
+None
+2022-06-14 10:25:35,328 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2834/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=2&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:35,488 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2834/flowpage>
+None
+2022-06-14 10:25:35,756 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2812/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:35,864 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2812/flowpage>
+None
+2022-06-14 10:25:36,055 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2531/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:36,175 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2531/flowpage>
+None
+2022-06-14 10:25:36,548 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2832/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:36,659 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2832/flowpage>
+None
+2022-06-14 10:25:37,003 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2833/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:37,112 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2833/flowpage>
+None
+2022-06-14 10:25:37,425 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2028/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:37,536 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2028/flowpage>
+None
+2022-06-14 10:25:37,866 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2161/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:37,982 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2161/flowpage>
+None
+2022-06-14 10:25:38,209 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2834/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:38,324 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2834/flowpage>
+None
+2022-06-14 10:25:38,652 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2655/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:38,772 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2655/flowpage>
+None
+2022-06-14 10:25:38,986 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2825/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:39,101 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2825/flowpage>
+None
+2022-06-14 10:25:39,364 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2614/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:39,473 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2614/flowpage>
+None
+2022-06-14 10:25:39,859 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2837/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:39,974 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2837/flowpage>
+None
+2022-06-14 10:25:40,514 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2845/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:40,625 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2845/flowpage>
+None
+2022-06-14 10:25:40,710 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2847/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:40,832 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2847/flowpage>
+None
+2022-06-14 10:25:41,011 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2841/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:41,126 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2841/flowpage>
+None
+2022-06-14 10:25:41,440 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2852/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:41,546 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2852/flowpage>
+None
+2022-06-14 10:25:41,873 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2856/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:41,993 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2856/flowpage>
+None
+2022-06-14 10:25:42,342 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2587/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:42,457 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2587/flowpage>
+None
+2022-06-14 10:25:42,656 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2077/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:42,770 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2077/flowpage>
+None
+2022-06-14 10:25:42,986 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2851/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=2&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:43,092 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2851/flowpage>
+None
+2022-06-14 10:25:43,433 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2858/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:43,541 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2858/flowpage>
+None
+2022-06-14 10:25:43,827 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/1875/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:43,946 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/1875/flowpage>
+None
+2022-06-14 10:25:44,192 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2613/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:44,306 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2613/flowpage>
+None
+2022-06-14 10:25:44,442 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2576/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:44,556 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2576/flowpage>
+None
+2022-06-14 10:25:44,948 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2560/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:45,059 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2560/flowpage>
+None
+2022-06-14 10:25:45,379 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2817/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:45,492 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2817/flowpage>
+None
+2022-06-14 10:25:45,806 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2875/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:45,915 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2875/flowpage>
+None
+2022-06-14 10:25:46,047 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2693/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:46,159 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2693/flowpage>
+None
+2022-06-14 10:25:46,414 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2883/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:46,533 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2883/flowpage>
+None
+2022-06-14 10:25:46,771 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2803/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:46,888 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2803/flowpage>
+None
+2022-06-14 10:25:47,270 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2652/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:47,384 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2652/flowpage>
+None
+2022-06-14 10:25:47,605 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2895/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:47,709 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2895/flowpage>
+None
+2022-06-14 10:25:47,840 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2890/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:47,958 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2890/flowpage>
+None
+2022-06-14 10:25:48,233 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2884/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:48,345 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2884/flowpage>
+None
+2022-06-14 10:25:48,709 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2898/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:48,814 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2898/flowpage>
+None
+2022-06-14 10:25:48,916 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2900/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:49,031 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2900/flowpage>
+None
+2022-06-14 10:25:49,312 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2690/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:49,418 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2690/flowpage>
+None
+2022-06-14 10:25:49,766 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2887/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:49,890 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2887/flowpage>
+None
+2022-06-14 10:25:50,183 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://ggzyjy.tianshui.gov.cn/f/tenderproject/2692/flowpage> (referer: http://ggzyjy.tianshui.gov.cn/f/trade/annogoods/getAnnoItem?pageNo=1&pageSize=20&prjpropertycode=A01&annogoodstype=1&type=&tabType=&isFrame=&annogoodsname=)
+2022-06-14 10:25:50,292 - scraper.py[line:275] - DEBUG: Scraped from <200 http://ggzyjy.tianshui.gov.cn/f/tenderproject/2692/flowpage>
+None
+2022-06-14 10:25:50,293 - engine.py[line:358] - INFO: Closing spider (finished)
+2022-06-14 10:25:50,294 - statscollectors.py[line:46] - INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 147642,
+ 'downloader/request_count': 243,
+ 'downloader/request_method_count/GET': 243,
+ 'downloader/response_bytes': 2237857,
+ 'downloader/response_count': 243,
+ 'downloader/response_status_count/200': 243,
+ 'elapsed_time_seconds': 91.317467,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 14, 2, 25, 50, 293513),
+ 'httpcompression/response_bytes': 8311099,
+ 'httpcompression/response_count': 243,
+ 'item_scraped_count': 226,
+ 'log_count/DEBUG': 470,
+ 'log_count/INFO': 11,
+ 'request_depth_max': 1,
+ 'response_received_count': 243,
+ 'scheduler/dequeued': 243,
+ 'scheduler/dequeued/memory': 243,
+ 'scheduler/enqueued': 243,
+ 'scheduler/enqueued/memory': 243,
+ 'start_time': datetime.datetime(2022, 6, 14, 2, 24, 18, 976046)}
+2022-06-14 10:25:50,294 - engine.py[line:385] - INFO: Spider closed (finished)

@@ -1,0 +1,245 @@
+2022-06-15 16:58:57,151 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['Qinghai.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-15 16:58:57,153 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-15 16:58:57,155 - middleware.py[line:51] - INFO: Enabled item pipelines:
+['Qinghai.pipelines.QinghaiPipeline']
+2022-06-15 16:58:57,155 - engine.py[line:313] - INFO: Spider opened
+2022-06-15 16:58:57,358 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-15 16:58:57,359 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-15 16:58:57,930 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxzfcg/index.jhtml> (referer: None)
+2022-06-15 16:58:58,294 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxzfcg/index_2.jhtml> (referer: None)
+2022-06-15 16:58:58,627 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxzfcg/index_3.jhtml> (referer: None)
+2022-06-15 16:58:59,048 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxzfcg/index_4.jhtml> (referer: None)
+2022-06-15 16:58:59,410 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxzfcg/index_5.jhtml> (referer: None)
+2022-06-15 16:58:59,866 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jygkgcjs/index.jhtml> (referer: None)
+2022-06-15 16:59:00,101 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jygkgcjs/index_2.jhtml> (referer: None)
+2022-06-15 16:59:00,490 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jygkgcjs/index_3.jhtml> (referer: None)
+2022-06-15 16:59:00,840 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jygkgcjs/index_4.jhtml> (referer: None)
+2022-06-15 16:59:01,045 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jygkgcjs/index_5.jhtml> (referer: None)
+2022-06-15 16:59:01,455 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxcqgk/index.jhtml> (referer: None)
+2022-06-15 16:59:01,956 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxcqgk/index_2.jhtml> (referer: None)
+2022-06-15 16:59:02,235 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxcqgk/index_3.jhtml> (referer: None)
+2022-06-15 16:59:02,646 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxcqgk/index_4.jhtml> (referer: None)
+2022-06-15 16:59:03,043 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxcqgk/index_5.jhtml> (referer: None)
+2022-06-15 16:59:03,532 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzy/index.jhtml> (referer: None)
+2022-06-15 16:59:03,941 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/zfcgzbcgjggg/796519.jhtml> from <GET http://fjggzyjy.cn:80/zfcgzbcgjggg/796519.jhtml>
+2022-06-15 16:59:03,954 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzy/index_2.jhtml> (referer: None)
+2022-06-15 16:59:04,237 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/zfcgzbcgzbgg/796520.jhtml> from <GET http://fjggzyjy.cn:80/zfcgzbcgzbgg/796520.jhtml>
+2022-06-15 16:59:04,540 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/zfcgzbcgzbgg/796530.jhtml> from <GET http://fjggzyjy.cn:80/zfcgzbcgzbgg/796530.jhtml>
+2022-06-15 16:59:04,997 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/zfcgzbcgzbgg/796538.jhtml> from <GET http://fjggzyjy.cn:80/zfcgzbcgzbgg/796538.jhtml>
+2022-06-15 16:59:05,390 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/zfcgzbcgzbgg/796554.jhtml> from <GET http://fjggzyjy.cn:80/zfcgzbcgzbgg/796554.jhtml>
+2022-06-15 16:59:05,779 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsxxhxmhxrgs/796533.jhtml> from <GET http://fjggzyjy.cn:80/gcjsxxhxmhxrgs/796533.jhtml>
+2022-06-15 16:59:06,178 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsjtslgcdyjy/796517.jhtml> from <GET http://fjggzyjy.cn:80/gcjsjtslgcdyjy/796517.jhtml>
+2022-06-15 16:59:06,413 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsjtslgchxrgs/796518.jhtml> from <GET http://fjggzyjy.cn:80/gcjsjtslgchxrgs/796518.jhtml>
+2022-06-15 16:59:06,718 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsxxhxmhxrgs/796531.jhtml> from <GET http://fjggzyjy.cn:80/gcjsxxhxmhxrgs/796531.jhtml>
+2022-06-15 16:59:07,158 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsjtslgcjggs/796540.jhtml> from <GET http://fjggzyjy.cn:80/gcjsjtslgcjggs/796540.jhtml>
+2022-06-15 16:59:07,549 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/cqjycbzlgppl/796549.jhtml> from <GET http://fjggzyjy.cn:80/cqjycbzlgppl/796549.jhtml>
+2022-06-15 16:59:07,882 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/cqjyswzcgppl/796548.jhtml> from <GET http://fjggzyjy.cn:80/cqjyswzcgppl/796548.jhtml>
+2022-06-15 16:59:08,246 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/cqjycbzlgppl/796550.jhtml> from <GET http://fjggzyjy.cn:80/cqjycbzlgppl/796550.jhtml>
+2022-06-15 16:59:08,710 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsxxhxmhxrgs/796532.jhtml> from <GET http://fjggzyjy.cn:80/gcjsxxhxmhxrgs/796532.jhtml>
+2022-06-15 16:59:09,124 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsxxhxmhxrgs/796534.jhtml> from <GET http://fjggzyjy.cn:80/gcjsxxhxmhxrgs/796534.jhtml>
+2022-06-15 16:59:09,715 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/zfcgzbcgjggg/796519.jhtml> (referer: None)
+2022-06-15 16:59:09,824 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/zfcgzbcgjggg/796519.jhtml>
+None
+2022-06-15 16:59:09,983 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/jyxxhjzypwqcjgg/796525.jhtml> from <GET http://fjggzyjy.cn:80/jyxxhjzypwqcjgg/796525.jhtml>
+2022-06-15 16:59:10,480 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/zfcgzbcgzbgg/796520.jhtml> (referer: None)
+2022-06-15 16:59:10,633 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/zfcgzbcgzbgg/796520.jhtml>
+None
+2022-06-15 16:59:10,700 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/zfcgzbcgzbgg/796530.jhtml> (referer: None)
+2022-06-15 16:59:10,811 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/zfcgzbcgzbgg/796530.jhtml>
+None
+2022-06-15 16:59:11,072 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/zfcgzbcgzbgg/796538.jhtml> (referer: None)
+2022-06-15 16:59:11,184 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/zfcgzbcgzbgg/796538.jhtml>
+None
+2022-06-15 16:59:11,417 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/zfcgzbcgzbgg/796554.jhtml> (referer: None)
+2022-06-15 16:59:11,527 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/zfcgzbcgzbgg/796554.jhtml>
+None
+2022-06-15 16:59:11,979 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsxxhxmhxrgs/796533.jhtml> (referer: None)
+2022-06-15 16:59:12,042 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsjtslgcdyjy/796517.jhtml> (referer: None)
+2022-06-15 16:59:12,094 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsxxhxmhxrgs/796533.jhtml>
+None
+2022-06-15 16:59:12,156 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsjtslgcdyjy/796517.jhtml>
+None
+2022-06-15 16:59:12,453 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsjtslgchxrgs/796518.jhtml> (referer: None)
+2022-06-15 16:59:12,570 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsjtslgchxrgs/796518.jhtml>
+None
+2022-06-15 16:59:12,928 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsxxhxmhxrgs/796531.jhtml> (referer: None)
+2022-06-15 16:59:13,041 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsxxhxmhxrgs/796531.jhtml>
+None
+2022-06-15 16:59:13,046 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsjtslgcjggs/796540.jhtml> (referer: None)
+2022-06-15 16:59:13,148 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsjtslgcjggs/796540.jhtml>
+None
+2022-06-15 16:59:13,375 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/cqjycbzlgppl/796549.jhtml> (referer: None)
+2022-06-15 16:59:13,478 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/cqjycbzlgppl/796549.jhtml>
+None
+2022-06-15 16:59:13,586 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/cqjyswzcgppl/796548.jhtml> (referer: None)
+2022-06-15 16:59:13,698 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/cqjyswzcgppl/796548.jhtml>
+None
+2022-06-15 16:59:13,831 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/cqjycbzlgppl/796550.jhtml> (referer: None)
+2022-06-15 16:59:13,934 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/cqjycbzlgppl/796550.jhtml>
+None
+2022-06-15 16:59:14,453 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsxxhxmhxrgs/796532.jhtml> (referer: None)
+2022-06-15 16:59:14,568 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsxxhxmhxrgs/796532.jhtml>
+None
+2022-06-15 16:59:14,938 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsxxhxmhxrgs/796534.jhtml> (referer: None)
+2022-06-15 16:59:15,031 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/jyxxhjzypwqjygg/796521.jhtml> from <GET http://fjggzyjy.cn:80/jyxxhjzypwqjygg/796521.jhtml>
+2022-06-15 16:59:15,053 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsxxhxmhxrgs/796534.jhtml>
+None
+2022-06-15 16:59:15,579 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzypwqcjgg/796525.jhtml> (referer: None)
+2022-06-15 16:59:15,696 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/jyxxhjzypwqcjgg/796525.jhtml>
+None
+2022-06-15 16:59:15,832 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/jyxxhjzypwqjygg/796522.jhtml> from <GET http://fjggzyjy.cn:80/jyxxhjzypwqjygg/796522.jhtml>
+2022-06-15 16:59:16,209 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/jyxxhjzypwqcjgg/796523.jhtml> from <GET http://fjggzyjy.cn:80/jyxxhjzypwqcjgg/796523.jhtml>
+2022-06-15 16:59:16,630 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/jyxxhjzypwqcjgg/796524.jhtml> from <GET http://fjggzyjy.cn:80/jyxxhjzypwqcjgg/796524.jhtml>
+2022-06-15 16:59:17,004 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/jyxxhjzypwqcjgg/796526.jhtml> from <GET http://fjggzyjy.cn:80/jyxxhjzypwqcjgg/796526.jhtml>
+2022-06-15 16:59:17,293 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/jyxxhjzypwqcjgg/796527.jhtml> from <GET http://fjggzyjy.cn:80/jyxxhjzypwqcjgg/796527.jhtml>
+2022-06-15 16:59:17,665 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/jyxxhjzypwqjygg/796541.jhtml> from <GET http://fjggzyjy.cn:80/jyxxhjzypwqjygg/796541.jhtml>
+2022-06-15 16:59:18,052 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/jyxxhjzypwqjygg/796542.jhtml> from <GET http://fjggzyjy.cn:80/jyxxhjzypwqjygg/796542.jhtml>
+2022-06-15 16:59:18,461 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/jyxxhjzypwqjygg/796543.jhtml> from <GET http://fjggzyjy.cn:80/jyxxhjzypwqjygg/796543.jhtml>
+2022-06-15 16:59:18,858 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/jyxxhjzypwqjygg/796544.jhtml> from <GET http://fjggzyjy.cn:80/jyxxhjzypwqjygg/796544.jhtml>
+2022-06-15 16:59:19,303 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/jyxxhjzypwqjygg/796545.jhtml> from <GET http://fjggzyjy.cn:80/jyxxhjzypwqjygg/796545.jhtml>
+2022-06-15 16:59:19,678 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/jyxxhjzypwqcjgg/796546.jhtml> from <GET http://fjggzyjy.cn:80/jyxxhjzypwqcjgg/796546.jhtml>
+2022-06-15 16:59:19,988 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/jyxxhjzypwqcjgg/796547.jhtml> from <GET http://fjggzyjy.cn:80/jyxxhjzypwqcjgg/796547.jhtml>
+2022-06-15 16:59:20,354 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsxxhxmhxrgs/796535.jhtml> from <GET http://fjggzyjy.cn:80/gcjsxxhxmhxrgs/796535.jhtml>
+2022-06-15 16:59:20,772 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsxxhxmhxrgs/796536.jhtml> from <GET http://fjggzyjy.cn:80/gcjsxxhxmhxrgs/796536.jhtml>
+2022-06-15 16:59:21,241 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzypwqjygg/796521.jhtml> (referer: None)
+2022-06-15 16:59:21,352 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/jyxxhjzypwqjygg/796521.jhtml>
+None
+2022-06-15 16:59:21,448 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsjtslgcdyjy/796537.jhtml> from <GET http://fjggzyjy.cn:80/gcjsjtslgcdyjy/796537.jhtml>
+2022-06-15 16:59:21,839 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzypwqjygg/796522.jhtml> (referer: None)
+2022-06-15 16:59:21,950 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/jyxxhjzypwqjygg/796522.jhtml>
+None
+2022-06-15 16:59:22,296 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzypwqcjgg/796523.jhtml> (referer: None)
+2022-06-15 16:59:22,403 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/jyxxhjzypwqcjgg/796523.jhtml>
+None
+2022-06-15 16:59:22,664 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzypwqcjgg/796524.jhtml> (referer: None)
+2022-06-15 16:59:22,780 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/jyxxhjzypwqcjgg/796524.jhtml>
+None
+2022-06-15 16:59:23,100 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzypwqcjgg/796526.jhtml> (referer: None)
+2022-06-15 16:59:23,206 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/jyxxhjzypwqcjgg/796526.jhtml>
+None
+2022-06-15 16:59:23,484 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzypwqcjgg/796527.jhtml> (referer: None)
+2022-06-15 16:59:23,598 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/jyxxhjzypwqcjgg/796527.jhtml>
+None
+2022-06-15 16:59:23,738 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzypwqjygg/796541.jhtml> (referer: None)
+2022-06-15 16:59:23,844 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/jyxxhjzypwqjygg/796541.jhtml>
+None
+2022-06-15 16:59:24,090 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzypwqjygg/796542.jhtml> (referer: None)
+2022-06-15 16:59:24,202 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/jyxxhjzypwqjygg/796542.jhtml>
+None
+2022-06-15 16:59:24,472 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzypwqjygg/796543.jhtml> (referer: None)
+2022-06-15 16:59:24,582 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/jyxxhjzypwqjygg/796543.jhtml>
+None
+2022-06-15 16:59:24,943 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzypwqjygg/796544.jhtml> (referer: None)
+2022-06-15 16:59:25,054 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/jyxxhjzypwqjygg/796544.jhtml>
+None
+2022-06-15 16:59:25,326 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzypwqjygg/796545.jhtml> (referer: None)
+2022-06-15 16:59:25,433 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/jyxxhjzypwqjygg/796545.jhtml>
+None
+2022-06-15 16:59:25,835 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzypwqcjgg/796546.jhtml> (referer: None)
+2022-06-15 16:59:25,953 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/jyxxhjzypwqcjgg/796546.jhtml>
+None
+2022-06-15 16:59:26,200 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzypwqcjgg/796547.jhtml> (referer: None)
+2022-06-15 16:59:26,311 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/jyxxhjzypwqcjgg/796547.jhtml>
+None
+2022-06-15 16:59:27,104 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsyggchxrgs/796539.jhtml> from <GET http://fjggzyjy.cn:80/gcjsyggchxrgs/796539.jhtml>
+2022-06-15 16:59:27,778 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsjtslgcjggs/796552.jhtml> from <GET http://fjggzyjy.cn:80/gcjsjtslgcjggs/796552.jhtml>
+2022-06-15 16:59:28,031 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsjtslgcbctz/796559.jhtml> from <GET http://fjggzyjy.cn:80/gcjsjtslgcbctz/796559.jhtml>
+2022-06-15 16:59:28,380 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsxxhxmjggg/796571.jhtml> from <GET http://fjggzyjy.cn:80/gcjsxxhxmjggg/796571.jhtml>
+2022-06-15 16:59:28,829 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsyggcbctz/796573.jhtml> from <GET http://fjggzyjy.cn:80/gcjsyggcbctz/796573.jhtml>
+2022-06-15 16:59:29,027 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/gcjsxxhxmhxrgs/796574.jhtml> from <GET http://fjggzyjy.cn:80/gcjsxxhxmhxrgs/796574.jhtml>
+2022-06-15 16:59:29,457 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/zfcgzbcgzbgg/796553.jhtml> from <GET http://fjggzyjy.cn:80/zfcgzbcgzbgg/796553.jhtml>
+2022-06-15 16:59:29,502 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsjtslgcdyjy/796537.jhtml> (referer: None)
+2022-06-15 16:59:29,616 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsjtslgcdyjy/796537.jhtml>
+None
+2022-06-15 16:59:29,899 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/zfcgzbcgjggg/796555.jhtml> from <GET http://fjggzyjy.cn:80/zfcgzbcgjggg/796555.jhtml>
+2022-06-15 16:59:30,053 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsxxhxmhxrgs/796536.jhtml> (referer: None)
+2022-06-15 16:59:30,165 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsxxhxmhxrgs/796536.jhtml>
+None
+2022-06-15 16:59:30,178 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsxxhxmhxrgs/796535.jhtml> (referer: None)
+2022-06-15 16:59:30,178 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/zfcgzbcgzbgg/796556.jhtml> from <GET http://fjggzyjy.cn:80/zfcgzbcgzbgg/796556.jhtml>
+2022-06-15 16:59:30,292 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsxxhxmhxrgs/796535.jhtml>
+None
+2022-06-15 16:59:30,569 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/zfcgzbcgzbgg/796557.jhtml> from <GET http://fjggzyjy.cn:80/zfcgzbcgzbgg/796557.jhtml>
+2022-06-15 16:59:31,538 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzy/index_3.jhtml> (referer: None)
+2022-06-15 16:59:31,823 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzy/index_4.jhtml> (referer: None)
+2022-06-15 16:59:33,280 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsjtslgcbctz/796559.jhtml> (referer: None)
+2022-06-15 16:59:33,395 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsjtslgcbctz/796559.jhtml>
+None
+2022-06-15 16:59:33,981 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsjtslgcjggs/796552.jhtml> (referer: None)
+2022-06-15 16:59:34,064 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsyggchxrgs/796539.jhtml> (referer: None)
+2022-06-15 16:59:34,086 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsjtslgcjggs/796552.jhtml>
+None
+2022-06-15 16:59:34,114 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsxxhxmjggg/796571.jhtml> (referer: None)
+2022-06-15 16:59:34,130 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsyggcbctz/796573.jhtml> (referer: None)
+2022-06-15 16:59:34,176 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsyggchxrgs/796539.jhtml>
+None
+2022-06-15 16:59:34,218 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsxxhxmjggg/796571.jhtml>
+None
+2022-06-15 16:59:34,221 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxhjzy/index_5.jhtml> (referer: None)
+2022-06-15 16:59:34,238 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsyggcbctz/796573.jhtml>
+None
+2022-06-15 16:59:34,286 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/gcjsxxhxmhxrgs/796574.jhtml> (referer: None)
+2022-06-15 16:59:34,395 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/gcjsxxhxmhxrgs/796574.jhtml>
+None
+2022-06-15 16:59:34,641 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/zfcgzbcgzbgg/796553.jhtml> (referer: None)
+2022-06-15 16:59:34,755 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/zfcgzbcgzbgg/796553.jhtml>
+None
+2022-06-15 16:59:35,268 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxylyp/index.jhtml> (referer: None)
+2022-06-15 16:59:35,427 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/zfcgzbcgjggg/796555.jhtml> (referer: None)
+2022-06-15 16:59:35,540 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/zfcgzbcgjggg/796555.jhtml>
+None
+2022-06-15 16:59:35,991 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxother/index.jhtml> (referer: None)
+2022-06-15 16:59:36,084 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/zfcgzbcgzbgg/796556.jhtml> (referer: None)
+2022-06-15 16:59:36,193 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/zfcgzbcgzbgg/796556.jhtml>
+None
+2022-06-15 16:59:36,741 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxother/index_2.jhtml> (referer: None)
+2022-06-15 16:59:36,836 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/zfcgzbcgzbgg/796557.jhtml> (referer: None)
+2022-06-15 16:59:36,949 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/zfcgzbcgzbgg/796557.jhtml>
+None
+2022-06-15 16:59:37,407 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxother/index_3.jhtml> (referer: None)
+2022-06-15 16:59:37,846 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxother/index_4.jhtml> (referer: None)
+2022-06-15 16:59:37,989 - redirect.py[line:55] - DEBUG: Redirecting (301) to <GET https://fjggzyjy.cn/jyxxotherqtzbcg/796528.jhtml> from <GET http://fjggzyjy.cn:80/jyxxotherqtzbcg/796528.jhtml>
+2022-06-15 16:59:38,017 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxother/index_5.jhtml> (referer: None)
+2022-06-15 16:59:38,582 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://fjggzyjy.cn/jyxxotherqtzbcg/796528.jhtml> (referer: None)
+2022-06-15 16:59:38,693 - scraper.py[line:275] - DEBUG: Scraped from <200 https://fjggzyjy.cn/jyxxotherqtzbcg/796528.jhtml>
+None
+2022-06-15 16:59:38,694 - engine.py[line:358] - INFO: Closing spider (finished)
+2022-06-15 16:59:38,695 - statscollectors.py[line:46] - INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 38445,
+ 'downloader/request_count': 112,
+ 'downloader/request_method_count/GET': 112,
+ 'downloader/response_bytes': 3021146,
+ 'downloader/response_count': 112,
+ 'downloader/response_status_count/200': 69,
+ 'downloader/response_status_count/301': 43,
+ 'elapsed_time_seconds': 41.337023,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 15, 8, 59, 38, 695338),
+ 'item_scraped_count': 43,
+ 'log_count/DEBUG': 156,
+ 'log_count/INFO': 10,
+ 'request_depth_max': 1,
+ 'response_received_count': 69,
+ 'scheduler/dequeued': 112,
+ 'scheduler/dequeued/memory': 112,
+ 'scheduler/enqueued': 112,
+ 'scheduler/enqueued/memory': 112,
+ 'start_time': datetime.datetime(2022, 6, 15, 8, 58, 57, 358315)}
+2022-06-15 16:59:38,695 - engine.py[line:385] - INFO: Spider closed (finished)

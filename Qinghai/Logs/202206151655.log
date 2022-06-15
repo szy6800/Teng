@@ -1,0 +1,157 @@
+2022-06-15 16:55:45,007 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['Qinghai.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-15 16:55:45,010 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-15 16:55:45,012 - middleware.py[line:51] - INFO: Enabled item pipelines:
+['Qinghai.pipelines.QinghaiPipeline']
+2022-06-15 16:55:45,012 - engine.py[line:313] - INFO: Spider opened
+2022-06-15 16:55:45,215 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-15 16:55:45,216 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-15 16:55:45,648 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhaobiao?page=1> (referer: None)
+2022-06-15 16:55:46,044 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhaobiao?page=2> (referer: None)
+2022-06-15 16:55:46,392 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiao?page=1> (referer: None)
+2022-06-15 16:55:46,836 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiao?page=2> (referer: None)
+2022-06-15 16:55:47,161 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zbdetail/5224> (referer: https://www.chinabrr.com/zhaobiao?page=1)
+2022-06-15 16:55:47,276 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zbdetail/5224>
+None
+2022-06-15 16:55:47,591 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zbdetail/5225> (referer: https://www.chinabrr.com/zhaobiao?page=1)
+2022-06-15 16:55:47,700 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zbdetail/5225>
+None
+2022-06-15 16:55:47,915 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zbdetail/5226> (referer: https://www.chinabrr.com/zhaobiao?page=1)
+2022-06-15 16:55:48,017 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zbdetail/5226>
+None
+2022-06-15 16:55:48,278 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zbdetail/5227> (referer: https://www.chinabrr.com/zhaobiao?page=1)
+2022-06-15 16:55:48,380 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zbdetail/5227>
+None
+2022-06-15 16:55:48,836 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zbdetail/5229> (referer: https://www.chinabrr.com/zhaobiao?page=1)
+2022-06-15 16:55:48,942 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zbdetail/5229>
+None
+2022-06-15 16:55:48,945 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zbdetail/5228> (referer: https://www.chinabrr.com/zhaobiao?page=1)
+2022-06-15 16:55:49,052 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zbdetail/5228>
+None
+2022-06-15 16:55:49,164 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zbdetail/5230> (referer: https://www.chinabrr.com/zhaobiao?page=1)
+2022-06-15 16:55:49,273 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zbdetail/5230>
+None
+2022-06-15 16:55:49,630 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zbdetail/5231> (referer: https://www.chinabrr.com/zhaobiao?page=1)
+2022-06-15 16:55:49,739 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zbdetail/5231>
+None
+2022-06-15 16:55:49,942 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zbdetail/5232> (referer: https://www.chinabrr.com/zhaobiao?page=1)
+2022-06-15 16:55:50,050 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zbdetail/5232>
+None
+2022-06-15 16:55:50,339 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zbdetail/5233> (referer: https://www.chinabrr.com/zhaobiao?page=1)
+2022-06-15 16:55:50,454 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zbdetail/5233>
+None
+2022-06-15 16:55:50,705 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zbdetail/5235> (referer: https://www.chinabrr.com/zhaobiao?page=1)
+2022-06-15 16:55:50,813 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zbdetail/5235>
+None
+2022-06-15 16:55:50,924 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zbdetail/5234> (referer: https://www.chinabrr.com/zhaobiao?page=1)
+2022-06-15 16:55:51,033 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zbdetail/5234>
+None
+2022-06-15 16:55:51,333 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zbdetail/5236> (referer: https://www.chinabrr.com/zhaobiao?page=1)
+2022-06-15 16:55:51,441 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zbdetail/5236>
+None
+2022-06-15 16:55:51,719 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zbdetail/5237> (referer: https://www.chinabrr.com/zhaobiao?page=1)
+2022-06-15 16:55:51,835 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zbdetail/5237>
+None
+2022-06-15 16:55:52,041 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3846> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:52,148 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3846>
+None
+2022-06-15 16:55:52,458 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3847> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:52,574 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3847>
+None
+2022-06-15 16:55:52,791 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3843> (referer: https://www.chinabrr.com/zhongbiao?page=2)
+2022-06-15 16:55:52,906 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3843>
+None
+2022-06-15 16:55:53,212 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3844> (referer: https://www.chinabrr.com/zhongbiao?page=2)
+2022-06-15 16:55:53,355 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3844>
+None
+2022-06-15 16:55:53,632 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3845> (referer: https://www.chinabrr.com/zhongbiao?page=2)
+2022-06-15 16:55:53,742 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3845>
+None
+2022-06-15 16:55:54,060 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3848> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:54,169 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3848>
+None
+2022-06-15 16:55:54,376 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3849> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:54,484 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3849>
+None
+2022-06-15 16:55:54,823 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3852> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:54,939 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3852>
+None
+2022-06-15 16:55:55,123 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3850> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:55,239 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3850>
+None
+2022-06-15 16:55:55,583 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3851> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:55,699 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3851>
+None
+2022-06-15 16:55:55,927 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3853> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:56,030 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3853>
+None
+2022-06-15 16:55:56,169 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3854> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:56,282 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3854>
+None
+2022-06-15 16:55:56,425 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3855> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:56,535 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3855>
+None
+2022-06-15 16:55:56,787 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3856> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:56,897 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3856>
+None
+2022-06-15 16:55:57,192 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3857> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:57,307 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3857>
+None
+2022-06-15 16:55:57,565 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3858> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:57,674 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3858>
+None
+2022-06-15 16:55:57,908 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3859> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:58,020 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3859>
+None
+2022-06-15 16:55:58,156 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3860> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:58,271 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3860>
+None
+2022-06-15 16:55:58,471 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3861> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:58,584 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3861>
+None
+2022-06-15 16:55:58,892 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3862> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:59,005 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3862>
+None
+2022-06-15 16:55:59,201 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.chinabrr.com/zhongbiaodetail/3863> (referer: https://www.chinabrr.com/zhongbiao?page=1)
+2022-06-15 16:55:59,317 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.chinabrr.com/zhongbiaodetail/3863>
+None
+2022-06-15 16:55:59,318 - engine.py[line:358] - INFO: Closing spider (finished)
+2022-06-15 16:55:59,319 - statscollectors.py[line:46] - INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 32590,
+ 'downloader/request_count': 39,
+ 'downloader/request_method_count/GET': 39,
+ 'downloader/response_bytes': 386301,
+ 'downloader/response_count': 39,
+ 'downloader/response_status_count/200': 39,
+ 'elapsed_time_seconds': 14.104526,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 15, 8, 55, 59, 319604),
+ 'httpcompression/response_bytes': 1771439,
+ 'httpcompression/response_count': 39,
+ 'item_scraped_count': 35,
+ 'log_count/DEBUG': 75,
+ 'log_count/INFO': 10,
+ 'request_depth_max': 1,
+ 'response_received_count': 39,
+ 'scheduler/dequeued': 39,
+ 'scheduler/dequeued/memory': 39,
+ 'scheduler/enqueued': 39,
+ 'scheduler/enqueued/memory': 39,
+ 'start_time': datetime.datetime(2022, 6, 15, 8, 55, 45, 215078)}
+2022-06-15 16:55:59,319 - engine.py[line:385] - INFO: Spider closed (finished)

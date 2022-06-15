@@ -1,0 +1,60 @@
+2022-06-13 19:19:52,339 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['Qinghai.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-13 19:19:52,354 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-13 19:19:52,354 - middleware.py[line:51] - INFO: Enabled item pipelines:
+[]
+2022-06-13 19:19:52,354 - engine.py[line:313] - INFO: Spider opened
+2022-06-13 19:19:52,558 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-13 19:19:52,558 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-13 19:19:52,637 - engine.py[line:291] - DEBUG: Crawled (404) <GET http://www.gsei.com.cn/html/1337/list-1.html> (referer: None)
+2022-06-13 19:19:52,747 - httperror.py[line:53] - INFO: Ignoring response <404 http://www.gsei.com.cn/html/1337/list-1.html>: HTTP status code is not handled or not allowed
+2022-06-13 19:19:52,985 - engine.py[line:291] - DEBUG: Crawled (404) <GET http://www.gsei.com.cn/html/1336/list-1.html> (referer: None)
+2022-06-13 19:19:53,092 - httperror.py[line:53] - INFO: Ignoring response <404 http://www.gsei.com.cn/html/1336/list-1.html>: HTTP status code is not handled or not allowed
+2022-06-13 19:19:53,328 - engine.py[line:291] - DEBUG: Crawled (404) <GET http://www.gsei.com.cn/html/1663/list-1.html> (referer: None)
+2022-06-13 19:19:53,437 - httperror.py[line:53] - INFO: Ignoring response <404 http://www.gsei.com.cn/html/1663/list-1.html>: HTTP status code is not handled or not allowed
+2022-06-13 19:19:53,704 - engine.py[line:291] - DEBUG: Crawled (404) <GET http://www.gsei.com.cn/html/1662/list-1.html> (referer: None)
+2022-06-13 19:19:53,830 - httperror.py[line:53] - INFO: Ignoring response <404 http://www.gsei.com.cn/html/1662/list-1.html>: HTTP status code is not handled or not allowed
+2022-06-13 19:19:54,080 - engine.py[line:291] - DEBUG: Crawled (404) <GET http://www.gsei.com.cn/html/1164/list-1.html> (referer: None)
+2022-06-13 19:19:54,190 - httperror.py[line:53] - INFO: Ignoring response <404 http://www.gsei.com.cn/html/1164/list-1.html>: HTTP status code is not handled or not allowed
+2022-06-13 19:19:54,395 - engine.py[line:291] - DEBUG: Crawled (404) <GET http://www.gsei.com.cn/html/1167/list-1.html> (referer: None)
+2022-06-13 19:19:54,505 - httperror.py[line:53] - INFO: Ignoring response <404 http://www.gsei.com.cn/html/1167/list-1.html>: HTTP status code is not handled or not allowed
+2022-06-13 19:19:54,505 - engine.py[line:358] - INFO: Closing spider (finished)
+2022-06-13 19:19:54,505 - statscollectors.py[line:46] - INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 2071,
+ 'downloader/request_count': 6,
+ 'downloader/request_method_count/GET': 6,
+ 'downloader/response_bytes': 1980,
+ 'downloader/response_count': 6,
+ 'downloader/response_status_count/404': 6,
+ 'elapsed_time_seconds': 1.946196,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 13, 11, 19, 54, 505107),
+ 'httpcompression/response_bytes': 3384,
+ 'httpcompression/response_count': 6,
+ 'httperror/response_ignored_count': 6,
+ 'httperror/response_ignored_status_count/404': 6,
+ 'log_count/DEBUG': 7,
+ 'log_count/INFO': 16,
+ 'response_received_count': 6,
+ 'scheduler/dequeued': 6,
+ 'scheduler/dequeued/memory': 6,
+ 'scheduler/enqueued': 6,
+ 'scheduler/enqueued/memory': 6,
+ 'start_time': datetime.datetime(2022, 6, 13, 11, 19, 52, 558911)}
+2022-06-13 19:19:54,505 - engine.py[line:385] - INFO: Spider closed (finished)

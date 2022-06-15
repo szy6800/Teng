@@ -31,7 +31,7 @@ class BjchySpider(scrapy.Spider):
             cate = each["cate"]
             pages = each["pages"]
             for p in range(pages):
-                # p = f"_{p+1}" if p else ""
+                p = f"_{p+1}" if p else ""
                 url = f"http://ggzyjy.bjchy.gov.cn/cyggzy/search.jspx?q=%25E6%258B%259B%25E6%25A0%2587%25E5%2585%25AC%25E5%2591%258A###"
                 yield scrapy.Request(url=url, callback=self.parse,dont_filter=True)
 

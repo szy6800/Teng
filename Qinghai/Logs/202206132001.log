@@ -1,0 +1,8 @@
+2022-06-13 20:01:55,968 - _legacy.py[line:147] - CRITICAL: Unhandled error in Deferred:
+2022-06-13 20:01:55,968 - _legacy.py[line:147] - CRITICAL: 
+Traceback (most recent call last):
+  File "D:\project\venv\lib\site-packages\twisted\internet\defer.py", line 1660, in _inlineCallbacks
+    result = current_context.run(gen.send, result)
+  File "D:\project\venv\lib\site-packages\scrapy\crawler.py", line 103, in crawl
+    start_requests = iter(self.spider.start_requests())
+TypeError: 'NoneType' object is not iterable

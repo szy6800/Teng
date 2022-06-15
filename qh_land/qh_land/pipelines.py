@@ -56,10 +56,8 @@ class QhLandPipeline:
         print('error------', reason)
 
     def insert(self, cursor, item):
-
         # 唯一id查询 执行sql语句
         cursor.execute(self.query_sql.format(item['uid']))
-
         # 查看这个数据是否存在,不存在就插入
         if cursor.fetchone():
             print(f"标题 {item['pro_name']} ==== {item['uid']} 已存在！！！")

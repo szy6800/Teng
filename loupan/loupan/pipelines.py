@@ -92,6 +92,5 @@ class LoupanPipeline(object):
                 item['crawler_time'],
                 item['link'],
                 item['covers_area']
-
             ))
             print(f"新增楼盘==== {item['arch_id']} ======{item['arch_name']}")

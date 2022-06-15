@@ -1,0 +1,96 @@
+2022-06-13 17:23:38,076 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'boss.middlewares.BossDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-13 17:23:38,079 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-13 17:23:38,079 - middleware.py[line:51] - INFO: Enabled item pipelines:
+[]
+2022-06-13 17:23:38,080 - engine.py[line:313] - INFO: Spider opened
+2022-06-13 17:23:38,369 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-13 17:23:38,370 - middlewares.py[line:120] - INFO: Spider opened: jishu1
+2022-06-13 17:23:38,371 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-13 17:23:38,702 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.zhipin.com/c100010000-p100101/?page=1> (referer: https://www.zhipin.com/web/common/security-check.html?seed=bs7hP1NEd6YrLZhfXM5djk9eD3huPlGSByaRGOTbBJQ%3D&name=a8d239c0&ts=1655111921897&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=)
+2022-06-13 17:23:38,828 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/2fff3aae246a9d451Xd6292_F1tR.html', 'job_titles': 'Java开发工程师', 'job_area': '北京·海淀区·圆明园', 'salary': '11-17K', 'job_welfare': '定期体检，五险一金，餐补，员工旅游，补充医疗保险，节日福利，加班补助，交通补助，年终奖，零食下午茶，带薪年假', 'company_url': 'https://www.zhipin.com/gongsi/e27cf82b7f4715eb1nJ40t29FFM~.html'}
+2022-06-13 17:23:38,829 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/9344394e5e24e1711XZ539q0F1pR.html', 'job_titles': 'Java开发工程师', 'job_area': '北京·朝阳区·朝阳门', 'salary': '18-24K', 'job_welfare': '带薪年假，节日福利，零食下午茶，定期体检，加班补助，免费班车，员工旅游，年终奖，五险一金', 'company_url': 'https://www.zhipin.com/gongsi/ad3f7fd677db5f381nx-2NU~.html'}
+2022-06-13 17:23:38,829 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/36aa63cf3631f8b71XZz39S-FlRR.html', 'job_titles': 'Java开发工程师(风控方向)', 'job_area': '北京', 'salary': '25-40K·14薪', 'job_welfare': '加班补助，通讯补贴，五险一金，员工旅游，餐补，年终奖，交通补助，节日福利，免费班车，带薪年假', 'company_url': 'javascript:;'}
+2022-06-13 17:23:38,829 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/d23665ba059af4ab1XR43Nq-FFJX.html', 'job_titles': 'Java开发工程师', 'job_area': '北京·大兴区·亦庄', 'salary': '12-18K', 'job_welfare': '带薪年假，餐补，年终奖，五险一金，定期体检，节日福利，股票期权', 'company_url': 'https://www.zhipin.com/gongsi/d1b712b99135aebd1H172tW-.html'}
+2022-06-13 17:23:38,830 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/3abb024ce6b5b9411XZ90tW9FlZR.html', 'job_titles': 'java开发（餐补+年终）', 'job_area': '北京·朝阳区·朝青', 'salary': '15-22K', 'job_welfare': '五险一金，补充医疗保险', 'company_url': 'https://www.zhipin.com/gongsi/57516d195c7b21a21nd92dq0E1Q~.html'}
+2022-06-13 17:23:38,830 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/dc996f46e7d2a2fb1XZz3NW0F1VQ.html', 'job_titles': '软件产品研发经理（yang企 福利好）', 'job_area': '北京', 'salary': '25-40K·16薪', 'job_welfare': '节日福利，休息时间，年终奖，定期体检，餐补，带薪年假，五险一金，加班补助，员工旅游，交通补助，住房补贴', 'company_url': 'javascript:;'}
+2022-06-13 17:23:38,830 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/1c0286d3b2f303921XR_3di4E1JS.html', 'job_titles': 'Java开发工程师', 'job_area': '北京·朝阳区·高碑店', 'salary': '13-25K·13薪', 'job_welfare': '补充医疗保险，五险一金，股票期权，零食下午茶，带薪年假，员工旅游，年终奖，定期体检，节日福利', 'company_url': 'https://www.zhipin.com/gongsi/9e1bceeac44be7361nd80tq6E1U~.html'}
+2022-06-13 17:23:38,830 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/0081be32384ea1d41nJ53ti6FFBV.html', 'job_titles': '高级Java开发工程师', 'job_area': '北京·海淀区·五道口', 'salary': '25-40K·16薪', 'job_welfare': '带薪年假，节日福利，加班补助，免费班车，餐补', 'company_url': 'https://www.zhipin.com/gongsi/e9a19e67cc19cc111nd-2N64FVo~.html'}
+2022-06-13 17:23:38,840 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/af3c5f20b8123fba1XZ43di_FFVR.html', 'job_titles': 'Java开发工程师', 'job_area': '北京·西城区·南礼士路', 'salary': '12-19K', 'job_welfare': '定期体检，通讯补贴，司龄福利假期，节日福利，餐补，免费班车，带薪年假，年终奖，五险一金，补充医疗保险', 'company_url': 'https://www.zhipin.com/gongsi/61b6dea7301a28fa1Xx53dq5.html'}
+2022-06-13 17:23:38,840 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/fb551ec392a012ad1Xd629W8EFZQ.html', 'job_titles': 'Java开发', 'job_area': '北京·朝阳区·国贸', 'salary': '15-20K', 'job_welfare': '加班补助，节日福利，五险一金，带薪年假，餐补，生日会', 'company_url': 'https://www.zhipin.com/gongsi/01019308a92b5af31nxy3ty1Fw~~.html'}
+2022-06-13 17:23:38,840 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/1d671467ceb72f351XZ_39q7FFBR.html', 'job_titles': 'JAVA开发——西二旗内部实施项目', 'job_area': '北京·海淀区·上地', 'salary': '15-19K', 'job_welfare': '五险一金，带薪年假，定期体检，通讯补贴，全勤奖，餐补', 'company_url': 'https://www.zhipin.com/gongsi/b0045d381ce69c711XZ639Q~.html'}
+2022-06-13 17:23:38,840 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/4c61a339c6d9b23a1nB53N-_FVdV.html', 'job_titles': 'JAVA中级工程师', 'job_area': '北京·海淀区·学院路', 'salary': '13-17K', 'job_welfare': '通讯补贴，定期体检，五险一金，年终奖，补充医疗保险，带薪年假，零食下午茶，餐补，节日福利，交通补助', 'company_url': 'https://www.zhipin.com/gongsi/7e43514f7428b34d1nB_09-_GQ~~.html'}
+2022-06-13 17:23:38,841 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/8d7b4d11859ae5201XZ53tq9GVZV.html', 'job_titles': '搜狐-焦点 Java开发工程师-北京', 'job_area': '北京·海淀区·中关村', 'salary': '26-30K·16薪', 'job_welfare': '股票期权，全勤奖，免费班车，节日福利，带薪年假，五险一金，员工旅游，年终奖，定期体检', 'company_url': 'https://www.zhipin.com/gongsi/41a613f6544a537e1nZy2Ng~.html'}
+2022-06-13 17:23:38,841 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/0b78db4cbfb40a7f1XZ_3tu5GVpV.html', 'job_titles': 'Java开发工程师', 'job_area': '北京·朝阳区·朝阳门', 'salary': '11-17K', 'job_welfare': '股票期权，年终奖，五险一金，节日福利，定期体检，带薪年假，员工旅游，零食下午茶', 'company_url': 'https://www.zhipin.com/gongsi/ab440d38b28c40071HZ72t-1FA~~.html'}
+2022-06-13 17:23:38,841 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/f3e3d6c31dbe3d551XRz29S-E1RR.html', 'job_titles': 'Java', 'job_area': '北京·西城区·宣武门', 'salary': '12-20K', 'job_welfare': '餐补，加班补助，五险一金，定期体检，节日福利，年终奖，通讯补贴，交通补助，带薪年假，补充医疗保险，零食下午茶，员工旅游', 'company_url': 'https://www.zhipin.com/gongsi/0a8820ca425d22de1nB63Nm8EFY~.html'}
+2022-06-13 17:23:38,855 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/6f048913f72ce9271XZ63dm_FVpQ.html', 'job_titles': 'Java开发工程师（大客户部）', 'job_area': '北京·西城区·车公庄', 'salary': '12-24K', 'job_welfare': '定期体检，团建活动，五险一金，零食下午茶，交通补助，带薪年假，节日福利，免费班车，加班补助', 'company_url': 'https://www.zhipin.com/gongsi/867dad38d96404220nJy2w~~.html'}
+2022-06-13 17:23:38,856 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/1733afb6db87396e1XZ729W_EVJQ.html', 'job_titles': 'Java开发工程师(金融经验)', 'job_area': '北京·西城区·动物园', 'salary': '17-26K·13薪', 'job_welfare': '定期体检，通讯补贴，餐补，五险一金，交通补助，加班补助，节日福利，年终奖，带薪年假，补充医疗保险，员工旅游', 'company_url': 'https://www.zhipin.com/gongsi/d74ea7466a2cbdc83nB43ts~.html'}
+2022-06-13 17:23:38,856 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/51e16ca6b05541591nZ83t65ElZQ.html', 'job_titles': '中级Java开发工程师', 'job_area': '北京', 'salary': '11-20K·13薪', 'job_welfare': '餐补，人才引进，年终奖，通讯补贴，加班补助，带薪年假，包吃，补充医疗保险，优秀员工奖，交通补助，节日福利，五险一金，零食下午茶，定期体检', 'company_url': 'https://www.zhipin.com/gongsi/2687e6b9f878cdd303B-39u0.html'}
+2022-06-13 17:23:38,856 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/0f6844edddddac231XZ-3Ny_ElVV.html', 'job_titles': 'Java开发工程师-升哲', 'job_area': '北京·朝阳区·花家地', 'salary': '17-24K', 'job_welfare': '交通补助，年终奖，带薪年假，餐补，补充医疗保险，五险一金，通讯补贴，定期体检，朝九晚六', 'company_url': 'https://www.zhipin.com/gongsi/154d3009897becf01n1-2928FA~~.html'}
+2022-06-13 17:23:38,856 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/a6ff3c72e9c4261d1XZ92tq0FldQ.html', 'job_titles': '高级Java开发工程师', 'job_area': '北京·昌平区·龙泽', 'salary': '15-22K', 'job_welfare': '免费班车，补充医疗保险，餐补，股票期权，员工旅游，交通补助，节日福利，零食下午茶，五险一金，年终奖', 'company_url': 'https://www.zhipin.com/gongsi/c8311034740eee121nVz09S7E1U~.html'}
+2022-06-13 17:23:38,857 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/190f67bd9061e8301XR63924FVRR.html', 'job_titles': '中级Java工程师', 'job_area': '北京·丰台区·科技园区', 'salary': '17-22K', 'job_welfare': '节日福利，补充医疗保险，年终奖，五险一金，带薪年假，零食下午茶，定期体检，股票期权，员工旅游', 'company_url': 'https://www.zhipin.com/gongsi/1d0b8fb389f1e12b1XR_2Nw~.html'}
+2022-06-13 17:23:38,857 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/eea32ea869da31221XV92t24ElZR.html', 'job_titles': '中级Java开发工程师', 'job_area': '北京·海淀区·西二旗', 'salary': '16-20K', 'job_welfare': '餐补，通讯补贴，娱乐健身，年终奖，零食下午茶，五险一金，补充医疗保险，交通补助，住房补贴，免费班车，加班补助，定期体检，节日福利，带薪年假，员工旅游', 'company_url': 'https://www.zhipin.com/gongsi/ccf081a09490e4191nVz09u8.html'}
+2022-06-13 17:23:38,871 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/4c256c084dfd18a11XV83dq_FltW.html', 'job_titles': '银行核心java开发工程师/架构师（北京）', 'job_area': '北京·丰台区·右安门', 'salary': '15-30K', 'job_welfare': '五险一金', 'company_url': 'https://www.zhipin.com/gongsi/b43e9afee3596e9b1Xd60tu6.html'}
+2022-06-13 17:23:38,872 - scraper.py[line:275] - DEBUG: Scraped from <200 https://www.zhipin.com/c100010000-p100101/?page=1>
+{'big_type': '技术', 'small_type': 'Java', 'small_code': '100101', 'job_urls': 'https://www.zhipin.com/job_detail/1257e6c20d7348f01nN_09W-GFpW.html', 'job_titles': 'Java高级开发工程师', 'job_area': '北京·海淀区·定慧寺', 'salary': '18-25K', 'job_welfare': '节日福利，带薪年假，定期体检，五险一金', 'company_url': 'https://www.zhipin.com/gongsi/9d2b8a8a9e3788041nx92dW6FFU~.html'}
+2022-06-13 17:23:38,874 - engine.py[line:358] - INFO: Closing spider (finished)
+2022-06-13 17:23:38,874 - statscollectors.py[line:46] - INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3475,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 34770,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.505114,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 13, 9, 23, 38, 874700),
+ 'httpcompression/response_bytes': 231449,
+ 'httpcompression/response_count': 1,
+ 'item_scraped_count': 24,
+ 'log_count/DEBUG': 26,
+ 'log_count/INFO': 11,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2022, 6, 13, 9, 23, 38, 369586)}
+2022-06-13 17:23:38,874 - engine.py[line:385] - INFO: Spider closed (finished)

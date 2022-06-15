@@ -81,7 +81,7 @@ class CdxctzSpider(scrapy.Spider):
         item['update_time'] = ''
         item['deleted'] = ''
 
-        item['province'] = ''
+        item['province'] = '四川|成都'
         item['base'] = ''
         if '26' in item['link']:
             item['type'] = '招标公告'

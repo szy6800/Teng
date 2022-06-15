@@ -1,0 +1,52 @@
+2022-06-13 11:27:45,176 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'boss.middlewares.BossDownloaderMiddleware',
+ 'boss.middlewares.RandomIPMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-13 11:27:45,179 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-13 11:27:45,180 - middleware.py[line:51] - INFO: Enabled item pipelines:
+[]
+2022-06-13 11:27:45,180 - engine.py[line:313] - INFO: Spider opened
+2022-06-13 11:27:45,499 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-13 11:27:45,499 - middlewares.py[line:120] - INFO: Spider opened: jishu1
+2022-06-13 11:27:45,500 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6024
+2022-06-13 11:27:45,501 - middlewares.py[line:168] - INFO: 使用代理[42.57.148.87:4267]访问[https://www.zhipin.com/c100010000-p100101/?page=2]
+2022-06-13 11:27:45,832 - redirect.py[line:55] - DEBUG: Redirecting (302) to <GET https://www.zhipin.com/web/common/security-check.html?seed=b%2BeGUOX4Wg%2BGHZ2OvekYJqWgvyNBr42EENajCuK49UY%3D&name=a8d239c0&ts=1655090865450&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=> from <GET https://www.zhipin.com/c100010000-p100101/?page=2>
+2022-06-13 11:27:45,832 - middlewares.py[line:168] - INFO: 使用代理[123.158.99.245:4224]访问[https://www.zhipin.com/web/common/security-check.html?seed=b%2BeGUOX4Wg%2BGHZ2OvekYJqWgvyNBr42EENajCuK49UY%3D&name=a8d239c0&ts=1655090865450&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=]
+2022-06-13 11:27:46,287 - engine.py[line:291] - DEBUG: Crawled (200) <GET https://www.zhipin.com/web/common/security-check.html?seed=b%2BeGUOX4Wg%2BGHZ2OvekYJqWgvyNBr42EENajCuK49UY%3D&name=a8d239c0&ts=1655090865450&callbackUrl=%2Fc100010000-p100101%2F%3Fpage%3D2&srcReferer=> (referer: None)
+2022-06-13 11:27:46,419 - engine.py[line:358] - INFO: Closing spider (finished)
+2022-06-13 11:27:46,419 - statscollectors.py[line:46] - INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 6597,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 4046,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 0.920206,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 13, 3, 27, 46, 419640),
+ 'httpcompression/response_bytes': 9582,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 3,
+ 'log_count/INFO': 13,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2022, 6, 13, 3, 27, 45, 499434)}
+2022-06-13 11:27:46,419 - engine.py[line:385] - INFO: Spider closed (finished)

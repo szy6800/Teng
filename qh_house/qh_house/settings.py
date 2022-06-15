@@ -52,7 +52,7 @@ DOWNLOAD_DELAY = 0.2
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'qh_house.middlewares.RandomUserAgentMiddleware': 543,
-   'qh_house.middlewares.IPProxyDownloadMiddleware': 542,
+   # 'qh_house.middlewares.IPProxyDownloadMiddleware': 542,
 }
 
 # Enable or disable extensions
@@ -64,8 +64,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   # 'qh_house.pipelines.QhHousePipeline': 300,
-   'qh_house.pipelines.QhbuildingPipeline': 300,
+   'qh_house.pipelines.QhHousePipeline': 300,
+   # 'qh_house.pipelines.QhbuildingPipeline': 300,
    # 'qh_house.pipelines.QhfloorPipeline': 300,
 }
 

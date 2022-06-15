@@ -78,7 +78,7 @@ class BzggzyjySpider(scrapy.Spider):
         item['update_time'] = ''
         item['deleted'] = ''
         # 省 份
-        item['province'] = ''
+        item['province'] = '山东|滨州'
         # 基础
         item['base'] = ''
         item['type'] = '招标公告'

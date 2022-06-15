@@ -1,0 +1,172 @@
+2022-06-14 10:10:40,018 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['Qinghai.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-14 10:10:40,021 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-14 10:10:40,023 - middleware.py[line:51] - INFO: Enabled item pipelines:
+['Qinghai.pipelines.QinghaiPipeline']
+2022-06-14 10:10:40,023 - engine.py[line:313] - INFO: Spider opened
+2022-06-14 10:10:40,244 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-14 10:10:40,245 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-14 10:10:40,511 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbgg/index.html> (referer: None)
+2022-06-14 10:10:40,785 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zhongbgg/index.html> (referer: None)
+2022-06-14 10:10:41,129 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/index.html> (referer: None)
+2022-06-14 10:10:41,405 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/index_2.html> (referer: None)
+2022-06-14 10:10:41,821 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/index_3.html> (referer: None)
+2022-06-14 10:10:42,068 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/index_4.html> (referer: None)
+2022-06-14 10:10:42,471 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/index_5.html> (referer: None)
+2022-06-14 10:10:42,916 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/index.html> (referer: None)
+2022-06-14 10:10:43,200 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/index_2.html> (referer: None)
+2022-06-14 10:10:43,474 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/index_3.html> (referer: None)
+2022-06-14 10:10:43,931 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/index_4.html> (referer: None)
+2022-06-14 10:10:44,298 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/index_5.html> (referer: None)
+2022-06-14 10:10:44,688 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/mfgg/index.html> (referer: None)
+2022-06-14 10:10:45,129 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/mfgg/index_2.html> (referer: None)
+2022-06-14 10:10:45,536 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/mfgg/index_3.html> (referer: None)
+2022-06-14 10:10:45,815 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/mfgg/index_4.html> (referer: None)
+2022-06-14 10:10:46,199 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/mfgg/index_5.html> (referer: None)
+2022-06-14 10:10:46,617 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/mfgg/index_6.html> (referer: None)
+2022-06-14 10:10:47,037 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/mfgg/index_7.html> (referer: None)
+2022-06-14 10:10:47,438 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668664.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:47,547 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668664.php>
+None
+2022-06-14 10:10:47,856 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668665.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:47,964 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668665.php>
+None
+2022-06-14 10:10:48,105 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668666.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:48,211 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668666.php>
+None
+2022-06-14 10:10:48,502 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668669.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:48,615 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668669.php>
+None
+2022-06-14 10:10:48,842 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668696.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:48,956 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668696.php>
+None
+2022-06-14 10:10:49,472 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668667.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:49,577 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668667.php>
+None
+2022-06-14 10:10:49,773 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668675.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:49,887 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668675.php>
+None
+2022-06-14 10:10:50,221 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668676.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:50,334 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668676.php>
+None
+2022-06-14 10:10:50,550 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668677.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:50,659 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668677.php>
+None
+2022-06-14 10:10:50,862 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668678.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:50,969 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668678.php>
+None
+2022-06-14 10:10:51,293 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668687.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:51,403 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668687.php>
+None
+2022-06-14 10:10:51,696 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668688.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:51,805 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668688.php>
+None
+2022-06-14 10:10:51,977 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668710.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:52,086 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668710.php>
+None
+2022-06-14 10:10:52,211 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668711.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:52,321 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668711.php>
+None
+2022-06-14 10:10:52,611 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668712.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:52,723 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668712.php>
+None
+2022-06-14 10:10:53,068 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668713.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:53,176 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668713.php>
+None
+2022-06-14 10:10:53,575 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668739.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:53,686 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668739.php>
+None
+2022-06-14 10:10:53,877 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668751.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:53,997 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668751.php>
+None
+2022-06-14 10:10:54,122 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668765.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:54,231 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668765.php>
+None
+2022-06-14 10:10:54,409 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668785.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:54,527 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668785.php>
+None
+2022-06-14 10:10:54,855 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/zbyg/202206/7668787.php> (referer: http://www.zgazxxw.com/zbpd/zbyg/index.html)
+2022-06-14 10:10:54,961 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/zbyg/202206/7668787.php>
+None
+2022-06-14 10:10:55,214 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668697.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:55,333 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668697.php>
+None
+2022-06-14 10:10:55,514 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668698.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:55,629 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668698.php>
+None
+2022-06-14 10:10:55,970 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668699.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:56,078 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668699.php>
+None
+2022-06-14 10:10:56,329 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668700.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:56,436 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668700.php>
+None
+2022-06-14 10:10:56,726 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668725.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:56,836 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668725.php>
+None
+2022-06-14 10:10:57,084 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668726.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:57,194 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668726.php>
+None
+2022-06-14 10:10:57,437 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668727.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:57,552 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668727.php>
+None
+2022-06-14 10:10:57,862 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668728.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:57,971 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668728.php>
+None
+2022-06-14 10:10:58,204 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668729.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:58,312 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668729.php>
+None
+2022-06-14 10:10:58,522 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668754.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:58,639 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668754.php>
+None
+2022-06-14 10:10:58,958 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668782.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:59,072 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668782.php>
+None
+2022-06-14 10:10:59,304 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668783.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:59,415 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668783.php>
+None
+2022-06-14 10:10:59,558 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/bggg/202206/7668784.php> (referer: http://www.zgazxxw.com/zbpd/bggg/index.html)
+2022-06-14 10:10:59,665 - scraper.py[line:275] - DEBUG: Scraped from <200 http://www.zgazxxw.com/zbpd/bggg/202206/7668784.php>
+None
+2022-06-14 10:10:59,917 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/mfgg/index_8.html> (referer: None)
+2022-06-14 10:11:00,313 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/mfgg/index_9.html> (referer: None)
+2022-06-14 10:11:00,762 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://www.zgazxxw.com/zbpd/mfgg/index_10.html> (referer: None)
+2022-06-14 10:11:00,873 - engine.py[line:358] - INFO: Closing spider (finished)
+2022-06-14 10:11:00,874 - statscollectors.py[line:46] - INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 19299,
+ 'downloader/request_count': 56,
+ 'downloader/request_method_count/GET': 56,
+ 'downloader/response_bytes': 555054,
+ 'downloader/response_count': 56,
+ 'downloader/response_status_count/200': 56,
+ 'elapsed_time_seconds': 20.628366,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 14, 2, 11, 0, 873231),
+ 'httpcompression/response_bytes': 3399290,
+ 'httpcompression/response_count': 56,
+ 'item_scraped_count': 34,
+ 'log_count/DEBUG': 91,
+ 'log_count/INFO': 10,
+ 'request_depth_max': 1,
+ 'response_received_count': 56,
+ 'scheduler/dequeued': 56,
+ 'scheduler/dequeued/memory': 56,
+ 'scheduler/enqueued': 56,
+ 'scheduler/enqueued/memory': 56,
+ 'start_time': datetime.datetime(2022, 6, 14, 2, 10, 40, 244865)}
+2022-06-14 10:11:00,874 - engine.py[line:385] - INFO: Spider closed (finished)

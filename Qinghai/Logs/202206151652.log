@@ -1,0 +1,233 @@
+2022-06-15 16:52:40,760 - middleware.py[line:51] - INFO: Enabled downloader middlewares:
+['Qinghai.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-15 16:52:40,763 - middleware.py[line:51] - INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-15 16:52:40,765 - middleware.py[line:51] - INFO: Enabled item pipelines:
+['Qinghai.pipelines.QinghaiPipeline']
+2022-06-15 16:52:40,765 - engine.py[line:313] - INFO: Spider opened
+2022-06-15 16:52:40,965 - logstats.py[line:48] - INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-15 16:52:40,966 - telnet.py[line:67] - INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-15 16:52:41,557 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1> (referer: None)
+2022-06-15 16:52:41,888 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1> (referer: None)
+2022-06-15 16:52:42,158 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2> (referer: None)
+2022-06-15 16:52:42,972 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=12&pn=1> (referer: None)
+2022-06-15 16:52:43,066 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=12&pn=2> (referer: None)
+2022-06-15 16:52:43,535 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=10&pn=2> (referer: None)
+2022-06-15 16:52:43,554 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78277.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:52:43,663 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78277.do>
+None
+2022-06-15 16:52:43,812 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78280.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:52:43,929 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78280.do>
+None
+2022-06-15 16:52:44,157 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78279.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:52:44,273 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78279.do>
+None
+2022-06-15 16:52:44,525 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78284.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:52:44,633 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78284.do>
+None
+2022-06-15 16:52:44,740 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=10&pn=1> (referer: None)
+2022-06-15 16:52:44,828 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78288.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:52:44,931 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78288.do>
+None
+2022-06-15 16:52:45,261 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78292.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:52:45,374 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78292.do>
+None
+2022-06-15 16:52:45,630 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78295.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:52:45,740 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78295.do>
+None
+2022-06-15 16:52:46,014 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78296.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:52:46,118 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78296.do>
+None
+2022-06-15 16:52:46,408 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78303.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:52:46,512 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78303.do>
+None
+2022-06-15 16:52:46,820 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78313.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:52:46,938 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78313.do>
+None
+2022-06-15 16:52:47,195 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78314.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:52:47,312 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78314.do>
+None
+2022-06-15 16:52:47,612 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78285.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:52:47,720 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78285.do>
+None
+2022-06-15 16:52:48,069 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78216.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:48,186 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78216.do>
+None
+2022-06-15 16:52:48,239 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78220.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:48,343 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78220.do>
+None
+2022-06-15 16:52:48,690 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78228.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:48,807 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78228.do>
+None
+2022-06-15 16:52:49,043 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78229.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:49,153 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78229.do>
+None
+2022-06-15 16:52:49,501 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78241.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:49,609 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78241.do>
+None
+2022-06-15 16:52:49,896 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78242.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:50,000 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78242.do>
+None
+2022-06-15 16:52:50,304 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78248.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:50,412 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78248.do>
+None
+2022-06-15 16:52:50,747 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78249.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:50,855 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78249.do>
+None
+2022-06-15 16:52:51,187 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78250.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:51,297 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78250.do>
+None
+2022-06-15 16:52:51,624 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78251.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:51,781 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78251.do>
+None
+2022-06-15 16:52:52,088 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78252.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:52,202 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78252.do>
+None
+2022-06-15 16:52:52,487 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78263.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:52,593 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78263.do>
+None
+2022-06-15 16:52:52,817 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78265.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:52,932 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78265.do>
+None
+2022-06-15 16:52:53,063 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78267.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:53,169 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78267.do>
+None
+2022-06-15 16:52:53,493 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78268.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:53,610 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78268.do>
+None
+2022-06-15 16:52:53,857 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78269.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:53,971 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78269.do>
+None
+2022-06-15 16:52:54,243 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78270.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:54,361 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78270.do>
+None
+2022-06-15 16:52:54,689 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78271.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:54,800 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78271.do>
+None
+2022-06-15 16:52:55,147 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78273.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:55,264 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78273.do>
+None
+2022-06-15 16:52:55,457 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78275.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=2)
+2022-06-15 16:52:55,562 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78275.do>
+None
+2022-06-15 16:52:55,721 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78286.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:52:55,825 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78286.do>
+None
+2022-06-15 16:52:56,215 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78287.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:52:56,325 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78287.do>
+None
+2022-06-15 16:52:56,536 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78297.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:52:56,650 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78297.do>
+None
+2022-06-15 16:52:56,983 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78301.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:52:57,087 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78301.do>
+None
+2022-06-15 16:52:57,360 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78302.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:52:57,464 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78302.do>
+None
+2022-06-15 16:52:57,756 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78304.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:52:57,873 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78304.do>
+None
+2022-06-15 16:52:58,190 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78305.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:52:58,297 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78305.do>
+None
+2022-06-15 16:52:58,513 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78306.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:52:58,625 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78306.do>
+None
+2022-06-15 16:52:58,842 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78311.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:52:58,952 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78311.do>
+None
+2022-06-15 16:52:59,311 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78312.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:52:59,423 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78312.do>
+None
+2022-06-15 16:52:59,766 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78318.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:52:59,874 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78318.do>
+None
+2022-06-15 16:53:00,029 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78320.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:53:00,138 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78320.do>
+None
+2022-06-15 16:53:00,314 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78330.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:53:00,418 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78330.do>
+None
+2022-06-15 16:53:00,583 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78331.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:53:00,699 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78331.do>
+None
+2022-06-15 16:53:01,046 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78334.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:53:01,152 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78334.do>
+None
+2022-06-15 16:53:01,490 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78338.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:53:01,599 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78338.do>
+None
+2022-06-15 16:53:01,928 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78339.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:53:02,034 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78339.do>
+None
+2022-06-15 16:53:02,195 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78340.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:53:02,312 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78340.do>
+None
+2022-06-15 16:53:02,628 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78345.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=11&pn=1)
+2022-06-15 16:53:02,733 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78345.do>
+None
+2022-06-15 16:53:02,952 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78315.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:53:03,062 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78315.do>
+None
+2022-06-15 16:53:03,343 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78316.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:53:03,451 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78316.do>
+None
+2022-06-15 16:53:03,684 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78319.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:53:03,794 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78319.do>
+None
+2022-06-15 16:53:04,153 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78325.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:53:04,261 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78325.do>
+None
+2022-06-15 16:53:04,554 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78328.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:53:04,668 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78328.do>
+None
+2022-06-15 16:53:04,998 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78329.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:53:05,108 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78329.do>
+None
+2022-06-15 16:53:05,240 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78332.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:53:05,356 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78332.do>
+None
+2022-06-15 16:53:05,589 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78333.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:53:05,703 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78333.do>
+None
+2022-06-15 16:53:06,007 - engine.py[line:291] - DEBUG: Crawled (200) <GET http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78344.do> (referer: http://cp.aceg.com.cn/webportal/index/bidnotice/list/1.do?cate=1&pn=1)
+2022-06-15 16:53:06,123 - scraper.py[line:275] - DEBUG: Scraped from <200 http://cp.aceg.com.cn:80/webportal/index/bidnotice/show/78344.do>
+None
+2022-06-15 16:53:06,124 - engine.py[line:358] - INFO: Closing spider (finished)
+2022-06-15 16:53:06,124 - statscollectors.py[line:46] - INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 30126,
+ 'downloader/request_count': 67,
+ 'downloader/request_method_count/GET': 67,
+ 'downloader/response_bytes': 648237,
+ 'downloader/response_count': 67,
+ 'downloader/response_status_count/200': 67,
+ 'elapsed_time_seconds': 25.159354,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 15, 8, 53, 6, 124583),
+ 'item_scraped_count': 60,
+ 'log_count/DEBUG': 128,
+ 'log_count/INFO': 10,
+ 'request_depth_max': 1,
+ 'response_received_count': 67,
+ 'scheduler/dequeued': 67,
+ 'scheduler/dequeued/memory': 67,
+ 'scheduler/enqueued': 67,
+ 'scheduler/enqueued/memory': 67,
+ 'start_time': datetime.datetime(2022, 6, 15, 8, 52, 40, 965229)}
+2022-06-15 16:53:06,125 - engine.py[line:385] - INFO: Spider closed (finished)
