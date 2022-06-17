@@ -21,12 +21,12 @@ class ZmzbSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs ):
         super(ZmzbSpider, self).__init__()
         self.cates = [
-            {"cate": "ywgg1gc", "pages": 7},  # 招标公告
-            {"cate": "ywgg1hw", "pages": 7},  # 中标公告
-            {"cate": "ywgg1fw", "pages": 7},  # 中标公告
+            {"cate": "ywgg1gc", "pages": 3},  # 招标公告
+            {"cate": "ywgg1hw", "pages": 3},  # 中标公告
+            {"cate": "ywgg1fw", "pages": 3},  # 中标公告
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=15)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=5)
 
     def start_requests(self):
         for each in self.cates:
@@ -72,7 +72,10 @@ class ZmzbSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="article-content"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # 购买人
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
@@ -85,9 +88,9 @@ class ZmzbSpider(scrapy.Spider):
         # 基础
         item['base'] = ''
 
-        item['type'] = '招标公告'
+        item['type'] = response.xpath('//*[@class="loc-link"]/a[2]/text()').get().strip()
         # 行业
-        item['items'] = ''
+        item['items'] = response.xpath('//*[@class="loc-link"]/a[3]/text()').get().strip()
         # 类型编号
         item['data_source'] = '00171'
         item['end_time'] = ''

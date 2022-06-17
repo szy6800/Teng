@@ -15,7 +15,6 @@ import datetime
 class BjchySpider(scrapy.Spider):
     name = 'bjchy'
     allowed_domains = ['bjchy.gov.cn']
-    start_urls = ['http://bjchy.gov.cn/']
 
     def __init__(self, *args, **kwargs ):
         super(BjchySpider, self).__init__()
@@ -24,16 +23,11 @@ class BjchySpider(scrapy.Spider):
 
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=5)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=10)
 
     def start_requests(self):
-        for each in self.cates:
-            cate = each["cate"]
-            pages = each["pages"]
-            for p in range(pages):
-                p = f"_{p+1}" if p else ""
-                url = f"http://ggzyjy.bjchy.gov.cn/cyggzy/search.jspx?q=%25E6%258B%259B%25E6%25A0%2587%25E5%2585%25AC%25E5%2591%258A###"
-                yield scrapy.Request(url=url, callback=self.parse,dont_filter=True)
+        url = f"http://ggzyjy.bjchy.gov.cn/cyggzy/search.jspx?q=%25E6%258B%259B%25E6%25A0%2587%25E5%2585%25AC%25E5%2591%258A###"
+        yield scrapy.Request(url=url, callback=self.parse,dont_filter=True)
 
     def parse(self, response):
         # print(response.text)
@@ -53,7 +47,9 @@ class BjchySpider(scrapy.Spider):
                 continue
             pub_time = re.findall('\\d{4}.\\d{2}.\\d{2}', pub_time)[0]
             PUBLISH = self.t.datetimes(pub_time)
-            item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
+            item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')
+            # print(item['publish_time'])
+            # 发布时间
             # print(item['publish_time'])
             ctime = self.t.datetimes(item['publish_time'])
             if ctime < self.c_time:
@@ -71,7 +67,10 @@ class BjchySpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@id="content"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''

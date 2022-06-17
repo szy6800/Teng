@@ -52,8 +52,6 @@ class CdxctzSpider(scrapy.Spider):
             item['title'] = title.strip()
             if item['title'] is None:
                 continue
-
-            print(item['link'],item['title'])
             yield scrapy.Request(item['link'], callback=self.parse_info, meta={'item': copy.deepcopy(item)},
                                  dont_filter=True)
 
@@ -74,7 +72,10 @@ class CdxctzSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@id="news_detail1"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''

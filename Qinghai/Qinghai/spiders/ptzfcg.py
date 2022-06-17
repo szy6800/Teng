@@ -22,7 +22,6 @@ class PtzfcgSpider(scrapy.Spider):
         self.cates = [
             {"cate": "zbgg", "pages": 5},  # 招标公告
 
-
         ]
         self.t = Times()
         self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=4)
@@ -76,7 +75,10 @@ class PtzfcgSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="notice-con"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
         item['update_time'] = ''

@@ -35,7 +35,7 @@ class GsTianshuiSpider(scrapy.Spider):
           {"cate": "C", "pages": 2,'types':'2'},  # 招标公告
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=40)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=4)
 
     def start_requests(self):
         for each in self.cates:

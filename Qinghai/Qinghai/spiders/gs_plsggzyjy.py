@@ -30,7 +30,7 @@ class GsPlsggzyjySpider(scrapy.Spider):
         #
         # ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=30)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=5)
 
     def start_requests(self):
         for i in range(1, 5):

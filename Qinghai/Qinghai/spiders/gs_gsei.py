@@ -22,7 +22,7 @@ class GsGgzySpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(GsGgzySpider, self).__init__()
         self.cates = [
-            {"cate": "1337", "pages": 20},  #
+            {"cate": "1337", "pages": 4},  #
 
 
         ]
@@ -76,14 +76,16 @@ class GsGgzySpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="artcon"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
         item['update_time'] = ''
         item['deleted'] = ''
         item['province'] = '甘肃省'
-        item['base'] = ''
         item['base'] = ''
         item['type'] =response.xpath('//*[@class="position5 pull-left"]/a[3]/text()').get()
         item['items'] = ''

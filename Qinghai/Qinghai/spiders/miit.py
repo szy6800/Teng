@@ -78,7 +78,10 @@ class MiitSpider(scrapy.Spider):
         # 前言
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@id="con_con"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # 购买人
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))

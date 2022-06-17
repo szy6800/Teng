@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # @Author : 石张毅
-# @Site : 中煤招标与采购网  http://www.zmzb.com/cms/index.htm
+# @Site :  http://www.qhheart.com/index.php?c=category&id=18
 # @introduce: 招标公告
 
 import scrapy
@@ -51,7 +51,6 @@ class QhheartSpider(scrapy.Spider):
                 continue
             PUBLISH = self.t.datetimes(pub_time)
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
-            print(item['link'], item['publish_time'], item['title'], item['type'])
             ctime = self.t.datetimes(item['publish_time'])
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
@@ -69,7 +68,10 @@ class QhheartSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@id="scon"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # 购买人
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
@@ -78,7 +80,7 @@ class QhheartSpider(scrapy.Spider):
         item['update_time'] = ''
         item['deleted'] = ''
         # 省 份
-        item['province'] = ''
+        item['province'] = '青海省'
         # 基础
         item['base'] = ''
         # 行业

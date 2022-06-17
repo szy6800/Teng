@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # @Author : 石张毅
-# @Site :北京江河润泽工程管理咨询有限公司 https://cg.bnu.edu.cn/sfw_cms/e?page=cms.index
+# @Site :北京江河润泽工程管理咨询有限公司 https://www.chinabrr.com/zhaobiao
 # @introduce:
 
 import scrapy
@@ -73,7 +73,10 @@ class ChinabrrSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="article_txt"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''

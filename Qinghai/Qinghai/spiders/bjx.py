@@ -14,36 +14,30 @@ import datetime
 
 class BjxSpider(scrapy.Spider):
     name = 'bjx'
-    allowed_domains = ['bjx.com']
-    start_urls = ['http://bjx.com/']
 
     def __init__(self, *args, **kwargs ):
         super(BjxSpider, self).__init__()
         self.cates = [
-            {"cate": "zbcg", "pages": 5},  # 招标采购
+            {"cate": "zbcg", "pages": 4},  # 招标采购
 
 
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=5)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=4)
 
     def start_requests(self):
-        for each in self.cates:
-            cate = each["cate"]
-            pages = each["pages"]
-            for p in range(1, pages):
-                p = f"{p}" if p else ""
-                url = f"https://news.bjx.com.cn/list?catid=79&page={p}"
-                yield scrapy.Request(url=url, callback=self.parse,dont_filter=True)
+        for i in range(1,4):
+            url = "https://news.bjx.com.cn/zb/{}/".format(i)
+            yield scrapy.Request(url=url, callback=self.parse,dont_filter=True)
 
     def parse(self, response):
         # print(response.text)
         item = {}
         # 列表页链接和发布时间
-        list_url = response.xpath('//*[@class="list_left_ul"]/li/a/@href').getall()
+        list_url = response.xpath('//*[@class="cc-list-content"]/ul/li/a/@href').getall()
         # print(list_url)
-        titles = response.xpath('//*[@class="list_left_ul"]/li/a/@title').getall()
-        pub_times = response.xpath('//*[@class="list_left_ul"]/li/a/following::span[1]/text()').getall()
+        titles = response.xpath('//*[@class="cc-list-content"]/ul/li/a/@title').getall()
+        pub_times = response.xpath('//*[@class="cc-list-content"]/ul/li/a/following::span[1]/text()').getall()
         # print(titles,pub_times)
         # 循环遍历
         for href, title, pub_time in zip(list_url, titles, pub_times):
@@ -71,7 +65,10 @@ class BjxSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@id="article_cont"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
@@ -79,7 +76,6 @@ class BjxSpider(scrapy.Spider):
         item['deleted'] = ''
         item['province'] = ''
         item['base'] = ''
-
         item['type'] = '招标信息'
         item['items'] = ''
         item['data_source'] = '00127'

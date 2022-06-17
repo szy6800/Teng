@@ -17,7 +17,7 @@ import json
 import re
 
 class GsGnzrmzfSpider(scrapy.Spider):
-    name = 'gs_gnzrmzf'
+    name = 'gs_gnzrmzf1'
 
     def __init__(self, *args, **kwargs):
         super(GsGnzrmzfSpider, self).__init__()

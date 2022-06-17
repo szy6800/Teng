@@ -4,6 +4,8 @@
 # @Site :必联网  http://www.ebnew.com
 # @introduce: 国际招标和国内招标
 import re
+from lxml import etree
+
 import scrapy
 import copy
 from Qinghai.tools.utils import Utils_
@@ -12,6 +14,7 @@ from Qinghai.tools.re_time import Times
 import datetime
 import jsonpath
 import json
+
 
 
 class EbnewSpider(scrapy.Spider):
@@ -96,7 +99,9 @@ class EbnewSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@id="notLogin"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''

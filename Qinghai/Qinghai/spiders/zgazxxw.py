@@ -28,7 +28,7 @@ class ZgazxxwSpider(scrapy.Spider):
 
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=4)
 
     def start_requests(self):
         for each in self.cates:
@@ -58,7 +58,6 @@ class ZgazxxwSpider(scrapy.Spider):
             pub_time = re.findall('\\d{4}-\\d{2}-\\d{2}', pub_time)[0]
             PUBLISH = self.t.datetimes(pub_time)
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
-            print(item['link'], item['publish_time'],item['title'])
             ctime = self.t.datetimes(item['publish_time'])
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
@@ -74,7 +73,10 @@ class ZgazxxwSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="zhengwen"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # 购买人
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))

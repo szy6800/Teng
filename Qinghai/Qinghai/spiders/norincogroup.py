@@ -27,7 +27,7 @@ class NorincogroupSpider(scrapy.Spider):
         self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=15)
 
     def start_requests(self):
-        for i in range(1, 15):
+        for i in range(1, 7):
             url = f'https://bid.norincogroup-ebuy.com/retrieve.do?fl=&hy=&dq=&es=1&keyFlag=&packtype=&packtypeCode=&packtypeValue=&packtypeCodeValue=&typflag=&fbdays=0&esly=&validityPeriodFlag=&flag1=&orderby=1&keyConValue=&keyCon=&fbDateStart=&fbDateEnd=&radio=on&ggyxq_time=2022-03-25+17%3A00%3A00&ggyxq_time=2022-03-24+17%3A00%3A00&ggyxq_time=2022-03-24+15%3A00%3A00&ggyxq_time=2022-03-24+17%3A00%3A00&pageNumber={i}&pageSize=10&sortColumns=undefined'
             yield scrapy.Request(url=url, callback=self.parse, dont_filter=True)
 
@@ -71,7 +71,10 @@ class NorincogroupSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="zbztb_ggcont clearfix"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # 购买人
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))

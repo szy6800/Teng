@@ -68,7 +68,10 @@ class DgsySpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="content_con"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # 购买人
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
@@ -77,12 +80,10 @@ class DgsySpider(scrapy.Spider):
         item['update_time'] = ''
         item['deleted'] = ''
         # 省 份
-        item['province'] = ''
+        item['province'] = '广东|东莞'
         # 基础
         item['base'] = ''
-
-        item['type'] = '招标公告'
-
+        item['type'] = '招采公告、文件'
         # 行业
         item['items'] = ''
         # 类型编号

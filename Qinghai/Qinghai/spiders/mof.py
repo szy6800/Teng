@@ -20,12 +20,12 @@ class MofSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(MofSpider, self).__init__()
         self.cates = [
-            {"cate": "zhongyangzhaobiaogonggao", "pages": 6},  # 招标公告
-            {"cate": "zhongyangzhongbiaogonggao", "pages": 6},  # 中标公告
-            {"cate": "zhongyanggengzhenggonggao", "pages": 6},  # 更正公告
+            {"cate": "zhongyangzhaobiaogonggao", "pages": 2},  # 招标公告
+            {"cate": "zhongyangzhongbiaogonggao", "pages": 2},  # 中标公告
+            {"cate": "zhongyanggengzhenggonggao", "pages": 2},  # 更正公告
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=5)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
 
     def start_requests(self):
         for each in self.cates:
@@ -72,7 +72,10 @@ class MofSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@id="news_detail1"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''

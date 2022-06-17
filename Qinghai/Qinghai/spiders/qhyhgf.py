@@ -55,7 +55,7 @@ class QhyhgfSpider(scrapy.Spider):
         yield scrapy.FormRequest(url=url, formdata=formdata, callback=self.parse)
 
     def parse(self, response):
-        print(response.text)
+        # print(response.text)
         item = {}
         json_text = json.loads(response.text)
         list_url = jsonpath.jsonpath(json_text, "$..LinkUrl")
@@ -72,7 +72,6 @@ class QhyhgfSpider(scrapy.Spider):
                 continue
             PUBLISH = self.t.datetimes(pub_time)
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
-            print(item['link'], item['publish_time'], item['title'])
             ctime = self.t.datetimes(item['publish_time'])
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
@@ -89,7 +88,10 @@ class QhyhgfSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="Section0"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # 购买人
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))

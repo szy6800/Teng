@@ -69,7 +69,10 @@ class ShipoeSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@id="content"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
@@ -77,7 +80,7 @@ class ShipoeSpider(scrapy.Spider):
         item['deleted'] = ''
         item['province'] = ''
         item['base'] = ''
-        item['type'] = ''
+        item['type'] = '招投标'
         item['items'] = ''
         item['data_source'] = '00138'
         item['end_time'] = ''

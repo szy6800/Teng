@@ -141,7 +141,10 @@ class CcgpQhSpider(scrapy.Spider):
             return
         item = response.meta['item']
         # print(response.text)
-        item['content'] = response.text
+        from lxml import etree
+html = etree.HTML(response.text)
+div_data = html.xpath('//*[@id="news_detail1"]')
+item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # print(item)
         time.sleep(1)
         yield item

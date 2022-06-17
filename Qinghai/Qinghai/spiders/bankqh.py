@@ -7,6 +7,9 @@ import re
 
 import scrapy
 import copy
+
+from lxml import etree
+
 from Qinghai.tools.utils import Utils_
 from Qinghai.tools.DB_mysql import *
 from Qinghai.tools.re_time import Times
@@ -21,12 +24,10 @@ class BankqhSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs ):
         super(BankqhSpider, self).__init__()
         self.cates = [
-            {"cate": "zbgg", "pages": 2},  # 重要公告
-
-
+            {"cate": "zbgg", "pages": 3},  # 重要公告
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=8)
 
     def start_requests(self):
         for each in self.cates:
@@ -74,7 +75,9 @@ class BankqhSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@id="news_detail1"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # 购买人
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))

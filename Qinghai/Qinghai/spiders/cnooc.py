@@ -21,14 +21,14 @@ class CnoocSpider(scrapy.Spider):
         super(CnoocSpider, self).__init__()
         self.cates = [
 
-            {"cate": "001001", "pages": 8},  # 招标公告
-            {"cate": "001002", "pages": 8},  # 中标公示
-            {"cate": "001003", "pages": 8},  # 结果公告
-            {"cate": "001004", "pages": 8},  # 非招标公告
+            {"cate": "001001", "pages": 7},  # 招标公告
+            {"cate": "001002", "pages": 7},  # 中标公示
+            {"cate": "001003", "pages": 7},  # 结果公告
+            {"cate": "001004", "pages": 7},  # 非招标公告
 
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=3)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=4)
 
     def start_requests(self):
         for each in self.cates:
@@ -74,7 +74,10 @@ class CnoocSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="article-Content"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # 购买人
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))

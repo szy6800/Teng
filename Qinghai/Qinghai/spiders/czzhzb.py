@@ -44,8 +44,10 @@ class CzzhzbSpider(scrapy.Spider):
         item = {}
         # 列表页链接和发布时间
         list_url = response.xpath('//*[@class="zh_zblist_bk"]//a/@href').getall()
+        serial = response.xpath('//*[@class="zh_zblist_bk"]//tr[position()>1]/td[1]/text()').getall()
         #循环遍历
-        for href in list_url:
+        for href,serial in zip(list_url,serial):
+            item['serial'] = serial
             # print(response.urljoin(href))
             item['link'] = response.urljoin(href.strip())
             # item['title'] = title.strip()
@@ -81,22 +83,23 @@ class CzzhzbSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="zh_news_con"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['purchaser'] = ''
-
-
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
         item['update_time'] = ''
         item['deleted'] = ''
         item['province'] = '江苏|常州'
         item['base'] = ''
-        item['type'] = '招标公告'
+        item['type'] = '招标与采购公告'
         item['items'] = ''
         item['data_source'] = '00144'
         item['end_time'] = ''
         item['status'] = ''
-        item['serial'] = ''
+
 
         yield item
 

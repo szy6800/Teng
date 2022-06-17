@@ -77,6 +77,9 @@ class Qh4yySpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@id="news_detail1"]')
         item['content'] = response.text
         # 购买人
         item['purchaser'] = ''

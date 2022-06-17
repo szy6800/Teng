@@ -56,7 +56,6 @@ class ConchSpider(scrapy.Spider):
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
                 return
-            print(item['link'], item['publish_time'],item['title'])
             yield scrapy.Request(item['link'], callback=self.parse_info, meta={'item': copy.deepcopy(item)},dont_filter=True)
 
     def parse_info(self, response):
@@ -68,13 +67,16 @@ class ConchSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="cont"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
         item['update_time'] = ''
         item['deleted'] = ''
-        item['province'] = ''
+        item['province'] = '安徽省'
         item['base'] = ''
         item['type'] = '信息公示'
         item['items'] = ''

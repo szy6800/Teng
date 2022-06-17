@@ -2,7 +2,7 @@
 
 # @Author : 石张毅
 # @Site :
-# @introduce:
+# @introduce:http://ec.ccccltd.cn/PMS/gysmore.shtml?id=sjN7r9ttBwLI2dpg4DQpQb68XreXjaqknBMygP8dAEQ57TILyRtTnCZX1hIiXHcc1Ra16D6TzZdblRFD/JXcCd5FP7Ek60ksxl9KkyODirY=
 import json
 import re
 
@@ -85,7 +85,10 @@ class CcccltdSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="tab_content"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # 购买人
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
@@ -98,7 +101,7 @@ class CcccltdSpider(scrapy.Spider):
         # 基础
         item['base'] = ''
 
-        item['type'] = '招标公告'
+        item['type'] = response.xpath('//*[@id="subnav"]/span/text()').get()
         # 行业
         item['items'] = ''
         # 类型编号

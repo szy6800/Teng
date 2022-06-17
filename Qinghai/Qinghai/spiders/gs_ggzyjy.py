@@ -28,7 +28,7 @@ class GsGgzyjySpider(scrapy.Spider):
         #
         # ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=5)
 
     def start_requests(self):
         url = "http://ggzyjy.baiyin.gov.cn/ajax/InfoPage_TradeInfomation,App_Web_tradeinfomation.aspx.3db62916.arderj2p.ashx?_method=getTradeDataList&_session=no"

@@ -43,7 +43,7 @@ class FjggzyjySpider(scrapy.Spider):
 
     def parse(self, response):
         # print(response.text)
-        item = {}
+
         # 列表页链接和发布时间
         list_url = response.xpath('//*[@class="list-body"]/li//a/@href').getall()
 
@@ -51,11 +51,11 @@ class FjggzyjySpider(scrapy.Spider):
         pub_times = response.xpath('//*[@class="list-body"]/li//a/following::p[1]/text()').getall()
         #循环遍历
         for href, pub_time in zip(list_url, pub_times):
+            item = {}
             # print(response.urljoin(href))
             item['link'] = response.urljoin(href.strip())
             PUBLISH = self.t.datetimes(pub_time)
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
-            print(item['link'], item['publish_time'])
             ctime = self.t.datetimes(item['publish_time'])
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
@@ -72,7 +72,10 @@ class FjggzyjySpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="body"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''

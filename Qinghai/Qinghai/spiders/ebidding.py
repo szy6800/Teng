@@ -22,12 +22,12 @@ class EbiddingSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs ):
         super(EbiddingSpider, self).__init__()
         self.cates = [
-            {"cate": "ywgg1gc", "pages": 7},  # 招标公告
-            {"cate": "ywgg1hw", "pages": 7},  # 中标公告
-            {"cate": "ywgg1fw", "pages": 7},  # 中标公告
+            {"cate": "002003", "pages": 7},  # 招标公告
+            {"cate": "002002", "pages": 7},  # 中标公告
+            {"cate": "002004", "pages": 7},  # 中标公告
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=15)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=5)
 
     def start_requests(self):
         for each in self.cates:
@@ -35,7 +35,7 @@ class EbiddingSpider(scrapy.Spider):
             pages = each["pages"]
             for p in range(1, pages):
                 # p = f"_{p+1}" if p else ""
-                url = f"https://ebidding.sinopec.com/TPWeb4AAA/showinfo/shgg_more.aspx?categoryNum=002001&Paging=2"
+                url = f"https://ebidding.sinopec.com/TPWeb4AAA/showinfo/shgg_more.aspx?categoryNum={cate}&Paging={p}"
                 yield scrapy.Request(url=url, callback=self.parse,dont_filter=True)
 
     def parse(self, response):
@@ -64,7 +64,7 @@ class EbiddingSpider(scrapy.Spider):
             yield scrapy.Request(item['link'], callback=self.parse_info, meta={'item': copy.deepcopy(item)},dont_filter=True)
 
     @staticmethod
-    def parse_info(self, response):
+    def parse_info(response):
         if response.status != 200:
             return
         item = response.meta['item']
@@ -73,7 +73,10 @@ class EbiddingSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="ewb-article-info"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # 购买人
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
@@ -86,7 +89,7 @@ class EbiddingSpider(scrapy.Spider):
         # 基础
         item['base'] = ''
 
-        item['type'] = '招标公告'
+        item['type'] = response.xpath('//*[@class="ewb-location"]//span/text()').get()
         # 行业
         item['items'] = ''
         # 类型编号

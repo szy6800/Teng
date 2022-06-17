@@ -49,6 +49,7 @@ class EcegSpider(scrapy.Spider):
         # print(titles)
         # 循环遍历
         for href, title, pub_time in zip(list_url,titles, pub_times):
+            href = href.replace('show','content')
             item['link'] = response.urljoin(href)
             item['title'] = title.strip()
             if item['title'] is None:
@@ -72,7 +73,10 @@ class EcegSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@id="content"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
@@ -80,7 +84,7 @@ class EcegSpider(scrapy.Spider):
         item['deleted'] = ''
         item['province'] = '安徽省'
         item['base'] = ''
-        item['type'] = '招标公告'
+        item['type'] = '招标采购'
         item['items'] = ''
         item['data_source'] = '00123'
         item['end_time'] = ''

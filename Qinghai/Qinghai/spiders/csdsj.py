@@ -22,8 +22,6 @@ class CsdsjSpider(scrapy.Spider):
         super(CsdsjSpider, self).__init__()
         self.cates = [
             {"cate": "zbgg", "pages": 1},  # 招标公告
-
-
         ]
         self.t = Times()
         self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=5)
@@ -43,10 +41,8 @@ class CsdsjSpider(scrapy.Spider):
         # 列表页链接和发布时间
         list_url = re.findall('/art/.*?html', response.text)
         # print(list_url)
-
         #循环遍历
         for href in list_url:
-
             # print(response.urljoin(href))
             item['link'] = response.urljoin(href.strip())
             print(item['link'] )
@@ -70,7 +66,10 @@ class CsdsjSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@id="zoom"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # 购买人
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))

@@ -26,7 +26,7 @@ class DfmbiddingSpider(scrapy.Spider):
 
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=5)
 
     def start_requests(self):
         for each in self.cates:
@@ -55,7 +55,7 @@ class DfmbiddingSpider(scrapy.Spider):
                 continue
             PUBLISH = self.t.datetimes(pub_time)
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
-            print(item['publish_time'])
+            # print(item['publish_time'])
             ctime = self.t.datetimes(item['publish_time'])
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
@@ -72,7 +72,10 @@ class DfmbiddingSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="ninfo-con"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
@@ -80,8 +83,8 @@ class DfmbiddingSpider(scrapy.Spider):
         item['deleted'] = ''
         item['province'] = ''
         item['base'] = ''
-        item['type'] = '招标公告'
-        item['items'] = ''
+        item['type'] = response.xpath('//*[@class="loc-link"]/a[last()-1]/text()').get()
+        item['items'] = response.xpath('//*[@class="loc-link"]/a[last()]/text()').get()
         item['data_source'] = '00139'
         item['end_time'] = ''
         item['status'] = ''

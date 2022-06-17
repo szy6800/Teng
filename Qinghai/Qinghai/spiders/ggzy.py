@@ -72,13 +72,16 @@ class GgzySpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@id="commonarticle"]|//*[@class="news-article"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
         item['update_time'] = ''
         item['deleted'] = ''
-        item['province'] = '吉林省'
+        item['province'] = '吉林|白城'
         item['base'] = ''
         item['type'] = '招标公告'
         item['items'] = ''

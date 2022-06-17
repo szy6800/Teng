@@ -20,14 +20,14 @@ class BdebidSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs ):
         super(BdebidSpider, self).__init__()
         self.cates = [
-            {"cate": "003001", "pages": 10},  # 采购公告
-            {"cate": "003002", "pages": 4},  # 变更公告
-            {"cate": "003003", "pages": 8},  # 候选人公示
-            {"cate": "003004", "pages": 8},  # 采购结果公示
+            {"cate": "003001", "pages": 5},  # 采购公告
+            {"cate": "003002", "pages": 5},  # 变更公告
+            {"cate": "003003", "pages": 5},  # 候选人公示
+            {"cate": "003004", "pages": 5},  # 采购结果公示
 
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=3)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
 
     def start_requests(self):
         for each in self.cates:
@@ -77,7 +77,10 @@ class BdebidSpider(scrapy.Spider):
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
         item['intro'] = ''
         item['abs'] = '1'
-        item['content'] = response.text
+        from lxml import etree
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@class="ewb-trade-info"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         item['purchaser'] = ''
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
