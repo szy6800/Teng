@@ -90,7 +90,7 @@ def job():
     print('Collect again after 1 hour!!!!')
 
     end_time = str(datetime.datetime.now()).split('.')[0]  # 采集结束时间
-    print(f"Starting time ===> {start_time}, End time ===> {end_time}")
+    print(f"Starting time 1===> {start_time}, End time ===> {end_time}")
     next_start_time = (start_times + datetime.timedelta(days=1)).strftime('%Y/%m/%d %H:%M:%S')  # 下次采集间隔时间
     print('Next startup time =====>', next_start_time, '\n')
 
