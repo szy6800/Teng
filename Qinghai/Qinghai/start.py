@@ -78,12 +78,9 @@ def job():
     os.system('scrapy crawl zmzb')
 
 
-
     # os.system('scrapy crawl ebnew')
     print('采集已完成>>>>>>>>')
-
     print('collect again after 1 hour!!!!')
-
     end_time = str(datetime.datetime.now()).split('.')[0]  # 采集结束时间
     print(f"starting time ===> {start_time}, end time ===> {end_time}")
     next_start_time = (start_times + datetime.timedelta(days=1)).strftime('%y/%m/%d %h:%m:%s')  # 下次采集间隔时间

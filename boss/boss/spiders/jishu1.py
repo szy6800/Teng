@@ -66,7 +66,7 @@ class Jishu1Spider(scrapy.Spider):
             item['small_type'] = i[2]
             item['small_code'] = i[3]
             url = 'https://www.zhipin.com/c100010000-p{}/?page=2'.format(item['small_code'])
-            yield scrapy.Request(url, callback=self.parse,dont_filter=True,meta={'item':item})
+            yield scrapy.Request(url, callback=self.parse,dont_filter=True,meta={'item':deepcopy(item)})
 
 
     def parse(self, response, **kwargs):
@@ -92,7 +92,7 @@ class Jishu1Spider(scrapy.Spider):
             item['job_welfare'] = job_welfare
             # 公司链接
             item['company_url'] = response.urljoin(company_url)
-            yield scrapy.Request(item['job_urls'], callback=self.parse_info, dont_filter=True, meta={'item': item})
+            yield scrapy.Request(item['job_urls'], callback=self.parse_info, dont_filter=True, meta={'item': deepcopy(item)})
 
 
     def parse_info(self,response):
