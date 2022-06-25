@@ -73,9 +73,9 @@ class ChinabrrSpider(scrapy.Spider):
         # 标题
         item['uuid'] = ''
         item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
-        if Redis_DB().Redis_pd(item['uid']) is True:  #数据去重
-            print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
-            return
+        # if Redis_DB().Redis_pd(item['uid']) is True:  #数据去重
+        #     print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
+        #     return
         item['intro'] = ''
         item['abs'] = '1'
         from lxml import etree
