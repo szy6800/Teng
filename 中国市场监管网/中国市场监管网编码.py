@@ -18,5 +18,6 @@ with open('中国市场.txt', 'r') as f:
     count = f.read()
     count = set(count.split('\n'))
 
+
 f.close()
 print(list(count))

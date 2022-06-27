@@ -27,7 +27,7 @@ DOWNLOAD_TIMEOUT = 16
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 1
+DOWNLOAD_DELAY = 0.1
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -73,7 +73,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   # 'loupan.pipelines.LoupanPipeline': 300,
+   'loupan.pipelines.DonglouPipeline': 300,
 }
 REDIRECT_ENABLED = False
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -103,5 +103,5 @@ MYSQL_HOST = '127.0.0.1'
 MYSQL_PORT = 3306
 MYSQL_USER = 'root'
 MYSQL_PASSWD = '123456'
-MYSQL_DB = 'ceshi'
+MYSQL_DB = 'test'
 MYSQL_CHARSET = 'utf8'

@@ -5,13 +5,24 @@
 # @Site : 
 # @File : a.py
 # @Software: PyCharm
-listss = ['11','12','13']
-def adds(lists):
-    lists.append('a')
-    return lists
 
-print(   (map(adds(listss),listss)))
+class a:
+    b = 1
+    name = '11'
+    def __init__(self):
+        self.app = self.b2222
+        self.b2222 = 1
+    def a11(self):
+        self.qw = self.b2222
+        sda = '1e2'
+        print(sda)
+        print(self.qw )
+    @classmethod
+    def in11(cls):
+        pd = 'hdisa'
+        print(pd)
+        print('2')
 
-for i in listss:
-    for s in enumerate(range(10)):
-        print(s)
+a.in11()
+a1 = a()
+a1.a11()
