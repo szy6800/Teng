@@ -95,9 +95,9 @@ class MofgovSpider(scrapy.Spider):
         item = response.meta['item']
         # print(response.text)
         from lxml import etree
-html = etree.HTML(response.text)
-div_data = html.xpath('//*[@id="news_detail1"]')
-item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
+        html = etree.HTML(response.text)
+        div_data = html.xpath('//*[@id="news_detail1"]')
+        item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # print(item)
         time.sleep(1)
         yield item

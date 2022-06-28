@@ -3,6 +3,6 @@ from scrapy.cmdline import execute
 
 
 if __name__ == '__main__':
-    # execute(["scrapy", "crawl", "xuke"])
-    execute(["scrapy", "crawl", "zhaob"])
+    execute(["scrapy", "crawl", "xuke"])
+    # execute(["scrapy", "crawl", "zhaob"])
 

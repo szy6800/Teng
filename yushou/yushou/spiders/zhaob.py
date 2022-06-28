@@ -5,12 +5,12 @@ from datetime import datetime, date, timedelta
 import scrapy
 import datetime
 import pymysql
-
 from sqlalchemy import create_engine
 import pymysql
 from sqlalchemy.types import *
 import numpy as np
 import pandas as pd
+
 
 def queryue(sql):
     # engine = create_engine('mysql+pymysql://root:I0z>kp9tnavw@127.0.0.1:3306/crawler2021?charset=utf8')

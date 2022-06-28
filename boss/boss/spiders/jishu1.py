@@ -66,6 +66,7 @@ class Jishu1Spider(scrapy.Spider):
             item['small_type'] = i[2]
             item['small_code'] = i[3]
             url = 'https://www.zhipin.com/c100010000-p{}/?page=2'.format(item['small_code'])
+            # print(url)
             yield scrapy.Request(url, callback=self.parse,dont_filter=True,meta={'item':deepcopy(item)})
 
 
@@ -73,11 +74,13 @@ class Jishu1Spider(scrapy.Spider):
 
         job_urls = response.xpath('//*[@class="primary-box"]/@href').getall()
         job_titles = response.xpath('//*[@class="job-name"]/a/@title').getall()
+        # print(job_titles)
         job_area = response.xpath('//*[@class="job-area"]/text()').getall()
         salary = response.xpath('//*[@class="red"]/text()').getall()
         job_welfare = response.xpath('//*[@class="info-desc"]/text()').getall()
         company_url = response.xpath('//*[@class="company-text"]/h3/a/@href').getall()
         job_tag = response.xpath('string(//*[@class="tags"])').getall()
+        # print()
         for job_urls,job_titles,job_area,salary,job_welfare,company_url in zip(job_urls,job_titles,job_area,salary,job_welfare,company_url):
             # 详情链接
             item = response.meta['item']
@@ -92,27 +95,30 @@ class Jishu1Spider(scrapy.Spider):
             item['job_welfare'] = job_welfare
             # 公司链接
             item['company_url'] = response.urljoin(company_url)
-            yield scrapy.Request(item['job_urls'], callback=self.parse_info, dont_filter=True, meta={'item': deepcopy(item)})
-
-
-    def parse_info(self,response):
-        item = response.meta['item']
-        # 城市
-        item['city'] = response.xpath('//*[@class="text-city"]/text()').get()
-        # 工作年限
-        item['work_time'] = response.xpath('//*[@class="text-city"]/following::text()[1]').get()
+            print(item['job_urls'])
+    #         yield scrapy.Request(item['job_urls'], callback=self.parse_info, dont_filter=True, meta={'item': deepcopy(item)})
+    #
+    #
+    # def parse_info(self,response):
+    #     # print(response.text)
+    #     item = response.meta['item']
+    #     # 城市
+    #     item['city'] = response.xpath('//*[@class="text-city"]/text()').get()
+    # #     # 工作年限
+    #     item['work_time'] = response.xpath('//*[@class="text-city"]/following::text()[1]').get()
+    #     print(item['city'],item['work_time'])
         # 学历
-        item['education'] = response.xpath('//*[@class="text-city"]/following::text()[2]').get()
-        # hr
-        item['hr'] = response.xpath('//h2[@class="name"]/text()[1]').get()
-        # hr岗位
-        hr_position = response.xpath('//h2[@class="name"]/following::p[1]//text()').getall()
-        item['hr_position'] = list_str(hr_position)
-        # 岗位详情
-        j_content = response.xpath('//h3/following::div[@class="text"]//text()').getall()
-        item['job_dec'] = list_str(j_content)
-
-        yield item
+    #     item['education'] = response.xpath('//*[@class="text-city"]/following::text()[2]').get()
+    #     # hr
+    #     item['hr'] = response.xpath('//h2[@class="name"]/text()[1]').get()
+    #     # hr岗位
+    #     hr_position = response.xpath('//h2[@class="name"]/following::p[1]//text()').getall()
+    #     item['hr_position'] = list_str(hr_position)
+    #     # 岗位详情
+    #     j_content = response.xpath('//h3/following::div[@class="text"]//text()').getall()
+    #     item['job_dec'] = list_str(j_content)
+    #
+    #     yield item
 
 
 
