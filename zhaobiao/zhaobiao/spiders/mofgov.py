@@ -69,6 +69,10 @@ class MofgovSpider(scrapy.Spider):
             # item['create_time'] = item['publish_time']
             item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
             item['update_time'] = ''
+        from Qinghai.tools.uredis import Redis_DB
+        if Redis_DB().Redis_pd(item['uid']) is True:  #数据去重
+            print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
+            return
             item['deleted'] = ''
             item['province'] = ''
             item['base'] = ''

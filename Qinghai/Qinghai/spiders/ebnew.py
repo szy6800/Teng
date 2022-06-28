@@ -106,6 +106,10 @@ class EbnewSpider(scrapy.Spider):
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
         item['update_time'] = ''
+        from Qinghai.tools.uredis import Redis_DB
+        if Redis_DB().Redis_pd(item['uid']) is True:  #数据去重
+            print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
+            return
         item['deleted'] = ''
         province = response.xpath("//span[contains(text(),'招标地区：')]/following-sibling::span[1]/text()").get()
         if province is None:

@@ -66,7 +66,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'yushou.pipelines.QinghaiPipeline': 300,
+   'yushou.pipelines.YushouPipeline': 300,
 }
 
 
@@ -91,20 +91,12 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-# 集群
-# MYSQL_HOST = '123.126.87.125'
-# MYSQL_PORT = 3307
-# MYSQL_USER = 'root'
-# MYSQL_PASSWD = 'Zfw3aVMkb^KVew6q'
-# MYSQL_DB = 'crawler2021'
-# MYSQL_CHARSET = 'utf8'
-
-#
-MYSQL_HOST = '123.126.87.123'
-MYSQL_PORT = 3306
+#集群
+MYSQL_HOST = '123.126.87.125'
+MYSQL_PORT = 3307
 MYSQL_USER = 'root'
-MYSQL_PASSWD = 'Lxp.138927!asd'
-MYSQL_DB = 'crawler2022'
+MYSQL_PASSWD = 'Zfw3aVMkb^KVew6q'
+MYSQL_DB = 'crawler2021'
 MYSQL_CHARSET = 'utf8'
 
 
@@ -113,6 +105,17 @@ PROXY_REDIS_IP = '123.56.87.41'
 PROXY_REDIS_PORT = 6379
 PROXY_REDIS_DB = 0
 PROXY_REDIS_PASSWD = '$SMe9ndaZQw$4bJ2'
+
+
+#
+# MYSQL_HOST = '123.126.87.123'
+# MYSQL_PORT = 3306
+# MYSQL_USER = 'root'
+# MYSQL_PASSWD = 'Lxp.138927!asd'
+# MYSQL_DB = 'crawler2022'
+# MYSQL_CHARSET = 'utf8'
+
+
 
 #
 # MYSQL_HOST = '127.0.0.1'

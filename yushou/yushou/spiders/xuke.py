@@ -5,7 +5,7 @@ from datetime import datetime, date, timedelta
 import scrapy
 import datetime
 import pymysql
-
+from yushou.uredis import Redis_DB
 from sqlalchemy import create_engine
 import pymysql
 from sqlalchemy.types import *
@@ -32,7 +32,8 @@ def id_sult():
     now = datetime.datetime.utcnow()
     otherStyleTime = now.strftime("%Y-%m-%d")
     yesterday = date.today() + timedelta(days=-1)
-    sql = f"SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `caijiqi` where date(create_time)=curdate()"
+    sql = f"SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `caijiqi` where date(create_time)=curdate() and abs='3';"
+    # sql = f"SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `caijiqi` where data_source='00664';"
     # sql = f"SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `caijiqi` where date(create_time)=date_sub(curdate(),interval 1 day);"
     result1 = queryue(sql=sql)
     # print(result1)
@@ -79,7 +80,9 @@ class XukeSpider(scrapy.Spider):
         for res in self.result:
             item = {}
             item['uid'] = res[0]
-
+            if Redis_DB().Redis_pd(item['uid']) is True:  # 数据去重
+                print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
+                continue
             item['uuid'] = res[1]
             item['title'] = res[2]
             item['link'] = res[3]

@@ -93,6 +93,10 @@ class QhrchSpider(scrapy.Spider):
         # 代理人
         item['proxy'] = ''
         item['update_time'] = ''
+        from Qinghai.tools.uredis import Redis_DB
+        if Redis_DB().Redis_pd(item['uid']) is True:  #数据去重
+            print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
+            return
         item['deleted'] = ''
         # 省 份
         item['province'] = '青海省'

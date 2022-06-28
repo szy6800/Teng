@@ -68,7 +68,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   # 'Qinghai.pipelines.QinghaiPipeline': 300,
+   'Qinghai.pipelines.QinghaiPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -94,12 +94,12 @@ ITEM_PIPELINES = {
 
 
 # # 测试
-MYSQL_HOST = '127.0.0.1'
-MYSQL_PORT = 3306
-MYSQL_USER = 'root'
-MYSQL_PASSWD = '123456'
-MYSQL_DB = 'ceshi'
-MYSQL_CHARSET = 'utf8'
+# MYSQL_HOST = '127.0.0.1'
+# MYSQL_PORT = 3306
+# MYSQL_USER = 'root'
+# MYSQL_PASSWD = '123456'
+# MYSQL_DB = 'ceshi'
+# MYSQL_CHARSET = 'utf8'
 
 
 
@@ -110,6 +110,16 @@ MYSQL_CHARSET = 'utf8'
 # MYSQL_PASSWD = 'I0z>kp9tnavw'
 # MYSQL_DB = 'crawler2021'
 # MYSQL_CHARSET = 'utf8'
+
+
+MYSQL_HOST = '123.126.87.125'
+MYSQL_PORT = 3307
+MYSQL_USER = 'root'
+MYSQL_PASSWD = 'Zfw3aVMkb^KVew6q'
+MYSQL_DB = 'crawler2021'
+MYSQL_CHARSET = 'utf8'
+
+
 # MYSQL_HOST = '123.126.87.123'
 # MYSQL_PORT = 3306
 # MYSQL_USER = 'root'

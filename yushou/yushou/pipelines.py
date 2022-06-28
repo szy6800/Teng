@@ -27,7 +27,7 @@ class YushouPipeline(object):
                         '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')
         """
 
-        self.query_sql = """SELECT * FROM zhaobiao2021 WHERE uid='{}'"""
+        # self.query_sql = """SELECT * FROM zhaobiao2021 WHERE uid='{}'"""
     @classmethod
     def from_settings(cls, settings):
         params = dict(
@@ -52,9 +52,7 @@ class YushouPipeline(object):
         print('error------', reason)
 
     def insert(self, cursor, item):
-        print(item)
         # 唯一id查询
-
         cursor.execute(self.insert_sql.format(
             # item['id'],
             item['uid'],
@@ -137,10 +135,11 @@ class tePipeline(object):
         ))
         print(f"新增公告==== {item['flowNo']} ======{item['fullName']}")
 
+
 class QinghaiPipeline(object):
     def __init__(self, pool):
         self.dbpool = pool
-        # 定义查询语句
+        #定义查询语句
         self.query_sql = """SELECT * FROM zhaobiaoquchong WHERE uid='{}'"""
         # 更改语句,插入语句
         self.qcinsert_sql = """

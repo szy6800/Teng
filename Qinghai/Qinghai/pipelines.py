@@ -13,11 +13,11 @@ class QinghaiPipeline(object):
     def __init__(self, pool):
         self.dbpool = pool
         # 定义查询语句
-        self.query_sql = """SELECT * FROM zhaobiaoquchong WHERE uid='{}'"""
-        # 更改语句,插入语句
-        self.qcinsert_sql = """
-                    INSERT INTO zhaobiaoquchong(uid)VALUES ('{}')
-                """
+        # self.query_sql = """SELECT * FROM zhaobiaoquchong WHERE uid='{}'"""
+        # # 更改语句,插入语句
+        # self.qcinsert_sql = """
+        #             INSERT INTO zhaobiaoquchong(uid)VALUES ('{}')
+        #         """
         self.insert_sql = """
             INSERT INTO zhaobiao2021(
                             uid, uuid, title, link, intro,abs, content,publish_time,purchaser,proxy,create_time,
@@ -52,38 +52,41 @@ class QinghaiPipeline(object):
 
     def insert(self, cursor, item):
         # 唯一id查询
-        cursor.execute(self.query_sql.format(item['uid']))
-        if cursor.fetchone():
-            print(f"标题 {item['title']} ==== {item['uid']} 已存在！！！")
-        else:
-            cursor.execute(self.insert_sql.format(
+        # cursor.execute(self.query_sql.format(item['uid']))
+        # if cursor.fetchone():
+        #     print(f"标题 {item['title']} ==== {item['uid']} 已存在！！！")
+        # else:
+        #     cursor.execute(self.qcinsert_sql.format(
+        #         item['uid']
+        #     ))
+        cursor.execute(self.insert_sql.format(
 
-                # item['id'],
-                item['uid'],
-                item['uuid'],
-                item['title'],
-                item['link'],
-                item['intro'],
-                item['abs'],
-                # 转义符
-                escape_string(item['content']),
-                # item['content'],
-                item['publish_time'],
-                item['purchaser'],
-                item['proxy'],
-                item['create_time'],
-                item['update_time'],
-                item['deleted'],
-                item['province'],
-                item['base'],
-                item['type'],
-                item['items'],
-                item['data_source'],
-                item['end_time'],
-                item['status'],
-                item['serial']
-            ))
-            print(f"新增公告==== {item['uid']} ======{item['title']}")
+            # item['id'],
+            item['uid'],
+            item['uuid'],
+            item['title'],
+            item['link'],
+            item['intro'],
+            item['abs'],
+            # 转义符
+            escape_string(item['content']),
+            # item['content'],
+            item['publish_time'],
+            item['purchaser'],
+            item['proxy'],
+            item['create_time'],
+            item['update_time'],
+            item['deleted'],
+            item['province'],
+            item['base'],
+            item['type'],
+            item['items'],
+            item['data_source'],
+            item['end_time'],
+            item['status'],
+            item['serial']
+        ))
+        print(f"新增公告==== {item['uid']} ======{item['title']}")
 
 
 
