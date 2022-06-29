@@ -10,7 +10,7 @@ from Qinghai.tools.utils import Utils_
 from Qinghai.tools.DB_mysql import *
 from Qinghai.tools.re_time import Times
 import datetime
-
+from Qinghai.tools.uredis import Redis_DB
 
 class FjggzyjySpider(scrapy.Spider):
     name = 'fjggzyjy'
@@ -57,6 +57,11 @@ class FjggzyjySpider(scrapy.Spider):
             PUBLISH = self.t.datetimes(pub_time)
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
             ctime = self.t.datetimes(item['publish_time'])
+            item['uid'] = 'zf' + Utils_.md5_encrypt(item['link'] + item['publish_time'])
+
+            if Redis_DB().Redis_pd(item['uid']) is True:  # 数据去重
+                print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
+                return
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
                 return
@@ -69,7 +74,7 @@ class FjggzyjySpider(scrapy.Spider):
         # 标题
         item['uuid'] = ''
         item['title'] = response.xpath('//*[@class="title"]/p[1]/text()').get().strip()
-        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
+
         item['intro'] = ''
         item['abs'] = '1'
         from lxml import etree
@@ -80,10 +85,7 @@ class FjggzyjySpider(scrapy.Spider):
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
         item['update_time'] = ''
-        from Qinghai.tools.uredis import Redis_DB
-        if Redis_DB().Redis_pd(item['uid']) is True:  #数据去重
-            print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
-            return
+
         item['deleted'] = ''
         item['province'] = '福建省'
         item['base'] = ''

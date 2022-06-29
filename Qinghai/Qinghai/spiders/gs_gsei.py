@@ -14,7 +14,7 @@ from lxml import etree
 import datetime
 import jsonpath
 import json
-
+from Qinghai.tools.uredis import Redis_DB
 
 class GsGgzySpider(scrapy.Spider):
     name = 'gs_gsei'
@@ -27,7 +27,7 @@ class GsGgzySpider(scrapy.Spider):
 
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=30)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
 
     def start_requests(self):
         for each in self.cates:
@@ -51,19 +51,20 @@ class GsGgzySpider(scrapy.Spider):
         # 循环遍历
         for href, title, pub_time in zip(list_url, titles, pub_times):
             item = {}
-            # print(response.urljoin(href))
             item['link'] = response.urljoin(href.strip())
             item['title'] = title.strip()
             if item['title'] is None:
                 continue
             PUBLISH = self.t.datetimes(pub_time)
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
-            # print(item['publish_time'])
+            item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
+            if Redis_DB().Redis_pd(item['uid']) is True:  # 数据去重
+                print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
+                return
             ctime = self.t.datetimes(item['publish_time'])
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
                 return
-            # print(item['link'], item['publish_time'],item['title'])
             yield scrapy.Request(item['link'], callback=self.parse_info, meta={'item': copy.deepcopy(item)},
                                  dont_filter=True)
 
@@ -73,7 +74,7 @@ class GsGgzySpider(scrapy.Spider):
         item = response.meta['item']
         # 标题
         item['uuid'] = ''
-        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
+
         item['intro'] = ''
         item['abs'] = '1'
         from lxml import etree
@@ -84,10 +85,7 @@ class GsGgzySpider(scrapy.Spider):
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
         item['update_time'] = ''
-        from Qinghai.tools.uredis import Redis_DB
-        if Redis_DB().Redis_pd(item['uid']) is True:  #数据去重
-            print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
-            return
+
         item['deleted'] = ''
         item['province'] = '甘肃省'
         item['base'] = ''

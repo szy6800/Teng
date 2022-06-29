@@ -78,9 +78,9 @@ class XukeSpider(scrapy.Spider):
         for res in resultc:
             item = {}
             item['uid'] = res[0]
-            if Redis_DB().Redis_pd(item['uid']) is True:  # 数据去重
-                print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
-                return
+            # if Redis_DB().Redis_pd(item['uid']) is True:  # 数据去重
+            #     print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
+            #     return
             item['uuid'] = res[1]
             item['title'] = res[2]
             item['link'] = res[3]

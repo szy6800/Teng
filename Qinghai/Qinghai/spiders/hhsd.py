@@ -10,7 +10,7 @@ from Qinghai.tools.utils import Utils_
 from Qinghai.tools.DB_mysql import *
 from Qinghai.tools.re_time import Times
 import datetime
-
+from Qinghai.tools.uredis import Redis_DB
 
 class HhsdSpider(scrapy.Spider):
     name = 'hhsd'
@@ -55,7 +55,10 @@ class HhsdSpider(scrapy.Spider):
             # pub_time = re.findall('\\d{4}-\\d{2}-\\d{2}', pub_time)[0]
             PUBLISH = self.t.datetimes(pub_time)
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
-            print(item['link'], item['publish_time'],item['title'])
+            item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
+            if Redis_DB().Redis_pd(item['uid']) is True:  # 数据去重
+                print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
+                return
             ctime = self.t.datetimes(item['publish_time'])
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
@@ -68,7 +71,7 @@ class HhsdSpider(scrapy.Spider):
         item = response.meta['item']
         # 标题
         item['uuid'] = ''
-        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
+
         item['intro'] = ''
         item['abs'] = '1'
         from lxml import etree
@@ -81,10 +84,7 @@ class HhsdSpider(scrapy.Spider):
         # 代理人
         item['proxy'] = ''
         item['update_time'] = ''
-        from Qinghai.tools.uredis import Redis_DB
-        if Redis_DB().Redis_pd(item['uid']) is True:  #数据去重
-            print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
-            return
+
         item['deleted'] = ''
         # 省 份
         item['province'] = ''

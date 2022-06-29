@@ -13,7 +13,7 @@ from Qinghai.tools.re_time import Times
 import datetime
 import jsonpath
 import json
-
+from Qinghai.tools.uredis import Redis_DB
 
 class BnuSpider(scrapy.Spider):
     name = 'bnu'
@@ -74,6 +74,10 @@ class BnuSpider(scrapy.Spider):
             item['end_time'] = end_time.strftime('%Y-%m-%d')
             PUBLISH = self.t.datetimes(pub_time)
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
+            item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
+            if Redis_DB().Redis_pd(item['uid']) is True:  # 数据去重
+                print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
+                return
             # print(item['publish_time'])
             ctime = self.t.datetimes(item['publish_time'])
             if ctime < self.c_time:
@@ -90,7 +94,7 @@ class BnuSpider(scrapy.Spider):
         item = response.meta['item']
         # 标题
         item['uuid'] = ''
-        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
+
         item['intro'] = ''
         item['abs'] = '1'
         from lxml import etree
@@ -101,10 +105,7 @@ class BnuSpider(scrapy.Spider):
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
         item['update_time'] = ''
-        from Qinghai.tools.uredis import Redis_DB
-        if Redis_DB().Redis_pd(item['uid']) is True:  #数据去重
-            print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
-            return
+
         item['deleted'] = ''
         item['province'] = '北京市'
         item['base'] = ''

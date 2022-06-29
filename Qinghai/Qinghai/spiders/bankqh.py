@@ -15,7 +15,7 @@ from Qinghai.tools.DB_mysql import *
 from Qinghai.tools.re_time import Times
 import datetime
 
-
+from Qinghai.tools.uredis import Redis_DB
 class BankqhSpider(scrapy.Spider):
     name = 'bankqh'
     allowed_domains = ['bankqh.com']
@@ -40,7 +40,7 @@ class BankqhSpider(scrapy.Spider):
 
     def parse(self, response):
         # print(response.text)
-        item = {}
+
         # 列表页链接和发布时间
         list_url = response.xpath('//*[@class="detail_title"]//li/a[1]/@href').getall()
         # print(list_url)
@@ -50,6 +50,7 @@ class BankqhSpider(scrapy.Spider):
         # print(pub_times,titles)
         #循环遍历
         for href, title, pub_time in zip(list_url, titles, pub_times):
+            item = {}
             # print(response.urljoin(href))
             item['link'] = response.urljoin(href.strip())
             item['title'] = title.strip()
@@ -64,6 +65,10 @@ class BankqhSpider(scrapy.Spider):
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
                 return
+            item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
+            if Redis_DB().Redis_pd(item['uid']) is True:  # 数据去重
+                print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
+                return
             yield scrapy.Request(item['link'], callback=self.parse_info, meta={'item': copy.deepcopy(item)},dont_filter=True)
 
     def parse_info(self, response):
@@ -72,7 +77,7 @@ class BankqhSpider(scrapy.Spider):
         item = response.meta['item']
         # 标题
         item['uuid'] = ''
-        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
+
         item['intro'] = ''
         item['abs'] = '1'
         html = etree.HTML(response.text)
@@ -84,10 +89,7 @@ class BankqhSpider(scrapy.Spider):
         # 代理人
         item['proxy'] = ''
         item['update_time'] = ''
-        from Qinghai.tools.uredis import Redis_DB
-        if Redis_DB().Redis_pd(item['uid']) is True:  #数据去重
-            print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
-            return
+
         item['deleted'] = ''
         # 省 份
         item['province'] = '青海省'

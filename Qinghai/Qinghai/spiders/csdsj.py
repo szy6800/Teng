@@ -45,8 +45,6 @@ class CsdsjSpider(scrapy.Spider):
         for href in list_url:
             # print(response.urljoin(href))
             item['link'] = response.urljoin(href.strip())
-            print(item['link'] )
-
             yield scrapy.Request(item['link'], callback=self.parse_info, meta={'item': copy.deepcopy(item)},dont_filter=True)
 
     def parse_info(self, response):

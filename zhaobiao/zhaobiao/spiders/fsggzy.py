@@ -40,7 +40,7 @@ class FsggzySpider(scrapy.Spider):
             item = ZhaobiaoItem()
             item['uuid'] = ''
             item['title'] = count.xpath('./div/a/text()').get().strip()
-            if item['title'] == None:
+            if item['title'] is None:
                 continue
             item['link'] = count.xpath('./div/a/@href').get()
             # item['id'] = ''

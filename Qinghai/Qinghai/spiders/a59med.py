@@ -13,6 +13,7 @@ from Qinghai.tools.utils import Utils_
 from Qinghai.tools.DB_mysql import *
 from Qinghai.tools.re_time import Times
 import datetime
+from Qinghai.tools.uredis import Redis_DB
 
 
 class A59medSpider(scrapy.Spider):
@@ -23,7 +24,7 @@ class A59medSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs ):
         super(A59medSpider, self).__init__()
         self.cates = [
-            {"cate": "catid=26", "pages": 8},  # 招中标信息
+            {"cate": "catid=26", "pages": 3},  # 招中标信息
         ]
         self.t = Times()
         self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=8)
@@ -38,13 +39,14 @@ class A59medSpider(scrapy.Spider):
 
     def parse(self, response):
         # print(response.text)
-        item = {}
+
         # 列表页链接和发布时间
         list_url = response.xpath('//*[@class="catlist"]/ul/li/a/@href').getall()
         titles = response.xpath('//*[@class="catlist"]/ul/li/a/@title').getall()
         pub_times = response.xpath('//*[@class="catlist"]/ul/li/a/@href/preceding::i[1]/text()').getall()
         # 循环遍历
         for href, title, pub_time in zip(list_url, titles, pub_times):
+            item = {}
             # print(response.urljoin(href))
             item['link'] = response.urljoin(href.strip())
             item['title'] = title.strip()
@@ -53,7 +55,10 @@ class A59medSpider(scrapy.Spider):
             PUBLISH = self.t.datetimes(pub_time)
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
             ctime = self.t.datetimes(item['publish_time'])
-
+            item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
+            if Redis_DB().Redis_pd(item['uid']) is True:  # 数据去重
+                print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
+                return
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
                 return
@@ -66,7 +71,6 @@ class A59medSpider(scrapy.Spider):
         item = response.meta['item']
         # 标题
         item['uuid'] = ''
-        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
         html = etree.HTML(response.text)
@@ -76,10 +80,6 @@ class A59medSpider(scrapy.Spider):
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
         item['update_time'] = ''
-        from Qinghai.tools.uredis import Redis_DB
-        if Redis_DB().Redis_pd(item['uid']) is True:  #数据去重
-            print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
-            return
         item['deleted'] = ''
         item['province'] = ''
         item['base'] = ''

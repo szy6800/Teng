@@ -30,10 +30,10 @@ class GsGnzrmzfSpider(scrapy.Spider):
         #
         # ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=5)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
 
     def start_requests(self):
-        for i in range(0, 10):
+        for i in range(0, 3):
             url = "http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList"
             formdata = {
                 "pageNo": "{}".format(i),
@@ -67,7 +67,6 @@ class GsGnzrmzfSpider(scrapy.Spider):
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
                 return
-
             yield scrapy.Request(item['link'], callback=self.parse_info, meta={'item': copy.deepcopy(item)},
                                  dont_filter=True)
 

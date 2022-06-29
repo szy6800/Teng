@@ -64,7 +64,6 @@ class CdxctzSpider(scrapy.Spider):
         pub_time = response.xpath('//*[@class="d"]/text()').get().strip()
         PUBLISH = self.t.datetimes(pub_time)
         item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
-        print(item['publish_time'])
         ctime = self.t.datetimes(item['publish_time'])
         if ctime < self.c_time:
             print('文章发布时间大于规定时间，不予采集', item['link'])

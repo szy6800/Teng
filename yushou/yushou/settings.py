@@ -67,6 +67,7 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'yushou.pipelines.YushouPipeline': 300,
+   # 'yushou.pipelines.QinghaiPipeline': 300,
 }
 
 

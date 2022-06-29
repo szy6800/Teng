@@ -23,18 +23,15 @@ class GsQysggzyjySpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(GsQysggzyjySpider, self).__init__()
         self.cates = [
-
             {"cate": "newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=", "pages": 3},  # 招标公告
             {"cate": "newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=B&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=", "pages": 3},  # 招标公告
             {"cate": "newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=C&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=", "pages": 3},  # 招标公告
             {"cate": "newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=", "pages": 3},  # 招标公告
             {"cate": "newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=", "pages": 3},  # 招标公告
           #  {"cate": "purchase/purchaseAnnoment/getAnnoList?type=sunAll&tabType=1&tradePlatformId=1&noticename=&pageNo=", "pages": 2},  # 招标公告
-
-
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=5)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
 
     def start_requests(self):
         for each in self.cates:
@@ -61,7 +58,6 @@ class GsQysggzyjySpider(scrapy.Spider):
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
                 return
-            print(item['publish_time'],item['link'])
             yield scrapy.Request(item['link'], callback=self.parse_info, meta={'item': copy.deepcopy(item)},
                                  dont_filter=True)
 

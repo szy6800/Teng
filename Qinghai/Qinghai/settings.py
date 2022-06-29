@@ -27,7 +27,7 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 0.3
+DOWNLOAD_DELAY = 0.2
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -101,8 +101,6 @@ ITEM_PIPELINES = {
 # MYSQL_DB = 'ceshi'
 # MYSQL_CHARSET = 'utf8'
 
-
-
 # # 阿里云mysql
 # MYSQL_HOST = '123.56.87.41'
 # MYSQL_PORT = 3306
@@ -119,13 +117,14 @@ MYSQL_PASSWD = 'Zfw3aVMkb^KVew6q'
 MYSQL_DB = 'crawler2021'
 MYSQL_CHARSET = 'utf8'
 
-
 # MYSQL_HOST = '123.126.87.123'
 # MYSQL_PORT = 3306
 # MYSQL_USER = 'root'
 # MYSQL_PASSWD = 'Lxp.138927!asd'
 # MYSQL_DB = 'crawler2022'
 # MYSQL_CHARSET = 'utf8'
+
+
 
 PROXY_REDIS_IP = '123.56.87.41'
 PROXY_REDIS_PORT = 6379

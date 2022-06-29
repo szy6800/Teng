@@ -15,7 +15,7 @@ import datetime
 import jsonpath
 import json
 
-
+from Qinghai.tools.uredis import Redis_DB
 
 class EbnewSpider(scrapy.Spider):
     name = 'ebnew'
@@ -83,6 +83,10 @@ class EbnewSpider(scrapy.Spider):
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
             # # print(item['publish_time'])
             ctime = self.t.datetimes(item['publish_time'])
+            item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
+            if Redis_DB().Redis_pd(item['uid']) is True:  # 数据去重
+                print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
+                return
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
                 return
@@ -96,7 +100,6 @@ class EbnewSpider(scrapy.Spider):
         item = response.meta['item']
         # 标题
         item['uuid'] = ''
-        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'] )
         item['intro'] = ''
         item['abs'] = '1'
         html = etree.HTML(response.text)
@@ -106,10 +109,6 @@ class EbnewSpider(scrapy.Spider):
         item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
         item['proxy'] = ''
         item['update_time'] = ''
-        from Qinghai.tools.uredis import Redis_DB
-        if Redis_DB().Redis_pd(item['uid']) is True:  #数据去重
-            print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
-            return
         item['deleted'] = ''
         province = response.xpath("//span[contains(text(),'招标地区：')]/following-sibling::span[1]/text()").get()
         if province is None:

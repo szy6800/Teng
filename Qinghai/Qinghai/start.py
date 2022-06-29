@@ -21,10 +21,11 @@ def job():
     # print('starting time ===>', start_time)
     # # 采集逻辑
     # # # #bnu ccccltd
+    # os.system('scrapy crawl bjchy')
+
     os.system('scrapy crawl a59med')
     os.system('scrapy crawl bankqh')
     os.system('scrapy crawl bdebid')
-    os.system('scrapy crawl bjchy')
     os.system('scrapy crawl bjhd')
     os.system('scrapy crawl bjmu')
     os.system('scrapy crawl bjx')
@@ -59,7 +60,6 @@ def job():
     os.system('scrapy crawl hhsd')
     os.system('scrapy crawl icbc')
     os.system('scrapy crawl miit')
-    os.system('scrapy crawl mps')
     os.system('scrapy crawl ptzfcg')
     os.system('scrapy crawl qh4yy')
     os.system('scrapy crawl qhheart')
@@ -90,10 +90,10 @@ def job():
 if __name__ == "__main__":
     job()
     scheduler = BlockingScheduler()  # 实例化定时器
-    scheduler.add_job(job, 'cron', hour=2, minute=1)
-    scheduler.add_job(job, 'cron', hour=8, minute=1)
-    scheduler.add_job(job, 'cron', hour=14, minute=1)
-    scheduler.add_job(job, 'cron', hour=20, minute=1)
+    scheduler.add_job(job, 'cron', hour=10, minute=2)
+    scheduler.add_job(job, 'cron', hour=16, minute=2)
+    scheduler.add_job(job, 'cron', hour=22, minute=2)
+
     try:
         scheduler.start()
     except (KeyboardInterrupt, SystemExit):

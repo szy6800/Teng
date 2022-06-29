@@ -31,7 +31,7 @@ class GsDingxiSpider(scrapy.Spider):
         #
         # ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=30)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
 
     def start_requests(self):
         for i in range(1, 9):
@@ -67,6 +67,7 @@ class GsDingxiSpider(scrapy.Spider):
             item = dict()
             item['link'] = 'http://ggzy.dingxi.gov.cn/EpointWebServiceDx/rest/DXProjectInfotoweb/ge' \
                            'tProjectinfo?infoid={}&infotype={}'.format(infoid, tid)
+
             # print(item['link'])
             yield scrapy.Request(item['link'], callback=self.parse_info, meta={'item': copy.deepcopy(item), 'types':types},
                                  dont_filter=True)

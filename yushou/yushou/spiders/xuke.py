@@ -12,6 +12,7 @@ from sqlalchemy.types import *
 import numpy as np
 import pandas as pd
 
+
 def queryue(sql):
     # engine = create_engine('mysql+pymysql://root:I0z>kp9tnavw@127.0.0.1:3306/crawler2021?charset=utf8')
     engine = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/ceshi?charset=utf8',)
@@ -32,8 +33,8 @@ def id_sult():
     now = datetime.datetime.utcnow()
     otherStyleTime = now.strftime("%Y-%m-%d")
     yesterday = date.today() + timedelta(days=-1)
-    sql = f"SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `caijiqi` where date(create_time)=curdate() and abs='3';"
-    # sql = f"SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `caijiqi` where data_source='00664';"
+    # sql = f"SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `caijiqi` where date(create_time)=curdate()"
+    sql = f"SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `caijiqi` where data_source='00664' and  date(create_time)=curdate();"
     # sql = f"SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `caijiqi` where date(create_time)=date_sub(curdate(),interval 1 day);"
     result1 = queryue(sql=sql)
     # print(result1)
@@ -71,7 +72,7 @@ class XukeSpider(scrapy.Spider):
     def start_requests(self):
         resultc = id_sult()
         # print(resultc)
-        new_url = 'https://www.baidu.com/'
+        new_url = 'https://www.suning.com/'
         yield scrapy.Request(new_url, callback=self.parse,meta={"resultc": resultc})
 
 

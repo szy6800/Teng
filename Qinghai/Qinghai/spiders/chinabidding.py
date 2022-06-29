@@ -7,7 +7,7 @@ from Qinghai.tools.utils import Utils_
 from Qinghai.tools.DB_mysql import *
 from Qinghai.tools.re_time import Times
 import datetime
-
+from Qinghai.tools.uredis import Redis_DB
 
 class ChinabiddingSpider(scrapy.Spider):
     name = 'chinabidding'
@@ -40,15 +40,20 @@ class ChinabiddingSpider(scrapy.Spider):
         item = {}
         # 列表页链接和发布时间
         list_url = response.xpath('//*[@id="hd"]//following::table[1]//td/a/@href').getall()
+        titles = response.xpath('//*[@id="hd"]//following::table[1]//td/a/text()').getall()
         # print(titles)
         pub_times = response.xpath('//*[@id="hd"]//following::table[1]//td/a/following::td[1]/text()').getall()
         #循环遍历
-        for href, pub_time in zip(list_url, pub_times):
+        for href, title,pub_time in zip(list_url,titles, pub_times):
             # print(response.urljoin(href))
             item['link'] = response.urljoin(href.strip())
             pub_time = pub_time.replace('/','-')
             PUBLISH = self.t.datetimes(pub_time.strip())
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
+            item['uid'] = 'zf' + Utils_.md5_encrypt(title + item['link'] + item['publish_time'])
+            if Redis_DB().Redis_pd(item['uid']) is True:  # 数据去重
+                print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
+                return
             # print(item['link'], item['publish_time'],item['title'])
             ctime = self.t.datetimes(item['publish_time'])
             if ctime < self.c_time:
@@ -64,7 +69,7 @@ class ChinabiddingSpider(scrapy.Spider):
         # 标题
         item['title'] = response.xpath('//*[@id="cphMain_tle"]/text()').get()
         item['uuid'] = ''
-        item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
+
         item['intro'] = ''
         item['abs'] = '1'
         from lxml import etree
@@ -78,10 +83,7 @@ class ChinabiddingSpider(scrapy.Spider):
         item['proxy'] = ''
 
         item['update_time'] = ''
-        from Qinghai.tools.uredis import Redis_DB
-        if Redis_DB().Redis_pd(item['uid']) is True:  #数据去重
-            print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
-            return
+
         item['deleted'] = ''
         # 省 份
         item['province'] = response.xpath('//*[@id="dtr"]/text()').get().strip()
