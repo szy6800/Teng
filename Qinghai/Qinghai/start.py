@@ -83,12 +83,12 @@ def job():
     print('collect again after 1 hour!!!!')
     end_time = str(datetime.datetime.now()).split('.')[0]  # 采集结束时间
     print(f"starting time ===> {start_time}, end time ===> {end_time}")
-    next_start_time = (start_times + datetime.timedelta(days=1)).strftime('%y/%m/%d %h:%m:%s')  # 下次采集间隔时间
+    next_start_time = (start_times + datetime.timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')  # 下次采集间隔时间
     print('next startup time =====>', next_start_time, '\n')
 
 
 if __name__ == "__main__":
-    job()
+    # job()
     scheduler = BlockingScheduler()  # 实例化定时器
     scheduler.add_job(job, 'cron', hour=10, minute=2)
     scheduler.add_job(job, 'cron', hour=16, minute=2)

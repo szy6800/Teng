@@ -12,16 +12,15 @@ from Qinghai.tools.uredis import Redis_DB
 class ChinabiddingSpider(scrapy.Spider):
     name = 'chinabidding'
     allowed_domains = ['baidu.com']
-    start_urls = ['http://baidu.com/']
+    # start_urls = ['http://baidu.com/']
 
     def __init__(self, *args, **kwargs ):
         super(ChinabiddingSpider, self).__init__()
         self.cates = [
-            {"cate": "0", "pages": 150},  # 招标公告
-            # {"cate": "1", "pages": 3},  # 招标公告
-            {"cate": "2", "pages": 50},  # 招标公告
-            {"cate": "3", "pages": 50},  # 招标公告
-
+            # {"cate": "0", "pages": 50},  # 招标公告
+            {"cate": "1", "pages": 3},  # 招标公告
+            # {"cate": "2", "pages": 50},  # 招标公告
+            # {"cate": "3", "pages": 50},  # 招标公告
         ]
         self.t = Times()
         self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=3)
@@ -41,21 +40,21 @@ class ChinabiddingSpider(scrapy.Spider):
         # 列表页链接和发布时间
         list_url = response.xpath('//*[@id="hd"]//following::table[1]//td/a/@href').getall()
         titles = response.xpath('//*[@id="hd"]//following::table[1]//td/a/text()').getall()
-        # print(titles)
+
         pub_times = response.xpath('//*[@id="hd"]//following::table[1]//td/a/following::td[1]/text()').getall()
         #循环遍历
-        for href, title,pub_time in zip(list_url,titles, pub_times):
+        for href ,pub_time in zip(list_url, pub_times):
             # print(response.urljoin(href))
             item['link'] = response.urljoin(href.strip())
             pub_time = pub_time.replace('/','-')
             PUBLISH = self.t.datetimes(pub_time.strip())
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
-            item['uid'] = 'zf' + Utils_.md5_encrypt(title + item['link'] + item['publish_time'])
+            # print(item['link'], item['publish_time'],item['title'])
+            ctime = self.t.datetimes(item['publish_time'])
+            item['uid'] = 'zf' + Utils_.md5_encrypt(item['link'] + item['publish_time'])
             if Redis_DB().Redis_pd(item['uid']) is True:  # 数据去重
                 print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
                 return
-            # print(item['link'], item['publish_time'],item['title'])
-            ctime = self.t.datetimes(item['publish_time'])
             if ctime < self.c_time:
                 print('文章发布时间大于规定时间，不予采集', item['link'])
                 return

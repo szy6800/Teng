@@ -36,7 +36,6 @@ class GsGgzySpider(scrapy.Spider):
             for p in range(pages):
                 p = f"list-{p + 1}.html" if p else ""
                 url = f"http://www.gsei.com.cn/html/{cate}/{p}"
-                print(url)
                 yield scrapy.Request(url=url, callback=self.parse, dont_filter=True)
 
     def parse(self, response, **kwargs):

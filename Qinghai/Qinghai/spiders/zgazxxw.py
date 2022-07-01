@@ -22,9 +22,9 @@ class ZgazxxwSpider(scrapy.Spider):
         self.cates = [
             {"cate": "zbgg", "pages": 1},  # 招标公告
             {"cate": "zhongbgg", "pages": 1},  # 中标公告
-            {"cate": "bggg", "pages": 5},  # 变更公告
-            {"cate": "zbyg", "pages": 5},  # 招标预告
-            {"cate": "mfgg", "pages": 10},  # 免费公告
+            {"cate": "bggg", "pages": 3},  # 变更公告
+            {"cate": "zbyg", "pages": 3},  # 招标预告
+            {"cate": "mfgg", "pages": 3},  # 免费公告
 
         ]
         self.t = Times()
