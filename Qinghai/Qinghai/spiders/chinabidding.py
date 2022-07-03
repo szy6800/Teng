@@ -1,7 +1,6 @@
 import scrapy
 import copy
 
-from lxml import etree
 
 from Qinghai.tools.utils import Utils_
 from Qinghai.tools.DB_mysql import *
@@ -18,9 +17,9 @@ class ChinabiddingSpider(scrapy.Spider):
         super(ChinabiddingSpider, self).__init__()
         self.cates = [
             # {"cate": "0", "pages": 50},  # 招标公告
-            {"cate": "1", "pages": 3},  # 招标公告
+            # {"cate": "1", "pages": 3},  # 招标公告
             # {"cate": "2", "pages": 50},  # 招标公告
-            # {"cate": "3", "pages": 50},  # 招标公告
+            {"cate": "3", "pages": 50},  # 招标公告
         ]
         self.t = Times()
         self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=3)
@@ -51,6 +50,7 @@ class ChinabiddingSpider(scrapy.Spider):
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
             # print(item['link'], item['publish_time'],item['title'])
             ctime = self.t.datetimes(item['publish_time'])
+
             item['uid'] = 'zf' + Utils_.md5_encrypt(item['link'] + item['publish_time'])
             if Redis_DB().Redis_pd(item['uid']) is True:  # 数据去重
                 print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
