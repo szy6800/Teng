@@ -10,6 +10,7 @@ import redis
 # REDIS_DB = 1
 # REDIS_PASSWD = ''
 
+
 REDIS_IP = '123.56.87.41'
 REDIS_PORT = 6379
 REDIS_DB = 0
@@ -19,7 +20,6 @@ REDIS_PASSWD = '$SMe9ndaZQw$4bJ2'
 # r = redis.Redis(connection_pool=pool)
 
 class Redis_DB():
-
     __red = None
     __init = True
 
@@ -39,6 +39,7 @@ class Redis_DB():
             self.r = redis.Redis(connection_pool=pool)
             Redis_DB.__init = False
 
+
     """文章去重"""
     def Redis_pd(self, id):
         redis_id = Redis_DB().r.hexists('bulongquchong', key=id)
@@ -46,3 +47,6 @@ class Redis_DB():
             return True
         else:
             Redis_DB().r.hset('bulongquchong', id, '')
+
+
+

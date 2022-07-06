@@ -13,8 +13,8 @@ class ZjSpider(scrapy.Spider):
                 "limit":"10"
             }
             a1='2'
-            url ='https://xkz.cbirc.gov.cn/zj/CEKQqR/getLicence.do?useState=3&or' \
-                 'ganNo=&fatherOrganNo=&province=&organType={}&fullName=&address=&flowNo='.format(a1)
+            url ='https://xkz.cbirc.gov.cn/zj/EKXEKX/getLicence.do?useState=3&organNo=&fatherOrganN' \
+                 'o=&province=&organType={}&fullName=&address=&flowNo='.format(a1)
             yield scrapy.FormRequest(url=url, formdata=data, method='POST',callback=self.parse)
 
 
@@ -28,7 +28,7 @@ class ZjSpider(scrapy.Spider):
         flowNo = jsonpath.jsonpath(json_text,'$..flowNo')
         fullName = jsonpath.jsonpath(json_text,'$..fullName')
         setDate = jsonpath.jsonpath(json_text,'$..setDate')
-        useState = jsonpath.jsonpath(json_text,'$..useState')
+        useState = jsonpath.jsonpath(json_text,'$..id')
         endDate = jsonpath.jsonpath(json_text,'$..endDate')
         for certCode,date,flowNo,fullName,setDate,useState,endDate in zip(certCode,date,flowNo,fullName,setDate,useState,endDate):
             item = {}
@@ -37,7 +37,7 @@ class ZjSpider(scrapy.Spider):
             item['flowNo'] = flowNo
             item['fullName'] = fullName
             item['setDate'] = setDate
-            item['useState'] = useState
+            item['ids'] = useState
             item['type'] = '保险经纪公司'
             item['endDate'] = endDate
 

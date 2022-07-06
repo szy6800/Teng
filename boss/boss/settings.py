@@ -50,7 +50,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'boss.middlewares.BossDownloaderMiddleware': 543,
-   'boss.middlewares.RandomIPMiddleware': 400,
+   # 'boss.middlewares.RandomIPMiddleware': 400,
 }
 
 # Enable or disable extensions

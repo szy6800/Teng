@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 # @Author : 石张毅
-# @Site :
-# @introduce:
+# @Site : 比比招标网
+# @introduce: https://www.bibenet.com/zbgsu5.html
 
 import scrapy
 import hashlib

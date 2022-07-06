@@ -104,10 +104,11 @@ class BankDownloaderMiddleware:
         spider.logger.info('Spider opened: %s' % spider.name)
 
 import base64
+
 class IPProxyDownloadMiddleware(object):
     def process_request(self, request, spider):
-        proxy = 'http://v677.kdltps.com:15818'
-        user_password = "t15580080402115:xrv21tq2"
+        proxy = 'http://a340.kdltps.com:15818'
+        user_password = "t15692511689532:ndgp2zvn"
         request.meta['proxy'] = proxy
         b64_user_password = base64.b64encode(user_password.encode('utf-8'))
         request.headers["Proxy-Authorization"] = 'Basic ' + b64_user_password.decode('utf-8')

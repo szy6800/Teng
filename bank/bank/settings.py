@@ -64,7 +64,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'bank.pipelines.BankPipeline': 300,
+   # 'bank.pipelines.BankPipeline': 300,
+   'bank.pipelines.Bank4': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
