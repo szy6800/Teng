@@ -20,7 +20,7 @@ class YushouPipeline(object):
 
         # 更改语句,插入语句
         self.insert_sql = """
-            INSERT INTO zhaobiao2021(
+            INSERT INTO zhaobiao2021_prod(
                             uid, uuid, title, link, intro,abs, content,publish_time,purchaser,proxy,create_time,
                             update_time,deleted,province,base,type,items,data_source,end_time,status,serial
                         )VALUES ('{}','{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}','{}', 
@@ -30,6 +30,7 @@ class YushouPipeline(object):
         # self.query_sql = """SELECT * FROM zhaobiao2021 WHERE uid='{}'"""
     @classmethod
     def from_settings(cls, settings):
+
         params = dict(
             host=settings['MYSQL_HOST'],
             port=settings['MYSQL_PORT'],

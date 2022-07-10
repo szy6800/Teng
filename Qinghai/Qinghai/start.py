@@ -88,9 +88,9 @@ def job():
 
 
 if __name__ == "__main__":
-    # job()
+    job()
     scheduler = BlockingScheduler()  # 实例化定时器
-    scheduler.add_job(job, 'cron', hour=10, minute=2)
+    scheduler.add_job(job, 'cron', hour=10, minute=4)
     scheduler.add_job(job, 'cron', hour=16, minute=2)
     scheduler.add_job(job, 'cron', hour=22, minute=2)
 

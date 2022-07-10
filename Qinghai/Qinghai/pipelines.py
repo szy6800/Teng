@@ -19,7 +19,7 @@ class QinghaiPipeline(object):
         #             INSERT INTO zhaobiaoquchong(uid)VALUES ('{}')
         #         """
         self.insert_sql = """
-            INSERT INTO zhaobiao2021(
+            INSERT INTO zhaobiao2021_prod(
                             uid, uuid, title, link, intro,abs, content,publish_time,purchaser,proxy,create_time,
                             update_time,deleted,province,base,type,items,data_source,end_time,status,serial
                         )VALUES ('{}','{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}','{}', 
