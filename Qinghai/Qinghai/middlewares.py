@@ -156,6 +156,7 @@ class RandomUserAgentMiddleware(object):
 # logger.addHandler(fh)
 
 from Qinghai.settings import PROXY_REDIS_IP, PROXY_REDIS_PORT, PROXY_REDIS_PASSWD
+
 class RandomIPMiddleware(object):
     def __init__(self):
         self.pool2 = redis.ConnectionPool(

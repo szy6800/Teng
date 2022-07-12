@@ -15,7 +15,7 @@ class GansuxinwenItem(scrapy.Item):
     publish_time = scrapy.Field()
     create_time = scrapy.Field()
     author = scrapy.Field()
-    countent = scrapy.Field()
+    content = scrapy.Field()
     data_source = scrapy.Field()
     status = scrapy.Field()
     base = scrapy.Field()

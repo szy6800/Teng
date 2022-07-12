@@ -53,7 +53,7 @@ class Times(object):
             raise Exception('时间为空: %s' % data)
 
         if re.match("\s*(\d+)月(\d+)日\s+(\d+)[:：]+(\d+)\s*", data):  # 01月03日 11:16
-            dt = self.Datatimes(datetime.datetime.strptime(data, "%m月%d日 %H:%M"), \
+            dt = self.Datatimes(datetime.datetime.strptime(data, "%m月%d日 %H:%M"),
                                 datetime.date.today().year - 1900)
 
         elif re.match("\s*(\d+)-(\d+)\s+(\d+)[:：]+(\d+)\s*", data):  # 01-03 11:16

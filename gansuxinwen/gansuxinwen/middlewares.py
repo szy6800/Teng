@@ -12,7 +12,7 @@ from urllib.parse import urlparse
 from scrapy.http import HtmlResponse
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
-from gansuxinwen.settings import PROXY_REDIS_IP, PROXY_REDIS_PORT, PROXY_REDIS_PASSWD
+from .settings import PROXY_REDIS_IP, PROXY_REDIS_PORT, PROXY_REDIS_PASSWD
 
 
 class RandomUserAgentMiddleware(object):
