@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 
-# @Time : 2022-07-12 15:22:07
+# @Time : 2022-07-13 10:50:45
 # @Author : 石张毅
-# @Site : https://www.china5e.com/energy-economy/macroeconomy/index_1.html
-# https://www.china5e.com/energy-economy/energy-strategy/index_1.html
-# https://www.china5e.com/energy-economy/stock/index_2.html
-# @introduce:中国能源网
+# @Site : http://www.ce.cn/cysc/newmain/right/zg/index.shtml
+# http://www.ce.cn/cysc/newmain/jdpd/yj/index.shtml
+# http://www.ce.cn/cysc/ny/gdxw/index.shtml
+# @introduce: 中国经济网-能源频道
 
-import scrapy
 import re
 import datetime
 import json
@@ -19,15 +18,15 @@ from gansuxinwen.tools.utils import Utils_
 from gansuxinwen.tools.DB_redis import Redis_DB
 import scrapy
 
+class CeSpider(scrapy.Spider):
+    name = 'ce'
 
-class China5eSpider(scrapy.Spider):
-    name = 'china5e'
     def __init__(self, *args, **kwargs):
-        super(China5eSpider, self).__init__()
+        super(CeSpider, self).__init__()
         self.cates = [
-            {"cate": "macroeconomy", "pages": 2},  # 招标公告
-            {"cate": "energy-strategy", "pages": 2},  # 招标公告
-            {"cate": "stock", "pages": 2},  # 招标公告
+            {"cate": "newmain/right/zg", "pages": 1},  # 招6标公告
+            {"cate": "newmain/jdpd/yj", "pages": 1},  # 招标公告
+            {"cate": "ny/gdxw", "pages": 1},  # 招标公告
         ]
         self.t = Times()
         self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
@@ -36,24 +35,25 @@ class China5eSpider(scrapy.Spider):
         for each in self.cates:
             cate = each["cate"]
             pages = each["pages"]
-            for p in range(1, pages):
-                # p = f"_{p + 1}" if p else ""
-                url = f"https://www.china5e.com/energy-economy/{cate}/index_{p}.html"
+            for p in range(0, pages):
+                p = f"_{p}" if p else ""
+                url = f"http://www.ce.cn/cysc/{cate}/index{p}.shtml"
                 # print(url)
                 yield scrapy.Request(url=url, callback=self.parse, dont_filter=True)
 
     def parse(self, response, *args):
-        count_list = response.xpath('//*[@class="md znw_list_list_height624"]//*[@class="bd"]/ul/li')
+        count_list = response.xpath('//*[@class="left"]/ul/li')
         if count_list is []:
             return
         for count in count_list:
             item = GansuxinwenItem()
             # 列表页链接和发布时间
-            item['link'] = response.urljoin(count.xpath('./a/@href').get())
-            item['title'] = count.xpath('./a/@title').get()
+            item['link'] = response.urljoin(count.xpath("./a/@href").get())
+            item['title'] = count.xpath("./a/text()").get()
             if item['title'] is None:
                 continue
-            pub_time = count.xpath('./span/text()').get()
+            pub_time = count.xpath('./text()[2]').get()
+            pub_time = re.findall('\d{4}/\d{2}/\d{2}', pub_time)[0]
             PUBLISH = self.t.datetimes(pub_time)
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布
             # print(item['publish_time'],item['link'],item['title'])
@@ -64,10 +64,10 @@ class China5eSpider(scrapy.Spider):
             item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
             if Redis_DB().Redis_pd(item['uid']) is True:  # 数据去重
                 print(item['title'], '\033[0;35m <=======此数据已采集=======> \033[0m')
-                break
+                return
             item['province'] = ''
             item['create_time'] = str(datetime.datetime.now().strftime('%Y-%m-%d'))
-            item['data_source'] = '00672'
+            item['data_source'] = '00674'
             item['status'] = ''
             item['base'] = ''
             yield scrapy.Request(item['link'], callback=self.parse_info, meta={'item': copy.deepcopy(item)},
@@ -78,15 +78,16 @@ class China5eSpider(scrapy.Spider):
         if response.status != 200:
             return
         item = response.meta['item']
-        # author = re.findall('\d{2}:\d{2}:\d{2}[\n]*(.*?)[&\n]*', response.text)
-        # print(author)
-        item['author'] = '中国能源网'
+        try:
+            author = re.findall('来源[:： \n]+(.*?)<', response.text)[0]
+            item['author'] = author
+        except:
+            item['author'] = '中国经济网'
         # print(response.text)
         from lxml import etree
         html = etree.HTML(response.text)
-        div_data = html.xpath('//*[@class="showcontent"]')
+        div_data = html.xpath('//*[@class="content"]')
         item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # print(item)
         yield item
-
 

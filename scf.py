@@ -1,13 +1,13 @@
+# coding:utf-8
 a = '''
-<span class="times">
-发布时间：2022-07-07
-</span>
-<span class="author">
-来源：国家能源局
-</span>
-<span class="switchsize"><b class="bigger">大</b><b class="medium">中</b><b class="smaller">小</b></span>
-<div class="arrow"></div>
+</div>
+
+<div class="cinfo center">
+	<span id="con_time">发布时间：2022-07-13 15:01</span>  <span>来源：离退休干部局</span>
+</div>
 '''
+
 import re
-b = re.findall('来源[:： \n]+(.*?)[\n]',a)
+b = re.findall('来源[:： \n]+(.*?)<',a)
 print(b)
+

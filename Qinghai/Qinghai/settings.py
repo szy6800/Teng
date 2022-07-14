@@ -54,7 +54,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'Qinghai.middlewares.RandomUserAgentMiddleware': 143,
-   # 'Qinghai.middlewares.RandomIPMiddleware': 40,
+   'Qinghai.middlewares.RandomIPMiddleware': 40,
 
 }
 

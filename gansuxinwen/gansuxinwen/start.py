@@ -25,6 +25,15 @@ def job():
     os.system('scrapy crawl gxj')
     os.system('scrapy crawl china_aii')
     os.system('scrapy crawl nea')
+    os.system('scrapy crawl china5e')
+    os.system('scrapy crawl nengyuancn')
+
+    os.system('scrapy crawl ce')
+    os.system('scrapy crawl cnenergynews')
+    os.system('scrapy crawl news')
+    os.system('scrapy crawl gsnea')
+    os.system('scrapy crawl miit')
+
 
     print('采集已完成>>>>>>>>')
     print('collect again after 1 hour!!!!')
