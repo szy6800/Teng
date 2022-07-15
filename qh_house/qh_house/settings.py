@@ -64,7 +64,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'qh_house.pipelines.QhHousePipeline': 300,
+   # 'qh_house.pipelines.QhHousePipeline': 300,
    # 'qh_house.pipelines.QhbuildingPipeline': 300,
    # 'qh_house.pipelines.QhfloorPipeline': 300,
 }
@@ -89,9 +89,18 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
 MYSQL_HOST = '127.0.0.1'
 MYSQL_PORT = 3306
 MYSQL_USER = 'root'
 MYSQL_PASSWD = '123456'
 MYSQL_DB = 'stu'
 MYSQL_CHARSET = 'utf8'
+#
+#
+# MYSQL_HOST = '123.126.87.123'
+# MYSQL_PORT = 3306
+# MYSQL_USER = 'root'
+# MYSQL_PASSWD = 'Lxp.138927!asd'
+# MYSQL_DB = 'crawler2021'
+# MYSQL_CHARSET = 'utf8'

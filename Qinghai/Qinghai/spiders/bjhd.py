@@ -23,7 +23,7 @@ class BjhdSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs ):
         super(BjhdSpider, self).__init__()
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=8)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
 
     def start_requests(self):
         url = f"http://www.bjhd.gov.cn/ggzyjy/zfcgQb/index.html"

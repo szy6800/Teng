@@ -46,9 +46,9 @@ class QhHousePipeline:
         return obj
 
     def process_item(self, item, spider):
-        result = self.dbpool.runInteraction(self.update, item)
+        # result = self.dbpool.runInteraction(self.insert, item)
         # 插入语句
-        # result = self.dbpool.runInteraction(self.update, item)
+        result = self.dbpool.runInteraction(self.update, item)
         # result.addErrback(self.error)
 
     def error(self, reason):

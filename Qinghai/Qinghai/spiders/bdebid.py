@@ -20,13 +20,13 @@ class BdebidSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs ):
         super(BdebidSpider, self).__init__()
         self.cates = [
-            {"cate": "003001", "pages": 5},  # 采购公告
-            {"cate": "003002", "pages": 5},  # 变更公告
-            {"cate": "003003", "pages": 5},  # 候选人公示
-            {"cate": "003004", "pages": 5},  # 采购结果公示
+            {"cate": "003001", "pages": 3},  # 采购公告
+            {"cate": "003002", "pages": 3},  # 变更公告
+            {"cate": "003003", "pages": 3},  # 候选人公示
+            {"cate": "003004", "pages": 3},  # 采购结果公示
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
 
     def start_requests(self):
         for each in self.cates:

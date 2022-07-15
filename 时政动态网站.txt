@@ -64,6 +64,9 @@ http://www.gsnea.cn/page158?article_category=92
 00676
 
 
+
+
+
 甘肃电力在线
 http://gs.news.cn/dianli/cult.htm
 http://gs.news.cn/dianli/grid.htm
@@ -83,4 +86,47 @@ https://www.miit.gov.cn/api-gateway/jpaas-publish-server/front/page/build/unit?p
 # 领导活动
 https://www.miit.gov.cn/api-gateway/jpaas-publish-server/front/page/build/unit?parseType=buildstatic&webId=8d828e408d90447786ddbe128d495e9e&tplSetId=209741b2109044b5b7695700b2bec37e&pageType=column&tagId=%E5%8F%B3%E4%BE%A7%E5%86%85%E5%AE%B9&editType=null&pageId=d3e2bede1bc045e2875fc7161c01db7d
 00678
+
+
+国家矿山安全监察局甘肃局
+http://gs.chinamine-safety.gov.cn/web/tofindInfoList.shtml?channelid=3688906045068456&parentid=3688906045068456?page=1
+http://gs.chinamine-safety.gov.cn/web/tofindInfoList.shtml?channelid=3688924161826730&parentid=3688924161826730?page=1
+http://gs.chinamine-safety.gov.cn/web/tofindInfoList.shtml?channelid=3688968856372054&parentid=3688968856372054?page=1
+00679
+
+
+
+中华人民共和国交通运输部
+https://www.mot.gov.cn/jiaotongyaowen/index.html
+00680
+
+
+
+
+中国经济网-交通频道
+http://www.ce.cn/cysc/jtys/yw/index.shtml
+http://www.ce.cn/cysc/jtys/tielu/index.shtml
+http://www.ce.cn/cysc/jtys/hangkong/index.shtml
+http://www.ce.cn/cysc/jtys/gonglu/index.shtml
+http://www.ce.cn/cysc/jtys/haiyun/index.shtml
+http://www.ce.cn/cysc/jtys/csjt/index.shtml
+http://www.ce.cn/cysc/jtys/zhwl/index.shtml
+00681
+
+
+交通在线
+http://www.jiaotongwang.cn/category/list-787-2266-1.html
+00682
+
+
+
+中国交通网
+http://www.zgjt.org/list-1.html
+http://www.zgjt.org/list-2.html
+http://www.zgjt.org/list-3.html
+http://www.zgjt.org/list-4.html
+http://www.zgjt.org/list-6.html
+http://www.zgjt.org/list-7.html
+00683
+
 

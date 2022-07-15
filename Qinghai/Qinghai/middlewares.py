@@ -164,6 +164,7 @@ class RandomIPMiddleware(object):
         )
         self.db2 = redis.Redis(connection_pool=self.pool2)
         # 获取所有ip返回列表
+        self.page = 0
         result = self.db2.hgetall('localproxyip')
         print(result)
         self.ips = []
@@ -188,7 +189,14 @@ class RandomIPMiddleware(object):
                     request.meta['proxy'] = 'https://' + proxy
             else:
                 spider.logger.warning('不使用代理访问[%s]' % request.url)
+
+            res = urlparse(request.url)  # 获取访问链接
+            link = res.scheme + '://' + res.netloc  # 访问页面的域名
+            self.db2.hset('jiankong', link, '0')
+            self.page = 0
+
             return None
+
         except requests.exceptions.RequestException:
             spider.logger.error('ProxyIPMiddleware出错了! ')
 
@@ -200,6 +208,11 @@ class RandomIPMiddleware(object):
             print("this is response !=200 ip:" + ip)
             request.meta['proxy'] = 'http://' + ip
             return request
+
+        self.page += 1  # 访问个数
+        res = urlparse(request.url)  # 获取访问链接
+        link = res.scheme + '://' + res.netloc  # 访问页面的域名
+        self.db2.hset('jiankong', link, str(self.page))
         return response
 
     def process_exception(self, request, exception, spider):
@@ -208,6 +221,12 @@ class RandomIPMiddleware(object):
             return request
         # 出现异常时（超时）使用代理
         print("\n出现异常，正在使用代理重试....\n",exception)
+
+        self.page += 1  # 访问个数
+        res = urlparse(request.url)  # 获取访问链接
+        link = res.scheme + '://' + res.netloc  # 访问页面的域名
+        self.db2.hset('jiankong', link, str(self.page))
+
         ip = random.choice(self.ips)
         # 对当前reque加上代理
         request.meta['proxy'] = 'https://' + ip

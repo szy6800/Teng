@@ -8,21 +8,23 @@ import json
 import jsonpath
 import scrapy
 import copy
-
+from urllib.parse import unquote
 
 class HouseSpider(scrapy.Spider):
     name = 'house'
     # allowed_domains = ['chinabdc.cn']
     # start_urls = ['http://chinabdc.cn/']
+    def __init__(self, *args, **kwargs):
+        super(HouseSpider, self).__init__()
 
     def start_requests(self):
-        for i in range(80,104):
-            url = 'https://www.chinabdc.cn/Tool/Config/QueryMethodName?methodName=GetNHouseList&pageIndex={}' \
-                  '&pageCount=10&filter_property=%7B%22mode%22:%22AND%22,%22data%22:[]%7D'.format(i)
-            yield scrapy.Request(url=url, callback=self.parse)
+        for i in range(1000,1043):
+            url = 'https://www.chinabdc.cn/Tool/Config/QueryMethodName?methodName=GetNHouseList&pageIndex={}&pageCount=10&filter_property=%7B%22mode%22:%22AND%22,%22data%22:[]%7D'.format(i)
+            yield scrapy.Request(url, callback=self.parse)
 
     def parse(self, response, **kwargs):
         js_text = json.loads(response.text)
+        # print(js_text)
         url_id = jsonpath.jsonpath(js_text,'$..id')
         # 小区名字
         name = jsonpath.jsonpath(js_text,'$..name')
@@ -49,9 +51,10 @@ class HouseSpider(scrapy.Spider):
         # 区县名
         disrictname = jsonpath.jsonpath(js_text,'$..disrictname')
 
+        # deliverytime = jsonpath.jsonpath(js_text, '$..deliverytime')
+
         for id, name, house_type,area_range,nsale_time,address,features,price,lastmodifydate,longitude,latitude,developers,disrictname in \
                 zip(url_id,name,house_type,area_range,nsale_time,address,features,price,lastmodifydate,longitude,latitude,developers,disrictname):
-
             item =dict()
             item['url'] = 'https://www.chinabdc.cn/index.html#/NewHouse/detail?ID='+id
             item['detail_id'] = id
@@ -60,11 +63,15 @@ class HouseSpider(scrapy.Spider):
             item['area_range'] = area_range
             item['nsale_time'] = nsale_time
             item['address'] = address
+            # item['deliverytime'] = deliverytime
             item['features'] = features
             item['lng'] = longitude
             item['lat'] = latitude
             item['developers'] = developers
+
             item['disrictname'] = disrictname
+
+
             if price == 0.0:
                 item['price'] = '价格待定'
             else:
