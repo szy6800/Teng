@@ -19,6 +19,7 @@ REDIS_PASSWD = '$SMe9ndaZQw$4bJ2'
 # pool = redis.ConnectionPool(host=REDIS_IP, port=REDIS_PORT, db=REDIS_DB, password=REDIS_PASSWD)  # , max_connections=10
 # r = redis.Redis(connection_pool=pool)
 
+# 单例模式
 class Redis_DB():
     __red = None
     __init = True

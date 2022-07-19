@@ -31,10 +31,10 @@ class GsDingxiSpider(scrapy.Spider):
         #
         # ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
 
     def start_requests(self):
-        for i in range(1, 9):
+        for i in range(1, 2):
             url = "http://ggzy.dingxi.gov.cn/EpointWebBuilder/JySearchAction.action?cmd=initPageList"
             formdata = {
                 "siteGuid": "7eb5f7f1-9041-43ad-8e13-8fcb82ea831a",

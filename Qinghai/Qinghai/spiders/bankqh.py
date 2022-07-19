@@ -24,10 +24,10 @@ class BankqhSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs ):
         super(BankqhSpider, self).__init__()
         self.cates = [
-            {"cate": "zbgg", "pages": 3},  # 重要公告
+            {"cate": "zbgg", "pages": 1},  # 重要公告
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=8)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
 
     def start_requests(self):
         for each in self.cates:

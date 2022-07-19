@@ -21,7 +21,6 @@ def job():
     # print('starting time ===>', start_time)
     # # 采集逻辑
     # # # #bnu ccccltd
-    # os.system('scrapy crawl bjchy')
 
     os.system('scrapy crawl a59med')
     os.system('scrapy crawl bankqh')
@@ -31,7 +30,7 @@ def job():
     os.system('scrapy crawl bjx')
     os.system('scrapy crawl bnu')
     os.system('scrapy crawl bzggzyjy')
-    # os.system('scrapy crawl ccccltd')
+
     os.system('scrapy crawl chinabrr')
     os.system('scrapy crawl cnooc')
     os.system('scrapy crawl conch')
@@ -44,17 +43,17 @@ def job():
     os.system('scrapy crawl ebidding')
     os.system('scrapy crawl eceg')
     os.system('scrapy crawl fjggzyjy')
-    # os.system('scrapy crawl ggzy')
-    os.system('scrapy crawl gs_gsei')
+
+
+    os.system('scrapy crawl gs_dingxi')
     os.system('scrapy crawl gs_ggzy')
-    os.system('scrapy crawl gs_ggzyjy')
     os.system('scrapy crawl gs_gnzrmzf')
     os.system('scrapy crawl gs_gnzrmzf1')
+    os.system('scrapy crawl gs_gsei')
     os.system('scrapy crawl gs_gssey')
     os.system('scrapy crawl gs_plsggzyjy')
     os.system('scrapy crawl gs_plsggzyjy1')
     os.system('scrapy crawl gs_qysggzyjy')
-    os.system('scrapy crawl gs_plsggzyjy1')
     os.system('scrapy crawl gs_tianshui')
     os.system('scrapy crawl hcjq')
     os.system('scrapy crawl hhsd')
@@ -90,19 +89,21 @@ def job():
 
 
 if __name__ == "__main__":
-    job()
-    scheduler = BlockingScheduler()  # 实例化定时器
-    scheduler.add_job(job, 'cron', hour=10, minute=4)
-    scheduler.add_job(job, 'cron', hour=16, minute=2)
-    scheduler.add_job(job, 'cron', hour=22, minute=2)
-
-    try:
-        scheduler.start()
-    except (KeyboardInterrupt, SystemExit):
-        pass
-    except SystemExit:
-        print('exit')
-        exit()
+    while True:
+        job()
+        time.sleep(60*20)
+    # scheduler = BlockingScheduler()  # 实例化定时器
+    # scheduler.add_job(job, 'cron', hour=10, minute=4)
+    # scheduler.add_job(job, 'cron', hour=16, minute=2)
+    # scheduler.add_job(job, 'cron', hour=22, minute=2)
+    #
+    # try:
+    #     scheduler.start()
+    # except (KeyboardInterrupt, SystemExit):
+    #     pass
+    # except SystemExit:
+    #     print('exit')
+    #     exit()
 
 
 

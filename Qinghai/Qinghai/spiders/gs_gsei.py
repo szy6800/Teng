@@ -22,12 +22,12 @@ class GsGgzySpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(GsGgzySpider, self).__init__()
         self.cates = [
-            {"cate": "1337", "pages": 4},  #
+            {"cate": "1337", "pages": 3},  #
 
 
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
 
     def start_requests(self):
         for each in self.cates:

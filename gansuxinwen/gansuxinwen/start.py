@@ -43,6 +43,8 @@ def job():
     os.system('scrapy crawl zgjtb')
     os.system('scrapy crawl zgjtys')
     os.system('scrapy crawl mem')
+    os.system('scrapy crawl emerinfo')
+    os.system('scrapy crawl mem')
 
 
     print('采集已完成>>>>>>>>')

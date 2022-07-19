@@ -30,10 +30,10 @@ class GsGnzrmzfSpider(scrapy.Spider):
         #
         # ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
 
     def start_requests(self):
-        for i in range(0, 3):
+        for i in range(1, 2):
             url = "http://ggzyjy.gnzrmzf.gov.cn/f/newtrade/annogoods/getAnnoList"
             formdata = {
                 "pageNo": "{}".format(i),

@@ -30,10 +30,10 @@ class GsPlsggzyjySpider(scrapy.Spider):
         #
         # ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
 
     def start_requests(self):
-        for i in range(1, 5):
+        for i in range(1, 3):
             url = "http://www.plsggzyjy.cn/f/tenderannquainqueryanns/tenderannquainqueryanns/annquainList?projectDataSourceId="
             formdata = {
                 "pageNo": "{}".format(i),

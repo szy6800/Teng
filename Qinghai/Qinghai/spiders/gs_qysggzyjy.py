@@ -4,7 +4,6 @@
 # @Site : http://www.qysggzyjy.cn/f/newtrade/tenderannquainqueryanns/list?selectedProjectType=1&idxType=A01&way=undefined&nature=1&typetab=0
 # @introduce:庆阳市公共资源交易中心
 
-import scrapy
 
 import scrapy
 import copy
@@ -23,15 +22,15 @@ class GsQysggzyjySpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(GsQysggzyjySpider, self).__init__()
         self.cates = [
-            {"cate": "newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=", "pages": 3},  # 招标公告
-            {"cate": "newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=B&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=", "pages": 3},  # 招标公告
-            {"cate": "newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=C&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=", "pages": 3},  # 招标公告
-            {"cate": "newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=", "pages": 3},  # 招标公告
-            {"cate": "newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=", "pages": 3},  # 招标公告
+            {"cate": "newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=A&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=", "pages": 2},  # 招标公告
+            {"cate": "newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=B&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=", "pages": 2},  # 招标公告
+            {"cate": "newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=C&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=", "pages": 2},  # 招标公告
+            {"cate": "newtrade/tenderannquainqueryanns/getListByProjectTypePage?projectType=D&purchaseCode=&gsPlatformNavActive=1&projectName=&tradePlatformId=1&tenderMode=all&pageNo=", "pages": 2},  # 招标公告
+            # {"cate": "newtrade/tenderannquainqueryanns/getImportantList?type=&noticename=&pageNo=", "pages": 3},  # 招标公告
           #  {"cate": "purchase/purchaseAnnoment/getAnnoList?type=sunAll&tabType=1&tradePlatformId=1&noticename=&pageNo=", "pages": 2},  # 招标公告
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
 
     def start_requests(self):
         for each in self.cates:

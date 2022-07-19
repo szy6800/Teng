@@ -25,10 +25,10 @@ class GsGsseySpider(scrapy.Spider):
             {"cate": "catid=26", "pages": 8},  # 招中标信息
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
 
     def start_requests(self):
-        for i in range(1, 10):
+        for i in range(1, 3):
             url = 'http://www.gssey.com/news4/index_{}.jhtml'.format(i)
             yield scrapy.Request(url=url, callback=self.parse,dont_filter=True)
 
@@ -50,7 +50,6 @@ class GsGsseySpider(scrapy.Spider):
             item['publish_time'] = PUBLISH.strftime('%Y-%m-%d')  # 发布时间
             ctime = self.t.datetimes(item['publish_time'])
             item['uid'] = 'zf' + Utils_.md5_encrypt(item['title'] + item['link'] + item['publish_time'])
-
             if Redis_DB().Redis_pd(item['uid']) is True:  # 数据去重
                 print(item['uid'], '\033[0;35m <=======此数据已采集=======> \033[0m')
                 return

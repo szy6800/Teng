@@ -164,13 +164,12 @@ class RandomIPMiddleware(object):
         )
         self.db2 = redis.Redis(connection_pool=self.pool2)
         # 获取所有ip返回列表
-        self.page = 0
         result = self.db2.hgetall('localproxyip')
-        print(result)
         self.ips = []
         for k, v in result.items():
             ip = k + ":" + v
             self.ips.append(ip)
+        self.page = 0
         print(self.ips)
 
     def process_request(self, request, spider):
@@ -193,42 +192,53 @@ class RandomIPMiddleware(object):
             res = urlparse(request.url)  # 获取访问链接
             link = res.scheme + '://' + res.netloc  # 访问页面的域名
             self.db2.hset('jiankong', link, '0')
-            self.page = 0
-
+            # self.page = 0
             return None
-
         except requests.exceptions.RequestException:
             spider.logger.error('ProxyIPMiddleware出错了! ')
+
 
     def process_response(self, request, response, spider):
         # 对返回的response处理
         # 如果返回的response状态不是200，重新生成当前request对象
         if response.status != 200:
+            self.page += 1  # 访问个数
+            res = urlparse(request.url)  # 获取访问链接
+            link = res.scheme + '://' + res.netloc  # 访问页面的域名
+            self.db2.hset('jiankong', link, str(self.page))
+            if self.page == 100:
+                print('<<<<更换ip>>>>')
+                result = self.db2.hgetall('localproxyip')
+                self.ips = []
+                self.page = 0
+                for k, v in result.items():
+                    ip = k + ":" + v
+                    self.ips.append(ip)
             ip = random.choice(self.ips)
             print("this is response !=200 ip:" + ip)
             request.meta['proxy'] = 'http://' + ip
             return request
-
-        self.page += 1  # 访问个数
-        res = urlparse(request.url)  # 获取访问链接
-        link = res.scheme + '://' + res.netloc  # 访问页面的域名
-        self.db2.hset('jiankong', link, str(self.page))
         return response
-
     def process_exception(self, request, exception, spider):
         if isinstance(exception, TimeoutError):
             print('****************************请求超时****************************')
             return request
-        # 出现异常时（超时）使用代理
-        print("\n出现异常，正在使用代理重试....\n",exception)
 
+        # 出现异常时（超时）使用代理
+        print("\n出现异常，正在使用代理重试....\n", exception)
         self.page += 1  # 访问个数
         res = urlparse(request.url)  # 获取访问链接
         link = res.scheme + '://' + res.netloc  # 访问页面的域名
         self.db2.hset('jiankong', link, str(self.page))
-
+        if self.page == 30:
+            print('<<<<更换ip>>>>')
+            result = self.db2.hgetall('localproxyip')
+            self.ips = []
+            self.page = 0
+            for k, v in result.items():
+                ip = k + ":" + v
+                self.ips.append(ip)
         ip = random.choice(self.ips)
         # 对当前reque加上代理
         request.meta['proxy'] = 'https://' + ip
         return request
-

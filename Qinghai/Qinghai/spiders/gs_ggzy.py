@@ -22,14 +22,14 @@ class GsGgzySpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(GsGgzySpider, self).__init__()
         self.cates = [
-            {"cate": "ZBGG", "pages": 3,'types':'SZFJ'},  # 市政、房建工程
-            {"cate": "CGGG", "pages": 3,'types':'ZFCG'},  # 政府采购
-            {"cate": "ZBGG", "pages": 3,'types':'QT'},  # 交通、水利及其他工程
-            {"cate": "CRGG", "pages": 3,'types':'GTGC'},  # 国土、矿权、产权
-            {"cate": "ZBGG", "pages": 3,'types':'GYXM'},  # 工业项目
+            {"cate": "ZBGG", "pages": 2,'types':'SZFJ'},  # 市政、房建工程
+            {"cate": "CGGG", "pages": 2,'types':'ZFCG'},  # 政府采购
+            {"cate": "ZBGG", "pages": 2,'types':'QT'},  # 交通、水利及其他工程
+            {"cate": "CRGG", "pages": 2,'types':'GTGC'},  # 国土、矿权、产权
+            {"cate": "ZBGG", "pages": 2,'types':'GYXM'},  # 工业项目
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=5)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
 
     def start_requests(self):
         for each in self.cates:

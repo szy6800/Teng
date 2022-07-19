@@ -22,10 +22,10 @@ class GsTianshuiSpider(scrapy.Spider):
         super(GsTianshuiSpider, self).__init__()
         self.cates = [
           {"cate": "A01", "pages": 3,'types':'1'},  # 招标公告
-          {"cate": "A01", "pages": 3,'types':'2'},  # 招标公告
-          {"cate": "A99", "pages": 3,'types':'1'},  # 招标公告
-          {"cate": "A99", "pages": 3,'types':'2'},  # 招标公告
-          {"cate": "A02", "pages": 3,'types':'1'},  # 招标公告
+          {"cate": "A01", "pages": 2,'types':'2'},  # 招标公告
+          {"cate": "A99", "pages": 2,'types':'1'},  # 招标公告
+          {"cate": "A99", "pages": 2,'types':'2'},  # 招标公告
+          {"cate": "A02", "pages": 2,'types':'1'},  # 招标公告
           {"cate": "A02", "pages": 2,'types':'2'},  # 招标公告
           {"cate": "A03", "pages": 2,'types':'1'},  # 招标公告
           {"cate": "A03", "pages": 2,'types':'2'},  # 招标公告
@@ -35,7 +35,7 @@ class GsTianshuiSpider(scrapy.Spider):
           {"cate": "C", "pages": 2,'types':'2'},  # 招标公告
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=200)
 
     def start_requests(self):
         for each in self.cates:

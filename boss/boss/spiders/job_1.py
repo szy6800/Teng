@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# 招聘详情
 from abc import ABC
 import re
 import time
@@ -61,47 +62,47 @@ class Job1Spider(scrapy.Spider, ABC):
         item = response.meta['item']
         job_text = json.loads(response.text)
         print(job_text)
-        # job_list = job_text['zpData']['jobList']
-        #
-        # for i in job_list:
-        #     # 招聘人
-        #     item['bossName'] = i['bossName']
-        #     # 岗位名称
-        #     item['jobName'] = i['jobName']
-        #     # 薪资
-        #     item['salaryDesc'] = i['salaryDesc']
-        #     # 招聘人岗位
-        #     item['bossTitle'] = i['bossTitle']
-        #     # 岗位（标签要求）
-        #     item['jobLabels'] = i['jobLabels']
-        #     # 要求技能
-        #     item['skills'] = i['skills']
-        #     # 工作年限
-        #     item['jobExperience'] = i['jobExperience']
-        #     # 学历要求
-        #     item['jobDegree'] = i['jobDegree']
-        #     # 所在城市
-        #     item['cityName'] = i['cityName']
-        #     # 公司
-        #     item['brandName'] = i['brandName']
-        #     # 公司logo
-        #     item['brandLogo'] = i['brandLogo']
-        #     # 融资阶段
-        #     item['brandStageName'] = i['brandStageName']
-        #     # 行业
-        #     item['brandIndustry'] = i['brandIndustry']
-        #     # 公司规模
-        #     item['brandScaleName'] = i['brandScaleName']
-        #     # 公司福利
-        #     item['welfareList'] = i['welfareList']
-        #     # 行业编码
-        #     item['industry'] = i['industry']
-        #     # 城市编码
-        #     item['cityCode'] = i['industry']
-        #
-        #     yield item
-        #
-        #
+        job_list = job_text['zpData']['jobList']
+
+        for i in job_list:
+            # 招聘人
+            item['bossName'] = i['bossName']
+            # 岗位名称
+            item['jobName'] = i['jobName']
+            # 薪资
+            item['salaryDesc'] = i['salaryDesc']
+            # 招聘人岗位
+            item['bossTitle'] = i['bossTitle']
+            # 岗位（标签要求）
+            item['jobLabels'] = i['jobLabels']
+            # 要求技能
+            item['skills'] = i['skills']
+            # 工作年限
+            item['jobExperience'] = i['jobExperience']
+            # 学历要求
+            item['jobDegree'] = i['jobDegree']
+            # 所在城市
+            item['cityName'] = i['cityName']
+            # 公司
+            item['brandName'] = i['brandName']
+            # 公司logo
+            item['brandLogo'] = i['brandLogo']
+            # 融资阶段
+            item['brandStageName'] = i['brandStageName']
+            # 行业
+            item['brandIndustry'] = i['brandIndustry']
+            # 公司规模
+            item['brandScaleName'] = i['brandScaleName']
+            # 公司福利
+            item['welfareList'] = i['welfareList']
+            # 行业编码
+            item['industry'] = i['industry']
+            # 城市编码
+            item['cityCode'] = i['industry']
+
+            yield item
+
+
 
 
 

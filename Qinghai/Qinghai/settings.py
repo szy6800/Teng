@@ -20,7 +20,7 @@ NEWSPIDER_MODULE = 'Qinghai.spiders'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
-DOWNLOAD_TIMEOUT = 16
+DOWNLOAD_TIMEOUT = 8
 # LOG_LEVEL = 'WARNING'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
@@ -56,7 +56,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'Qinghai.middlewares.RandomUserAgentMiddleware': 143,
-   # 'Qinghai.middlewares.RandomIPMiddleware': 40,
+   'Qinghai.middlewares.RandomIPMiddleware': 40,
 
 }
 
