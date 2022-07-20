@@ -7,7 +7,12 @@
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
 
+from liepin.items import LiepinJOBItem
+from liepin.items import LiepinCompItem
+
 
 class LiepinPipeline:
     def process_item(self, item, spider):
-        return item
+        if isinstance(item, LiepinCompItem):
+            print(item)
+

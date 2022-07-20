@@ -8,6 +8,7 @@ import pymysql
 from twisted.enterprise import adbapi
 from pymysql.converters import escape_string
 
+
 class GansuxinwenPipeline(object):
     def __init__(self, pool):
         self.dbpool = pool

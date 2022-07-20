@@ -33,8 +33,8 @@ def id_sult():
     now = datetime.datetime.utcnow()
     otherStyleTime = now.strftime("%Y-%m-%d")
     yesterday = date.today() + timedelta(days=-1)
-    sql = f"SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `caijiqi` where date(create_time)=curdate()"
-    # sql = f"SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `caijiqi` where date(create_time)=date_sub(curdate(),interval 1 day)"
+    # sql = f"SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `caijiqi` where date(create_time)=curdate()"
+    sql = f"SELECT uid,uuid,title,link,intro,abs,content,publish_time,purchaser,proxy,create_time,update_time,deleted,province,base,type,items,data_source,end_time,status,serial FROM `caijiqi` where date(create_time)=date_sub(curdate(),interval 1 day)"
     result1 = queryue(sql=sql)
     # print(result1)
     page = len(result1)

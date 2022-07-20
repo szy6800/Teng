@@ -19,6 +19,7 @@ from scrapy.http import HtmlResponse
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from liepin.settings import PROXY_REDIS_IP, PROXY_REDIS_PORT, PROXY_REDIS_PASSWD
+
 class LiepinSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
@@ -136,59 +137,3 @@ class RandomUserAgentMiddleware(object):
 
 
 
-class RandomIPMiddleware(object):
-    def __init__(self):
-        self.pool2 = redis.ConnectionPool(
-            host=PROXY_REDIS_IP, port=PROXY_REDIS_PORT, password=PROXY_REDIS_PASSWD, decode_responses=True
-        )
-        self.db2 = redis.Redis(connection_pool=self.pool2)
-        # 获取所有ip返回列表
-        result = self.db2.hgetall('localproxyip')
-        self.ips = []
-        for k, v in result.items():
-            ip = k + ":" + v
-            self.ips.append(ip)
-        print(self.ips)
-
-    def process_request(self, request, spider):
-        try:
-            # 此方法会返回一个随机ip ['ip']
-            proxy = random.choices(self.ips)
-            # proxy = ''
-            if proxy:
-                proxy = proxy[0]
-                agreement = urlparse(request.url).scheme
-                if agreement == 'http':
-                    spider.logger.info('使用代理[%s]访问[%s]' % (proxy, request.url))
-                    request.meta['proxy'] = 'http://' + proxy
-                else:
-                    spider.logger.info('使用代理[%s]访问[%s]' % (proxy, request.url))
-                    request.meta['proxy'] = 'https://' + proxy
-            else:
-                spider.logger.warning('不使用代理访问[%s]' % request.url)
-            return None
-        except requests.exceptions.RequestException:
-            spider.logger.error('ProxyIPMiddleware出错了! ')
-
-    def process_response(self, request, response, spider):
-        # 对返回的response处理
-        # 如果返回的response状态不是200，重新生成当前request对象
-        if response.status != 200:
-            ip = random.choice(self.ips)
-            print("this is response !=200 ip:" + ip)
-            request.meta['proxy'] = 'http://' + ip
-            return request
-        return response
-
-    def process_exception(self, request, exception, spider):
-        if isinstance(exception, TimeoutError):
-            print('****************************请求超时****************************')
-            return request
-
-        # 出现异常时（超时）使用代理
-        print("\n出现异常，正在使用代理重试....\n", exception)
-        ip = random.choice(self.ips)
-        # 对当前reque加上代理
-        request.meta['proxy'] = 'https://' + ip
-
-        return request
