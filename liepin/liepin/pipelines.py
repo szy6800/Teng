@@ -9,10 +9,106 @@ from itemadapter import ItemAdapter
 
 from liepin.items import LiepinJOBItem
 from liepin.items import LiepinCompItem
-
+import pymysql
+from twisted.enterprise import adbapi
+from pymysql.converters import escape_string
 
 class LiepinPipeline:
+    def __init__(self, pool):
+        self.dbpool = pool
+        # 插入语句
+        self.insert_sql = """
+            INSERT INTO jobs(
+                            uid, link, job_title, job_indu, salary, work_years, job_tags,
+                            city, job_desc, education, comp_name
+                        )VALUES ('{}','{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')
+        """
+    @classmethod
+    def from_settings(cls, settings):
+        params = dict(
+            host=settings['MYSQL_HOST'],
+            port=settings['MYSQL_PORT'],
+            db=settings['MYSQL_DB'],
+            user=settings['MYSQL_USER'],
+            passwd=settings['MYSQL_PASSWD'],
+            charset=settings['MYSQL_CHARSET'],
+            cursorclass=pymysql.cursors.DictCursor
+        )
+        db_connect_pool = adbapi.ConnectionPool('pymysql', **params)
+        obj = cls(db_connect_pool)
+        return obj
+
+    def process_item(self, item, spider):
+        if isinstance(item, LiepinJOBItem):
+            result = self.dbpool.runInteraction(self.insert, item)
+
+    def error(self, reason):
+        print('error------', reason)
+    def insert(self, cursor, item):
+        cursor.execute(self.insert_sql.format(
+            item['uid'],
+            item['link'],
+            item['job_title'],
+            item['job_indu'],
+            item['salary'],
+            item['work_years'],
+            item['job_tags'],
+            item['city'],
+            item['job_desc'],
+            item['education'],
+            item['comp_name']
+        ))
+        print(f"新增公告==== {item['uid']} ======{item['job_title']}")
+
+
+
+class LiepincPipeline:
+    def __init__(self, pool):
+        self.dbpool = pool
+        # 插入语句
+        self.insert_sql = """
+            INSERT INTO company(
+                            cid, link, name, comp_ind, num_of_peo, fig_stage, comp_addr,
+                            reg_time, reg_capi, op_period, man_range,comp_desc,lng,lat
+                        )VALUES ('{}','{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')
+        """
+    @classmethod
+    def from_settings(cls, settings):
+        params = dict(
+            host=settings['MYSQL_HOST'],
+            port=settings['MYSQL_PORT'],
+            db=settings['MYSQL_DB'],
+            user=settings['MYSQL_USER'],
+            passwd=settings['MYSQL_PASSWD'],
+            charset=settings['MYSQL_CHARSET'],
+            cursorclass=pymysql.cursors.DictCursor
+        )
+        db_connect_pool = adbapi.ConnectionPool('pymysql', **params)
+        obj = cls(db_connect_pool)
+        return obj
+
     def process_item(self, item, spider):
         if isinstance(item, LiepinCompItem):
-            print(item)
+            result = self.dbpool.runInteraction(self.insert, item)
 
+    def error(self, reason):
+        print('error------', reason)
+
+    def insert(self, cursor, item):
+        cursor.execute(self.insert_sql.format(
+            item['cid'],
+            item['link'],
+            item['name'],
+            item['comp_ind'],
+            item['num_of_peo'],
+            item['fig_stage'],
+            item['comp_addr'],
+            item['reg_time'],
+            item['reg_capi'],
+            item['op_period'],
+            item['man_range'],
+            item['comp_desc'],
+            item['lng'],
+            item['lat'],
+        ))
+        print(f"新增公司==== {item['cid']} ======{item['name']}")

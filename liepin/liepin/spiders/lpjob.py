@@ -5,7 +5,7 @@ import jsonpath
 import copy
 from liepin.items import LiepinJOBItem
 from liepin.items import LiepinCompItem
-
+import hashlib
 
 class LpjobSpider(scrapy.Spider):
     name = 'lpjob'
@@ -15,8 +15,8 @@ class LpjobSpider(scrapy.Spider):
 
         # self.result = dbz()
     def start_requests(self):
-        url = 'https://www.liepin.com/zhaopin/?headId=f6165a1f8584f2e02244bb8c52fc5bdf&ckId=0lvq6bwxswrzig29y8d8r9m83snwgfz8&oldCkId=f1aa3d12c4c0f0d02e6e06f3828f6e29&fkId=' \
-              'j99i2466m18z38u8gst54oj6wby3slob&skId=02akryz8xa9bj52xrdjtqeqeqcs10xib&sfrom=search_job_pc&industry=1$420&currentPage=5&scene=page'
+
+        url = 'https://www.liepin.com/zhaopin/?headId=9296d84423d70bfb31a63874d29dce6e&ckId=qjifw5vzwgtepwq3dle9hx6a4wvense8&oldCkId=9abde3568e7bf67336a7b9168605ba7d&fkId=fer793ehy1njp3co234146pvyjnats88&skId=1xr9gptsswpl8wpfizgd4ly6bfrau1a9&sfrom=search_job_pc&industry=1$040&dq=010&currentPage=1&scene=page'
         yield scrapy.Request(url, callback=self.parse, dont_filter=True)
 
     def parse(self, response, *args, **kwargs):
@@ -33,8 +33,8 @@ class LpjobSpider(scrapy.Spider):
             # 薪资
             item['salary'] = count.xpath('.//*[@class="job-salary"]/text()').get()
             # 工作种类
-            item['job_ind'] = ''
-            # yield item
+            item['job_indu'] = ''
+
             yield scrapy.Request(item['link'], callback=self.parse_info, meta={'item': copy.deepcopy(item)},
                                  dont_filter=True)
 
@@ -55,13 +55,25 @@ class LpjobSpider(scrapy.Spider):
         item['job_tags'] = '|'.join(response.xpath('//*[@class="tag-box"]/ul/li/text()').getall())
         # 公司名
         item['comp_name'] = response.xpath('//*[@class="company-info-container"]//div[@class="name ellipsis-1"]/text()').get()
+        if item['comp_name'] is None:
+            item['comp_name'] = response.xpath('//*[@class="title-box"]/span[2]/text()|//*[@class="title-box"]/span[2]/div/text()').get().strip().replace('· ','')
         # 公司表
+        uid = item['link'] + item['job_title']+item['job_desc']+item['comp_name']
+        item['uid'] = hashlib.md5(uid.encode(encoding='utf-8')).hexdigest()
+
         company_item = LiepinCompItem()
         company_item['name'] = item['comp_name']
         company_item['link'] = response.url
         # 公司行业
         company_item['comp_ind'] = response.xpath("//*[contains(text(),'企业行业：')]/following::span[1]/text()").get()
         # 人数规模
+        lng = response.xpath('//*[@id="location"]/@value').get()
+        try:
+            company_item['lng'] = lng.split(',')[0]
+            company_item['lat'] = lng.split(',')[1]
+        except:
+            company_item['lng'] = ''
+            company_item['lat'] = ''
         company_item['num_of_peo'] = response.xpath("//*[contains(text(),'人数规模：')]/following::span[1]/text()").get()
         # 融资阶段
         company_item['fig_stage'] = response.xpath("//*[contains(text(),'融资阶段：')]/following::span[1]/text()").get()
@@ -77,5 +89,7 @@ class LpjobSpider(scrapy.Spider):
         company_item['man_range'] = response.xpath("//*[contains(text(),'经营范围：')]/following::span[1]/text()").get()
         # 公司简介
         company_item['comp_desc'] = response.xpath('//*[@class="company-intro-container"]//div[contains(@class,"inner")]/text()').get()
+        # 经纬度
+        company_item['cid'] = ''
         yield company_item
         yield item

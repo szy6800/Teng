@@ -13,9 +13,13 @@ import re
 b = re.findall('来源[:： \n]+(.*?)<', a)[0]
 # print(b)
 
-
-n = '018'
-print("{:0<d}".format(int(n)))
+a = '121.50776,31.234293'
+lng = a.split(',')[0]
+lat = a.split(',')[1]
+print(lng)
+print(lat)
+# n = '018'
+# print("{:0<d}".format(int(n)))
 # b = re.findall('\d{2}/\d{2}', a)
 
 

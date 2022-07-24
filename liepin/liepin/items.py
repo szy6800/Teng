@@ -8,10 +8,11 @@ import scrapy
 
 class LiepinJOBItem(scrapy.Item):
     # define the fields for your item here like:
+    uid = scrapy.Field()
     link = scrapy.Field()
     job_title = scrapy.Field()
     name = scrapy.Field()
-    job_ind = scrapy.Field()
+    job_indu = scrapy.Field()
     salary = scrapy.Field()
     work_years = scrapy.Field()
     job_tags = scrapy.Field()
@@ -22,6 +23,7 @@ class LiepinJOBItem(scrapy.Item):
 
 
 class LiepinCompItem(scrapy.Item):
+    cid = scrapy.Field()
     name = scrapy.Field()
     link = scrapy.Field()
     comp_ind = scrapy.Field()
@@ -33,4 +35,6 @@ class LiepinCompItem(scrapy.Item):
     op_period = scrapy.Field()
     man_range = scrapy.Field()
     comp_desc = scrapy.Field()
+    lng = scrapy.Field()
+    lat = scrapy.Field()
 

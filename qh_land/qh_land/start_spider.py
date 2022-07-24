@@ -2,7 +2,7 @@ from scrapy.cmdline import execute
 
 if __name__ == '__main__':
 
-    execute(["scrapy", "crawl", "qh_land"])
+    execute(["scrapy", "crawl", "spider_request"])
 
 
 

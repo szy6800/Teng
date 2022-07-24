@@ -1,18 +1,21 @@
-# -*- coding: utf-8 -*-
 
-# @Time : 2022-07-11 15:29:49
-# @Author : 石张毅
-# @Site : http://www.conch.cn/xxgs/list.aspx
-# @introduce: 安徽海螺水泥股份有限公司
+import json
 
-
-import scrapy
+from scrapy import Spider, Request, cmdline
+from scrapy.cmdline import execute
 
 
-class Test3Spider(scrapy.Spider):
-    name = 'test3'
-    allowed_domains = ['baiduc.com']
-    start_urls = ['http://www.gssgxy.cn/index/hyzx/index.html?page=1']
+class SpiderRequest(Spider):
+    name = "spider_request"
+
+    def start_requests(self):
+        url = "https://httpbin.org/get?name=tom"
+        yield Request(url, body=json.dumps({"age": "23"}))
 
     def parse(self, response):
         print(response.text)
+
+
+if __name__ == '__main__':
+    execute(["scrapy", "crawl", "xuke"])
+

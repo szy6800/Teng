@@ -71,7 +71,7 @@ def job():
     os.system('scrapy crawl tobaccobid')
     os.system('scrapy crawl westmining')
     os.system('scrapy crawl xndyyljt')
-    os.system('scrapy crawl xntg')
+    # os.system('scrapy crawl xntg')
     os.system('scrapy crawl zgazxxw')
     os.system('scrapy crawl zhengpingjituan')
     os.system('scrapy crawl zmzb')
@@ -91,7 +91,7 @@ def job():
 if __name__ == "__main__":
     while True:
         job()
-        time.sleep(60*20)
+        time.sleep(60*300)
     # scheduler = BlockingScheduler()  # 实例化定时器
     # scheduler.add_job(job, 'cron', hour=10, minute=4)
     # scheduler.add_job(job, 'cron', hour=16, minute=2)
