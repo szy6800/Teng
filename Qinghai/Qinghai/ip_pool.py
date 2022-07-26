@@ -114,6 +114,7 @@ class Redis_Ip():
                 else:
                     print(proxy, '<<<<<<ip不可用>>>>>>')
                     self.dele_usable_ip_list.append(proxy)
+
         except:
             print(proxy,'请求异常')
             self.dele_usable_ip_list.append(proxy)

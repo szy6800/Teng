@@ -20,6 +20,7 @@ class LiepinJOBItem(scrapy.Item):
     job_desc = scrapy.Field()
     education = scrapy.Field()
     comp_name = scrapy.Field()
+    cid = scrapy.Field()
 
 
 class LiepinCompItem(scrapy.Item):
@@ -37,4 +38,5 @@ class LiepinCompItem(scrapy.Item):
     comp_desc = scrapy.Field()
     lng = scrapy.Field()
     lat = scrapy.Field()
+    logo = scrapy.Field()
 

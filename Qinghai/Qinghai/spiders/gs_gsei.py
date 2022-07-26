@@ -24,7 +24,6 @@ class GsGgzySpider(scrapy.Spider):
         self.cates = [
             {"cate": "1337", "pages": 3},  #
 
-
         ]
         self.t = Times()
         self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
