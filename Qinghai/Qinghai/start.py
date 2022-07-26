@@ -47,6 +47,7 @@ def job():
 
     os.system('scrapy crawl gs_dingxi')
     os.system('scrapy crawl gs_ggzy')
+    os.system('scrapy crawl gs_ggzy_jsc')
     os.system('scrapy crawl gs_gnzrmzf')
     os.system('scrapy crawl gs_gnzrmzf1')
     os.system('scrapy crawl gs_gsei')
@@ -88,21 +89,19 @@ def job():
 
 
 if __name__ == "__main__":
-    while True:
-        job()
-        time.sleep(60*300)
-    # scheduler = BlockingScheduler()  # 实例化定时器
-    # scheduler.add_job(job, 'cron', hour=10, minute=4)
-    # scheduler.add_job(job, 'cron', hour=16, minute=2)
-    # scheduler.add_job(job, 'cron', hour=22, minute=2)
-    #
-    # try:
-    #     scheduler.start()
-    # except (KeyboardInterrupt, SystemExit):
-    #     pass
-    # except SystemExit:
-    #     print('exit')
-    #     exit()
+    job()
+    scheduler = BlockingScheduler()  # 实例化定时器
+    scheduler.add_job(job, 'cron', hour=10, minute=4)
+    scheduler.add_job(job, 'cron', hour=16, minute=2)
+    scheduler.add_job(job, 'cron', hour=22, minute=2)
+
+    try:
+        scheduler.start()
+    except (KeyboardInterrupt, SystemExit):
+        pass
+    except SystemExit:
+        print('exit')
+        exit()
 
 
 

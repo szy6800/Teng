@@ -1,7 +1,6 @@
 from scrapy.cmdline import execute
 
 
-
 if __name__ == '__main__':
     # execute(["scrapy", "crawl", "xuke"])
     execute(["scrapy", "crawl", "lpjob"])
@@ -18,3 +17,4 @@ if __name__ == '__main__':
     #         os.system('scrapy crawl xuke')
     #         print('<<<<<<<<<<<<<<<<<<<<<<<<<<<全部结束>>>>>>>>>>>>>>>>>>>>>>>>>')
     #         time.sleep(3600)
+

@@ -16,15 +16,26 @@ class HhsdSpider(scrapy.Spider):
     name = 'hhsd'
     allowed_domains = ['hhsd.com']
     start_urls = ['http://hhsd.com/']
+    custom_settings = {
+        'COOKIES_ENABLED':False,
+        'DEFAULT_REQUEST_HEADERS': {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+            "Accept-Encoding": "gzip, deflate",
+            "Accept-Language": "zh-CN,zh;q=0.9",
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "Cookie": "ARzami5PV4uxS=5hQv9tz0msH5hS.Zob5d.E757_hZ_Y0Sj7OyjJEsiHR4T839u9FNUWGRyzLvyukmENH7cpVGTJSky7l8Qvzu3wa; ARzami5PV4uxT=U31FZQ7qcBPhpJa_feZBOb12spiSVPysVQXdlvODvn1dGr9q1V1IRr3C5MdhLapqqdwPFrAqJb23xYKPOy0GnnbLl7Y6BCagy7_XkgUE7zPM85o9GhmwJssaBH83g5ILNw7TfPJZWYk2_tFmaRAFShTVdCPLwCSmuHHsuxkoEuMnfThRwE1ligmANGI0OZ2dPBbQ2H2HcxbSx6aASkylwwOK.cdx.MZ0W0_tkyr3q4hQx5omUG4oj24pp8cRCxf9kOz9BlpZE9uq.9WSWaI6by5QznKlx5lU6xK9b8GgDETMP4nQ6fJj02xlojR9wbBr5EP_hUDjh4tzQs_oPASCa1CmtsckI7R4_I6.hzVS5Va",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36",
+        }
+    }
 
     def __init__(self, *args, **kwargs ):
         super(HhsdSpider, self).__init__()
         self.cates = [
             {"cate": "zbgg", "pages": 2},  # 招标公告
-
         ]
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=200)
 
     def start_requests(self):
         for each in self.cates:
