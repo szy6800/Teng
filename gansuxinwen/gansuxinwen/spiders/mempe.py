@@ -37,9 +37,9 @@ class MempeSpider(scrapy.Spider):
             pages = each["pages"]
             for p in range(1, pages):
                 # p = f"_{p}" if p else ""
-                url = f"http://www.mempe.org.cn/{cate}{p}.html"
-                print(url)
+                url = f"http://mempe.org.cn/{cate}{p}.html"
                 yield scrapy.Request(url=url, callback=self.parse, dont_filter=True)
+
 
     def parse(self, response, *args):
         count_list = response.xpath('//*[@class="mainbody_rlist"]/ul/li')

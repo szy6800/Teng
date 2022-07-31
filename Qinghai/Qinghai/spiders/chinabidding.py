@@ -16,10 +16,10 @@ class ChinabiddingSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs ):
         super(ChinabiddingSpider, self).__init__()
         self.cates = [
-            {"cate": "0", "pages": 15},  # 招标公告
+            {"cate": "0", "pages": 5},  # 招标公告
             {"cate": "1", "pages": 3},  # 招标公告
-            {"cate": "2", "pages": 15},  # 招标公告
-            {"cate": "3", "pages": 15},  # 招标公告
+            {"cate": "2", "pages": 5},  # 招标公告
+            {"cate": "3", "pages": 5},  # 招标公告
         ]
         self.t = Times()
         self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=3)

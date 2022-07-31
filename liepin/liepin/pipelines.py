@@ -25,16 +25,18 @@ class LiepinPipeline:
         self.job_insert_sql = """
             INSERT INTO jobs(
                             uid, link, job_title, job_indu, salary, work_years, job_tags,
-                            city, job_desc, education, comp_name,cid
-                        )VALUES ('{}','{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}','{}')
+                            city, job_desc, education, comp_name,cid,source,base,pub_time
+                        )VALUES ('{}','{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}','{}','{}','{}','{}')
         """
 
         self.com_insert_sql = """
              INSERT INTO company(
                              cid, link, name, comp_ind, num_of_peo, fig_stage, comp_addr,
-                             reg_time, reg_capi, op_period, man_range,comp_desc,lng,lat,logo
-                         )VALUES ('{}','{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}','{}')
+                             reg_time, reg_capi, op_period, man_range,comp_desc,lng,lat,logo,welfare,legal_peo,reg_au,comp_code,
+                             status,comp_link,locations,comp_type
+                         )VALUES ('{}','{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')
          """
+
     @classmethod
     def from_settings(cls, settings):
         params = dict(
@@ -57,7 +59,7 @@ class LiepinPipeline:
         print('error------', reason)
 
     def insert(self, cursor, item):
-        if len(item) == 12:
+        if len(item) == 15:
             cursor.execute(self.job_insert_sql.format(
                 item['uid'],
                 item['link'],
@@ -71,6 +73,9 @@ class LiepinPipeline:
                 item['education'],
                 item['comp_name'],
                 item['cid'],
+                item['source'],
+                item['base'],
+                item['pub_time'],
             ))
             print(f"新增岗位==== {item['uid']} ======{item['job_title']}")
         else:
@@ -97,6 +102,14 @@ class LiepinPipeline:
                     item['lng'],
                     item['lat'],
                     item['logo'],
+                    item['welfare'],
+                    item['legal_peo'],
+                    item['reg_au'],
+                    item['comp_code'],
+                    item['status'],
+                    item['comp_link'],
+                    item['locations'],
+                    item['comp_type'],
                 ))
                 print(f"新增公司==== {item['cid']} ======{item['name']}")
 

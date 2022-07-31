@@ -45,13 +45,6 @@ class Redis_DB():
         else:
             Redis_DB().r.hset('jobs', id, '')
 
-    def redis_comp(self, id):
-        redis_id = Redis_DB().r.hexists('company', key=id)
-        if redis_id is True:
-            return True
-        else:
-            Redis_DB().r.hset('company', id, '')
-
 
 
 

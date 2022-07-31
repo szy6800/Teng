@@ -3,7 +3,7 @@ from scrapy.cmdline import execute
 
 if __name__ == '__main__':
     # execute(["scrapy", "crawl", "xuke"])
-    execute(["scrapy", "crawl", "lpjob"])
+    execute(["scrapy", "crawl", "lpjob1"])
     # while True:
     #
     #     # os.system('scrapy crawl fangtianxia')

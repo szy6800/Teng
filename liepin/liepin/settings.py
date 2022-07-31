@@ -25,7 +25,7 @@ LOG_LEVEL = 'WARNING'
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 0.3
+DOWNLOAD_DELAY = 0.4
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -65,7 +65,6 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'liepin.pipelines.LiepinPipeline': 300,
-
    # 'liepin.pipelines.LiepincPipeline': 299,
 }
 
@@ -91,12 +90,12 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 
-# MYSQL_HOST = '123.126.87.123'
-# MYSQL_PORT = 3306
-# MYSQL_USER = 'root'
-# MYSQL_PASSWD = 'Lxp.138927!asd'
-# MYSQL_DB = 'crawler2022'
-# MYSQL_CHARSET = 'utf8'
+MYSQL_HOST = '123.126.87.123'
+MYSQL_PORT = 3306
+MYSQL_USER = 'root'
+MYSQL_PASSWD = 'Lxp.138927!asd'
+MYSQL_DB = 'crawler2022'
+MYSQL_CHARSET = 'utf8'
 
 
 
@@ -105,10 +104,10 @@ PROXY_REDIS_PORT = 6379
 PROXY_REDIS_DB = 0
 PROXY_REDIS_PASSWD = '$SMe9ndaZQw$4bJ2'
 
-MYSQL_HOST = '127.0.0.1'
-MYSQL_PORT = 3306
-MYSQL_USER = 'root'
-MYSQL_PASSWD = '123456'
-MYSQL_DB = 'test'
-MYSQL_CHARSET = 'utf8'
+# MYSQL_HOST = '127.0.0.1'
+# MYSQL_PORT = 3306
+# MYSQL_USER = 'root'
+# MYSQL_PASSWD = '123456'
+# MYSQL_DB = 'test'
+# MYSQL_CHARSET = 'utf8'
 

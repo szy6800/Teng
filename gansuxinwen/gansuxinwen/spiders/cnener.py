@@ -98,4 +98,5 @@ class CnenergynewsSpider(scrapy.Spider):
         div_data = html.xpath('//*[@class="article-content"]')
         item['content'] = etree.tostring(div_data[0], encoding='utf-8').decode()
         # print(item)
+
         yield item

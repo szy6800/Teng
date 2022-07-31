@@ -97,52 +97,52 @@ class LoupanPipeline(object):
 
 
 
-class DonglouPipeline(object):
-    def __init__(self, pool):
-        self.dbpool = pool
-        # 定义查询语句
-        # self.query_sql = """SELECT * FROM arch_info_crawler_copy1 WHERE arch_id='{}'"""
-        # 更改语句,插入语句
-        # self.insert_sql = """
-        #     INSERT INTO arch_info_crawler(
-        #                     arch_id, prov_name, city_name, country_name, arch_name, link ,arch_add, avg_price, dispx, dispy, build_category,
-        #                     property_fee, property_company, building_developers,building_number,source_name,crawler_time,house_number
-        #                 )VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}','{}',
-        #                 '{}', '{}', '{}', '{}', '{}')
-        # """
-        #
-        self.update_sql3 = """UPDATE ershou SET esf_count='{}', price='{}' WHERE id='{}';"""
-
-    @classmethod
-    def from_settings(cls, settings):
-        params = dict(
-            host=settings['MYSQL_HOST'],
-            port=settings['MYSQL_PORT'],
-            db=settings['MYSQL_DB'],
-            user=settings['MYSQL_USER'],
-            passwd=settings['MYSQL_PASSWD'],
-            charset=settings['MYSQL_CHARSET'],
-            cursorclass=pymysql.cursors.DictCursor
-        )
-        db_connect_pool = adbapi.ConnectionPool('pymysql', **params)
-        obj = cls(db_connect_pool)
-        return obj
-
-    def process_item(self, item, spider):
-        result = self.dbpool.runInteraction(self.insert, item)
-        # result.addErrback(self.error)
-
-    def error(self, reason):
-        print('error------', reason)
-
-    def insert(self, cursor, item):
-        # 唯一id查询
-        try:
-            cursor.execute(self.update_sql3.format(
-                item['esf_count'],
-                item['price'],
-                item['id'],
-            ))
-            print(f"更新楼盘 {item['id']}")
-        except:
-            print(item['id'])
+# class DonglouPipeline(object):
+#     def __init__(self, pool):
+#         self.dbpool = pool
+#         # 定义查询语句
+#         # self.query_sql = """SELECT * FROM arch_info_crawler_copy1 WHERE arch_id='{}'"""
+#         # 更改语句,插入语句
+#         # self.insert_sql = """
+#         #     INSERT INTO arch_info_crawler(
+#         #                     arch_id, prov_name, city_name, country_name, arch_name, link ,arch_add, avg_price, dispx, dispy, build_category,
+#         #                     property_fee, property_company, building_developers,building_number,source_name,crawler_time,house_number
+#         #                 )VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}','{}',
+#         #                 '{}', '{}', '{}', '{}', '{}')
+#         # """
+#         #
+#         self.update_sql3 = """UPDATE ershou SET esf_count='{}', price='{}' WHERE id='{}';"""
+#
+#     @classmethod
+#     def from_settings(cls, settings):
+#         params = dict(
+#             host=settings['MYSQL_HOST'],
+#             port=settings['MYSQL_PORT'],
+#             db=settings['MYSQL_DB'],
+#             user=settings['MYSQL_USER'],
+#             passwd=settings['MYSQL_PASSWD'],
+#             charset=settings['MYSQL_CHARSET'],
+#             cursorclass=pymysql.cursors.DictCursor
+#         )
+#         db_connect_pool = adbapi.ConnectionPool('pymysql', **params)
+#         obj = cls(db_connect_pool)
+#         return obj
+#
+#     def process_item(self, item, spider):
+#         result = self.dbpool.runInteraction(self.insert, item)
+#         # result.addErrback(self.error)
+#
+#     def error(self, reason):
+#         print('error------', reason)
+#
+#     def insert(self, cursor, item):
+#         # 唯一id查询
+#         try:
+#             cursor.execute(self.update_sql3.format(
+#                 item['esf_count'],
+#                 item['price'],
+#                 item['id'],
+#             ))
+#             print(f"更新楼盘 {item['id']}")
+#         except:
+#             print(item['id'])

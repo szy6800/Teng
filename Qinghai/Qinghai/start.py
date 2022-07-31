@@ -21,7 +21,6 @@ def job():
     # print('starting time ===>', start_time)
     # # 采集逻辑
     # # # #bnu ccccltd
-
     os.system('scrapy crawl a59med')
     os.system('scrapy crawl bankqh')
     os.system('scrapy crawl bdebid')
@@ -76,10 +75,17 @@ def job():
     os.system('scrapy crawl zhengpingjituan')
     os.system('scrapy crawl zmzb')
     os.system('scrapy crawl ebnew')
+
+
+    os.system('scrapy crawl qh_westaport')
+    os.system('scrapy crawl qh_guide')
+    os.system('scrapy crawl qh_bidding')
+    os.system('scrapy crawl qh_qhrch')
+    os.system('scrapy crawl qh_ei')
+    os.system('scrapy crawl qh_301')
+
     # os.system('scrapy crawl chinabidding')
 
-
-    # os.system('scrapy crawl ebnew')
     print('采集已完成>>>>>>>>')
     print('collect again after 1 hour!!!!')
     end_time = str(datetime.datetime.now()).split('.')[0]  # 采集结束时间

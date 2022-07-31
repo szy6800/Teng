@@ -19,6 +19,7 @@ html = etree.HTML(res.text)
 provice = html.xpath('//*[@class="CityList"]//*[@class="Province"]/text()')
 provices = html.xpath('//*[@class="CityList"]//*[@class="Province"]/following::ul[1]')
 
+
 te = []
 for i, i1 in zip(provices, provice):
     city_list = i.xpath('./li/a/text()')

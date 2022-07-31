@@ -170,7 +170,7 @@ class RandomIPMiddleware(object):
             ip = k + ":" + v
             self.ips.append(ip)
         self.page = 0
-        print(self.ips)
+        # print(self.ips)
 
     def process_request(self, request, spider):
         try:

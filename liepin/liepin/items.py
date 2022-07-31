@@ -21,6 +21,10 @@ class LiepinJOBItem(scrapy.Item):
     education = scrapy.Field()
     comp_name = scrapy.Field()
     cid = scrapy.Field()
+    source = scrapy.Field()
+    base = scrapy.Field()
+
+    pub_time = scrapy.Field()
 
 
 class LiepinCompItem(scrapy.Item):
@@ -39,4 +43,13 @@ class LiepinCompItem(scrapy.Item):
     lng = scrapy.Field()
     lat = scrapy.Field()
     logo = scrapy.Field()
+    welfare = scrapy.Field()
+    #更新
+    legal_peo = scrapy.Field()
+    reg_au = scrapy.Field()
+    comp_code = scrapy.Field()
+    status = scrapy.Field()
+    comp_link = scrapy.Field()
+    locations = scrapy.Field()
+    comp_type = scrapy.Field()
 

@@ -20,11 +20,12 @@ class LpjobSpider(scrapy.Spider):
 
     def __init__(self, *args, **kwargs):
         super(LpjobSpider, self).__init__()
+        self.ind = ''
 
         # self.result = dbz()
     def start_requests(self):
 
-        url = 'https://www.liepin.com/zhaopin/?headId=02c89b9548d8aea7d7a2046b464d68c6&ckId=2ouc46d7gsdcx9o1zujem8xaqf4owlq8&oldCkId=1ecfb39fd0c463ac14d80f09e2897d77&fkId=q1bn6krclxjoe9bkjt9272g407449kf8&skId=go4ep8zdmmwrpyvywy59ur28rqx685p8&sfrom=search_job_pc&industry=11$300&dq=050020&currentPage=7&scene=page'
+        url = 'https://www.liepin.com/zhaopin/?headId=02c89b9548d8aea7d7a2046b464d68c6&ckId=mldrhthumlud7kfrj3bx1d5ibx91l3u8&oldCkId=2c62fc66a9ddb29d80a521c6946831c8&fkId=14b3fo4tosqmflesgfhuvrkhpchl5jn9&skId=go4ep8zdmmwrpyvywy59ur28rqx685p8&sfrom=search_job_pc&industry=10$280&dq=040&currentPage=2&scene=page'
         yield scrapy.Request(url, callback=self.parse, dont_filter=True)
 
     def parse(self, response, *args, **kwargs):
@@ -36,6 +37,10 @@ class LpjobSpider(scrapy.Spider):
             link = count.xpath('.//*[@data-nick="job-detail-job-info"]/@href').get()
             # print(link)
             item['link'] = re.findall('https://www.liepin.com/.*?\?', link)[0]
+            # 网站来源
+            item['source'] = '猎聘网'
+            # 备用字段
+            item['base'] = ''
             # print(len(item['link']))
             # print(item['link'])
             # 岗位名称
@@ -46,6 +51,7 @@ class LpjobSpider(scrapy.Spider):
             item['salary'] = count.xpath('.//*[@class="job-salary"]/text()').get()
             # 工作种类
             item['job_indu'] = ''
+
             # 公司信息
             company_item = LiepinCompItem()
             jo1 = count.xpath('.//*[@class="company-tags-box ellipsis-1"]/span').getall()
@@ -138,11 +144,12 @@ class LpjobSpider(scrapy.Spider):
         company_item['man_range'] = response.xpath("//*[contains(text(),'经营范围：')]/following::span[1]/text()").get()
         # 公司简介
         company_item['comp_desc'] = response.xpath('//*[@class="company-intro-container"]//div[contains(@class,"inner")]/text()').get()
+
+        company_item['welfare'] = '|'.join(response.xpath('//*[@class="job-apply-container-left"]/div[1]/span/text()').getall())
         # 岗位id和公司id
         cid = company_item['name'] + company_item['comp_ind']
         company_item['cid'] = hashlib.md5(cid.encode(encoding='utf-8')).hexdigest()
         item['cid'] = company_item['cid']
-
         yield company_item
 
         yield item

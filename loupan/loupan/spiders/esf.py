@@ -19,13 +19,13 @@ import pandas as pd
 # def md5_encrypt( chart):
 #     md = hashlib.md5(chart.encode())
 #     return md.hexdigest()
-#
+
 def dbz():
     # now = datetime.datetime.now()
     # otherStyleTime = now.strftime("%Y-%m-%d")
 
-    sql1 = f'''SELECT id,county FROM `ershou` WHERE province='陕西省';'''
-    sql2 = f'''SELECT id,county FROM `ershou_copy1`;'''
+    sql1 = f'''SELECT id,county FROM `ershouid` WHERE county='西宁';'''
+    sql2 = f'''SELECT id,county FROM `ershouid_copy1`;'''
     # print(sql)
     engine = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/test?charset=utf8')
     engine2 = create_engine('mysql+pymysql://root:123456@127.0.0.1:3306/test?charset=utf8')
@@ -43,9 +43,9 @@ def dbz():
     # print(dbz)
     # print(f'对比保留了{len(dbz)}条')
     dbz = dbz[['id','county']].values.tolist() # df转列表
-    # print(dbz)
+    print(dbz)
     return dbz
-
+dbz()
 
 class EsfSpider(scrapy.Spider):
 
