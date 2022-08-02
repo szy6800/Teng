@@ -33,8 +33,8 @@ class LiepinPipeline:
              INSERT INTO company(
                              cid, link, name, comp_ind, num_of_peo, fig_stage, comp_addr,
                              reg_time, reg_capi, op_period, man_range,comp_desc,lng,lat,logo,welfare,legal_peo,reg_au,comp_code,
-                             status,comp_link,locations,comp_type
-                         )VALUES ('{}','{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')
+                             status,comp_link,locations,comp_type,comp_website
+                         )VALUES ('{}','{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')
          """
 
     @classmethod
@@ -110,6 +110,7 @@ class LiepinPipeline:
                     item['comp_link'],
                     item['locations'],
                     item['comp_type'],
+                    item['comp_website'],
                 ))
                 print(f"新增公司==== {item['cid']} ======{item['name']}")
 

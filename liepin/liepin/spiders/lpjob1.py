@@ -33,7 +33,7 @@ class LpjobSpider(scrapy.Spider):
 
         # self.result = dbz()
     def start_requests(self):
-        for i in self.ind[13:14]:
+        for i in self.ind[43:44]:
             # 行业链接
             ind_code = i['code']
             # 北京
@@ -41,7 +41,7 @@ class LpjobSpider(scrapy.Spider):
             job_indu = i['small_type']
             url = 'https://www.liepin.com/zhaopin/?headId=e305e6c88ef64ef81821659a5f0e00a8&ckId=79rhndaqlt2jkzahwagommtvsb4t8ri9&oldCkId=d28dc535e6275' \
                   'a5b17c972484f600af8&fkId=yf3vj3vib1wep2eoex69irq566wy6t88&skId=6t7wxnbldwkofbyn6odg3cm7ft0v8sl9&sfrom=search_job_pc&industry=' \
-                  '10${}&dq={}&currentPage=2&scene=page'.format(ind_code,city_code)
+                  '10${}&dq={}&currentPage=1&scene=page'.format(ind_code,city_code)
             yield scrapy.Request(url, callback=self.parse, dont_filter=True,meta={'job_indu':job_indu},)
 
     def parse(self, response, *args, **kwargs):
@@ -136,6 +136,8 @@ class LpjobSpider(scrapy.Spider):
         except:
             company_item['lng'] = ''
             company_item['lat'] = ''
+        # 公司官网
+        company_item['comp_website'] = ''
         company_item['comp_addr'] = response.xpath("//*[contains(text(),'职位地址：')]/following::span[1]/text()").get()
         # 注册时间
         company_item['reg_time'] = response.xpath("//*[contains(text(),'注册时间：')]/following::span[1]/text()").get()
@@ -149,6 +151,7 @@ class LpjobSpider(scrapy.Spider):
         company_item['comp_desc'] = response.xpath('//*[@class="company-intro-container"]//div[contains(@class,"inner")]/text()').get()
 
         company_item['welfare'] = '|'.join(response.xpath('//*[@class="job-apply-container-left"]/div[1]/span/text()').getall())
+
         # 公司详情链接
         company_item['comp_link'] = response.xpath('//*[@class="title-box"]//a[contains(@href,"com/company/")]/@href').get()
         if company_item['comp_link'] is None:

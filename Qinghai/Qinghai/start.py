@@ -32,7 +32,7 @@ def job():
 
     os.system('scrapy crawl chinabrr')
     os.system('scrapy crawl cnooc')
-    os.system('scrapy crawl conch')
+    # os.system('scrapy crawl conch')
     os.system('scrapy crawl csdsj')
     os.system('scrapy crawl csg')
     os.system('scrapy crawl czzhzb')
@@ -67,7 +67,7 @@ def job():
     os.system('scrapy crawl qhyhgf')
     # os.system('scrapy crawl sgcc')
     os.system('scrapy crawl shipoe')
-    os.system('scrapy crawl tobacco')
+    # os.system('scrapy crawl tobacco')
     os.system('scrapy crawl tobaccobid')
     os.system('scrapy crawl westmining')
     os.system('scrapy crawl xndyyljt')
@@ -95,20 +95,23 @@ def job():
 
 
 if __name__ == "__main__":
-    job()
-    scheduler = BlockingScheduler()  # 实例化定时器
-    scheduler.add_job(job, 'cron', hour=10, minute=4)
-    scheduler.add_job(job, 'cron', hour=16, minute=2)
-    scheduler.add_job(job, 'cron', hour=22, minute=2)
+    while True:
+        job()
+        time.sleep(60*300)
 
-    try:
-        scheduler.start()
-    except (KeyboardInterrupt, SystemExit):
-        pass
-    except SystemExit:
-        print('exit')
-        exit()
-
-
-
-
+    # scheduler = BlockingScheduler()  # 实例化定时器
+    # scheduler.add_job(job, 'cron', hour=10, minute=4)
+    # scheduler.add_job(job, 'cron', hour=16, minute=2)
+    # scheduler.add_job(job, 'cron', hour=22, minute=2)
+    #
+    # try:
+    #     scheduler.start()
+    # except (KeyboardInterrupt, SystemExit):
+    #     pass
+    # except SystemExit:
+    #     print('exit')
+    #     exit()
+    #
+    #
+    #
+    #

@@ -52,4 +52,5 @@ class LiepinCompItem(scrapy.Item):
     comp_link = scrapy.Field()
     locations = scrapy.Field()
     comp_type = scrapy.Field()
+    comp_website = scrapy.Field()
 
