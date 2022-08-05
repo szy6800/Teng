@@ -4,4 +4,4 @@ import gerapy_selenium
 
 if __name__ == '__main__':
     execute(["scrapy", "crawl", "chinabidding"])
-    # execute(["scrapy", "crawl", "gs_ggzy"])
+    # execute(["scrapy", "crawl", "ebnew"])

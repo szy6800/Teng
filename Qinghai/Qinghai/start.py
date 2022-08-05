@@ -49,7 +49,7 @@ def job():
     os.system('scrapy crawl gs_ggzy_jsc')
     os.system('scrapy crawl gs_gnzrmzf')
     os.system('scrapy crawl gs_gnzrmzf1')
-    os.system('scrapy crawl gs_gsei')
+    # os.system('scrapy crawl gs_gsei')
     os.system('scrapy crawl gs_gssey')
     os.system('scrapy crawl gs_plsggzyjy')
     os.system('scrapy crawl gs_plsggzyjy1')
@@ -60,7 +60,7 @@ def job():
     os.system('scrapy crawl icbc')
     os.system('scrapy crawl miit')
     os.system('scrapy crawl ptzfcg')
-    os.system('scrapy crawl qh4yy')
+    # os.system('scrapy crawl qh4yy')
     os.system('scrapy crawl qhheart')
     os.system('scrapy crawl qhrch')
     os.system('scrapy crawl qhssyy')
@@ -74,7 +74,7 @@ def job():
     os.system('scrapy crawl zgazxxw')
     os.system('scrapy crawl zhengpingjituan')
     os.system('scrapy crawl zmzb')
-    os.system('scrapy crawl ebnew')
+    # os.system('scrapy crawl ebnew')
 
 
     os.system('scrapy crawl qh_westaport')
@@ -83,6 +83,7 @@ def job():
     os.system('scrapy crawl qh_qhrch')
     os.system('scrapy crawl qh_ei')
     os.system('scrapy crawl qh_301')
+    os.system('scrapy crawl qh_srmyy')
 
     # os.system('scrapy crawl chinabidding')
 
@@ -97,7 +98,7 @@ def job():
 if __name__ == "__main__":
     while True:
         job()
-        time.sleep(60*300)
+        time.sleep(60*60)
 
     # scheduler = BlockingScheduler()  # 实例化定时器
     # scheduler.add_job(job, 'cron', hour=10, minute=4)

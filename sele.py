@@ -1,39 +1,189 @@
+"""有道翻译整体思路：
+1.首先找到翻译的请求与传递地址：https://fanyi.youdao.com/translate_o?smartresult=dict&smartresult=rule
+    第一、其中具有的返回数据如下：
+        "translateResult": [
+        [
+            {
+                "tgt": "苹果",
+                "src": "apple"
+            }
+        ]
+        输入的数据是apple 返回的翻译结果 苹果 我们想要的数据就存在这组json数据格式的 ['translateResult'][0]['tgt']中
+    第二、查看此URL的请求参数，找到是以那些请求头参数向网页传入的需要翻译的内容。
+          headers = {
+            "i": "apple",
+            "from": "AUTO",
+            "to": "AUTO",
+            "smartresult": "dict",
+            "client": "fanyideskweb",
+            "salt": "16555291396783",   -->加密参数（可能是时间戳）
+            "sign": "d2a2e590151a473a253adbd2fbb3adcb",   -->加密参数
+            "lts": "1655529139678",   -->加密参数（可能是时间戳）
+            "bv": "09e377475805a2fb71b566de21e0dc2b",   -->加密参数
+            "doctype": "json",
+            "version": "2.1",
+            "keyfrom": "fanyi.web",
+            "action": "FY_BY_REALTlME"
+            }
+    2.对整体的分析完毕，进行请求头参数加密的js逆向，寻找当前页面用什么方式进行的加密。
+    首先是整体的参数生成的js函数代码：
+     t.translate = function(e, t) {
+        k = f("#language").val();
+        var n = w.val()
+          , r = v.generateSaltSign(n)
+          , i = n.length;
+        if (M(),
+        _.text(i),
+        i > 5e3) {
+            var o = n;
+            n = o.substr(0, 5e3),
+            r = v.generateSaltSign(n);
+            var s = o.substr(5e3);
+            s = (s = s.trim()).substr(0, 3),
+            f("#inputTargetError").text("有道翻译字数限制为5000字，“" + s + "”及其后面没有被翻译!").show(),
+            _.addClass("fonts__overed")
+        } else
+            _.removeClass("fonts__overed"),
+            f("#inputTargetError").hide();
+        p.isWeb(n) ? a() : c({
+            i: n,
+            from: C,
+            to: S,
+            smartresult: "dict",
+            client: E,
+            salt: r.salt,
+            sign: r.sign,
+            lts: r.ts,
+            bv: r.bv,
+            doctype: "json",
+            version: "2.1",
+            keyfrom: "fanyi.web",
+            action: e || "FY_BY_DEFAULT"
+        }, t)
+    }
+    可以看到大部分的参数都是通过使用r这个函数来生成的，r这个函数使用的是r = v.generateSaltSign(n);
+    接下来找r = v.generateSaltSign(n);这个js的代码部分：这是讲n传入给了这个r函数，所以n 在开头可以分析到是我们写入的需要翻译的字符串
+    var r = function(e) { -->传入的e也是字符串
+        var t = n.md5(navigator.appVersion)
+          , r = "" + (new Date).getTime()     ---> r在这里获取了时间，是时间戳
+          , i = r + parseInt(10 * Math.random(), 10);   --> i 是 时间戳 + 一个随机的整数，在0-9之间
+        return {
+            ts: r,  -->时间戳
+            bv: t,  --> bv就是t 而t来自于上面的赋值 调用n.md5对浏览器信息进行假买，也就是对：5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44 进行md5加密
+            salt: i,    --> 时间戳 + 一个随机的整数，在0-9之间
+            sign: n.md5("fanyideskweb" + e + i + "Ygy_4c=r#e#4EX^NUGUc5")  --> 签名加密的所在之处 "fanyideskweb" + e + i + "Ygy_4c=r#e#4EX^NUGUc5"采用md5加密算法
+        }                                                                                               这里e 是这个r函数传进来的参数，去找个这个参数，发现是我们需要翻译的字符串
+    };                                                                                                     i是前面分析的时间戳 + 一个随机的整数，在0-9之间
+    t.recordUpdate = function(e) {
+        var t = e.i
+          , i = r(t);
+        n.ajax({
+            type: "POST",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            url: "/bettertranslation",
+            data: {
+                i: e.i,
+                client: "fanyideskweb",
+                salt: i.salt,
+                sign: i.sign,
+                lts: i.ts,
+                bv: i.bv,
+                tgt: e.tgt,
+                modifiedTgt: e.modifiedTgt,
+                from: e.from,
+                to: e.to
+            },
+            success: function(e) {},
+            error: function(e) {}
+        })
+    3.得到的结果：
+        bv = 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44 md5加密
+        salt = 时间戳 + 一个随机的整数，在0-9之间
+        sign = "fanyideskweb" + 我们输入的需要翻译的内容 + salt + "Ygy_4c=r#e#4EX^NUGUc5" md5加密
+        lts = 时间戳
+        最终：
+        headers = {
+            "i": "我们输入的字符串",
+            "from": "AUTO",
+            "to": "AUTO",
+            "smartresult": "dict",
+            "client": "fanyideskweb",
+            "salt": 时间戳 + 一个随机的整数，在0-9之间
+            "sign": "fanyideskweb" + 我们输入的字符串 + salt + "Ygy_4c=r#e#4EX^NUGUc5" md5加密
+            "lts": 时间戳
+            "bv": 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44 md5加密
+            "doctype": "json",
+            "version": "2.1",
+            "keyfrom": "fanyi.web",
+            "action": "FY_BY_REALTlME"
+        }
+"""
+import time
 import requests
+from random import randint
+from hashlib import md5
 
-headers = {
-    'authority': 'bj.58.com',
-    'pragma': 'no-cache',
-    'cache-control': 'no-cache',
-    'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"Windows"',
-    'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36',
-    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-    'sec-fetch-site': 'same-origin',
-    'sec-fetch-mode': 'navigate',
-    'sec-fetch-user': '?1',
-    'sec-fetch-dest': 'document',
-    'referer': 'https://bj.58.com/yiyaodaibiao/?key=%E6%8B%9B%E8%81%98&cmcskey=%E6%8B%9B%E8%81%98&final=1&jump=1&specialtype=gls&classpolicy=uuid_cc041b2e40ce4556bbc04ac2e4130ce8,displocalid_1,from_main,to_jump,tradeline_job,classify_D&PGTID=0d30364d-0000-1264-beca-c1556f5c9e06&ClickID=4',
-    'accept-language': 'zh-CN,zh;q=0.9',
-    'cookie': 'f=n; commontopbar_new_city_info=1%7C%E5%8C%97%E4%BA%AC%7Cbj; time_create=1661918604473; userid360_xml=C7977A6730823F910D61E36545E6F68B; id58=CocHKmJrsvwd00/gBFPwAg==; 58tj_uuid=883f06af-ea1f-4366-8018-3e35725400e7; als=0; wmda_uuid=22af24eb753314591c43d6563191d5af; wmda_new_uuid=1; xxzl_deviceid=wb8gy%2FPMsMYQmw%2BwB5TZAOoxa%2B0WEbhPnxMTVNdk5HUwxd%2BheF7itHNXY97solAH; wmda_visited_projects=%3B11187958619315%3B1731916484865%3B2286118353409%3B10104579731767; 58home=bj; f=n; commontopbar_new_city_info=1%7C%E5%8C%97%E4%BA%AC%7Cbj; commontopbar_ipcity=bj%7C%E5%8C%97%E4%BA%AC%7C0; city=bj; spm=; utm_source=; new_uv=3; init_refer=; wmda_session_id_11187958619315=1659325885286-cdd6b72b-5776-cabf; xxzl_cid=82d0de8097ae4b218bb0cf7518483a55; xzuid=580970d0-7108-4f94-84a5-72a409098990; sessionid=3cda78c2-5f56-4765-a1d9-acb460e821e7; fzq_h=78797577584cb36b3120b130977c468f_1659325897419_9316fa20d68c4432933f14aa927d4e64_2071877498; wmda_session_id_1731916484865=1659325897074-6b52ce6e-ce42-1946; new_session=0; Hm_lvt_5bcc464efd3454091cf2095d3515ea05=1659325898; Hm_lvt_b2c7b5733f1b8ddcfc238f97b417f4dd=1659326041; __utma=253535702.71241368.1656061471.1656061471.1659326049.2; __utmc=253535702; __utmz=253535702.1659326049.2.2.utmcsr=qy.58.com|utmccn=(referral)|utmcmd=referral|utmcct=/80531377537556/; __utmt_pageTracker=1; myfeet_tooltip=end; __utmb=253535702.3.10.1659326049; wmda_session_id_2286118353409=1659326139015-ee90f3f7-1334-23e0; fzq_js_infodetailweb=54c6e12bc18018984c0000fe5bd42e7f_1659326163478_9; ppStore_fingerprint=331EA1935B39F35F42D3E8461D1546FBB24A252A5BE5EA8F%EF%BC%BF1659326163533; Hm_lpvt_b2c7b5733f1b8ddcfc238f97b417f4dd=1659326164; JSESSIONID=768042B9B720F708943168AB489AA176; fzq_js_zhaopin_list_pc=fd95e2d1d705031245597ea7d8a3138d_1659326604083_9; Hm_lpvt_5bcc464efd3454091cf2095d3515ea05=1659326604',
-}
 
-params = (
-    ('key', '\u62DB\u8058'),
-    ('cmcskey', '\u62DB\u8058'),
-    ('final', '1'),
-    ('jump', '1'),
-    ('specialtype', 'gls'),
-    ('classpolicy', 'uuid_cc041b2e40ce4556bbc04ac2e4130ce8,displocalid_1,from_main,to_jump,tradeline_job,classify_D'),
-    ('pid', '452804496442097665'),
-    ('PGTID', '0d3029e4-0000-1921-9081-243dc765ea5d'),
-    ('ClickID', ''),
-)
+class youdao(object):
+    def __init__(self):
+        self.url = "https://fanyi.youdao.com/translate_o?smartresult=dict&smartresult=rule"
 
-response = requests.get('https://bj.58.com/yiyaodaibiao/pn7/', headers=headers, params=params)
-print(response.text)
-#NB. Original query string below. It seems impossible to parse and
-#reproduce query strings 100% accurately so the one below is given
-#in case the reproduced version is not "correct".
-# response = requests.get('https://bj.58.com/yiyaodaibiao/pn2/?key=%E6%8B%9B%E8%81%98&cmcskey=%E6%8B%9B%E8%81%98&final=1&jump=1&specialtype=gls&classpolicy=uuid_cc041b2e40ce4556bbc04ac2e4130ce8,displocalid_1,from_main,to_jump,tradeline_job,classify_D&pid=452804496442097665&PGTID=0d3029e4-0000-1921-9081-243dc765ea5d&ClickID=3', headers=headers)
+    def md5_encrypt(self, content):
+        hl = md5()
+        hl.update(content.encode(encoding='utf-8'))
+        return hl.hexdigest()
+
+    def spider(self,keys):
+        # 获取当前时间（取整再转字符串）用来获取lts参数
+        ts = str(int(time.time() * 1000))
+        lts = ts
+
+        # 设置salt参数（时间戳+随机0-9的整数）
+        salt = lts + str(randint(0, 9))
+
+        # 设置sign参数（"fanyideskweb" + 我们输入的字符串 + salt + "Ygy_4c=r#e#4EX^NUGUc5" md5加密）
+        sign = self.md5_encrypt("fanyideskweb" + keys + salt + "Ygy_4c=r#e#4EX^NUGUc5")
+        headers = {
+            "Cookie": "OUTFOX_SEARCH_USER_ID=-1883290551@10.110.96.158; OUTFOX_SEARCH_USER_ID_NCOO=1303558223.335795; fanyi-ad-id=306808; fanyi-ad-closed=1; ___rl__test__cookies={}".format(ts),
+            "Host": "fanyi.youdao.com",
+            "Origin": "https://fanyi.youdao.com",
+            "Referer": "https://fanyi.youdao.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44",
+        }
+
+        bv = self.md5_encrypt(headers['User-Agent'])
+        params = {
+            "i": keys,
+            "from": "AUTO",
+            "to": "AUTO",
+            "smartresult": "dict",
+            "client": "fanyideskweb",
+            "salt": salt,
+            "sign": sign,
+            "lts": ts,
+            "bv": bv,
+            "doctype": "json",
+            "version": "2.1",
+            "keyfrom": "fanyi.web",
+            "action": "FY_BY_REALTlM"
+        }
+        resp = requests.post(url=self.url, data=params, headers=headers).json()
+        # print(resp)
+        if resp['errorCode'] == 0:
+            result = resp['translateResult'][0][0]['tgt']
+            print(f'翻译的结果是：{result}')
+        elif resp['errorCode'] == 40:
+            print('此语种未被识别！')
+
+
+def run():
+    translate = youdao()
+    while True:
+        keys = input('请输入想要翻译的内容（按Y退出）：')
+        if keys == 'y':
+            break
+        else:
+            translate.spider(keys)
+
+if __name__ == '__main__':
+    run()
