@@ -2,7 +2,7 @@
 
 # @Time : 2022-08-01 13:53:45
 # @Author : 石张毅
-# @Site : https://bj.58.com/tech/?key=%E6%8B%9B%E8%81%98&cmcskey=%E6%8B%9B%E8%81%98&final=1&jump=1&specialtype=gls&classpolicy=uuid_5b53e4813aca4a90b528600379ab5e1e,displocalid_1,from_main,to_jump,tradeline_job,classify_D&PGTID=0d302408-0000-1ff5-f3d6-2c565a6ca769&ClickID=3
+# @Site : https://bj.58.com/
 # @introduce: 58同城招聘
 
 import scrapy
@@ -11,14 +11,14 @@ from liepin.items import LiepinJOBItem
 from liepin.items import LiepinCompItem
 import hashlib
 from liepin.tools.DB_redis import Redis_DB
-from liepin.spiders.ind_city import ind
+from liepin.spiders.ind_city import liepin_ind
+
 
 class Job58Spider(scrapy.Spider):
     name = 'job_58'
     custom_settings = {
         'COOKIES_ENABLED': False,
         'DEFAULT_REQUEST_HEADERS': {
-
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
             'accept-encoding': 'gzip, deflate, br',
             'accept-language': 'zh,en;q=0.9,zh-CN;q=0.8,vi;q=0.7,ko;q=0.6',
@@ -39,7 +39,22 @@ class Job58Spider(scrapy.Spider):
         yield scrapy.Request(url, callback=self.parse, dont_filter=True)
 
     def parse(self, response, *args, **kwargs):
-        href_id = response.xpath('//*[@class="item_con apply"]/@infoid').getall()
+        count_list = response.xpath('//*[@id="list_con"]/li')
+        if count_list is []:
+            return
+        for count in count_list[0:1]:
+            item = LiepinJOBItem()
+            link_id = count.xpath('.//*[@class="item_con apply"]/@infoid').get()
+            link = f'https://bj.58.com/tech/{link_id}x.shtml?'
+            yield scrapy.Request(link,callback=self.parse_info)
+
+    def parse_info(self,response):
+        print(response.text)
+
+
+
+
+
 
 
 

@@ -12,7 +12,7 @@ from liepin.items import LiepinJOBItem
 from liepin.items import LiepinCompItem
 import hashlib
 from liepin.tools.DB_redis import Redis_DB
-from liepin.spiders.ind_city import ind
+from liepin.spiders.ind_city import liepin_ind
 
 
 class LpjobSpider(scrapy.Spider):
@@ -28,17 +28,17 @@ class LpjobSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(LpjobSpider, self).__init__()
         # 行业列表
-        self.ind = ind()
+        self.ind = liepin_ind()
 
         # self.result = dbz()
     def start_requests(self):
-        for i in self.ind[4:5]:
+        for i in self.ind[6:7]:
             # 行业链接
             ind_code = i['code']
             # 北京 010  上海020 天津030
             city_code = '030'
             job_indu = i['small_type']
-            for pages in range(4, 6):
+            for pages in range(8, 10):
                 url = 'https://www.liepin.com/zhaopin/?headId=e305e6c88ef64ef81821659a5f0e00a8&ckId=79rhndaqlt2jkzahwagommtvsb4t8ri9&oldCkId=d28dc535e6275' \
                       'a5b17c972484f600af8&fkId=yf3vj3vib1wep2eoex69irq566wy6t88&skId=6t7wxnbldwkofbyn6odg3cm7ft0v8sl9&sfrom=search_job_pc&industry=' \
                       '10${}&dq={}&currentPage={}&scene=page'.format(ind_code,city_code,pages)
