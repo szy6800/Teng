@@ -46,11 +46,12 @@ class Job58Spider(scrapy.Spider):
             item = LiepinJOBItem()
             link_id = count.xpath('.//*[@class="item_con apply"]/@infoid').get()
             link = f'https://bj.58.com/tech/{link_id}x.shtml?'
+            print(link)
             yield scrapy.Request(link,callback=self.parse_info)
 
     def parse_info(self,response):
+        # pass
         print(response.text)
-
 
 
 
