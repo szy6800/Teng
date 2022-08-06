@@ -7,7 +7,6 @@ import random
 from scrapy import signals
 
 # useful for handling different item types with a single interface
-from itemadapter import is_item, ItemAdapter
 
 import random
 import redis

@@ -6,23 +6,41 @@
 # @introduce: 58同城招聘
 
 import scrapy
-
+import copy
+from liepin.items import LiepinJOBItem
+from liepin.items import LiepinCompItem
+import hashlib
+from liepin.tools.DB_redis import Redis_DB
+from liepin.spiders.ind_city import ind
 
 class Job58Spider(scrapy.Spider):
     name = 'job_58'
-    # custom_settings = {
-    #     'COOKIES_ENABLED': False,
-    #     'DEFAULT_REQUEST_HEADERS': {
-    #         "Cookie": 'f=n; commontopbar_new_city_info=1|北京|bj; f=n; commontopbar_new_city_info=1|北京|bj; time_create=1661925581178; userid360_xml=C7977A6730823F910D61E36545E6F68B; id58=CocHKmJrsvwd00/gBFPwAg==; 58tj_uuid=883f06af-ea1f-4366-8018-3e35725400e7; als=0; wmda_uuid=22af24eb753314591c43d6563191d5af; wmda_new_uuid=1; xxzl_deviceid=wb8gy/PMsMYQmw+wB5TZAOoxa+0WEbhPnxMTVNdk5HUwxd+heF7itHNXY97solAH; wmda_visited_projects=;11187958619315;1731916484865;2286118353409;10104579731767; 58home=bj; f=n; commontopbar_new_city_info=1|北京|bj; commontopbar_ipcity=bj|北京|0; city=bj; sessionid=3cda78c2-5f56-4765-a1d9-acb460e821e7; fzq_h=78797577584cb36b3120b130977c468f_1659325897419_9316fa20d68c4432933f14aa927d4e64_2071877498; Hm_lvt_5bcc464efd3454091cf2095d3515ea05=1659325898; Hm_lvt_b2c7b5733f1b8ddcfc238f97b417f4dd=1659326041; __utmc=253535702; myfeet_tooltip=end; spm=; utm_source=; new_uv=4; new_session=0; wmda_session_id_1731916484865=1659331813258-68a4d3af-bb15-c33f; wmda_session_id_11187958619315=1659331843332-9c852241-6e56-c800; __utmz=253535702.1659331880.3.3.utmcsr=qy.58.com|utmccn=(referral)|utmcmd=referral|utmcct=/73533032889614/; __utma=253535702.71241368.1656061471.1659326049.1659331880.3; init_refer=http%3A%2F%2Flocalhost%3A63342%2F; xxzl_cid=82d0de8097ae4b218bb0cf7518483a55; xzuid=580970d0-7108-4f94-84a5-72a409098990; fzq_js_infodetailweb=f4a4b2cddf9725070a256913b8b20d8b_1659335959524_7; Hm_lpvt_b2c7b5733f1b8ddcfc238f97b417f4dd=1659335960; ppStore_fingerprint=331EA1935B39F35F42D3E8461D1546FBB24A252A5BE5EA8F＿1659335959617; www58com="UserID=71458147739661&UserName=0fxbux8ev"; 58cooper="userid=71458147739661&username=0fxbux8ev"; 58uname=0fxbux8ev; passportAccount="atype=0&bstate=0"; PPU=UID=71458147739661&UN=0fxbux8ev&TT=0cc2c706277151dee90c649842ab5cb0&PBODY=gonqSriUJGFM9mFIqkF9L1k5zLBDx02dwNhntr0v0yWUlfiuFc2Veg4FOF-PjnYgmMeEox3_vR0OKZRAaWkdx7Kbu8Ks2BqsdHQgChs1NU4bsXe3AVoIF2EWksduWGx3K_o6EiE4Gn2Ygd2ffzR4LTaLG2RKcLitkYlWGcWFOh8&VER=1&CUID=Ia5GM2c1i47263wLL87x3w; crmvip=; dk_cookie=; xxzl_smartid=610a42d76847430ba91d9f85189542fc; JSESSIONID=55C524B48B6AC0F25E07586A4BD3C024; fzq_js_zhaopin_list_pc=880e2ae82027bfaaf5a007f86fc8cb27_1659337761334_9; Hm_lpvt_5bcc464efd3454091cf2095d3515ea05=1659337762'
-    #     }
-    # }
+    custom_settings = {
+        'COOKIES_ENABLED': False,
+        'DEFAULT_REQUEST_HEADERS': {
+
+            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            'accept-encoding': 'gzip, deflate, br',
+            'accept-language': 'zh,en;q=0.9,zh-CN;q=0.8,vi;q=0.7,ko;q=0.6',
+            'cookie': 'f=n; commontopbar_new_city_info=1%7C%E5%8C%97%E4%BA%AC%7Cbj; f=n; commontopbar_new_city_info=1%7C%E5%8C%97%E4%BA%AC%7Cbj; userid360_xml=003B0B7DD9EA28E62916BCB409FCEEEF; time_create=1662346058414; id58=CocG42IZ/xy9/7mLErkOAg==; 58tj_uuid=99e71191-9e21-4654-b203-8c924c2cea9c; als=0; wmda_uuid=93c07d553a63dc9df0e5bcda6f229015; Hm_lvt_3013163ef40dcfa5b06ea83e8a1a797f=1645870881; Hm_lvt_fe7700af2f35759e6256aa5635b9c9ff=1645870881; gr_user_id=35f72dff-1ce3-4dae-9061-07f4b5e5594e; xxzl_deviceid=v9UYVKqMKX%2BgUwFigjqyE0I2rAO5tk1mIvcAx9JuSzSI6L%2FGxZz%2BGkIgWCWGI%2Bub; __utma=253535702.1408907173.1645870892.1645870892.1645870892.1; __utmz=253535702.1645870892.1.1.utmcsr=bj.58.com|utmccn=(referral)|utmcmd=referral|utmcct=/; Hm_lvt_b2c7b5733f1b8ddcfc238f97b417f4dd=1645870965; ppStore_fingerprint=22471D9B27FCED76F9F16C313BDB2F4DCBCDE535D1900109%EF%BC%BF1645870976569; sessionid=500a7d44-5326-4893-94f9-9993fe682bb6; fzq_h=4cf0d3aa05e22704746acbc605fbab5a_1659753338724_e3ff8e094d7446fd820b012de3ac411b_1874969889; wmda_session_id_1731916484865=1659753339288-6b70fb49-4d59-777a; spm=; utm_source=; new_uv=2; init_refer=https%253A%252F%252Fcallback.58.com%252F; Hm_lvt_5bcc464efd3454091cf2095d3515ea05=1659753340; 58home=bj; f=n; wmda_session_id_11187958619315=1659753340939-d46e4b82-2844-5e8f; www58com="UserID=71458147739661&UserName=0fxbux8ev"; 58cooper="userid=71458147739661&username=0fxbux8ev"; 58uname=0fxbux8ev; passportAccount="atype=0&bstate=0"; new_session=0; xxzl_smartid=193b68c9992ad8b78999ed9b53f74b7d; commontopbar_new_city_info=1%7C%E5%8C%97%E4%BA%AC%7Cbj; city=bj; commontopbar_ipcity=bj%7C%E5%8C%97%E4%BA%AC%7C0; wmda_session_id_1409632296065=1659753732206-328f8288-2a6d-94a6; wmda_visited_projects=%3B11187958619315%3B1731916484865%3B1409632296065; Hm_lvt_ad024d0e0914a20e88ae3423b878a182=1659753733; Hm_lpvt_ad024d0e0914a20e88ae3423b878a182=1659753733; PPU.sig=cEYvV79eKqUTjHmvqHrlOAu_Zuk; xzfzqtoken=dPgCSVq3%2BZPEzpgBUciOhspWXnnmozbkqxrVOpR0dB%2FYRabZn1aAx3hWrQKIdZsnin35brBb%2F%2FeSODvMgkQULA%3D%3D; xxzl_cid=53e07ae5dadb4c80ad22a4f7e6ae5fdb; xzuid=b3031ea2-a74f-473b-aa0c-c2b45d0562ac; JSESSIONID=67C25EC5BB2491EF6FFB00C1205F22AB; fzq_js_zhaopin_list_pc=6ec9a6ee7a6d8274d3f71c114d44022c_1659754294058_6; Hm_lpvt_5bcc464efd3454091cf2095d3515ea05=1659754294; PPU="UID=71458147739661&UN=0fxbux8ev&TT=887a3ce1362562f6c7ae2b40f9a1733f&PBODY=U5Dj1gDiA_hVj2mcQpJctkdrCBqOZc57wnpLDZfxRylgfjAgzDAghYMh2__vEUO7d2HyV8ydNlCzq_x_dvIrx0Mjcuv4rZdg445-i2ZswPUeyiuUmKZ1fUqlTB08_BDN3qvygjw09uDy_EGa7wcxNX9IhdTFRRreVOoF43KGKoQ&VER=1&CUID=Ia5GM2c1i47263wLL87x3w"',
+            'referer': 'https://bj.58.com/jishuzhichi/pn3/?pid=454597533263659009&PGTID=0d302f85-0000-13ac-0715-fc008e730a13&ClickID=3',
+            'sec-ch-ua-mobile': '?0',
+            'sec-fetch-dest': 'document',
+            'sec-fetch-mode': 'navigate',
+            'sec-fetch-site': 'same-origin',
+            'sec-fetch-user': '?1',
+            'upgrade-insecure-requests': '1',
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36',
+        }
+    }
 
     def start_requests(self):
-        url = 'https://bj.58.com/tech/pn13/?key=%E6%8B%9B%E8%81%98&cmcskey=%E6%8B%9B%E8%81%98&final=1&jump=1&specialtype=gls&classpolicy=uuid_5b53e4813aca4a90b528600379ab5e1e,displocalid_1,from_main,to_jump,tradeline_job,classify_D&pid=452840702995169280&PGTID=0d303655-0000-1949-edf8-aa10337b21bd&ClickID=3'
+        url = 'https://bj.58.com/yingjiangong/pn2/?pid=454607466785308672&PGTID=0d302f81-0000-17be-07d9-5eec830f26fe&ClickID=3'
         yield scrapy.Request(url, callback=self.parse, dont_filter=True)
 
     def parse(self, response, *args, **kwargs):
-        # print(response.text)
-        res = response.xpath('//*[@class="item_con apply"]/@infoid').getall()
-        print(res)
+        href_id = response.xpath('//*[@class="item_con apply"]/@infoid').getall()
+
+
+
 

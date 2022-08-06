@@ -4,7 +4,6 @@
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 
 # useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
 
 from liepin.items import LiepinJOBItem
 from liepin.items import LiepinCompItem
