@@ -34,11 +34,11 @@ def job():
     os.system('scrapy crawl cnooc')
     # os.system('scrapy crawl conch')
     os.system('scrapy crawl csdsj')
-    os.system('scrapy crawl csg')
+    # os.system('scrapy crawl csg')
     os.system('scrapy crawl czzhzb')
     os.system('scrapy crawl DAV')
     os.system('scrapy crawl dfmbidding')
-    os.system('scrapy crawl dgsy')
+    # os.system('scrapy crawl dgsy')
     os.system('scrapy crawl ebidding')
     os.system('scrapy crawl eceg')
     os.system('scrapy crawl fjggzyjy')
@@ -84,6 +84,8 @@ def job():
     os.system('scrapy crawl qh_ei')
     os.system('scrapy crawl qh_301')
     os.system('scrapy crawl qh_srmyy')
+
+    os.system('scrapy crawl qh_10086')
 
     # os.system('scrapy crawl chinabidding')
 
