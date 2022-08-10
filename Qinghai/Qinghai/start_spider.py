@@ -3,6 +3,6 @@ import gerapy_selenium
 
 
 if __name__ == '__main__':
-    execute(["scrapy", "crawl", "chinabidding"])
+    # execute(["scrapy", "crawl", "chinabidding"])
     # execute(["scrapy", "crawl", "ebnew"])
-    # execute(["scrapy", "crawl", "obei"])
+    execute(["scrapy", "crawl", "cncecyc"])

@@ -7,11 +7,11 @@
 
 import scrapy
 import copy
-from liepin.items import LiepinJOBItem
-from liepin.items import LiepinCompItem
-import hashlib
-from liepin.tools.DB_redis import Redis_DB
-from liepin.spiders.ind_city import liepin_ind
+# from job_58.items import LiepinJOBItem
+# from job_58.items import LiepinCompItem
+# import hashlib
+# from job_58.tools.DB_redis import Redis_DB
+# from job_58.spiders.ind_city import liepin_ind
 
 
 class Job58Spider(scrapy.Spider):

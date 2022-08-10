@@ -86,6 +86,7 @@ def job():
     os.system('scrapy crawl qh_srmyy')
 
     os.system('scrapy crawl qh_10086')
+    os.system('scrapy crawl cncecyc')
 
     # os.system('scrapy crawl chinabidding')
 
