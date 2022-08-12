@@ -23,7 +23,6 @@ class LiepinJOBItem(scrapy.Item):
     cid = scrapy.Field()
     source = scrapy.Field()
     base = scrapy.Field()
-
     pub_time = scrapy.Field()
 
 
