@@ -32,11 +32,11 @@ class LpjobSpider(scrapy.Spider):
 
         # self.result = dbz()
     def start_requests(self):
-        for i in self.ind[22:23]:
+        for i in self.ind[5:6]:
             # 行业链接
             ind_code = i['code']
-            # 北京 010  上海020 天津030  重庆040 #广州050020 # 深圳050090
-            city_code = '050090'
+            # 北京 010  上海020 天津030  重庆040 #广州050020 # 深圳050090 #苏州060080
+            city_code = '060080'
             job_indu = i['small_type']
             for pages in range(0,10):
                 url = 'https://www.liepin.com/zhaopin/?headId=e305e6c88ef64ef81821659a5f0e00a8&ckId=79rhndaqlt2jkzahwagommtvsb4t8ri9&oldCkId=d28dc535e6275' \
