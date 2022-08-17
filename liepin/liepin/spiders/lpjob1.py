@@ -20,7 +20,7 @@ class LpjobSpider(scrapy.Spider):
     custom_settings = {
         'COOKIES_ENABLED': False,
         'DEFAULT_REQUEST_HEADERS': {
-            "Cookie": "gr_user_id=b21ede8f-e4bd-4638-bf5f-6a6306453010; __uuid=1654585870293.02; __gc_id=f8062ff6c43c443c86e564440b0133a4; need_bind_tel=false; new_user=false; c_flag=762cd6f483231d222d74912fdc67da8d; __s_bid=f255f61873c258e5ccc43dd6a9e8a14be406; imClientId=669dfff6133fba4e7674d3815bdeee65; imId=669dfff6133fba4e91362c0e3c63f8af; imClientId_0=669dfff6133fba4e7674d3815bdeee65; imId_0=669dfff6133fba4e91362c0e3c63f8af; access_system=C; _fecdn_=0; __tlog=1659197855877.02%7C00000000%7C00000000%7C00000000%7C00000000; inited_user=83fc4fabea08a638acf3441819698d09; user_roles=0; user_photo=5f8fa3a6f6d1ab58476f322808u.png; user_name=%E7%9F%B3%E5%BC%A0%E6%AF%85; Hm_lvt_a2647413544f5a04f00da7eee0d5e200=1658888610,1659065044,1659146166,1659197923; imApp_0=1; fe_im_connectJson_0=%7B%220_f8b0ac45bac241ec1a667e00ad0d9493%22%3A%7B%22socketConnect%22%3A%221%22%2C%22connectDomain%22%3A%22liepin.com%22%7D%7D; UniqueKey=f8b0ac45bac241ec1a667e00ad0d9493; lt_auth=vr4KPCQMnV2q5HiKgGFfta8fjN6hAzrI9HtcgRsF1dfvWvWw4PjrQwqFr7YCxAMhl098dcULN7X3NOH2yXFL7UEUwGqklICxvf%2Bk1X4eTeRnHuyflMXuqsjQQ5wtrXg6ykpgn2si; Hm_lpvt_a2647413544f5a04f00da7eee0d5e200=1659198037; fe_im_socketSequence_new_0=5_3_1; fe_im_opened_pages=1659197923361; __session_seq=15; __uv_seq=20",
+            "Cookie": '__s_bid=3e9339a13111fc0ecec35efe55f15a16a823; __uuid=1644668700788.18; __gc_id=93bf726a111e4690836a0771ac7a1411; gr_user_id=95954b65-b000-4728-b07e-e2ad870f6857; gr_session_id_97dcf586237881ba=28735aaa-de54-4069-b567-9d14297e6788; __tlog=1660574215841.01|00000000|00000000|s_00_pz0|s_00_pz0; UniqueKey=f8b0ac45bac241ec1a667e00ad0d9493; lt_auth=vOxZOSQMnV2q5HiKgGFfta8fjN6hAzrI9HtcgRsF1dfvWvWw4PjrQwqFr7YCxAMhxx4jcsULN7b+MO/6y3dO70YRwGqkloCyvPKk0H8FUeJsHuyflMXuqsjQQJgirXg6ykpgn2si; inited_user=83fc4fabea08a638acf3441819698d09; user_roles=0; user_photo=5f8fa3a6f6d1ab58476f322808u.png; user_name=石张毅; need_bind_tel=false; new_user=false; c_flag=762cd6f483231d222d74912fdc67da8d; acw_tc=276082a916605742667695289ee07f4606b2732c79762eb68212f0eeba98f0; Hm_lvt_a2647413544f5a04f00da7eee0d5e200=1660574267; imClientId=669dfff6133fba4e7674d3815bdeee65; imId=669dfff6133fba4e91362c0e3c63f8af; imClientId_0=669dfff6133fba4e7674d3815bdeee65; imId_0=669dfff6133fba4e91362c0e3c63f8af; imApp_0=1; Hm_lpvt_a2647413544f5a04f00da7eee0d5e200=1660574316; __session_seq=4; __uv_seq=4; fe_im_socketSequence_new_0=2_2_2; fe_im_connectJson_0={"0_f8b0ac45bac241ec1a667e00ad0d9493":{"socketConnect":"3","connectDomain":"liepin.com"}}; fe_im_opened_pages=',
             "Host": "www.liepin.com",
         }
     }
@@ -32,11 +32,11 @@ class LpjobSpider(scrapy.Spider):
 
         # self.result = dbz()
     def start_requests(self):
-        for i in self.ind[5:6]:
+        for i in self.ind[10:11]:
             # 行业链接
             ind_code = i['code']
-            # 北京 010  上海020 天津030  重庆040 #广州050020 # 深圳050090 #苏州060080
-            city_code = '060080'
+            # 北京 010  上海020 天津030  重庆040 #广州050020 # 深圳050090 #苏州060080 #南京060020
+            city_code = '060020'
             job_indu = i['small_type']
             for pages in range(0,10):
                 url = 'https://www.liepin.com/zhaopin/?headId=e305e6c88ef64ef81821659a5f0e00a8&ckId=79rhndaqlt2jkzahwagommtvsb4t8ri9&oldCkId=d28dc535e6275' \

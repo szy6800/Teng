@@ -101,7 +101,7 @@ def job():
 if __name__ == "__main__":
     while True:
         job()
-        time.sleep(60*60)
+        time.sleep(60*300)
 
     # scheduler = BlockingScheduler()  # 实例化定时器
     # scheduler.add_job(job, 'cron', hour=10, minute=4)

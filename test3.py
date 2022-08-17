@@ -1,9 +1,10 @@
+ls ={
+    '1':'res',
+    '2':'43'
 
-def res():
-    inde()
 
-def inde():
-    print('1')
-    return '312'
 
-res()
+}
+for i in ls:
+    a = ls.get(i)
+    print(a)
