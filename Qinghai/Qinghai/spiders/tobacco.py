@@ -21,7 +21,6 @@ class TobaccoSpider(scrapy.Spider):
         super(TobaccoSpider, self).__init__()
         self.cates = [
             {"cate": "8", "pages": 1},  # 招标公告
-
         ]
         self.t = Times()
         self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=15)
@@ -65,6 +64,7 @@ class TobaccoSpider(scrapy.Spider):
     def parse_info(response):
         if response.status !=200:
             return
+
         item = response.meta['item']
         # 标题
         item['uuid'] = ''

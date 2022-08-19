@@ -96,11 +96,7 @@ class Job58Spider(scrapy.Spider):
         company_item = response.meta['company_item']
         # 公司简介
         item['job_desc'] = ''.join(response.xpath('//*[@class="des"]/text()').getall())
-
         item['city'] = response.xpath('//*[@class="pos_area_item"][1]/text()').get()
-
-
-
         print(item)
 
 

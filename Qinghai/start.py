@@ -29,7 +29,6 @@ def job():
     os.system('scrapy crawl bjx')
     os.system('scrapy crawl bnu')
     os.system('scrapy crawl bzggzyjy')
-
     os.system('scrapy crawl chinabrr')
     os.system('scrapy crawl cnooc')
     # os.system('scrapy crawl conch')
