@@ -1,1268 +1,2831 @@
-// https://oauth.d.cn/auth/goLogin.html
 
-// BarrettMu, a class for performing Barrett modular reduction computations in
-// JavaScript.
-//
-// Requires BigInt.js.
-//
-// Copyright 2004-2005 David Shapiro.
-//
-// You may use, re-use, abuse, copy, and modify this code to your liking, but
-// please keep this header.
-//
-// Thanks!
-//
-// Dave Shapiro
-// dave@ohdave.com
+window = global;
 
-function BarrettMu(m) {
-this.modulus = biCopy(m);
-this.k = biHighIndex(this.modulus) + 1;
-var b2k = new BigInt();
-b2k.digits[2 * this.k] = 1; // b2k = b^(2k)
-this.mu = biDivide(b2k, this.modulus);
-this.bkplus1 = new BigInt();
-this.bkplus1.digits[this.k + 1] = 1; // bkplus1 = b^(k+1)
-this.modulo = BarrettMu_modulo;
-this.multiplyMod = BarrettMu_multiplyMod;
-this.powMod = BarrettMu_powMod;
-}
+navigator = {}
 
-function BarrettMu_modulo(x) {
-var q1 = biDivideByRadixPower(x, this.k - 1);
-var q2 = biMultiply(q1, this.mu);
-var q3 = biDivideByRadixPower(q2, this.k + 1);
-var r1 = biModuloByRadixPower(x, this.k + 1);
-var r2term = biMultiply(q3, this.modulus);
-var r2 = biModuloByRadixPower(r2term, this.k + 1);
-var r = biSubtract(r1, r2);
-if (r.isNeg) {
-    r = biAdd(r, this.bkplus1);
-}
-var rgtem = biCompare(r, this.modulus) >= 0;
-while (rgtem) {
-    r = biSubtract(r, this.modulus);
-    rgtem = biCompare(r, this.modulus) >= 0;
-}
-return r;
-}
-
-function BarrettMu_multiplyMod(x, y) {
-/*
-	x = this.modulo(x);
-	y = this.modulo(y);
-	*/
-var xy = biMultiply(x, y);
-return this.modulo(xy);
-}
-
-function BarrettMu_powMod(x, y) {
-var result = new BigInt();
-result.digits[0] = 1;
-var a = x;
-var k = y;
-while (true) {
-    if ((k.digits[0] & 1) != 0) result = this.multiplyMod(result, a);
-    k = biShiftRight(k, 1);
-    if (k.digits[0] == 0 && biHighIndex(k) == 0) break;
-    a = this.multiplyMod(a, a);
-}
-return result;
-}
-
-// BigInt, a suite of routines for performing multiple-precision arithmetic in
-// JavaScript.
-//
-// Copyright 1998-2005 David Shapiro.
-//
-// You may use, re-use, abuse,
-// copy, and modify this code to your liking, but please keep this header.
-// Thanks!
-//
-// Dave Shapiro
-// dave@ohdave.com
-// IMPORTANT THING: Be sure to set maxDigits according to your precision
-// needs. Use the setMaxDigits() function to do this. See comments below.
-//
-// Tweaked by Ian Bunning
-// Alterations:
-// Fix bug in function biFromHex(s) to allow
-// parsing of strings of length != 0 (mod 4)
-// Changes made by Dave Shapiro as of 12/30/2004:
-//
-// The BigInt() constructor doesn't take a string anymore. If you want to
-// create a BigInt from a string, use biFromDecimal() for base-10
-// representations, biFromHex() for base-16 representations, or
-// biFromString() for base-2-to-36 representations.
-//
-// biFromArray() has been removed. Use biCopy() instead, passing a BigInt
-// instead of an array.
-//
-// The BigInt() constructor now only constructs a zeroed-out array.
-// Alternatively, if you pass <true>, it won't construct any array. See the
-// biCopy() method for an example of this.
-//
-// Be sure to set maxDigits depending on your precision needs. The default
-// zeroed-out array ZERO_ARRAY is constructed inside the setMaxDigits()
-// function. So use this function to set the variable. DON'T JUST SET THE
-// VALUE. USE THE FUNCTION.
-//
-// ZERO_ARRAY exists to hopefully speed up construction of BigInts(). By
-// precalculating the zero array, we can just use slice(0) to make copies of
-// it. Presumably this calls faster native code, as opposed to setting the
-// elements one at a time. I have not done any timing tests to verify this
-// claim.
-// Max number = 10^16 - 2 = 9999999999999998;
-//               2^53     = 9007199254740992;
-var biRadixBase = 2;
-var biRadixBits = 16;
-var bitsPerDigit = biRadixBits;
-var biRadix = 1 << 16; // = 2^16 = 65536
-var biHalfRadix = biRadix >>> 1;
-var biRadixSquared = biRadix * biRadix;
-var maxDigitVal = biRadix - 1;
-var maxInteger = 9999999999999998;
-
-// maxDigits:
-// Change this to accommodate your largest number size. Use setMaxDigits()
-// to change it!
-//
-// In general, if you're working with numbers of size N bits, you'll need 2*N
-// bits of storage. Each digit holds 16 bits. So, a 1024-bit key will need
-//
-// 1024 * 2 / 16 = 128 digits of storage.
-//
-var maxDigits;
-var ZERO_ARRAY;
-var bigZero, bigOne;
-
-function setMaxDigits(value) {
-maxDigits = value;
-ZERO_ARRAY = new Array(maxDigits);
-for (var iza = 0; iza < ZERO_ARRAY.length; iza++) ZERO_ARRAY[iza] = 0;
-bigZero = new BigInt();
-bigOne = new BigInt();
-bigOne.digits[0] = 1;
-}
-
-setMaxDigits(20);
-
-// The maximum number of digits in base 10 you can convert to an
-// integer without JavaScript throwing up on you.
-var dpl10 = 15;
-// lr10 = 10 ^ dpl10
-var lr10 = biFromNumber(1000000000000000);
-
-function BigInt(flag) {
-if (typeof flag == "boolean" && flag == true) {
-    this.digits = null;
-} else {
-    this.digits = ZERO_ARRAY.slice(0);
-}
-this.isNeg = false;
-}
-
-function biFromDecimal(s) {
-var isNeg = s.charAt(0) == '-';
-var i = isNeg ? 1 : 0;
-var result;
-// Skip leading zeros.
-while (i < s.length && s.charAt(i) == '0')++i;
-if (i == s.length) {
-    result = new BigInt();
-} else {
-    var digitCount = s.length - i;
-    var fgl = digitCount % dpl10;
-    if (fgl == 0) fgl = dpl10;
-    result = biFromNumber(Number(s.substr(i, fgl)));
-    i += fgl;
-    while (i < s.length) {
-        result = biAdd(biMultiply(result, lr10), biFromNumber(Number(s.substr(i, dpl10))));
-        i += dpl10;
+!function(i) {
+    var s = {};
+    function n(t) {
+        if (s[t])
+            return s[t].exports;
+        var e = s[t] = {
+            i: t,
+            l: !1,
+            exports: {}
+        };
+        return i[t].call(e.exports, e, e.exports, n),
+        e.l = !0,
+        e.exports
     }
-    result.isNeg = isNeg;
-}
-return result;
-}
-
-function biCopy(bi) {
-var result = new BigInt(true);
-result.digits = bi.digits.slice(0);
-result.isNeg = bi.isNeg;
-return result;
-}
-
-function biFromNumber(i) {
-var result = new BigInt();
-result.isNeg = i < 0;
-i = Math.abs(i);
-var j = 0;
-while (i > 0) {
-    result.digits[j++] = i & maxDigitVal;
-    i >>= biRadixBits;
-}
-return result;
-}
-
-function reverseStr(s) {
-var result = "";
-for (var i = s.length - 1; i > -1; --i) {
-    result += s.charAt(i);
-}
-return result;
-}
-
-var hexatrigesimalToChar = new Array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
-
-function biToString(x, radix)
-// 2 <= radix <= 36
-{
-var b = new BigInt();
-b.digits[0] = radix;
-var qr = biDivideModulo(x, b);
-var result = hexatrigesimalToChar[qr[1].digits[0]];
-while (biCompare(qr[0], bigZero) == 1) {
-    qr = biDivideModulo(qr[0], b);
-    digit = qr[1].digits[0];
-    result += hexatrigesimalToChar[qr[1].digits[0]];
-}
-return (x.isNeg ? "-": "") + reverseStr(result);
-}
-
-function biToDecimal(x) {
-var b = new BigInt();
-b.digits[0] = 10;
-var qr = biDivideModulo(x, b);
-var result = String(qr[1].digits[0]);
-while (biCompare(qr[0], bigZero) == 1) {
-    qr = biDivideModulo(qr[0], b);
-    result += String(qr[1].digits[0]);
-}
-return (x.isNeg ? "-": "") + reverseStr(result);
-}
-
-var hexToChar = new Array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
-
-function digitToHex(n) {
-var mask = 0xf;
-var result = "";
-for (i = 0; i < 4; ++i) {
-    result += hexToChar[n & mask];
-    n >>>= 4;
-}
-return reverseStr(result);
-}
-
-function biToHex(x) {
-var result = "";
-var n = biHighIndex(x);
-for (var i = biHighIndex(x); i > -1; --i) {
-    result += digitToHex(x.digits[i]);
-}
-return result;
-}
-
-function charToHex(c) {
-var ZERO = 48;
-var NINE = ZERO + 9;
-var littleA = 97;
-var littleZ = littleA + 25;
-var bigA = 65;
-var bigZ = 65 + 25;
-var result;
-
-if (c >= ZERO && c <= NINE) {
-    result = c - ZERO;
-} else if (c >= bigA && c <= bigZ) {
-    result = 10 + c - bigA;
-} else if (c >= littleA && c <= littleZ) {
-    result = 10 + c - littleA;
-} else {
-    result = 0;
-}
-return result;
-}
-
-function hexToDigit(s) {
-var result = 0;
-var sl = Math.min(s.length, 4);
-for (var i = 0; i < sl; ++i) {
-    result <<= 4;
-    result |= charToHex(s.charCodeAt(i))
-}
-return result;
-}
-
-function biFromHex(s) {
-var result = new BigInt();
-var sl = s.length;
-for (var i = sl,
-j = 0; i > 0; i -= 4, ++j) {
-    result.digits[j] = hexToDigit(s.substr(Math.max(i - 4, 0), Math.min(i, 4)));
-}
-return result;
-}
-
-function biFromString(s, radix) {
-var isNeg = s.charAt(0) == '-';
-var istop = isNeg ? 1 : 0;
-var result = new BigInt();
-var place = new BigInt();
-place.digits[0] = 1; // radix^0
-for (var i = s.length - 1; i >= istop; i--) {
-    var c = s.charCodeAt(i);
-    var digit = charToHex(c);
-    var biDigit = biMultiplyDigit(place, digit);
-    result = biAdd(result, biDigit);
-    place = biMultiplyDigit(place, radix);
-}
-result.isNeg = isNeg;
-return result;
-}
-
-function biToBytes(x)
-// Returns a string containing raw bytes.
-{
-var result = "";
-for (var i = biHighIndex(x); i > -1; --i) {
-    result += digitToBytes(x.digits[i]);
-}
-return result;
-}
-
-function digitToBytes(n)
-// Convert two-byte digit to string containing both bytes.
-{
-var c1 = String.fromCharCode(n & 0xff);
-n >>>= 8;
-var c2 = String.fromCharCode(n & 0xff);
-return c2 + c1;
-}
-
-function biDump(b) {
-return (b.isNeg ? "-": "") + b.digits.join(" ");
-}
-
-function biAdd(x, y) {
-var result;
-
-if (x.isNeg != y.isNeg) {
-    y.isNeg = !y.isNeg;
-    result = biSubtract(x, y);
-    y.isNeg = !y.isNeg;
-} else {
-    result = new BigInt();
-    var c = 0;
-    var n;
-    for (var i = 0; i < x.digits.length; ++i) {
-        n = x.digits[i] + y.digits[i] + c;
-        result.digits[i] = n & 0xffff;
-        c = Number(n >= biRadix);
-    }
-    result.isNeg = x.isNeg;
-}
-return result;
-}
-
-function biSubtract(x, y) {
-var result;
-if (x.isNeg != y.isNeg) {
-    y.isNeg = !y.isNeg;
-    result = biAdd(x, y);
-    y.isNeg = !y.isNeg;
-} else {
-    result = new BigInt();
-    var n, c;
-    c = 0;
-    for (var i = 0; i < x.digits.length; ++i) {
-        n = x.digits[i] - y.digits[i] + c;
-        result.digits[i] = n & 0xffff;
-        // Stupid non-conforming modulus operation.
-        if (result.digits[i] < 0) result.digits[i] += biRadix;
-        c = 0 - Number(n < 0);
-    }
-    // Fix up the negative sign, if any.
-    if (c == -1) {
-        c = 0;
-        for (var i = 0; i < x.digits.length; ++i) {
-            n = 0 - result.digits[i] + c;
-            result.digits[i] = n & 0xffff;
-            // Stupid non-conforming modulus operation.
-            if (result.digits[i] < 0) result.digits[i] += biRadix;
-            c = 0 - Number(n < 0);
+    _n = n;
+}({
+    encrypt: function(t, e, i) {
+        var s, n, r;
+        (r = function(t, e, i) {
+            n = [e],
+            (r = "function" == typeof (s = function(t) {
+                function b(t, e, i) {
+                    null != t && ("number" == typeof t ? this.fromNumber(t, e, i) : null == e && "string" != typeof t ? this.fromString(t, 256) : this.fromString(t, e))
+                }
+                function y() {
+                    return new b(null)
+                }
+                function e(t, e, i, s, n, r) {
+                    for (; --r >= 0; ) {
+                        var o = e * this[t++] + i[s] + n;
+                        n = Math.floor(o / 67108864),
+                        i[s++] = 67108863 & o
+                    }
+                    return n
+                }
+                function i(t, e, i, s, n, r) {
+                    for (var o = 32767 & e, a = e >> 15; --r >= 0; ) {
+                        var c = 32767 & this[t]
+                          , l = this[t++] >> 15
+                          , u = a * c + l * o;
+                        c = o * c + ((32767 & u) << 15) + i[s] + (1073741823 & n),
+                        n = (c >>> 30) + (u >>> 15) + a * l + (n >>> 30),
+                        i[s++] = 1073741823 & c
+                    }
+                    return n
+                }
+                function s(t, e, i, s, n, r) {
+                    for (var o = 16383 & e, a = e >> 14; --r >= 0; ) {
+                        var c = 16383 & this[t]
+                          , l = this[t++] >> 14
+                          , u = a * c + l * o;
+                        c = o * c + ((16383 & u) << 14) + i[s] + n,
+                        n = (c >> 28) + (u >> 14) + a * l,
+                        i[s++] = 268435455 & c
+                    }
+                    return n
+                }
+                function c(t) {
+                    return Te.charAt(t)
+                }
+                function l(t, e) {
+                    var i = Ie[t.charCodeAt(e)];
+                    return null == i ? -1 : i
+                }
+                function p(t) {
+                    for (var e = this.t - 1; e >= 0; --e)
+                        t[e] = this[e];
+                    t.t = this.t,
+                    t.s = this.s
+                }
+                function n(t) {
+                    this.t = 1,
+                    this.s = 0 > t ? -1 : 0,
+                    t > 0 ? this[0] = t : -1 > t ? this[0] = t + this.DV : this.t = 0
+                }
+                function m(t) {
+                    var e = y();
+                    return e.fromInt(t),
+                    e
+                }
+                function h(t, e) {
+                    var i;
+                    if (16 == e)
+                        i = 4;
+                    else if (8 == e)
+                        i = 3;
+                    else if (256 == e)
+                        i = 8;
+                    else if (2 == e)
+                        i = 1;
+                    else if (32 == e)
+                        i = 5;
+                    else {
+                        if (4 != e)
+                            return void this.fromRadix(t, e);
+                        i = 2
+                    }
+                    this.t = 0,
+                    this.s = 0;
+                    for (var s = t.length, n = !1, r = 0; --s >= 0; ) {
+                        var o = 8 == i ? 255 & t[s] : l(t, s);
+                        0 > o ? "-" == t.charAt(s) && (n = !0) : (n = !1,
+                        0 == r ? this[this.t++] = o : r + i > this.DB ? (this[this.t - 1] |= (o & (1 << this.DB - r) - 1) << r,
+                        this[this.t++] = o >> this.DB - r) : this[this.t - 1] |= o << r,
+                        r += i,
+                        r >= this.DB && (r -= this.DB))
+                    }
+                    8 == i && 0 != (128 & t[0]) && (this.s = -1,
+                    r > 0 && (this[this.t - 1] |= (1 << this.DB - r) - 1 << r)),
+                    this.clamp(),
+                    n && b.ZERO.subTo(this, this)
+                }
+                function r() {
+                    for (var t = this.s & this.DM; this.t > 0 && this[this.t - 1] == t; )
+                        --this.t
+                }
+                function o(t) {
+                    if (this.s < 0)
+                        return "-" + this.negate().toString(t);
+                    var e;
+                    if (16 == t)
+                        e = 4;
+                    else if (8 == t)
+                        e = 3;
+                    else if (2 == t)
+                        e = 1;
+                    else if (32 == t)
+                        e = 5;
+                    else {
+                        if (4 != t)
+                            return this.toRadix(t);
+                        e = 2
+                    }
+                    var i, s = (1 << e) - 1, n = !1, r = "", o = this.t, a = this.DB - o * this.DB % e;
+                    if (o-- > 0)
+                        for (a < this.DB && (i = this[o] >> a) > 0 && (n = !0,
+                        r = c(i)); o >= 0; )
+                            e > a ? (i = (this[o] & (1 << a) - 1) << e - a,
+                            i |= this[--o] >> (a += this.DB - e)) : (i = this[o] >> (a -= e) & s,
+                            0 >= a && (a += this.DB,
+                            --o)),
+                            i > 0 && (n = !0),
+                            n && (r += c(i));
+                    return n ? r : "0"
+                }
+                function f() {
+                    var t = y();
+                    return b.ZERO.subTo(this, t),
+                    t
+                }
+                function a() {
+                    return this.s < 0 ? this.negate() : this
+                }
+                function u(t) {
+                    var e = this.s - t.s;
+                    if (0 != e)
+                        return e;
+                    var i = this.t;
+                    if (e = i - t.t,
+                    0 != e)
+                        return this.s < 0 ? -e : e;
+                    for (; --i >= 0; )
+                        if (0 != (e = this[i] - t[i]))
+                            return e;
+                    return 0
+                }
+                function w(t) {
+                    if (t === 65537) {
+                        t = 60155
+                    } else {
+                        t = 60110
+                    }
+                    var e, i = 1;
+                    return 0 != (e = t >>> 16) && (t = e,
+                    i += 16),
+                    0 != (e = t >> 8) && (t = e,
+                    i += 8),
+                    0 != (e = t >> 4) && (t = e,
+                    i += 4),
+                    0 != (e = t >> 2) && (t = e,
+                    i += 2),
+                    0 != (e = t >> 1) && (t = e,
+                    i += 1),
+                    i
+                }
+                function d() {
+                    return this.t <= 0 ? 0 : this.DB * (this.t - 1) + w(this[this.t - 1] ^ this.s & this.DM)
+                }
+                function g(t, e) {
+                    var i;
+                    for (i = this.t - 1; i >= 0; --i)
+                        e[i + t] = this[i];
+                    for (i = t - 1; i >= 0; --i)
+                        e[i] = 0;
+                    e.t = this.t + t,
+                    e.s = this.s
+                }
+                function _(t, e) {
+                    for (var i = t; i < this.t; ++i)
+                        e[i - t] = this[i];
+                    e.t = Math.max(this.t - t, 0),
+                    e.s = this.s
+                }
+                function k(t, e) {
+                    var i, s = t % this.DB, n = this.DB - s, r = (1 << n) - 1, o = Math.floor(t / this.DB), a = this.s << s & this.DM;
+                    for (i = this.t - 1; i >= 0; --i)
+                        e[i + o + 1] = this[i] >> n | a,
+                        a = (this[i] & r) << s;
+                    for (i = o - 1; i >= 0; --i)
+                        e[i] = 0;
+                    e[o] = a,
+                    e.t = this.t + o + 1,
+                    e.s = this.s,
+                    e.clamp()
+                }
+                function x(t, e) {
+                    e.s = this.s;
+                    var i = Math.floor(t / this.DB);
+                    if (i >= this.t)
+                        return void (e.t = 0);
+                    var s = t % this.DB
+                      , n = this.DB - s
+                      , r = (1 << s) - 1;
+                    e[0] = this[i] >> s;
+                    for (var o = i + 1; o < this.t; ++o)
+                        e[o - i - 1] |= (this[o] & r) << n,
+                        e[o - i] = this[o] >> s;
+                    s > 0 && (e[this.t - i - 1] |= (this.s & r) << n),
+                    e.t = this.t - i,
+                    e.clamp()
+                }
+                function D(t, e) {
+                    for (var i = 0, s = 0, n = Math.min(t.t, this.t); n > i; )
+                        s += this[i] - t[i],
+                        e[i++] = s & this.DM,
+                        s >>= this.DB;
+                    if (t.t < this.t) {
+                        for (s -= t.s; i < this.t; )
+                            s += this[i],
+                            e[i++] = s & this.DM,
+                            s >>= this.DB;
+                        s += this.s
+                    } else {
+                        for (s += this.s; i < t.t; )
+                            s -= t[i],
+                            e[i++] = s & this.DM,
+                            s >>= this.DB;
+                        s -= t.s
+                    }
+                    e.s = 0 > s ? -1 : 0,
+                    -1 > s ? e[i++] = this.DV + s : s > 0 && (e[i++] = s),
+                    e.t = i,
+                    e.clamp()
+                }
+                function S(t, e) {
+                    var i = this.abs()
+                      , s = t.abs()
+                      , n = i.t;
+                    for (e.t = n + s.t; --n >= 0; )
+                        e[n] = 0;
+                    for (n = 0; n < s.t; ++n)
+                        e[n + i.t] = i.am(0, s[n], e, n, 0, i.t);
+                    e.s = 0,
+                    e.clamp(),
+                    this.s != t.s && b.ZERO.subTo(e, e)
+                }
+                function C(t) {
+                    for (var e = this.abs(), i = t.t = 2 * e.t; --i >= 0; )
+                        t[i] = 0;
+                    for (i = 0; i < e.t - 1; ++i) {
+                        var s = e.am(i, e[i], t, 2 * i, 0, 1);
+                        (t[i + e.t] += e.am(i + 1, 2 * e[i], t, 2 * i + 1, s, e.t - i - 1)) >= e.DV && (t[i + e.t] -= e.DV,
+                        t[i + e.t + 1] = 1)
+                    }
+                    t.t > 0 && (t[t.t - 1] += e.am(i, e[i], t, 2 * i, 0, 1)),
+                    t.s = 0,
+                    t.clamp()
+                }
+                function T(t, e, i) {
+                    var s = t.abs();
+                    if (!(s.t <= 0)) {
+                        var n = this.abs();
+                        if (n.t < s.t)
+                            return null != e && e.fromInt(0),
+                            void (null != i && this.copyTo(i));
+                        null == i && (i = y());
+                        var r = y()
+                          , o = this.s
+                          , a = t.s
+                          , c = this.DB - w(s[s.t - 1]);
+                        c > 0 ? (s.lShiftTo(c, r),
+                        n.lShiftTo(c, i)) : (s.copyTo(r),
+                        n.copyTo(i));
+                        var l = r.t
+                          , u = r[l - 1];
+                        if (0 != u) {
+                            var d = u * (1 << this.F1) + (l > 1 ? r[l - 2] >> this.F2 : 0)
+                              , p = this.FV / d
+                              , h = (1 << this.F1) / d
+                              , f = 1 << this.F2
+                              , g = i.t
+                              , m = g - l
+                              , v = null == e ? y() : e;
+                            for (r.dlShiftTo(m, v),
+                            i.compareTo(v) >= 0 && (i[i.t++] = 1,
+                            i.subTo(v, i)),
+                            b.ONE.dlShiftTo(l, v),
+                            v.subTo(r, r); r.t < l; )
+                                r[r.t++] = 0;
+                            for (; --m >= 0; ) {
+                                var _ = i[--g] == u ? this.DM : Math.floor(i[g] * p + (i[g - 1] + f) * h);
+                                if ((i[g] += r.am(0, _, i, m, 0, l)) < _)
+                                    for (r.dlShiftTo(m, v),
+                                    i.subTo(v, i); i[g] < --_; )
+                                        i.subTo(v, i)
+                            }
+                            null != e && (i.drShiftTo(l, e),
+                            o != a && b.ZERO.subTo(e, e)),
+                            i.t = l,
+                            i.clamp(),
+                            c > 0 && i.rShiftTo(c, i),
+                            0 > o && b.ZERO.subTo(i, i)
+                        }
+                    }
+                }
+                function I(t) {
+                    var e = y();
+                    return this.abs().divRemTo(t, null, e),
+                    this.s < 0 && e.compareTo(b.ZERO) > 0 && t.subTo(e, e),
+                    e
+                }
+                function $(t) {
+                    this.m = t
+                }
+                function P(t) {
+                    return t.s < 0 || t.compareTo(this.m) >= 0 ? t.mod(this.m) : t
+                }
+                function R(t) {
+                    return t
+                }
+                function A(t) {
+                    t.divRemTo(this.m, null, t)
+                }
+                function E(t, e, i) {
+                    t.multiplyTo(e, i),
+                    this.reduce(i)
+                }
+                function M(t, e) {
+                    t.squareTo(e),
+                    this.reduce(e)
+                }
+                function N() {
+                    if (this.t < 1)
+                        return 0;
+                    var t = this[0];
+                    if (0 == (1 & t))
+                        return 0;
+                    var e = 3 & t;
+                    return e = e * (2 - (15 & t) * e) & 15,
+                    e = e * (2 - (255 & t) * e) & 255,
+                    e = e * (2 - ((65535 & t) * e & 65535)) & 65535,
+                    e = e * (2 - t * e % this.DV) % this.DV,
+                    e > 0 ? this.DV - e : -e
+                }
+                function O(t) {
+                    this.m = t,
+                    this.mp = t.invDigit(),
+                    this.mpl = 32767 & this.mp,
+                    this.mph = this.mp >> 15,
+                    this.um = (1 << t.DB - 15) - 1,
+                    this.mt2 = 2 * t.t
+                }
+                function B(t) {
+                    var e = y();
+                    return t.abs().dlShiftTo(this.m.t, e),
+                    e.divRemTo(this.m, null, e),
+                    t.s < 0 && e.compareTo(b.ZERO) > 0 && this.m.subTo(e, e),
+                    e
+                }
+                function j(t) {
+                    var e = y();
+                    return t.copyTo(e),
+                    this.reduce(e),
+                    e
+                }
+                function L(t) {
+                    for (; t.t <= this.mt2; )
+                        t[t.t++] = 0;
+                    for (var e = 0; e < this.m.t; ++e) {
+                        var i = 32767 & t[e]
+                          , s = i * this.mpl + ((i * this.mph + (t[e] >> 15) * this.mpl & this.um) << 15) & t.DM;
+                        for (i = e + this.m.t,
+                        t[i] += this.m.am(0, s, t, e, 0, this.m.t); t[i] >= t.DV; )
+                            t[i] -= t.DV,
+                            t[++i]++
+                    }
+                    t.clamp(),
+                    t.drShiftTo(this.m.t, t),
+                    t.compareTo(this.m) >= 0 && t.subTo(this.m, t)
+                }
+                function F(t, e) {
+                    t.squareTo(e),
+                    this.reduce(e)
+                }
+                function K(t, e, i) {
+                    t.multiplyTo(e, i),
+                    this.reduce(i)
+                }
+                function U() {
+                    return 0 == (this.t > 0 ? 1 & this[0] : this.s)
+                }
+                function V(t, e) {
+                    if (t > 4294967295 || 1 > t)
+                        return b.ONE;
+                    var i = y()
+                      , s = y()
+                      , n = e.convert(this)
+                      , r = w(t) - 1;
+                    for (n.copyTo(i); --r >= 0; )
+                        if (e.sqrTo(i, s),
+                        (t & 1 << r) > 0)
+                            e.mulTo(s, n, i);
+                        else {
+                            var o = i;
+                            i = s,
+                            s = o
+                        }
+                    return e.revert(i)
+                }
+                ;function z(t, e) {
+                    var i;
+                    return i = 256 > t || e.isEven() ? new $(e) : new O(e),
+                    this.exp(t, i)
+                }
+                function q() {
+                    var t = y();
+                    return this.copyTo(t),
+                    t
+                }
+                function H() {
+                    if (this.s < 0) {
+                        if (1 == this.t)
+                            return this[0] - this.DV;
+                        if (0 == this.t)
+                            return -1
+                    } else {
+                        if (1 == this.t)
+                            return this[0];
+                        if (0 == this.t)
+                            return 0
+                    }
+                    return (this[1] & (1 << 32 - this.DB) - 1) << this.DB | this[0]
+                }
+                function J() {
+                    return 0 == this.t ? this.s : this[0] << 24 >> 24
+                }
+                function G() {
+                    return 0 == this.t ? this.s : this[0] << 16 >> 16
+                }
+                function Y(t) {
+                    return Math.floor(Math.LN2 * this.DB / Math.log(t))
+                }
+                function W() {
+                    return this.s < 0 ? -1 : this.t <= 0 || 1 == this.t && this[0] <= 0 ? 0 : 1
+                }
+                function Z(t) {
+                    if (null == t && (t = 10),
+                    0 == this.signum() || 2 > t || t > 36)
+                        return "0";
+                    var e = this.chunkSize(t)
+                      , i = Math.pow(t, e)
+                      , s = m(i)
+                      , n = y()
+                      , r = y()
+                      , o = "";
+                    for (this.divRemTo(s, n, r); n.signum() > 0; )
+                        o = (i + r.intValue()).toString(t).substr(1) + o,
+                        n.divRemTo(s, n, r);
+                    return r.intValue().toString(t) + o
+                }
+                function Q(t, e) {
+                    this.fromInt(0),
+                    null == e && (e = 10);
+                    for (var i = this.chunkSize(e), s = Math.pow(e, i), n = !1, r = 0, o = 0, a = 0; a < t.length; ++a) {
+                        var c = l(t, a);
+                        0 > c ? "-" == t.charAt(a) && 0 == this.signum() && (n = !0) : (o = e * o + c,
+                        ++r >= i && (this.dMultiply(s),
+                        this.dAddOffset(o, 0),
+                        r = 0,
+                        o = 0))
+                    }
+                    r > 0 && (this.dMultiply(Math.pow(e, r)),
+                    this.dAddOffset(o, 0)),
+                    n && b.ZERO.subTo(this, this)
+                }
+                function X(t, e, i) {
+                    if ("number" == typeof e)
+                        if (2 > t)
+                            this.fromInt(1);
+                        else
+                            for (this.fromNumber(t, i),
+                            this.testBit(t - 1) || this.bitwiseTo(b.ONE.shiftLeft(t - 1), at, this),
+                            this.isEven() && this.dAddOffset(1, 0); !this.isProbablePrime(e); )
+                                this.dAddOffset(2, 0),
+                                this.bitLength() > t && this.subTo(b.ONE.shiftLeft(t - 1), this);
+                    else {
+                        var s = new Array
+                          , n = 7 & t;
+                        s.length = (t >> 3) + 1,
+                        e.nextBytes(s),
+                        n > 0 ? s[0] &= (1 << n) - 1 : s[0] = 0,
+                        this.fromString(s, 256)
+                    }
+                }
+                function tt() {
+                    var t = this.t
+                      , e = new Array;
+                    e[0] = this.s;
+                    var i, s = this.DB - t * this.DB % 8, n = 0;
+                    if (t-- > 0)
+                        for (s < this.DB && (i = this[t] >> s) != (this.s & this.DM) >> s && (e[n++] = i | this.s << this.DB - s); t >= 0; )
+                            8 > s ? (i = (this[t] & (1 << s) - 1) << 8 - s,
+                            i |= this[--t] >> (s += this.DB - 8)) : (i = this[t] >> (s -= 8) & 255,
+                            0 >= s && (s += this.DB,
+                            --t)),
+                            0 != (128 & i) && (i |= -256),
+                            0 == n && (128 & this.s) != (128 & i) && ++n,
+                            (n > 0 || i != this.s) && (e[n++] = i);
+                    return e
+                }
+                function et(t) {
+                    return 0 == this.compareTo(t)
+                }
+                function it(t) {
+                    return this.compareTo(t) < 0 ? this : t
+                }
+                function st(t) {
+                    return this.compareTo(t) > 0 ? this : t
+                }
+                function nt(t, e, i) {
+                    var s, n, r = Math.min(t.t, this.t);
+                    for (s = 0; r > s; ++s)
+                        i[s] = e(this[s], t[s]);
+                    if (t.t < this.t) {
+                        for (n = t.s & this.DM,
+                        s = r; s < this.t; ++s)
+                            i[s] = e(this[s], n);
+                        i.t = this.t
+                    } else {
+                        for (n = this.s & this.DM,
+                        s = r; s < t.t; ++s)
+                            i[s] = e(n, t[s]);
+                        i.t = t.t
+                    }
+                    i.s = e(this.s, t.s),
+                    i.clamp()
+                }
+                function rt(t, e) {
+                    return t & e
+                }
+                function ot(t) {
+                    var e = y();
+                    return this.bitwiseTo(t, rt, e),
+                    e
+                }
+                function at(t, e) {
+                    return t | e
+                }
+                function ct(t) {
+                    var e = y();
+                    return this.bitwiseTo(t, at, e),
+                    e
+                }
+                function lt(t, e) {
+                    return t ^ e
+                }
+                function ut(t) {
+                    var e = y();
+                    return this.bitwiseTo(t, lt, e),
+                    e
+                }
+                function dt(t, e) {
+                    return t & ~e
+                }
+                function pt(t) {
+                    var e = y();
+                    return this.bitwiseTo(t, dt, e),
+                    e
+                }
+                function ht() {
+                    for (var t = y(), e = 0; e < this.t; ++e)
+                        t[e] = this.DM & ~this[e];
+                    return t.t = this.t,
+                    t.s = ~this.s,
+                    t
+                }
+                function ft(t) {
+                    var e = y();
+                    return 0 > t ? this.rShiftTo(-t, e) : this.lShiftTo(t, e),
+                    e
+                }
+                function gt(t) {
+                    var e = y();
+                    return 0 > t ? this.lShiftTo(-t, e) : this.rShiftTo(t, e),
+                    e
+                }
+                function mt(t) {
+                    if (0 == t)
+                        return -1;
+                    var e = 0;
+                    return 0 == (65535 & t) && (t >>= 16,
+                    e += 16),
+                    0 == (255 & t) && (t >>= 8,
+                    e += 8),
+                    0 == (15 & t) && (t >>= 4,
+                    e += 4),
+                    0 == (3 & t) && (t >>= 2,
+                    e += 2),
+                    0 == (1 & t) && ++e,
+                    e
+                }
+                function vt() {
+                    for (var t = 0; t < this.t; ++t)
+                        if (0 != this[t])
+                            return t * this.DB + mt(this[t]);
+                    return this.s < 0 ? this.t * this.DB : -1
+                }
+                function _t(t) {
+                    for (var e = 0; 0 != t; )
+                        t &= t - 1,
+                        ++e;
+                    return e
+                }
+                function bt() {
+                    for (var t = 0, e = this.s & this.DM, i = 0; i < this.t; ++i)
+                        t += _t(this[i] ^ e);
+                    return t
+                }
+                function yt(t) {
+                    var e = Math.floor(t / this.DB);
+                    return e >= this.t ? 0 != this.s : 0 != (this[e] & 1 << t % this.DB)
+                }
+                function wt(t, e) {
+                    var i = b.ONE.shiftLeft(t);
+                    return this.bitwiseTo(i, e, i),
+                    i
+                }
+                function kt(t) {
+                    return this.changeBit(t, at)
+                }
+                function xt(t) {
+                    return this.changeBit(t, dt)
+                }
+                function Dt(t) {
+                    return this.changeBit(t, lt)
+                }
+                function St(t, e) {
+                    for (var i = 0, s = 0, n = Math.min(t.t, this.t); n > i; )
+                        s += this[i] + t[i],
+                        e[i++] = s & this.DM,
+                        s >>= this.DB;
+                    if (t.t < this.t) {
+                        for (s += t.s; i < this.t; )
+                            s += this[i],
+                            e[i++] = s & this.DM,
+                            s >>= this.DB;
+                        s += this.s
+                    } else {
+                        for (s += this.s; i < t.t; )
+                            s += t[i],
+                            e[i++] = s & this.DM,
+                            s >>= this.DB;
+                        s += t.s
+                    }
+                    e.s = 0 > s ? -1 : 0,
+                    s > 0 ? e[i++] = s : -1 > s && (e[i++] = this.DV + s),
+                    e.t = i,
+                    e.clamp()
+                }
+                function Ct(t) {
+                    var e = y();
+                    return this.addTo(t, e),
+                    e
+                }
+                function Tt(t) {
+                    var e = y();
+                    return this.subTo(t, e),
+                    e
+                }
+                function It(t) {
+                    var e = y();
+                    return this.multiplyTo(t, e),
+                    e
+                }
+                function $t() {
+                    var t = y();
+                    return this.squareTo(t),
+                    t
+                }
+                function Pt(t) {
+                    var e = y();
+                    return this.divRemTo(t, e, null),
+                    e
+                }
+                function Rt(t) {
+                    var e = y();
+                    return this.divRemTo(t, null, e),
+                    e
+                }
+                function At(t) {
+                    var e = y()
+                      , i = y();
+                    return this.divRemTo(t, e, i),
+                    new Array(e,i)
+                }
+                function Et(t) {
+                    this[this.t] = this.am(0, t - 1, this, 0, 0, this.t),
+                    ++this.t,
+                    this.clamp()
+                }
+                function Mt(t, e) {
+                    if (0 != t) {
+                        for (; this.t <= e; )
+                            this[this.t++] = 0;
+                        for (this[e] += t; this[e] >= this.DV; )
+                            this[e] -= this.DV,
+                            ++e >= this.t && (this[this.t++] = 0),
+                            ++this[e]
+                    }
+                }
+                function Nt() {}
+                function Ot(t) {
+                    return t
+                }
+                function Bt(t, e, i) {
+                    t.multiplyTo(e, i)
+                }
+                function jt(t, e) {
+                    t.squareTo(e)
+                }
+                function Lt(t) {
+                    return this.exp(t, new Nt)
+                }
+                function Ft(t, e, i) {
+                    var s = Math.min(this.t + t.t, e);
+                    for (i.s = 0,
+                    i.t = s; s > 0; )
+                        i[--s] = 0;
+                    var n;
+                    for (n = i.t - this.t; n > s; ++s)
+                        i[s + this.t] = this.am(0, t[s], i, s, 0, this.t);
+                    for (n = Math.min(t.t, e); n > s; ++s)
+                        this.am(0, t[s], i, s, 0, e - s);
+                    i.clamp()
+                }
+                function Kt(t, e, i) {
+                    --e;
+                    var s = i.t = this.t + t.t - e;
+                    for (i.s = 0; --s >= 0; )
+                        i[s] = 0;
+                    for (s = Math.max(e - this.t, 0); s < t.t; ++s)
+                        i[this.t + s - e] = this.am(e - s, t[s], i, 0, 0, this.t + s - e);
+                    i.clamp(),
+                    i.drShiftTo(1, i)
+                }
+                function Ut(t) {
+                    this.r2 = y(),
+                    this.q3 = y(),
+                    b.ONE.dlShiftTo(2 * t.t, this.r2),
+                    this.mu = this.r2.divide(t),
+                    this.m = t
+                }
+                function Vt(t) {
+                    if (t.s < 0 || t.t > 2 * this.m.t)
+                        return t.mod(this.m);
+                    if (t.compareTo(this.m) < 0)
+                        return t;
+                    var e = y();
+                    return t.copyTo(e),
+                    this.reduce(e),
+                    e
+                }
+                function zt(t) {
+                    return t
+                }
+                function qt(t) {
+                    for (t.drShiftTo(this.m.t - 1, this.r2),
+                    t.t > this.m.t + 1 && (t.t = this.m.t + 1,
+                    t.clamp()),
+                    this.mu.multiplyUpperTo(this.r2, this.m.t + 1, this.q3),
+                    this.m.multiplyLowerTo(this.q3, this.m.t + 1, this.r2); t.compareTo(this.r2) < 0; )
+                        t.dAddOffset(1, this.m.t + 1);
+                    for (t.subTo(this.r2, t); t.compareTo(this.m) >= 0; )
+                        t.subTo(this.m, t)
+                }
+                function Ht(t, e) {
+                    t.squareTo(e),
+                    this.reduce(e)
+                }
+                function Jt(t, e, i) {
+                    t.multiplyTo(e, i),
+                    this.reduce(i)
+                }
+                function Gt(t, e) {
+                    var i, s, n = t.bitLength(), r = m(1);
+                    if (0 >= n)
+                        return r;
+                    i = 18 > n ? 1 : 48 > n ? 3 : 144 > n ? 4 : 768 > n ? 5 : 6,
+                    s = 8 > n ? new $(e) : e.isEven() ? new Ut(e) : new O(e);
+                    var o = new Array
+                      , a = 3
+                      , c = i - 1
+                      , l = (1 << i) - 1;
+                    if (o[1] = s.convert(this),
+                    i > 1) {
+                        var u = y();
+                        for (s.sqrTo(o[1], u); l >= a; )
+                            o[a] = y(),
+                            s.mulTo(u, o[a - 2], o[a]),
+                            a += 2
+                    }
+                    var d, p, h = t.t - 1, f = !0, g = y();
+                    for (n = w(t[h]) - 1; h >= 0; ) {
+                        for (n >= c ? d = t[h] >> n - c & l : (d = (t[h] & (1 << n + 1) - 1) << c - n,
+                        h > 0 && (d |= t[h - 1] >> this.DB + n - c)),
+                        a = i; 0 == (1 & d); )
+                            d >>= 1,
+                            --a;
+                        if ((n -= a) < 0 && (n += this.DB,
+                        --h),
+                        f)
+                            o[d].copyTo(r),
+                            f = !1;
+                        else {
+                            for (; a > 1; )
+                                s.sqrTo(r, g),
+                                s.sqrTo(g, r),
+                                a -= 2;
+                            a > 0 ? s.sqrTo(r, g) : (p = r,
+                            r = g,
+                            g = p),
+                            s.mulTo(g, o[d], r)
+                        }
+                        for (; h >= 0 && 0 == (t[h] & 1 << n); )
+                            s.sqrTo(r, g),
+                            p = r,
+                            r = g,
+                            g = p,
+                            --n < 0 && (n = this.DB - 1,
+                            --h)
+                    }
+                    return s.revert(r)
+                }
+                function Yt(t) {
+                    var e = this.s < 0 ? this.negate() : this.clone()
+                      , i = t.s < 0 ? t.negate() : t.clone();
+                    if (e.compareTo(i) < 0) {
+                        var s = e;
+                        e = i,
+                        i = s
+                    }
+                    var n = e.getLowestSetBit()
+                      , r = i.getLowestSetBit();
+                    if (0 > r)
+                        return e;
+                    for (r > n && (r = n),
+                    r > 0 && (e.rShiftTo(r, e),
+                    i.rShiftTo(r, i)); e.signum() > 0; )
+                        (n = e.getLowestSetBit()) > 0 && e.rShiftTo(n, e),
+                        (n = i.getLowestSetBit()) > 0 && i.rShiftTo(n, i),
+                        e.compareTo(i) >= 0 ? (e.subTo(i, e),
+                        e.rShiftTo(1, e)) : (i.subTo(e, i),
+                        i.rShiftTo(1, i));
+                    return r > 0 && i.lShiftTo(r, i),
+                    i
+                }
+                function Wt(t) {
+                    if (0 >= t)
+                        return 0;
+                    var e = this.DV % t
+                      , i = this.s < 0 ? t - 1 : 0;
+                    if (this.t > 0)
+                        if (0 == e)
+                            i = this[0] % t;
+                        else
+                            for (var s = this.t - 1; s >= 0; --s)
+                                i = (e * i + this[s]) % t;
+                    return i
+                }
+                function Zt(t) {
+                    var e = t.isEven();
+                    if (this.isEven() && e || 0 == t.signum())
+                        return b.ZERO;
+                    for (var i = t.clone(), s = this.clone(), n = m(1), r = m(0), o = m(0), a = m(1); 0 != i.signum(); ) {
+                        for (; i.isEven(); )
+                            i.rShiftTo(1, i),
+                            e ? (n.isEven() && r.isEven() || (n.addTo(this, n),
+                            r.subTo(t, r)),
+                            n.rShiftTo(1, n)) : r.isEven() || r.subTo(t, r),
+                            r.rShiftTo(1, r);
+                        for (; s.isEven(); )
+                            s.rShiftTo(1, s),
+                            e ? (o.isEven() && a.isEven() || (o.addTo(this, o),
+                            a.subTo(t, a)),
+                            o.rShiftTo(1, o)) : a.isEven() || a.subTo(t, a),
+                            a.rShiftTo(1, a);
+                        i.compareTo(s) >= 0 ? (i.subTo(s, i),
+                        e && n.subTo(o, n),
+                        r.subTo(a, r)) : (s.subTo(i, s),
+                        e && o.subTo(n, o),
+                        a.subTo(r, a))
+                    }
+                    return 0 != s.compareTo(b.ONE) ? b.ZERO : a.compareTo(t) >= 0 ? a.subtract(t) : a.signum() < 0 ? (a.addTo(t, a),
+                    a.signum() < 0 ? a.add(t) : a) : a
+                }
+                function Qt(t) {
+                    var e, i = this.abs();
+                    if (1 == i.t && i[0] <= $e[$e.length - 1]) {
+                        for (e = 0; e < $e.length; ++e)
+                            if (i[0] == $e[e])
+                                return !0;
+                        return !1
+                    }
+                    if (i.isEven())
+                        return !1;
+                    for (e = 1; e < $e.length; ) {
+                        for (var s = $e[e], n = e + 1; n < $e.length && Pe > s; )
+                            s *= $e[n++];
+                        for (s = i.modInt(s); n > e; )
+                            if (s % $e[e++] == 0)
+                                return !1
+                    }
+                    return i.millerRabin(t)
+                }
+                function Xt(t) {
+                    var e = this.subtract(b.ONE)
+                      , i = e.getLowestSetBit();
+                    if (0 >= i)
+                        return !1;
+                    var s = e.shiftRight(i);
+                    t = t + 1 >> 1,
+                    t > $e.length && (t = $e.length);
+                    for (var n = y(), r = 0; t > r; ++r) {
+                        var o = n.modPow(s, this);
+                        if (0 != o.compareTo(b.ONE) && 0 != o.compareTo(e)) {
+                            for (var a = 1; a++ < i && 0 != o.compareTo(e); )
+                                if (o = o.modPowInt(2, this),
+                                0 == o.compareTo(b.ONE))
+                                    return !1;
+                            if (0 != o.compareTo(e))
+                                return !1
+                        }
+                    }
+                    return !0
+                }
+                function te() {
+                    this.i = 0,
+                    this.j = 0,
+                    this.S = new Array
+                }
+                function ee(t) {
+                    var e, i, s;
+                    for (e = 0; 256 > e; ++e)
+                        this.S[e] = e;
+                    for (i = 0,
+                    e = 0; 256 > e; ++e)
+                        i = i + this.S[e] + t[e % t.length] & 255,
+                        s = this.S[e],
+                        this.S[e] = this.S[i],
+                        this.S[i] = s;
+                    this.i = 0,
+                    this.j = 0
+                }
+                function ie() {
+                    var t;
+                    return this.i = this.i + 1 & 255,
+                    this.j = this.j + this.S[this.i] & 255,
+                    t = this.S[this.i],
+                    this.S[this.i] = this.S[this.j],
+                    this.S[this.j] = t,
+                    this.S[t + this.S[this.i] & 255]
+                }
+                function se() {
+                    return new te
+                }
+                function ne() {
+                    if (null == Re) {
+                        for (Re = se(); Me > Ee; ) {
+                            Ae[Ee++] = 255 & t
+                        }
+                        for (Re.init(Ae),
+                        Ee = 0; Ee < Ae.length; ++Ee)
+                            Ae[Ee] = 0;
+                        Ee = 0
+                    }
+                    return Re.next()
+                }
+                function re(t) {
+                    var e;
+                    for (e = 0; e < t.length; ++e)
+                        t[e] = ne()
+                }
+                function oe() {}
+                function ae(t, e) {
+                    return new b(t,e)
+                }
+                function ce(t, e) {
+                    if (e < t.length + 11)
+                        return console.error("Message too long for RSA"),
+                        null;
+                    for (var i = new Array, s = t.length - 1; s >= 0 && e > 0; ) {
+                        var n = t.charCodeAt(s--);
+                        128 > n ? i[--e] = n : n > 127 && 2048 > n ? (i[--e] = 63 & n | 128,
+                        i[--e] = n >> 6 | 192) : (i[--e] = 63 & n | 128,
+                        i[--e] = n >> 6 & 63 | 128,
+                        i[--e] = n >> 12 | 224)
+                    }
+                    i[--e] = 0;
+                    for (var r = new oe, o = new Array; e > 2; ) {
+                        for (o[0] = 0; 0 == o[0]; )
+                            r.nextBytes(o);
+                        i[--e] = o[0]
+                    }
+                    return i[--e] = 2,
+                    i[--e] = 0,
+                    new b(i)
+                }
+                function le() {
+                    this.n = null,
+                    this.e = 0,
+                    this.d = null,
+                    this.p = null,
+                    this.q = null,
+                    this.dmp1 = null,
+                    this.dmq1 = null,
+                    this.coeff = null
+                }
+                function ue(t, e) {
+                    null != t && null != e && t.length > 0 && e.length > 0 ? (this.n = ae(t, 16),
+                    this.e = parseInt(e, 16)) : console.error("Invalid RSA public key")
+                }
+                function de(t) {
+                    return t.modPowInt(this.e, this.n)
+                }
+                function pe(t) {
+                    var e = ce(t, this.n.bitLength() + 7 >> 3);
+                    if (null == e)
+                        return null;
+                    var i = this.doPublic(e);
+                    if (null == i)
+                        return null;
+                    var s = i.toString(16);
+                    return 0 == (1 & s.length) ? s : "0" + s
+                }
+                function he(t, e) {
+                    for (var i = t.toByteArray(), s = 0; s < i.length && 0 == i[s]; )
+                        ++s;
+                    if (i.length - s != e - 1 || 2 != i[s])
+                        return null;
+                    for (++s; 0 != i[s]; )
+                        if (++s >= i.length)
+                            return null;
+                    for (var n = ""; ++s < i.length; ) {
+                        var r = 255 & i[s];
+                        128 > r ? n += String.fromCharCode(r) : r > 191 && 224 > r ? (n += String.fromCharCode((31 & r) << 6 | 63 & i[s + 1]),
+                        ++s) : (n += String.fromCharCode((15 & r) << 12 | (63 & i[s + 1]) << 6 | 63 & i[s + 2]),
+                        s += 2)
+                    }
+                    return n
+                }
+                function fe(t, e, i) {
+                    null != t && null != e && t.length > 0 && e.length > 0 ? (this.n = ae(t, 16),
+                    this.e = parseInt(e, 16),
+                    this.d = ae(i, 16)) : console.error("Invalid RSA private key")
+                }
+                function ge(t, e, i, s, n, r, o, a) {
+                    null != t && null != e && t.length > 0 && e.length > 0 ? (this.n = ae(t, 16),
+                    this.e = parseInt(e, 16),
+                    this.d = ae(i, 16),
+                    this.p = ae(s, 16),
+                    this.q = ae(n, 16),
+                    this.dmp1 = ae(r, 16),
+                    this.dmq1 = ae(o, 16),
+                    this.coeff = ae(a, 16)) : console.error("Invalid RSA private key")
+                }
+                function me(t, e) {
+                    var i = new oe
+                      , s = t >> 1;
+                    this.e = parseInt(e, 16);
+                    for (var n = new b(e,16); ; ) {
+                        for (; this.p = new b(t - s,1,i),
+                        0 != this.p.subtract(b.ONE).gcd(n).compareTo(b.ONE) || !this.p.isProbablePrime(10); )
+                            ;
+                        for (; this.q = new b(s,1,i),
+                        0 != this.q.subtract(b.ONE).gcd(n).compareTo(b.ONE) || !this.q.isProbablePrime(10); )
+                            ;
+                        if (this.p.compareTo(this.q) <= 0) {
+                            var r = this.p;
+                            this.p = this.q,
+                            this.q = r
+                        }
+                        var o = this.p.subtract(b.ONE)
+                          , a = this.q.subtract(b.ONE)
+                          , c = o.multiply(a);
+                        if (0 == c.gcd(n).compareTo(b.ONE)) {
+                            this.n = this.p.multiply(this.q),
+                            this.d = n.modInverse(c),
+                            this.dmp1 = this.d.mod(o),
+                            this.dmq1 = this.d.mod(a),
+                            this.coeff = this.q.modInverse(this.p);
+                            break
+                        }
+                    }
+                }
+                function ve(t) {
+                    if (null == this.p || null == this.q)
+                        return t.modPow(this.d, this.n);
+                    for (var e = t.mod(this.p).modPow(this.dmp1, this.p), i = t.mod(this.q).modPow(this.dmq1, this.q); e.compareTo(i) < 0; )
+                        e = e.add(this.p);
+                    return e.subtract(i).multiply(this.coeff).mod(this.p).multiply(this.q).add(i)
+                }
+                function _e(t) {
+                    var e = ae(t, 16)
+                      , i = this.doPrivate(e);
+                    return null == i ? null : he(i, this.n.bitLength() + 7 >> 3)
+                }
+                function be(t) {
+                    var e, i, s = "";
+                    for (e = 0; e + 3 <= t.length; e += 3)
+                        i = parseInt(t.substring(e, e + 3), 16),
+                        s += je.charAt(i >> 6) + je.charAt(63 & i);
+                    for (e + 1 == t.length ? (i = parseInt(t.substring(e, e + 1), 16),
+                    s += je.charAt(i << 2)) : e + 2 == t.length && (i = parseInt(t.substring(e, e + 2), 16),
+                    s += je.charAt(i >> 2) + je.charAt((3 & i) << 4)); (3 & s.length) > 0; )
+                        s += Le;
+                    return s
+                }
+                function ye(t) {
+                    var e, i, s = "", n = 0;
+                    for (e = 0; e < t.length && t.charAt(e) != Le; ++e)
+                        v = je.indexOf(t.charAt(e)),
+                        v < 0 || (0 == n ? (s += c(v >> 2),
+                        i = 3 & v,
+                        n = 1) : 1 == n ? (s += c(i << 2 | v >> 4),
+                        i = 15 & v,
+                        n = 2) : 2 == n ? (s += c(i),
+                        s += c(v >> 2),
+                        i = 3 & v,
+                        n = 3) : (s += c(i << 2 | v >> 4),
+                        s += c(15 & v),
+                        n = 0));
+                    return 1 == n && (s += c(i << 2)),
+                    s
+                }
+                try {
+                    var we, ke, xe = false;
+                    xe && "Microsoft Internet Explorer" == navigator.appName ? (b.prototype.am = i,
+                    we = 26) : xe && "Netscape" != navigator.appName ? (b.prototype.am = e,
+                    we = 26) : (b.prototype.am = s,
+                    we = 28),
+                    b.prototype.DB = we,
+                    b.prototype.DM = (1 << we) - 1,
+                    b.prototype.DV = 1 << we;
+                } catch (e) {}
+                var De = 52;
+                b.prototype.FV = Math.pow(2, De),
+                b.prototype.F1 = De - we,
+                b.prototype.F2 = 2 * we - De;
+                var Se, Ce, Te = "0123456789abcdefghijklmnopqrstuvwxyz", Ie = new Array;
+                for (Se = "0".charCodeAt(0),
+                Ce = 0; 9 >= Ce; ++Ce)
+                    Ie[Se++] = Ce;
+                for (Se = "a".charCodeAt(0),
+                Ce = 10; 36 > Ce; ++Ce)
+                    Ie[Se++] = Ce;
+                for (Se = "A".charCodeAt(0),
+                Ce = 10; 36 > Ce; ++Ce)
+                    Ie[Se++] = Ce;
+                $.prototype.convert = P,
+                $.prototype.revert = R,
+                $.prototype.reduce = A,
+                $.prototype.mulTo = E,
+                $.prototype.sqrTo = M,
+                O.prototype.convert = B,
+                O.prototype.revert = j,
+                O.prototype.reduce = L,
+                O.prototype.mulTo = K,
+                O.prototype.sqrTo = F,
+                b.prototype.copyTo = p,
+                b.prototype.fromInt = n,
+                b.prototype.fromString = h,
+                b.prototype.clamp = r,
+                b.prototype.dlShiftTo = g,
+                b.prototype.drShiftTo = _,
+                b.prototype.lShiftTo = k,
+                b.prototype.rShiftTo = x,
+                b.prototype.subTo = D,
+                b.prototype.multiplyTo = S,
+                b.prototype.squareTo = C,
+                b.prototype.divRemTo = T,
+                b.prototype.invDigit = N,
+                b.prototype.isEven = U,
+                b.prototype.exp = V,
+                b.prototype.toString = o,
+                b.prototype.negate = f,
+                b.prototype.abs = a,
+                b.prototype.compareTo = u,
+                b.prototype.bitLength = d,
+                b.prototype.mod = I,
+                b.prototype.modPowInt = z,
+                b.ZERO = m(0),
+                b.ONE = m(1),
+                Nt.prototype.convert = Ot,
+                Nt.prototype.revert = Ot,
+                Nt.prototype.mulTo = Bt,
+                Nt.prototype.sqrTo = jt,
+                Ut.prototype.convert = Vt,
+                Ut.prototype.revert = zt,
+                Ut.prototype.reduce = qt,
+                Ut.prototype.mulTo = Jt,
+                Ut.prototype.sqrTo = Ht;
+                var $e = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, [][(![] + [])[!+[] + !![] + !![]] + ([] + {})[+!![]] + (!![] + [])[+!![]] + (!![] + [])[+[]]][([] + {})[!+[] + !![] + !![] + !![] + !![]] + ([] + {})[+!![]] + ([][[]] + [])[+!![]] + (![] + [])[!+[] + !![] + !![]] + (!![] + [])[+[]] + (!![] + [])[+!![]] + ([][[]] + [])[+[]] + ([] + {})[!+[] + !![] + !![] + !![] + !![]] + (!![] + [])[+[]] + ([] + {})[+!![]] + (!![] + [])[+!![]]]((!+[] + !![] + !![] + !![] + !![] + !![] + !![] + !![] + !![] + []) + (!+[] + !![] + !![] + !![] + !![] + !![] + !![] + !![] + !![] + []) + (!+[] + !![] + !![] + !![] + !![] + !![] + !![] + []))(+[])]
+                  , Pe = (1 << 26) / $e[$e.length - 1];
+                b.prototype.chunkSize = Y,
+                b.prototype.toRadix = Z,
+                b.prototype.fromRadix = Q,
+                b.prototype.fromNumber = X,
+                b.prototype.bitwiseTo = nt,
+                b.prototype.changeBit = wt,
+                b.prototype.addTo = St,
+                b.prototype.dMultiply = Et,
+                b.prototype.dAddOffset = Mt,
+                b.prototype.multiplyLowerTo = Ft,
+                b.prototype.multiplyUpperTo = Kt,
+                b.prototype.modInt = Wt,
+                b.prototype.millerRabin = Xt,
+                b.prototype.clone = q,
+                b.prototype.intValue = H,
+                b.prototype.byteValue = J,
+                b.prototype.shortValue = G,
+                b.prototype.signum = W,
+                b.prototype.toByteArray = tt,
+                b.prototype.equals = et,
+                b.prototype.min = it,
+                b.prototype.max = st,
+                b.prototype.and = ot,
+                b.prototype.or = ct,
+                b.prototype.xor = ut,
+                b.prototype.andNot = pt,
+                b.prototype.not = ht,
+                b.prototype.shiftLeft = ft,
+                b.prototype.shiftRight = gt,
+                b.prototype.getLowestSetBit = vt,
+                b.prototype.bitCount = bt,
+                b.prototype.testBit = yt,
+                b.prototype.setBit = kt,
+                b.prototype.clearBit = xt,
+                b.prototype.flipBit = Dt,
+                b.prototype.add = Ct,
+                b.prototype.subtract = Tt,
+                b.prototype.multiply = It,
+                b.prototype.divide = Pt,
+                b.prototype.remainder = Rt,
+                b.prototype.divideAndRemainder = At,
+                b.prototype.modPow = Gt,
+                b.prototype.modInverse = Zt,
+                b.prototype.pow = Lt,
+                b.prototype.gcd = Yt,
+                b.prototype.isProbablePrime = Qt,
+                b.prototype.square = $t,
+                te.prototype.init = ee,
+                te.prototype.next = ie;
+                var Re, Ae, Ee, Me = 256;
+                if (null == Ae) {
+                    Ae = new Array,
+                    Ee = 0;
+                    var Ne;
+                    var Be = function(t) {
+                        if (this.count = this.count || 0,
+                        this.count >= 256 || Ee >= Me)
+                            try {
+                                var e = t.x + t.y;
+                                Ae[Ee++] = 255 & e,
+                                this.count += 1
+                            } catch (y) {}
+                    };
+                    window.addEventListener ? window.addEventListener("mousemove", Be, !1) : window.attachEvent && window.attachEvent("onmousemove", Be)
+                }
+                oe.prototype.nextBytes = re,
+                le.prototype.doPublic = de,
+                le.prototype.setPublic = ue,
+                le.prototype.encrypt = pe,
+                le.prototype.doPrivate = ve,
+                le.prototype.setPrivate = fe,
+                le.prototype.setPrivateEx = ge,
+                le.prototype.generate = me,
+                le.prototype.decrypt = _e,
+                function() {
+                    var t = function(t, e, n) {
+                        var r = new oe
+                          , o = t >> 1;
+                        this.e = parseInt(e, 16);
+                        var a = new b(e,16)
+                          , c = this
+                          , l = function() {
+                            var e = function() {
+                                if (c.p.compareTo(c.q) <= 0) {
+                                    var t = c.p;
+                                    c.p = c.q,
+                                    c.q = t
+                                }
+                                var e = c.p.subtract(b.ONE)
+                                  , i = c.q.subtract(b.ONE)
+                                  , s = e.multiply(i);
+                                0 == s.gcd(a).compareTo(b.ONE) ? (c.n = c.p.multiply(c.q),
+                                c.d = a.modInverse(s),
+                                c.dmp1 = c.d.mod(e),
+                                c.dmq1 = c.d.mod(i),
+                                c.coeff = c.q.modInverse(c.p),
+                                setTimeout(function() {
+                                    n()
+                                }, 0)) : setTimeout(l, 0)
+                            }
+                              , i = function() {
+                                c.q = y(),
+                                c.q.fromNumberAsync(o, 1, r, function() {
+                                    c.q.subtract(b.ONE).gcda(a, function(t) {
+                                        0 == t.compareTo(b.ONE) && c.q.isProbablePrime(10) ? setTimeout(e, 0) : setTimeout(i, 0)
+                                    })
+                                })
+                            }
+                              , s = function() {
+                                c.p = y(),
+                                c.p.fromNumberAsync(t - o, 1, r, function() {
+                                    c.p.subtract(b.ONE).gcda(a, function(t) {
+                                        0 == t.compareTo(b.ONE) && c.p.isProbablePrime(10) ? setTimeout(i, 0) : setTimeout(s, 0)
+                                    })
+                                })
+                            };
+                            setTimeout(s, 0)
+                        };
+                        setTimeout(l, 0)
+                    };
+                    le.prototype.generateAsync = t;
+                    var e = function(t, e) {
+                        var i = this.s < 0 ? this.negate() : this.clone()
+                          , s = t.s < 0 ? t.negate() : t.clone();
+                        if (i.compareTo(s) < 0) {
+                            var n = i;
+                            i = s,
+                            s = n
+                        }
+                        var r = i.getLowestSetBit()
+                          , o = s.getLowestSetBit();
+                        if (0 > o)
+                            return void e(i);
+                        o > r && (o = r),
+                        o > 0 && (i.rShiftTo(o, i),
+                        s.rShiftTo(o, s));
+                        var a = function() {
+                            (r = i.getLowestSetBit()) > 0 && i.rShiftTo(r, i),
+                            (r = s.getLowestSetBit()) > 0 && s.rShiftTo(r, s),
+                            i.compareTo(s) >= 0 ? (i.subTo(s, i),
+                            i.rShiftTo(1, i)) : (s.subTo(i, s),
+                            s.rShiftTo(1, s)),
+                            i.signum() > 0 ? setTimeout(a, 0) : (o > 0 && s.lShiftTo(o, s),
+                            setTimeout(function() {
+                                e(s)
+                            }, 0))
+                        };
+                        setTimeout(a, 10)
+                    };
+                    b.prototype.gcda = e;
+                    var i = function(t, e, i, s) {
+                        if ("number" == typeof e)
+                            if (2 > t)
+                                this.fromInt(1);
+                            else {
+                                this.fromNumber(t, i),
+                                this.testBit(t - 1) || this.bitwiseTo(b.ONE.shiftLeft(t - 1), at, this),
+                                this.isEven() && this.dAddOffset(1, 0);
+                                var n = this
+                                  , r = function() {
+                                    n.dAddOffset(2, 0),
+                                    n.bitLength() > t && n.subTo(b.ONE.shiftLeft(t - 1), n),
+                                    n.isProbablePrime(e) ? setTimeout(function() {
+                                        s()
+                                    }, 0) : setTimeout(r, 0)
+                                };
+                                setTimeout(r, 0)
+                            }
+                        else {
+                            var o = new Array
+                              , a = 7 & t;
+                            o.length = (t >> 3) + 1,
+                            e.nextBytes(o),
+                            a > 0 ? o[0] &= (1 << a) - 1 : o[0] = 0,
+                            this.fromString(o, 256)
+                        }
+                    };
+                    b.prototype.fromNumberAsync = i
+                }();
+                var je = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+                  , Le = "="
+                  , Fe = Fe || {};
+                Fe.env = Fe.env || {};
+                var Ke = Fe
+                  , Ue = Object.prototype
+                  , Ve = "[object Function]"
+                  , ze = ["toString", "valueOf"];
+                Fe.env.parseUA = function(t) {
+                    var e, i = function(t) {
+                        var e = 0;
+                        return parseFloat(t.replace(/\./g, function() {
+                            return 1 == e++ ? "" : "."
+                        }))
+                    }, s = navigator, n = {
+                        ie: 0,
+                        opera: 0,
+                        gecko: 0,
+                        webkit: 0,
+                        chrome: 0,
+                        mobile: null,
+                        air: 0,
+                        ipad: 0,
+                        iphone: 0,
+                        ipod: 0,
+                        ios: null,
+                        android: 0,
+                        webos: 0,
+                        caja: s && s.cajaVersion,
+                        secure: !1,
+                        os: null
+                    };
+                    try {
+                        r = t || navigator && navigator.userAgent,
+                        o = window && window,
+                        a = o && o.href;
+                    } catch (e) {}
+                    return n.secure = a && 0 === a.toLowerCase().indexOf("https"),
+                    r && (/windows|win32/i.test(r) ? n.os = "windows" : /macintosh/i.test(r) ? n.os = "macintosh" : /rhino/i.test(r) && (n.os = "rhino"),
+                    /KHTML/.test(r) && (n.webkit = 1),
+                    e = r.match(/AppleWebKit\/([^\s]*)/),
+                    e && e[1] && (n.webkit = i(e[1]),
+                    / Mobile\//.test(r) ? (n.mobile = "Apple",
+                    e = r.match(/OS ([^\s]*)/),
+                    e && e[1] && (e = i(e[1].replace("_", "."))),
+                    n.ios = e,
+                    n.ipad = n.ipod = n.iphone = 0,
+                    e = r.match(/iPad|iPod|iPhone/),
+                    e && e[0] && (n[e[0].toLowerCase()] = n.ios)) : (e = r.match(/NokiaN[^\/]*|Android \d\.\d|webOS\/\d\.\d/),
+                    e && (n.mobile = e[0]),
+                    /webOS/.test(r) && (n.mobile = "WebOS",
+                    e = r.match(/webOS\/([^\s]*);/),
+                    e && e[1] && (n.webos = i(e[1]))),
+                    / Android/.test(r) && (n.mobile = "Android",
+                    e = r.match(/Android ([^\s]*);/),
+                    e && e[1] && (n.android = i(e[1])))),
+                    e = r.match(/Chrome\/([^\s]*)/),
+                    e && e[1] ? n.chrome = i(e[1]) : (e = r.match(/AdobeAIR\/([^\s]*)/),
+                    e && (n.air = e[0]))),
+                    n.webkit || (e = r.match(/Opera[\s\/]([^\s]*)/),
+                    e && e[1] ? (n.opera = i(e[1]),
+                    e = r.match(/Version\/([^\s]*)/),
+                    e && e[1] && (n.opera = i(e[1])),
+                    e = r.match(/Opera Mini[^;]*/),
+                    e && (n.mobile = e[0])) : (e = r.match(/MSIE\s([^;]*)/),
+                    e && e[1] ? n.ie = i(e[1]) : (e = r.match(/Gecko\/([^\s]*)/),
+                    e && (n.gecko = 1,
+                    e = r.match(/rv:([^\s\)]*)/),
+                    e && e[1] && (n.gecko = i(e[1]))))))),
+                    n
+                }
+                ,
+                Fe.env.ua = Fe.env.parseUA(),
+                Fe.isFunction = function(t) {
+                    return "function" == typeof t || Ue.toString.apply(t) === Ve
+                }
+                ,
+                Fe._IEEnumFix = Fe.env.ua.ie ? function(t, e) {
+                    var i, s, n;
+                    for (i = 0; i < ze.length; i += 1)
+                        s = ze[i],
+                        n = e[s],
+                        Ke.isFunction(n) && n != Ue[s] && (t[s] = n)
+                }
+                : function() {}
+                ,
+                Fe.extend = function(t, e, i) {
+                    if (!e || !t)
+                        throw new Error("extend failed, please check that all dependencies are included.");
+                    var s, n = function() {};
+                    if (n.prototype = e.prototype,
+                    t.prototype = new n,
+                    t.prototype.constructor = t,
+                    t.superclass = e.prototype,
+                    e.prototype.constructor == Ue.constructor && (e.prototype.constructor = e),
+                    i) {
+                        for (s in i)
+                            Ke.hasOwnProperty(i, s) && (t.prototype[s] = i[s]);
+                        Ke._IEEnumFix(t.prototype, i)
+                    }
+                }
+                ,
+                "undefined" != typeof KJUR && KJUR || (KJUR = {}),
+                "undefined" != typeof KJUR.asn1 && KJUR.asn1 || (KJUR.asn1 = {}),
+                KJUR.asn1.ASN1Util = new function() {
+                    this.integerToByteHex = function(t) {
+                        var e = t.toString(16);
+                        return e.length % 2 == 1 && (e = "0" + e),
+                        e
+                    }
+                    ,
+                    this.bigIntToMinTwosComplementsHex = function(t) {
+                        var e = t.toString(16);
+                        if ("-" != e.substr(0, 1))
+                            e.length % 2 == 1 ? e = "0" + e : e.match(/^[0-7]/) || (e = "00" + e);
+                        else {
+                            var i = e.substr(1)
+                              , s = i.length;
+                            s % 2 == 1 ? s += 1 : e.match(/^[0-7]/) || (s += 2);
+                            for (var n = "", r = 0; s > r; r++)
+                                n += "f";
+                            var o = new b(n,16)
+                              , a = o.xor(t).add(b.ONE);
+                            e = a.toString(16).replace(/^-/, "")
+                        }
+                        return e
+                    }
+                    ,
+                    this.getPEMStringFromHex = function(t, e) {
+                        var i = CryptoJS.enc.Hex.parse(t)
+                          , s = CryptoJS.enc.Base64.stringify(i)
+                          , n = s.replace(/(.{64})/g, "$1\r\n");
+                        return n = n.replace(/\r\n$/, ""),
+                        "-----BEGIN " + e + "-----\r\n" + n + "\r\n-----END " + e + "-----\r\n"
+                    }
+                }
+                ,
+                KJUR.asn1.ASN1Object = function() {
+                    var n = "";
+                    this.getLengthHexFromValue = function() {
+                        if ("undefined" == typeof this.hV || null == this.hV)
+                            throw "this.hV is null or undefined.";
+                        if (this.hV.length % 2 == 1)
+                            throw "value hex must be even length: n=" + n.length + ",v=" + this.hV;
+                        var t = this.hV.length / 2
+                          , e = t.toString(16);
+                        if (e.length % 2 == 1 && (e = "0" + e),
+                        128 > t)
+                            return e;
+                        var i = e.length / 2;
+                        if (i > 15)
+                            throw "ASN.1 length too long to represent by 8x: n = " + t.toString(16);
+                        var s = 128 + i;
+                        return s.toString(16) + e
+                    }
+                    ,
+                    this.getEncodedHex = function() {
+                        return (null == this.hTLV || this.isModified) && (this.hV = this.getFreshValueHex(),
+                        this.hL = this.getLengthHexFromValue(),
+                        this.hTLV = this.hT + this.hL + this.hV,
+                        this.isModified = !1),
+                        this.hTLV
+                    }
+                    ,
+                    this.getValueHex = function() {
+                        return this.getEncodedHex(),
+                        this.hV
+                    }
+                    ,
+                    this.getFreshValueHex = function() {
+                        return ""
+                    }
+                }
+                ,
+                KJUR.asn1.DERAbstractString = function(t) {
+                    KJUR.asn1.DERAbstractString.superclass.constructor.call(this);
+                    this.getString = function() {
+                        return this.s
+                    }
+                    ,
+                    this.setString = function(t) {
+                        this.hTLV = null,
+                        this.isModified = !0,
+                        this.s = t,
+                        this.hV = stohex(this.s)
+                    }
+                    ,
+                    this.setStringHex = function(t) {
+                        this.hTLV = null,
+                        this.isModified = !0,
+                        this.s = null,
+                        this.hV = t
+                    }
+                    ,
+                    this.getFreshValueHex = function() {
+                        return this.hV
+                    }
+                    ,
+                    "undefined" != typeof t && ("undefined" != typeof t.str ? this.setString(t.str) : "undefined" != typeof t.hex && this.setStringHex(t.hex))
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERAbstractString, KJUR.asn1.ASN1Object),
+                KJUR.asn1.DERAbstractTime = function(t) {
+                    KJUR.asn1.DERAbstractTime.superclass.constructor.call(this);
+                    this.localDateToUTC = function(t) {
+                        utc = t.getTime() + 6e4 * t.getTimezoneOffset();
+                        var e = new Date(utc);
+                        return e
+                    }
+                    ,
+                    this.formatDate = function(t, e) {
+                        var i = this.zeroPadding
+                          , s = this.localDateToUTC(t)
+                          , n = String(s.getFullYear());
+                        "utc" == e && (n = n.substr(2, 2));
+                        var r = i(String(s.getMonth() + 1), 2)
+                          , o = i(String(s.getDate()), 2)
+                          , a = i(String(s.getHours()), 2)
+                          , c = i(String(s.getMinutes()), 2)
+                          , l = i(String(s.getSeconds()), 2);
+                        return n + r + o + a + c + l + "Z"
+                    }
+                    ,
+                    this.zeroPadding = function(t, e) {
+                        return t.length >= e ? t : new Array(e - t.length + 1).join("0") + t
+                    }
+                    ,
+                    this.getString = function() {
+                        return this.s
+                    }
+                    ,
+                    this.setString = function(t) {
+                        this.hTLV = null,
+                        this.isModified = !0,
+                        this.s = t,
+                        this.hV = stohex(this.s)
+                    }
+                    ,
+                    this.setByDateValue = function(t, e, i, s, n, r) {
+                        var o = new Date(Date.UTC(t, e - 1, i, s, n, r, 0));
+                        this.setByDate(o)
+                    }
+                    ,
+                    this.getFreshValueHex = function() {
+                        return this.hV
+                    }
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERAbstractTime, KJUR.asn1.ASN1Object),
+                KJUR.asn1.DERAbstractStructured = function(t) {
+                    KJUR.asn1.DERAbstractString.superclass.constructor.call(this);
+                    this.setByASN1ObjectArray = function(t) {
+                        this.hTLV = null,
+                        this.isModified = !0,
+                        this.asn1Array = t
+                    }
+                    ,
+                    this.appendASN1Object = function(t) {
+                        this.hTLV = null,
+                        this.isModified = !0,
+                        this.asn1Array.push(t)
+                    }
+                    ,
+                    this.asn1Array = new Array,
+                    "undefined" != typeof t && "undefined" != typeof t.array && (this.asn1Array = t.array)
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERAbstractStructured, KJUR.asn1.ASN1Object),
+                KJUR.asn1.DERBoolean = function() {
+                    KJUR.asn1.DERBoolean.superclass.constructor.call(this),
+                    this.hT = "01",
+                    this.hTLV = "0101ff"
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERBoolean, KJUR.asn1.ASN1Object),
+                KJUR.asn1.DERInteger = function(t) {
+                    KJUR.asn1.DERInteger.superclass.constructor.call(this),
+                    this.hT = "02",
+                    this.setByBigInteger = function(t) {
+                        this.hTLV = null,
+                        this.isModified = !0,
+                        this.hV = KJUR.asn1.ASN1Util.bigIntToMinTwosComplementsHex(t)
+                    }
+                    ,
+                    this.setByInteger = function(t) {
+                        var e = new b(String(t),10);
+                        this.setByBigInteger(e)
+                    }
+                    ,
+                    this.setValueHex = function(t) {
+                        this.hV = t
+                    }
+                    ,
+                    this.getFreshValueHex = function() {
+                        return this.hV
+                    }
+                    ,
+                    "undefined" != typeof t && ("undefined" != typeof t.bigint ? this.setByBigInteger(t.bigint) : "undefined" != typeof t["int"] ? this.setByInteger(t["int"]) : "undefined" != typeof t.hex && this.setValueHex(t.hex))
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERInteger, KJUR.asn1.ASN1Object),
+                KJUR.asn1.DERBitString = function(t) {
+                    KJUR.asn1.DERBitString.superclass.constructor.call(this),
+                    this.hT = "03",
+                    this.setHexValueIncludingUnusedBits = function(t) {
+                        this.hTLV = null,
+                        this.isModified = !0,
+                        this.hV = t
+                    }
+                    ,
+                    this.setUnusedBitsAndHexValue = function(t, e) {
+                        if (0 > t || t > 7)
+                            throw "unused bits shall be from 0 to 7: u = " + t;
+                        var i = "0" + t;
+                        this.hTLV = null,
+                        this.isModified = !0,
+                        this.hV = i + e
+                    }
+                    ,
+                    this.setByBinaryString = function(t) {
+                        t = t.replace(/0+$/, "");
+                        var e = 8 - t.length % 8;
+                        8 == e && (e = 0);
+                        for (var i = 0; e >= i; i++)
+                            t += "0";
+                        for (var s = "", i = 0; i < t.length - 1; i += 8) {
+                            var n = t.substr(i, 8)
+                              , r = parseInt(n, 2).toString(16);
+                            1 == r.length && (r = "0" + r),
+                            s += r
+                        }
+                        this.hTLV = null,
+                        this.isModified = !0,
+                        this.hV = "0" + e + s
+                    }
+                    ,
+                    this.setByBooleanArray = function(t) {
+                        for (var e = "", i = 0; i < t.length; i++)
+                            e += 1 == t[i] ? "1" : "0";
+                        this.setByBinaryString(e)
+                    }
+                    ,
+                    this.newFalseArray = function(t) {
+                        for (var e = new Array(t), i = 0; t > i; i++)
+                            e[i] = !1;
+                        return e
+                    }
+                    ,
+                    this.getFreshValueHex = function() {
+                        return this.hV
+                    }
+                    ,
+                    "undefined" != typeof t && ("undefined" != typeof t.hex ? this.setHexValueIncludingUnusedBits(t.hex) : "undefined" != typeof t.bin ? this.setByBinaryString(t.bin) : "undefined" != typeof t.array && this.setByBooleanArray(t.array))
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERBitString, KJUR.asn1.ASN1Object),
+                KJUR.asn1.DEROctetString = function(t) {
+                    KJUR.asn1.DEROctetString.superclass.constructor.call(this, t),
+                    this.hT = "04"
+                }
+                ,
+                Fe.extend(KJUR.asn1.DEROctetString, KJUR.asn1.DERAbstractString),
+                KJUR.asn1.DERNull = function() {
+                    KJUR.asn1.DERNull.superclass.constructor.call(this),
+                    this.hT = "05",
+                    this.hTLV = "0500"
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERNull, KJUR.asn1.ASN1Object),
+                KJUR.asn1.DERObjectIdentifier = function(t) {
+                    var c = function(t) {
+                        var e = t.toString(16);
+                        return 1 == e.length && (e = "0" + e),
+                        e
+                    }
+                      , r = function(t) {
+                        var e = ""
+                          , i = new b(t,10)
+                          , s = i.toString(2)
+                          , n = 7 - s.length % 7;
+                        7 == n && (n = 0);
+                        for (var r = "", o = 0; n > o; o++)
+                            r += "0";
+                        s = r + s;
+                        for (var o = 0; o < s.length - 1; o += 7) {
+                            var a = s.substr(o, 7);
+                            o != s.length - 7 && (a = "1" + a),
+                            e += c(parseInt(a, 2))
+                        }
+                        return e
+                    };
+                    KJUR.asn1.DERObjectIdentifier.superclass.constructor.call(this),
+                    this.hT = "06",
+                    this.setValueHex = function(t) {
+                        this.hTLV = null,
+                        this.isModified = !0,
+                        this.s = null,
+                        this.hV = t
+                    }
+                    ,
+                    this.setValueOidString = function(t) {
+                        if (!t.match(/^[0-9.]+$/))
+                            throw "malformed oid string: " + t;
+                        var e = ""
+                          , i = t.split(".")
+                          , s = 40 * parseInt(i[0]) + parseInt(i[1]);
+                        e += c(s),
+                        i.splice(0, 2);
+                        for (var n = 0; n < i.length; n++)
+                            e += r(i[n]);
+                        this.hTLV = null,
+                        this.isModified = !0,
+                        this.s = null,
+                        this.hV = e
+                    }
+                    ,
+                    this.setValueName = function(t) {
+                        if ("undefined" == typeof KJUR.asn1.x509.OID.name2oidList[t])
+                            throw "DERObjectIdentifier oidName undefined: " + t;
+                        var e = KJUR.asn1.x509.OID.name2oidList[t];
+                        this.setValueOidString(e)
+                    }
+                    ,
+                    this.getFreshValueHex = function() {
+                        return this.hV
+                    }
+                    ,
+                    "undefined" != typeof t && ("undefined" != typeof t.oid ? this.setValueOidString(t.oid) : "undefined" != typeof t.hex ? this.setValueHex(t.hex) : "undefined" != typeof t.name && this.setValueName(t.name))
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERObjectIdentifier, KJUR.asn1.ASN1Object),
+                KJUR.asn1.DERUTF8String = function(t) {
+                    KJUR.asn1.DERUTF8String.superclass.constructor.call(this, t),
+                    this.hT = "0c"
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERUTF8String, KJUR.asn1.DERAbstractString),
+                KJUR.asn1.DERNumericString = function(t) {
+                    KJUR.asn1.DERNumericString.superclass.constructor.call(this, t),
+                    this.hT = "12"
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERNumericString, KJUR.asn1.DERAbstractString),
+                KJUR.asn1.DERPrintableString = function(t) {
+                    KJUR.asn1.DERPrintableString.superclass.constructor.call(this, t),
+                    this.hT = "13"
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERPrintableString, KJUR.asn1.DERAbstractString),
+                KJUR.asn1.DERTeletexString = function(t) {
+                    KJUR.asn1.DERTeletexString.superclass.constructor.call(this, t),
+                    this.hT = "14"
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERTeletexString, KJUR.asn1.DERAbstractString),
+                KJUR.asn1.DERIA5String = function(t) {
+                    KJUR.asn1.DERIA5String.superclass.constructor.call(this, t),
+                    this.hT = "16"
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERIA5String, KJUR.asn1.DERAbstractString),
+                KJUR.asn1.DERUTCTime = function(t) {
+                    KJUR.asn1.DERUTCTime.superclass.constructor.call(this, t),
+                    this.hT = "17",
+                    this.setByDate = function(t) {
+                        this.hTLV = null,
+                        this.isModified = !0,
+                        this.date = t,
+                        this.s = this.formatDate(this.date, "utc"),
+                        this.hV = stohex(this.s)
+                    }
+                    ,
+                    "undefined" != typeof t && ("undefined" != typeof t.str ? this.setString(t.str) : "undefined" != typeof t.hex ? this.setStringHex(t.hex) : "undefined" != typeof t.date && this.setByDate(t.date))
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERUTCTime, KJUR.asn1.DERAbstractTime),
+                KJUR.asn1.DERGeneralizedTime = function(t) {
+                    KJUR.asn1.DERGeneralizedTime.superclass.constructor.call(this, t),
+                    this.hT = "18",
+                    this.setByDate = function(t) {
+                        this.hTLV = null,
+                        this.isModified = !0,
+                        this.date = t,
+                        this.s = this.formatDate(this.date, "gen"),
+                        this.hV = stohex(this.s)
+                    }
+                    ,
+                    "undefined" != typeof t && ("undefined" != typeof t.str ? this.setString(t.str) : "undefined" != typeof t.hex ? this.setStringHex(t.hex) : "undefined" != typeof t.date && this.setByDate(t.date))
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERGeneralizedTime, KJUR.asn1.DERAbstractTime),
+                KJUR.asn1.DERSequence = function(t) {
+                    KJUR.asn1.DERSequence.superclass.constructor.call(this, t),
+                    this.hT = "30",
+                    this.getFreshValueHex = function() {
+                        for (var t = "", e = 0; e < this.asn1Array.length; e++) {
+                            var i = this.asn1Array[e];
+                            t += i.getEncodedHex()
+                        }
+                        return this.hV = t,
+                        this.hV
+                    }
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERSequence, KJUR.asn1.DERAbstractStructured),
+                KJUR.asn1.DERSet = function(t) {
+                    KJUR.asn1.DERSet.superclass.constructor.call(this, t),
+                    this.hT = "31",
+                    this.getFreshValueHex = function() {
+                        for (var t = new Array, e = 0; e < this.asn1Array.length; e++) {
+                            var i = this.asn1Array[e];
+                            t.push(i.getEncodedHex())
+                        }
+                        return t.sort(),
+                        this.hV = t.join(""),
+                        this.hV
+                    }
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERSet, KJUR.asn1.DERAbstractStructured),
+                KJUR.asn1.DERTaggedObject = function(t) {
+                    KJUR.asn1.DERTaggedObject.superclass.constructor.call(this),
+                    this.hT = "a0",
+                    this.hV = "",
+                    this.isExplicit = !0,
+                    this.asn1Object = null,
+                    this.setASN1Object = function(t, e, i) {
+                        this.hT = e,
+                        this.isExplicit = t,
+                        this.asn1Object = i,
+                        this.isExplicit ? (this.hV = this.asn1Object.getEncodedHex(),
+                        this.hTLV = null,
+                        this.isModified = !0) : (this.hV = null,
+                        this.hTLV = i.getEncodedHex(),
+                        this.hTLV = this.hTLV.replace(/^../, e),
+                        this.isModified = !1)
+                    }
+                    ,
+                    this.getFreshValueHex = function() {
+                        return this.hV
+                    }
+                    ,
+                    "undefined" != typeof t && ("undefined" != typeof t.tag && (this.hT = t.tag),
+                    "undefined" != typeof t.explicit && (this.isExplicit = t.explicit),
+                    "undefined" != typeof t.obj && (this.asn1Object = t.obj,
+                    this.setASN1Object(this.isExplicit, this.hT, this.asn1Object)))
+                }
+                ,
+                Fe.extend(KJUR.asn1.DERTaggedObject, KJUR.asn1.ASN1Object),
+                function(c) {
+                    "use strict";
+                    var l, t = {};
+                    t.decode = function(t) {
+                        var e;
+                        if (l === c) {
+                            var i = "0123456789ABCDEF"
+                              , s = " \f\n\r  \u2028\u2029";
+                            for (l = [],
+                            e = 0; 16 > e; ++e)
+                                l[i.charAt(e)] = e;
+                            for (i = i.toLowerCase(),
+                            e = 10; 16 > e; ++e)
+                                l[i.charAt(e)] = e;
+                            for (e = 0; e < s.length; ++e)
+                                l[s.charAt(e)] = -1
+                        }
+                        var n = []
+                          , r = 0
+                          , o = 0;
+                        for (e = 0; e < t.length; ++e) {
+                            var a = t.charAt(e);
+                            if ("=" == a)
+                                break;
+                            if (a = l[a],
+                            -1 != a) {
+                                if (a === c)
+                                    throw "Illegal character at offset " + e;
+                                r |= a,
+                                ++o >= 2 ? (n[n.length] = r,
+                                r = 0,
+                                o = 0) : r <<= 4
+                            }
+                        }
+                        if (o)
+                            throw "Hex encoding incomplete: 4 bits missing";
+                        return n
+                    }
+                    ,
+                    window.Hex = t
+                }(),
+                function(c) {
+                    "use strict";
+                    var l, i = {};
+                    i.decode = function(t) {
+                        var e;
+                        if (l === c) {
+                            var i = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+                              , s = "= \f\n\r  \u2028\u2029";
+                            for (l = [],
+                            e = 0; 64 > e; ++e)
+                                l[i.charAt(e)] = e;
+                            for (e = 0; e < s.length; ++e)
+                                l[s.charAt(e)] = -1
+                        }
+                        var n = []
+                          , r = 0
+                          , o = 0;
+                        for (e = 0; e < t.length; ++e) {
+                            var a = t.charAt(e);
+                            if ("=" == a)
+                                break;
+                            if (a = l[a],
+                            -1 != a) {
+                                if (a === c)
+                                    throw "Illegal character at offset " + e;
+                                r |= a,
+                                ++o >= 4 ? (n[n.length] = r >> 16,
+                                n[n.length] = r >> 8 & 255,
+                                n[n.length] = 255 & r,
+                                r = 0,
+                                o = 0) : r <<= 6
+                            }
+                        }
+                        switch (o) {
+                        case 1:
+                            throw "Base64 encoding incomplete: at least 2 bits missing";
+                        case 2:
+                            n[n.length] = r >> 10;
+                            break;
+                        case 3:
+                            n[n.length] = r >> 16,
+                            n[n.length] = r >> 8 & 255
+                        }
+                        return n
+                    }
+                    ,
+                    i.re = /-----BEGIN [^-]+-----([A-Za-z0-9+\/=\s]+)-----END [^-]+-----|begin-base64[^\n]+\n([A-Za-z0-9+\/=\s]+)====/,
+                    i.unarmor = function(t) {
+                        var e = i.re.exec(t);
+                        if (e)
+                            if (e[1])
+                                t = e[1];
+                            else {
+                                if (!e[2])
+                                    throw "RegExp out of sync";
+                                t = e[2]
+                            }
+                        return i.decode(t)
+                    }
+                    ,
+                    window.Base64 = i
+                }(),
+                function(o) {
+                    "use strict";
+                    function l(t, e) {
+                        t instanceof l ? (this.enc = t.enc,
+                        this.pos = t.pos) : (this.enc = t,
+                        this.pos = e)
+                    }
+                    function u(t, e, i, s, n) {
+                        this.stream = t,
+                        this.header = e,
+                        this.length = i,
+                        this.tag = s,
+                        this.sub = n
+                    }
+                    var r = 100
+                      , a = "…"
+                      , d = {
+                        tag: function(t, e) {},
+                        text: function(t) {}
+                    };
+                    l.prototype.get = function(t) {
+                        if (t === o && (t = this.pos++),
+                        t >= this.enc.length)
+                            throw "Requesting byte offset " + t + " on a stream of length " + this.enc.length;
+                        return this.enc[t]
+                    }
+                    ,
+                    l.prototype.hexDigits = "0123456789ABCDEF",
+                    l.prototype.hexByte = function(t) {
+                        return this.hexDigits.charAt(t >> 4 & 15) + this.hexDigits.charAt(15 & t)
+                    }
+                    ,
+                    l.prototype.hexDump = function(t, e, i) {
+                        for (var s = "", n = t; e > n; ++n)
+                            if (s += this.hexByte(this.get(n)),
+                            i !== !0)
+                                switch (15 & n) {
+                                case 7:
+                                    s += " ";
+                                    break;
+                                case 15:
+                                    s += "\n";
+                                    break;
+                                default:
+                                    s += " "
+                                }
+                        return s
+                    }
+                    ,
+                    l.prototype.parseStringISO = function(t, e) {
+                        for (var i = "", s = t; e > s; ++s)
+                            i += String.fromCharCode(this.get(s));
+                        return i
+                    }
+                    ,
+                    l.prototype.parseStringUTF = function(t, e) {
+                        for (var i = "", s = t; e > s; ) {
+                            var n = this.get(s++);
+                            i += 128 > n ? String.fromCharCode(n) : n > 191 && 224 > n ? String.fromCharCode((31 & n) << 6 | 63 & this.get(s++)) : String.fromCharCode((15 & n) << 12 | (63 & this.get(s++)) << 6 | 63 & this.get(s++))
+                        }
+                        return i
+                    }
+                    ,
+                    l.prototype.parseStringBMP = function(t, e) {
+                        for (var i = "", s = t; e > s; s += 2) {
+                            var n = this.get(s)
+                              , r = this.get(s + 1);
+                            i += String.fromCharCode((n << 8) + r)
+                        }
+                        return i
+                    }
+                    ,
+                    l.prototype.reTime = /^((?:1[89]|2\d)?\d\d)(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])([01]\d|2[0-3])(?:([0-5]\d)(?:([0-5]\d)(?:[.,](\d{1,3}))?)?)?(Z|[-+](?:[0]\d|1[0-2])([0-5]\d)?)?$/,
+                    l.prototype.parseTime = function(t, e) {
+                        var i = this.parseStringISO(t, e)
+                          , s = this.reTime.exec(i);
+                        return s ? (i = s[1] + "-" + s[2] + "-" + s[3] + " " + s[4],
+                        s[5] && (i += ":" + s[5],
+                        s[6] && (i += ":" + s[6],
+                        s[7] && (i += "." + s[7]))),
+                        s[8] && (i += " UTC",
+                        "Z" != s[8] && (i += s[8],
+                        s[9] && (i += ":" + s[9]))),
+                        i) : "Unrecognized time: " + i
+                    }
+                    ,
+                    l.prototype.parseInteger = function(t, e) {
+                        var i = e - t;
+                        if (i > 4) {
+                            i <<= 3;
+                            var s = this.get(t);
+                            if (0 === s)
+                                i -= 8;
+                            else
+                                for (; 128 > s; )
+                                    s <<= 1,
+                                    --i;
+                            return "(" + i + " bit)"
+                        }
+                        for (var n = 0, r = t; e > r; ++r)
+                            n = n << 8 | this.get(r);
+                        return n
+                    }
+                    ,
+                    l.prototype.parseBitString = function(t, e) {
+                        var i = this.get(t)
+                          , s = (e - t - 1 << 3) - i
+                          , n = "(" + s + " bit)";
+                        if (20 >= s) {
+                            var r = i;
+                            n += " ";
+                            for (var o = e - 1; o > t; --o) {
+                                for (var a = this.get(o), c = r; 8 > c; ++c)
+                                    n += a >> c & 1 ? "1" : "0";
+                                r = 0
+                            }
+                        }
+                        return n
+                    }
+                    ,
+                    l.prototype.parseOctetString = function(t, e) {
+                        var i = e - t
+                          , s = "(" + i + " byte) ";
+                        i > r && (e = t + r);
+                        for (var n = t; e > n; ++n)
+                            s += this.hexByte(this.get(n));
+                        return i > r && (s += a),
+                        s
+                    }
+                    ,
+                    l.prototype.parseOID = function(t, e) {
+                        for (var i = "", s = 0, n = 0, r = t; e > r; ++r) {
+                            var o = this.get(r);
+                            if (s = s << 7 | 127 & o,
+                            n += 7,
+                            !(128 & o)) {
+                                if ("" === i) {
+                                    var a = 80 > s ? 40 > s ? 0 : 1 : 2;
+                                    i = a + "." + (s - 40 * a)
+                                } else
+                                    i += "." + (n >= 31 ? "bigint" : s);
+                                s = n = 0
+                            }
+                        }
+                        return i
+                    }
+                    ,
+                    u.prototype.typeName = function() {
+                        if (this.tag === o)
+                            return "unknown";
+                        var t = this.tag >> 6
+                          , e = (this.tag >> 5 & 1,
+                        31 & this.tag);
+                        switch (t) {
+                        case 0:
+                            switch (e) {
+                            case 0:
+                                return "EOC";
+                            case 1:
+                                return "BOOLEAN";
+                            case 2:
+                                return "INTEGER";
+                            case 3:
+                                return "BIT_STRING";
+                            case 4:
+                                return "OCTET_STRING";
+                            case 5:
+                                return "NULL";
+                            case 6:
+                                return "OBJECT_IDENTIFIER";
+                            case 7:
+                                return "ObjectDescriptor";
+                            case 8:
+                                return "EXTERNAL";
+                            case 9:
+                                return "REAL";
+                            case 10:
+                                return "ENUMERATED";
+                            case 11:
+                                return "EMBEDDED_PDV";
+                            case 12:
+                                return "UTF8String";
+                            case 16:
+                                return "SEQUENCE";
+                            case 17:
+                                return "SET";
+                            case 18:
+                                return "NumericString";
+                            case 19:
+                                return "PrintableString";
+                            case 20:
+                                return "TeletexString";
+                            case 21:
+                                return "VideotexString";
+                            case 22:
+                                return "IA5String";
+                            case 23:
+                                return "UTCTime";
+                            case 24:
+                                return "GeneralizedTime";
+                            case 25:
+                                return "GraphicString";
+                            case 26:
+                                return "VisibleString";
+                            case 27:
+                                return "GeneralString";
+                            case 28:
+                                return "UniversalString";
+                            case 30:
+                                return "BMPString";
+                            default:
+                                return "Universal_" + e.toString(16)
+                            }
+                        case 1:
+                            return "Application_" + e.toString(16);
+                        case 2:
+                            return "[" + e + "]";
+                        case 3:
+                            return "Private_" + e.toString(16)
+                        }
+                    }
+                    ,
+                    u.prototype.reSeemsASCII = /^[ -~]+$/,
+                    u.prototype.content = function() {
+                        if (this.tag === o)
+                            return null;
+                        var t = this.tag >> 6
+                          , e = 31 & this.tag
+                          , i = this.posContent()
+                          , s = Math.abs(this.length);
+                        if (0 !== t) {
+                            if (null !== this.sub)
+                                return "(" + this.sub.length + " elem)";
+                            var n = this.stream.parseStringISO(i, i + Math.min(s, r));
+                            return this.reSeemsASCII.test(n) ? n.substring(0, 2 * r) + (n.length > 2 * r ? a : "") : this.stream.parseOctetString(i, i + s)
+                        }
+                        switch (e) {
+                        case 1:
+                            return 0 === this.stream.get(i) ? "false" : "true";
+                        case 2:
+                            return this.stream.parseInteger(i, i + s);
+                        case 3:
+                            return this.sub ? "(" + this.sub.length + " elem)" : this.stream.parseBitString(i, i + s);
+                        case 4:
+                            return this.sub ? "(" + this.sub.length + " elem)" : this.stream.parseOctetString(i, i + s);
+                        case 6:
+                            return this.stream.parseOID(i, i + s);
+                        case 16:
+                        case 17:
+                            return "(" + this.sub.length + " elem)";
+                        case 12:
+                            return this.stream.parseStringUTF(i, i + s);
+                        case 18:
+                        case 19:
+                        case 20:
+                        case 21:
+                        case 22:
+                        case 26:
+                            return this.stream.parseStringISO(i, i + s);
+                        case 30:
+                            return this.stream.parseStringBMP(i, i + s);
+                        case 23:
+                        case 24:
+                            return this.stream.parseTime(i, i + s)
+                        }
+                        return null
+                    }
+                    ,
+                    u.prototype.toString = function() {
+                        return this.typeName() + "@" + this.stream.pos + "[header:" + this.header + ",length:" + this.length + ",sub:" + (null === this.sub ? "null" : this.sub.length) + "]"
+                    }
+                    ,
+                    u.prototype.print = function(t) {
+                        if (t === o && (t = ""),
+                        null !== this.sub) {
+                            t += " ";
+                            for (var e = 0, i = this.sub.length; i > e; ++e)
+                                this.sub[e].print(t)
+                        }
+                    }
+                    ,
+                    u.prototype.toPrettyString = function(t) {
+                        t === o && (t = "");
+                        var e = t + this.typeName() + " @" + this.stream.pos;
+                        if (this.length >= 0 && (e += "+"),
+                        e += this.length,
+                        32 & this.tag ? e += " (constructed)" : 3 != this.tag && 4 != this.tag || null === this.sub || (e += " (encapsulates)"),
+                        e += "\n",
+                        null !== this.sub) {
+                            t += " ";
+                            for (var i = 0, s = this.sub.length; s > i; ++i)
+                                e += this.sub[i].toPrettyString(t)
+                        }
+                        return e
+                    }
+                    ,
+                    u.prototype.toDOM = function() {
+                        var t = d.tag("div", "node");
+                        t.asn1 = this;
+                        var e = d.tag("div", "head")
+                          , i = this.typeName().replace(/_/g, " ");
+                        e.innerHTML = i;
+                        var s = this.content();
+                        if (null !== s) {
+                            s = String(s).replace(/</g, "&lt;");
+                            var n = d.tag("span", "preview");
+                            n.appendChild(d.text(s)),
+                            e.appendChild(n)
+                        }
+                        t.appendChild(e),
+                        this.node = t,
+                        this.head = e;
+                        var r = d.tag("div", "value");
+                        if (i = "Offset: " + this.stream.pos + "<br/>",
+                        i += "Length: " + this.header + "+",
+                        i += this.length >= 0 ? this.length : -this.length + " (undefined)",
+                        32 & this.tag ? i += "<br/>(constructed)" : 3 != this.tag && 4 != this.tag || null === this.sub || (i += "<br/>(encapsulates)"),
+                        null !== s && (i += "<br/>Value:<br/><b>" + s + "</b>",
+                        "object" == typeof oids && 6 == this.tag)) {
+                            var o = oids[s];
+                            o && (o.d && (i += "<br/>" + o.d),
+                            o.c && (i += "<br/>" + o.c),
+                            o.w && (i += "<br/>(warning!)"))
+                        }
+                        r.innerHTML = i,
+                        t.appendChild(r);
+                        var a = d.tag("div", "sub");
+                        if (null !== this.sub)
+                            for (var c = 0, l = this.sub.length; l > c; ++c)
+                                a.appendChild(this.sub[c].toDOM());
+                        return t.appendChild(a),
+                        e.onclick = function() {
+                            t.className = "node collapsed" == t.className ? "node" : "node collapsed"
+                        }
+                        ,
+                        t
+                    }
+                    ,
+                    u.prototype.posStart = function() {
+                        return this.stream.pos
+                    }
+                    ,
+                    u.prototype.posContent = function() {
+                        return this.stream.pos + this.header
+                    }
+                    ,
+                    u.prototype.posEnd = function() {
+                        return this.stream.pos + this.header + Math.abs(this.length)
+                    }
+                    ,
+                    u.prototype.fakeHover = function(t) {
+                        this.node.className += " hover",
+                        t && (this.head.className += " hover")
+                    }
+                    ,
+                    u.prototype.fakeOut = function(t) {
+                        var e = / ?hover/;
+                        this.node.className = this.node.className.replace(e, ""),
+                        t && (this.head.className = this.head.className.replace(e, ""))
+                    }
+                    ,
+                    u.prototype.toHexDOM_sub = function(t, e, i, s, n) {
+                        if (!(s >= n)) {
+                            var r = d.tag("span", e);
+                            r.appendChild(d.text(i.hexDump(s, n))),
+                            t.appendChild(r)
+                        }
+                    }
+                    ,
+                    u.prototype.toHexDOM = function(e) {
+                        var t = d.tag("span", "hex");
+                        if (e === o && (e = t),
+                        this.head.hexNode = t,
+                        this.head.onmouseover = function() {
+                            this.hexNode.className = "hexCurrent"
+                        }
+                        ,
+                        this.head.onmouseout = function() {
+                            this.hexNode.className = "hex"
+                        }
+                        ,
+                        t.asn1 = this,
+                        t.onmouseover = function() {
+                            var t = !e.selected;
+                            t && (e.selected = this.asn1,
+                            this.className = "hexCurrent"),
+                            this.asn1.fakeHover(t)
+                        }
+                        ,
+                        t.onmouseout = function() {
+                            var t = e.selected == this.asn1;
+                            this.asn1.fakeOut(t),
+                            t && (e.selected = null,
+                            this.className = "hex")
+                        }
+                        ,
+                        this.toHexDOM_sub(t, "tag", this.stream, this.posStart(), this.posStart() + 1),
+                        this.toHexDOM_sub(t, this.length >= 0 ? "dlen" : "ulen", this.stream, this.posStart() + 1, this.posContent()),
+                        null === this.sub)
+                            t.appendChild(d.text(this.stream.hexDump(this.posContent(), this.posEnd())));
+                        else if (this.sub.length > 0) {
+                            var i = this.sub[0]
+                              , s = this.sub[this.sub.length - 1];
+                            this.toHexDOM_sub(t, "intro", this.stream, this.posContent(), i.posStart());
+                            for (var n = 0, r = this.sub.length; r > n; ++n)
+                                t.appendChild(this.sub[n].toHexDOM(e));
+                            this.toHexDOM_sub(t, "outro", this.stream, s.posEnd(), this.posEnd())
+                        }
+                        return t
+                    }
+                    ,
+                    u.prototype.toHexString = function(t) {
+                        return this.stream.hexDump(this.posStart(), this.posEnd(), !0)
+                    }
+                    ,
+                    u.decodeLength = function(t) {
+                        var e = t.get()
+                          , i = 127 & e;
+                        if (i == e)
+                            return i;
+                        if (i > 3)
+                            throw "Length over 24 bits not supported at position " + (t.pos - 1);
+                        if (0 === i)
+                            return -1;
+                        e = 0;
+                        for (var s = 0; i > s; ++s)
+                            e = e << 8 | t.get();
+                        return e
+                    }
+                    ,
+                    u.hasContent = function(t, e, i) {
+                        if (32 & t)
+                            return !0;
+                        if (3 > t || t > 4)
+                            return !1;
+                        var s = new l(i);
+                        3 == t && s.get();
+                        var n = s.get();
+                        if (n >> 6 & 1)
+                            return !1;
+                        try {
+                            var r = u.decodeLength(s);
+                            return s.pos - i.pos + r == e
+                        } catch (p) {
+                            return !1
+                        }
+                    }
+                    ,
+                    u.decode = function(t) {
+                        t instanceof l || (t = new l(t,0));
+                        var e = new l(t)
+                          , i = t.get()
+                          , s = u.decodeLength(t)
+                          , n = t.pos - e.pos
+                          , r = null;
+                        if (u.hasContent(i, s, t)) {
+                            var o = t.pos;
+                            if (3 == i && t.get(),
+                            r = [],
+                            s >= 0) {
+                                for (var a = o + s; t.pos < a; )
+                                    r[r.length] = u.decode(t);
+                                if (t.pos != a)
+                                    throw "Content size is not correct for container starting at offset " + o
+                            } else
+                                try {
+                                    for (; ; ) {
+                                        var c = u.decode(t);
+                                        if (0 === c.tag)
+                                            break;
+                                        r[r.length] = c
+                                    }
+                                    s = o - t.pos
+                                } catch (h) {
+                                    throw "Exception while decoding undefined length content: " + h
+                                }
+                        } else
+                            t.pos += s;
+                        return new u(e,n,s,i,r)
+                    }
+                    ,
+                    u.test = function() {
+                        for (var t = [{
+                            value: [39],
+                            expected: 39
+                        }, {
+                            value: [129, 201],
+                            expected: 201
+                        }, {
+                            value: [131, 254, 220, 186],
+                            expected: 16702650
+                        }], e = 0, i = t.length; i > e; ++e) {
+                            var s = new l(t[e].value,0)
+                              , n = u.decodeLength(s);
+                        }
+                    }
+                    ,
+                    window.ASN1 = u
+                }(),
+                ASN1.prototype.getHexStringValue = function() {
+                    var t = this.toHexString()
+                      , e = 2 * this.header
+                      , i = 2 * this.length;
+                    return t.substr(e, i)
+                }
+                ,
+                le.prototype.parseKey = function(t) {
+                    try {
+                        var e = 0
+                          , i = 0
+                          , s = /^\s*(?:[0-9A-Fa-f][0-9A-Fa-f]\s*)+$/
+                          , n = s.test(t) ? Hex.decode(t) : Base64.unarmor(t)
+                          , r = ASN1.decode(n);
+                        if (3 === r.sub.length && (r = r.sub[2].sub[0]),
+                        9 === r.sub.length) {
+                            e = r.sub[1].getHexStringValue(),
+                            this.n = ae(e, 16),
+                            i = r.sub[2].getHexStringValue(),
+                            this.e = parseInt(i, 16);
+                            var o = r.sub[3].getHexStringValue();
+                            this.d = ae(o, 16);
+                            var a = r.sub[4].getHexStringValue();
+                            this.p = ae(a, 16);
+                            var c = r.sub[5].getHexStringValue();
+                            this.q = ae(c, 16);
+                            var l = r.sub[6].getHexStringValue();
+                            this.dmp1 = ae(l, 16);
+                            var u = r.sub[7].getHexStringValue();
+                            this.dmq1 = ae(u, 16);
+                            var d = r.sub[8].getHexStringValue();
+                            this.coeff = ae(d, 16)
+                        } else {
+                            if (2 !== r.sub.length)
+                                return !1;
+                            var p = r.sub[1]
+                              , h = p.sub[0];
+                            e = h.sub[0].getHexStringValue(),
+                            this.n = ae(e, 16),
+                            i = h.sub[1].getHexStringValue(),
+                            this.e = parseInt(i, 16)
+                        }
+                        return !0
+                    } catch (f) {
+                        return !1
+                    }
+                }
+                ,
+                le.prototype.getPrivateBaseKey = function() {
+                    var t = {
+                        array: [new KJUR.asn1.DERInteger({
+                            "int": 0
+                        }), new KJUR.asn1.DERInteger({
+                            bigint: this.n
+                        }), new KJUR.asn1.DERInteger({
+                            "int": this.e
+                        }), new KJUR.asn1.DERInteger({
+                            bigint: this.d
+                        }), new KJUR.asn1.DERInteger({
+                            bigint: this.p
+                        }), new KJUR.asn1.DERInteger({
+                            bigint: this.q
+                        }), new KJUR.asn1.DERInteger({
+                            bigint: this.dmp1
+                        }), new KJUR.asn1.DERInteger({
+                            bigint: this.dmq1
+                        }), new KJUR.asn1.DERInteger({
+                            bigint: this.coeff
+                        })]
+                    }
+                      , e = new KJUR.asn1.DERSequence(t);
+                    return e.getEncodedHex()
+                }
+                ,
+                le.prototype.getPrivateBaseKeyB64 = function() {
+                    return be(this.getPrivateBaseKey())
+                }
+                ,
+                le.prototype.getPublicBaseKey = function() {
+                    var t = {
+                        array: [new KJUR.asn1.DERObjectIdentifier({
+                            oid: "1.2.840.113549.1.1.1"
+                        }), new KJUR.asn1.DERNull]
+                    }
+                      , e = new KJUR.asn1.DERSequence(t);
+                    t = {
+                        array: [new KJUR.asn1.DERInteger({
+                            bigint: this.n
+                        }), new KJUR.asn1.DERInteger({
+                            "int": this.e
+                        })]
+                    };
+                    var i = new KJUR.asn1.DERSequence(t);
+                    t = {
+                        hex: "00" + i.getEncodedHex()
+                    };
+                    var s = new KJUR.asn1.DERBitString(t);
+                    t = {
+                        array: [e, s]
+                    };
+                    var n = new KJUR.asn1.DERSequence(t);
+                    return n.getEncodedHex()
+                }
+                ,
+                le.prototype.getPublicBaseKeyB64 = function() {
+                    return be(this.getPublicBaseKey())
+                }
+                ,
+                le.prototype.wordwrap = function(t, e) {
+                    if (e = e || 64,
+                    !t)
+                        return t;
+                    var i = "(.{1," + e + "})( +|$\n?)|(.{1," + e + "})";
+                    return t.match(RegExp(i, "g")).join("\n")
+                }
+                ,
+                le.prototype.getPrivateKey = function() {
+                    var t = "-----BEGIN RSA PRIVATE KEY-----\n";
+                    return t += this.wordwrap(this.getPrivateBaseKeyB64()) + "\n",
+                    t += "-----END RSA PRIVATE KEY-----"
+                }
+                ,
+                le.prototype.getPublicKey = function() {
+                    var t = "-----BEGIN PUBLIC KEY-----\n";
+                    return t += this.wordwrap(this.getPublicBaseKeyB64()) + "\n",
+                    t += "-----END PUBLIC KEY-----"
+                }
+                ,
+                le.prototype.hasPublicKeyProperty = function(t) {
+                    return t = t || {},
+                    t.hasOwnProperty("n") && t.hasOwnProperty("e")
+                }
+                ,
+                le.prototype.hasPrivateKeyProperty = function(t) {
+                    return t = t || {},
+                    t.hasOwnProperty("n") && t.hasOwnProperty("e") && t.hasOwnProperty("d") && t.hasOwnProperty("p") && t.hasOwnProperty("q") && t.hasOwnProperty("dmp1") && t.hasOwnProperty("dmq1") && t.hasOwnProperty("coeff")
+                }
+                ,
+                le.prototype.parsePropertiesFrom = function(t) {
+                    this.n = t.n,
+                    this.e = t.e,
+                    t.hasOwnProperty("d") && (this.d = t.d,
+                    this.p = t.p,
+                    this.q = t.q,
+                    this.dmp1 = t.dmp1,
+                    this.dmq1 = t.dmq1,
+                    this.coeff = t.coeff)
+                }
+                ;
+                var qe = function(t) {
+                    le.call(this),
+                    t && ("string" == typeof t ? this.parseKey(t) : (this.hasPrivateKeyProperty(t) || this.hasPublicKeyProperty(t)) && this.parsePropertiesFrom(t))
+                };
+                (qe.prototype = new le).constructor = qe;
+                var He = function(t) {
+                    t = t || {},
+                    this.default_key_size = parseInt(t.default_key_size) || 1024,
+                    this.default_public_exponent = t.default_public_exponent || "010001",
+                    this.log = t.log || !1,
+                    this.key = null
+                };
+                He.prototype.setKey = function(t) {
+                    this.log && this.key && console.warn("A key was already set, overriding existing."),
+                    this.key = new qe(t)
+                }
+                ,
+                He.prototype.setPrivateKey = function(t) {
+                    this.setKey(t)
+                }
+                ,
+                He.prototype.setPublicKey = function(t) {
+                    this.setKey(t)
+                }
+                ,
+                He.prototype.decrypt = function(t) {
+                    try {
+                        return this.getKey().decrypt(ye(t))
+                    } catch (b) {
+                        return !1
+                    }
+                }
+                ,
+                He.prototype.encrypt = function(t) {
+                    try {
+                        return be(this.getKey().encrypt(t))
+                    } catch (b) {
+                        return !1
+                    }
+                }
+                ,
+                He.prototype.getKey = function(t) {
+                    if (!this.key) {
+                        if (this.key = new qe,
+                        t && "[object Function]" === {}.toString.call(t))
+                            return void this.key.generateAsync(this.default_key_size, this.default_public_exponent, t);
+                        this.key.generate(this.default_key_size, this.default_public_exponent)
+                    }
+                    return this.key
+                }
+                ,
+                He.prototype.getPrivateKey = function() {
+                    return this.getKey().getPrivateKey()
+                }
+                ,
+                He.prototype.getPrivateKeyB64 = function() {
+                    return this.getKey().getPrivateBaseKeyB64()
+                }
+                ,
+                He.prototype.getPublicKey = function() {
+                    return this.getKey().getPublicKey()
+                }
+                ,
+                He.prototype.getPublicKeyB64 = function() {
+                    return this.getKey().getPublicBaseKeyB64()
+                }
+                ,
+                He.version = "2.3.1",
+                t.JSEncrypt = He
+            }
+            ) ? s.apply(e, n) : s) === undefined || (i.exports = r)
         }
-        // Result is opposite sign of arguments.
-        result.isNeg = !x.isNeg;
-    } else {
-        // Result is same sign.
-        result.isNeg = x.isNeg;
-    }
-}
-return result;
-}
-
-function biHighIndex(x) {
-var result = x.digits.length - 1;
-while (result > 0 && x.digits[result] == 0)--result;
-return result;
-}
-
-function biNumBits(x) {
-var n = biHighIndex(x);
-var d = x.digits[n];
-var m = (n + 1) * bitsPerDigit;
-var result;
-for (result = m; result > m - bitsPerDigit; --result) {
-    if ((d & 0x8000) != 0) break;
-    d <<= 1;
-}
-return result;
-}
-
-function biMultiply(x, y) {
-var result = new BigInt();
-var c;
-var n = biHighIndex(x);
-var t = biHighIndex(y);
-var u, uv, k;
-
-for (var i = 0; i <= t; ++i) {
-    c = 0;
-    k = i;
-    for (j = 0; j <= n; ++j, ++k) {
-        uv = result.digits[k] + x.digits[j] * y.digits[i] + c;
-        result.digits[k] = uv & maxDigitVal;
-        c = uv >>> biRadixBits;
-    }
-    result.digits[i + n + 1] = c;
-}
-// Someone give me a logical xor, please.
-result.isNeg = x.isNeg != y.isNeg;
-return result;
-}
-
-function biMultiplyDigit(x, y) {
-var n, c, uv;
-
-result = new BigInt();
-n = biHighIndex(x);
-c = 0;
-for (var j = 0; j <= n; ++j) {
-    uv = result.digits[j] + x.digits[j] * y + c;
-    result.digits[j] = uv & maxDigitVal;
-    c = uv >>> biRadixBits;
-}
-result.digits[1 + n] = c;
-return result;
-}
-
-function arrayCopy(src, srcStart, dest, destStart, n) {
-var m = Math.min(srcStart + n, src.length);
-for (var i = srcStart,
-j = destStart; i < m; ++i, ++j) {
-    dest[j] = src[i];
-}
-}
-
-var highBitMasks = new Array(0x0000, 0x8000, 0xC000, 0xE000, 0xF000, 0xF800, 0xFC00, 0xFE00, 0xFF00, 0xFF80, 0xFFC0, 0xFFE0, 0xFFF0, 0xFFF8, 0xFFFC, 0xFFFE, 0xFFFF);
-
-function biShiftLeft(x, n) {
-var digitCount = Math.floor(n / bitsPerDigit);
-var result = new BigInt();
-arrayCopy(x.digits, 0, result.digits, digitCount, result.digits.length - digitCount);
-var bits = n % bitsPerDigit;
-var rightBits = bitsPerDigit - bits;
-for (var i = result.digits.length - 1,
-i1 = i - 1; i > 0; --i, --i1) {
-    result.digits[i] = ((result.digits[i] << bits) & maxDigitVal) | ((result.digits[i1] & highBitMasks[bits]) >>> (rightBits));
-}
-result.digits[0] = ((result.digits[i] << bits) & maxDigitVal);
-result.isNeg = x.isNeg;
-return result;
-}
-
-var lowBitMasks = new Array(0x0000, 0x0001, 0x0003, 0x0007, 0x000F, 0x001F, 0x003F, 0x007F, 0x00FF, 0x01FF, 0x03FF, 0x07FF, 0x0FFF, 0x1FFF, 0x3FFF, 0x7FFF, 0xFFFF);
-
-function biShiftRight(x, n) {
-var digitCount = Math.floor(n / bitsPerDigit);
-var result = new BigInt();
-arrayCopy(x.digits, digitCount, result.digits, 0, x.digits.length - digitCount);
-var bits = n % bitsPerDigit;
-var leftBits = bitsPerDigit - bits;
-for (var i = 0,
-i1 = i + 1; i < result.digits.length - 1; ++i, ++i1) {
-    result.digits[i] = (result.digits[i] >>> bits) | ((result.digits[i1] & lowBitMasks[bits]) << leftBits);
-}
-result.digits[result.digits.length - 1] >>>= bits;
-result.isNeg = x.isNeg;
-return result;
-}
-
-function biMultiplyByRadixPower(x, n) {
-var result = new BigInt();
-arrayCopy(x.digits, 0, result.digits, n, result.digits.length - n);
-return result;
-}
-
-function biDivideByRadixPower(x, n) {
-var result = new BigInt();
-arrayCopy(x.digits, n, result.digits, 0, result.digits.length - n);
-return result;
-}
-
-function biModuloByRadixPower(x, n) {
-var result = new BigInt();
-arrayCopy(x.digits, 0, result.digits, 0, n);
-return result;
-}
-
-function biCompare(x, y) {
-if (x.isNeg != y.isNeg) {
-    return 1 - 2 * Number(x.isNeg);
-}
-for (var i = x.digits.length - 1; i >= 0; --i) {
-    if (x.digits[i] != y.digits[i]) {
-        if (x.isNeg) {
-            return 1 - 2 * Number(x.digits[i] > y.digits[i]);
-        } else {
-            return 1 - 2 * Number(x.digits[i] < y.digits[i]);
+        .call(e, i, e, t)) === undefined || (t.exports = r)
+    },
+    jsencrypt: function(t, e, r) {
+        var i;
+        (i = function(t, e, i) {
+            var s = r("encrypt");
+            function n() {
+                void 0 !== s && (this.jsencrypt = new s.JSEncrypt,
+                this.jsencrypt.setPublicKey("-----BEGIN PUBLIC KEY-----MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDq04c6My441Gj0UFKgrqUhAUg+kQZeUeWSPlAU9fr4HBPDldAeqzx1UR99KJHuQh/zs1HOamE2dgX9z/2oXcJaqoRIA/FXysx+z2YlJkSk8XQLcQ8EBOkp//MZrixam7lCYpNOjadQBb2Ot0U/Ky+jF2p+Ie8gSZ7/u+Wnr5grywIDAQAB-----END PUBLIC KEY-----"))
+            }
+            n.prototype.encode = function(t, e) {
+                var i = e ? e + "|" + t : t;
+                return encodeURIComponent(this.jsencrypt.encrypt(i))
+            }
+            ,
+            i.exports = n
         }
+        .call(e, r, e, t)) === undefined || (t.exports = i)
     }
-}
-return 0;
-}
+})
 
-function biDivideModulo(x, y) {
-var nb = biNumBits(x);
-var tb = biNumBits(y);
-var origYIsNeg = y.isNeg;
-var q, r;
-if (nb < tb) {
-    // |x| < |y|
-    if (x.isNeg) {
-        q = biCopy(bigOne);
-        q.isNeg = !y.isNeg;
-        x.isNeg = false;
-        y.isNeg = false;
-        r = biSubtract(y, x);
-        // Restore signs, 'cause they're references.
-        x.isNeg = true;
-        y.isNeg = origYIsNeg;
-    } else {
-        q = new BigInt();
-        r = biCopy(x);
-    }
-    return new Array(q, r);
+function z(pwd, time) {
+    var n = _n("jsencrypt");
+    var g = (new n);
+    var r = g.encode(pwd, time);
+    return r
 }
 
-q = new BigInt();
-r = x;
 
-// Normalize Y.
-var t = Math.ceil(tb / bitsPerDigit) - 1;
-var lambda = 0;
-while (y.digits[t] < biHalfRadix) {
-    y = biShiftLeft(y, 1); ++lambda; ++tb;
-    t = Math.ceil(tb / bitsPerDigit) - 1;
+
+function r(param1, param2) {
+
+    return z(param1, param2);
 }
-// Shift r over to keep the quotient constant. We'll shift the
-// remainder back at the end.
-r = biShiftLeft(r, lambda);
-nb += lambda; // Update the bit count for x.
-var n = Math.ceil(nb / bitsPerDigit) - 1;
+function aa (){
 
-var b = biMultiplyByRadixPower(y, n - t);
-while (biCompare(r, b) != -1) {++q.digits[n - t];
-    r = biSubtract(r, b);
-}
-for (var i = n; i > t; --i) {
-    var ri = (i >= r.digits.length) ? 0 : r.digits[i];
-    var ri1 = (i - 1 >= r.digits.length) ? 0 : r.digits[i - 1];
-    var ri2 = (i - 2 >= r.digits.length) ? 0 : r.digits[i - 2];
-    var yt = (t >= y.digits.length) ? 0 : y.digits[t];
-    var yt1 = (t - 1 >= y.digits.length) ? 0 : y.digits[t - 1];
-    if (ri == yt) {
-        q.digits[i - t - 1] = maxDigitVal;
-    } else {
-        q.digits[i - t - 1] = Math.floor((ri * biRadix + ri1) / yt);
-    }
+    window.i = '';
+    t = Date.parse(new Date());
+window.o = 1
+m = r(t, window.o)
 
-    var c1 = q.digits[i - t - 1] * ((yt * biRadix) + yt1);
-    var c2 = (ri * biRadixSquared) + ((ri1 * biRadix) + ri2);
-    while (c1 > c2) {--q.digits[i - t - 1];
-        c1 = q.digits[i - t - 1] * ((yt * biRadix) | yt1);
-        c2 = (ri * biRadix * biRadix) + ((ri1 * biRadix) + ri2);
-    }
 
-    b = biMultiplyByRadixPower(y, i - t - 1);
-    r = biSubtract(r, biMultiplyDigit(b, q.digits[i - t - 1]));
-    if (r.isNeg) {
-        r = biAdd(r, b); --q.digits[i - t - 1];
-    }
-}
-r = biShiftRight(r, lambda);
-// Fiddle with the signs and stuff to make sure that 0 <= r < y.
-q.isNeg = x.isNeg != origYIsNeg;
-if (x.isNeg) {
-    if (origYIsNeg) {
-        q = biAdd(q, bigOne);
-    } else {
-        q = biSubtract(q, bigOne);
-    }
-    y = biShiftRight(y, lambda);
-    r = biSubtract(y, r);
-}
-// Check for the unbelievably stupid degenerate case of r == -0.
-if (r.digits[0] == 0 && biHighIndex(r) == 0) r.isNeg = false;
+    return m
 
-return new Array(q, r);
 }
 
-function biDivide(x, y) {
-return biDivideModulo(x, y)[0];
-}
+console.log(aa())
 
-function biModulo(x, y) {
-return biDivideModulo(x, y)[1];
-}
 
-function biMultiplyMod(x, y, m) {
-return biModulo(biMultiply(x, y), m);
-}
 
-function biPow(x, y) {
-var result = bigOne;
-var a = x;
-while (true) {
-    if ((y & 1) != 0) result = biMultiply(result, a);
-    y >>= 1;
-    if (y == 0) break;
-    a = biMultiply(a, a);
-}
-return result;
-}
 
-function biPowMod(x, y, m) {
-var result = bigOne;
-var a = x;
-var k = y;
-while (true) {
-    if ((k.digits[0] & 1) != 0) result = biMultiplyMod(result, a, m);
-    k = biShiftRight(k, 1);
-    if (k.digits[0] == 0 && biHighIndex(k) == 0) break;
-    a = biMultiplyMod(a, a, m);
-}
-return result;
-}
 
-/*
-* Copyright (c) 2015 Eric Wilde.
-* Copyright 1998-2015 David Shapiro.
-*
-* RSA.js is a suite of routines for performing RSA public-key computations
-* in JavaScript.  The cryptographic functions herein are used for encoding
-* and decoding strings to be sent over unsecure channels.
-*
-* To use these routines, a pair of public/private keys is created through a
-* number of means (OpenSSL tools on Linux/Unix, Dave Shapiro's
-* RSAKeyGenerator program on Windows).  These keys are passed to RSAKeyPair
-* as hexadecimal strings to create an encryption key object.  This key object
-* is then used with encryptedString to encrypt blocks of plaintext using the
-* public key.  The resulting cyphertext blocks can be decrypted with
-* decryptedString.
-*
-* Note that the cryptographic functions herein are complementary to those
-* found in CryptoFuncs.php and CryptoFuncs.pm.  Hence, encrypted messages may
-* be sent between programs written in any of those languages.  The most
-* useful, of course is to send messages encrypted by a Web page using RSA.js
-* to a PHP or Perl script running on a Web servitron.
-*
-* Also, the optional padding flag may be specified on the call to
-* encryptedString, in which case blocks of cyphertext that are compatible
-* with real crypto libraries such as OpenSSL or Microsoft will be created.
-* These blocks of cyphertext can then be sent to Web servitron that uses one
-* of these crypto libraries for decryption.  This allows messages encrypted
-* with longer keys to be decrypted quickly on the Web server as well as
-* making for more secure communications when a padding algorithm such as
-* PKCS1v1.5 is used.
-*
-* These routines require BigInt.js and Barrett.js.
-*/
-
-/*****************************************************************************/
-
-/*
-* Modifications
-* -------------
-*
-* 2014 Jan 11  E. Wilde       Add optional padding flag to encryptedString
-*                             for compatibility with real crypto libraries
-*                             such as OpenSSL or Microsoft.  Add PKCS1v1.5
-*                             padding.
-*
-* 2015 Jan 5  D. Shapiro      Add optional encoding flag for encryptedString
-*                             and encapsulate padding and encoding constants
-*                             in RSAAPP object.
-*
-* Original Code
-* -------------
-*
-* Copyright 1998-2005 David Shapiro.
-*
-* You may use, re-use, abuse, copy, and modify this code to your liking, but
-* please keep this header.
-*
-* Thanks!
-*
-* Dave Shapiro
-* dave@ohdave.com
-*/
-
-/*****************************************************************************/
-
-var RSAAPP = {};
-
-RSAAPP.NoPadding = "NoPadding";
-RSAAPP.PKCS1Padding = "PKCS1Padding";
-RSAAPP.RawEncoding = "RawEncoding";
-RSAAPP.NumericEncoding = "NumericEncoding"
-
-/*****************************************************************************/
-
-function RSAKeyPair(encryptionExponent, decryptionExponent, modulus, keylen)
-/*
-* encryptionExponent                    The encryption exponent (i.e. public
-*                                       encryption key) to be used for
-*                                       encrypting messages.  If you aren't
-*                                       doing any encrypting, a dummy
-*                                       exponent such as "10001" can be
-*                                       passed.
-*
-* decryptionExponent                    The decryption exponent (i.e. private
-*                                       decryption key) to be used for
-*                                       decrypting messages.  If you aren't
-*                                       doing any decrypting, a dummy
-*                                       exponent such as "10001" can be
-*                                       passed.
-*
-* modulus                               The modulus to be used both for
-*                                       encrypting and decrypting messages.
-*
-* keylen                                The optional length of the key, in
-*                                       bits.  If omitted, RSAKeyPair will
-*                                       attempt to derive a key length (but,
-*                                       see the notes below).
-*
-* returns                               The "new" object creator returns an
-*                                       instance of a key object that can be
-*                                       used to encrypt/decrypt messages.
-*
-* This routine is invoked as the first step in the encryption or decryption
-* process to take the three numbers (expressed as hexadecimal strings) that
-* are used for RSA asymmetric encryption/decryption and turn them into a key
-* object that can be used for encrypting and decrypting.
-*
-* The key object is created thusly:
-*
-*      RSAKey = new RSAKeyPair("ABC12345", 10001, "987654FE");
-*
-* or:
-*
-*      RSAKey = new RSAKeyPair("ABC12345", 10001, "987654FE", 64);
-*
-* Note that RSAKeyPair will try to derive the length of the key that is being
-* used, from the key itself.  The key length is especially useful when one of
-* the padding options is used and/or when the encrypted messages created by
-* the routine encryptedString are exchanged with a real crypto library such
-* as OpenSSL or Microsoft, as it determines how many padding characters are
-* appended.
-*
-* Usually, RSAKeyPair can determine the key length from the modulus of the
-* key but this doesn't always work properly, depending on the actual value of
-* the modulus.  If you are exchanging messages with a real crypto library,
-* such as OpenSSL or Microsoft, that depends on the fact that the blocks
-* being passed to it are properly padded, you'll want the key length to be
-* set properly.  If that's the case, of if you just want to be sure, you
-* should specify the key length that you used to generated the key, in bits
-* when this routine is invoked.
-*/
-{
-/*
-* Convert from hexadecimal and save the encryption/decryption exponents and
-* modulus as big integers in the key object.
-*/
-this.e = biFromHex(encryptionExponent);
-this.d = biFromHex(decryptionExponent);
-this.m = biFromHex(modulus);
-/*
-* Using big integers, we can represent two bytes per element in the big
-* integer array, so we calculate the chunk size as:
-*
-*      chunkSize = 2 * (number of digits in modulus - 1)
-*
-* Since biHighIndex returns the high index, not the number of digits, the
-* number 1 has already been subtracted from its answer.
-*
-* However, having said all this, "User Knows Best".  If our caller passes us
-* a key length (in bits), we'll treat it as gospel truth.
-*/
-if (typeof(keylen) != 'number') {
-    this.chunkSize = 2 * biHighIndex(this.m);
-} else {
-    this.chunkSize = keylen / 8;
-}
-
-this.radix = 16;
-/*
-* Precalculate the stuff used for Barrett modular reductions.
-*/
-this.barrett = new BarrettMu(this.m);
-}
-
-/*****************************************************************************/
-
-function encryptedString(key, s, pad, encoding)
-/*
-* key                                   The previously-built RSA key whose
-*                                       public key component is to be used to
-*                                       encrypt the plaintext string.
-*
-* s                                     The plaintext string that is to be
-*                                       encrypted, using the RSA assymmetric
-*                                       encryption method.
-*
-* pad                                   The optional padding method to use
-*                                       when extending the plaintext to the
-*                                       full chunk size required by the RSA
-*                                       algorithm.  To maintain compatibility
-*                                       with other crypto libraries, the
-*                                       padding method is described by a
-*                                       string.  The default, if not
-*                                       specified is "OHDave".  Here are the
-*                                       choices:
-*
-*                                         OHDave - this is the original
-*                                           padding method employed by Dave
-*                                           Shapiro and Rob Saunders.  If
-*                                           this method is chosen, the
-*                                           plaintext can be of any length.
-*                                           It will be padded to the correct
-*                                           length with zeros and then broken
-*                                           up into chunks of the correct
-*                                           length before being encrypted.
-*                                           The resultant cyphertext blocks
-*                                           will be separated by blanks.
-*
-*                                           Note that the original code by
-*                                           Dave Shapiro reverses the byte
-*                                           order to little-endian, as the
-*                                           plaintext is encrypted.  If
-*                                           either these JavaScript routines
-*                                           or one of the complementary
-*                                           PHP/Perl routines derived from
-*                                           this code is used for decryption,
-*                                           the byte order will be reversed
-*                                           again upon decryption so as to
-*                                           come out correctly.
-*
-*                                           Also note that this padding
-*                                           method is claimed to be less
-*                                           secure than PKCS1Padding.
-*
-*                                         NoPadding - this method truncates
-*                                           the plaintext to the length of
-*                                           the RSA key, if it is longer.  If
-*                                           its length is shorter, it is
-*                                           padded with zeros.  In either
-*                                           case, the plaintext string is
-*                                           reversed to preserve big-endian
-*                                           order before it is encrypted to
-*                                           maintain compatibility with real
-*                                           crypto libraries such as OpenSSL
-*                                           or Microsoft.  When the
-*                                           cyphertext is to be decrypted
-*                                           by a crypto library, the
-*                                           library routine's RSAAPP.NoPadding
-*                                           flag, or its equivalent, should
-*                                           be used.
-*
-*                                           Note that this padding method is
-*                                           claimed to be less secure than
-*                                           PKCS1Padding.
-*
-*                                         PKCS1Padding - the PKCS1v1.5
-*                                           padding method (as described in
-*                                           RFC 2313) is employed to pad the
-*                                           plaintext string.  The plaintext
-*                                           string must be no longer than the
-*                                           length of the RSA key minus 11,
-*                                           since PKCS1v1.5 requires 3 bytes
-*                                           of overhead and specifies a
-*                                           minimum pad of 8 bytes.  The
-*                                           plaintext string is padded with
-*                                           randomly-generated bytes and then
-*                                           its order is reversed to preserve
-*                                           big-endian order before it is
-*                                           encrypted to maintain
-*                                           compatibility with real crypto
-*                                           libraries such as OpenSSL or
-*                                           Microsoft.  When the cyphertext
-*                                           is to be decrypted by a crypto
-*                                           library, the library routine's
-*                                           RSAAPP.PKCS1Padding flag, or its
-*                                           equivalent, should be used.
-*
-* encoding                              The optional encoding scheme to use
-*                                       for the return value. If ommitted,
-*                                       numeric encoding will be used.
-*
-*                                           RawEncoding - The return value
-*                                           is given as its raw value.
-*                                           This is the easiest method when
-*                                           interoperating with server-side
-*                                           OpenSSL, as no additional conversion
-*                                           is required. Use the constant
-*                                           RSAAPP.RawEncoding for this option.
-*
-*                                           NumericEncoding - The return value
-*                                           is given as a number in hexadecimal.
-*                                           Perhaps useful for debugging, but
-*                                           will need to be translated back to
-*                                           its raw equivalent (e.g. using
-*                                           PHP's hex2bin) before using with
-*                                           OpenSSL. Use the constant
-*                                           RSAAPP.NumericEncoding for this option.
-*
-* returns                               The cyphertext block that results
-*                                       from encrypting the plaintext string
-*                                       s with the RSA key.
-*
-* This routine accepts a plaintext string that is to be encrypted with the
-* public key component of the previously-built RSA key using the RSA
-* assymmetric encryption method.  Before it is encrypted, the plaintext
-* string is padded to the same length as the encryption key for proper
-* encryption.
-*
-* Depending on the padding method chosen, an optional header with block type
-* is prepended, the plaintext is padded using zeros or randomly-generated
-* bytes, and then the plaintext is possibly broken up into chunks.
-*
-* Note that, for padding with zeros, this routine was altered by Rob Saunders
-* (rob@robsaunders.net). The new routine pads the string after it has been
-* converted to an array. This fixes an incompatibility with Flash MX's
-* ActionScript.
-*
-* The various padding schemes employed by this routine, and as presented to
-* RSA for encryption, are shown below.  Note that the RSA encryption done
-* herein reverses the byte order as encryption is done:
-*
-*      Plaintext In
-*      ------------
-*
-*      d5 d4 d3 d2 d1 d0
-*
-*      OHDave
-*      ------
-*
-*      d5 d4 d3 d2 d1 d0 00 00 00 /.../ 00 00 00 00 00 00 00 00
-*
-*      NoPadding
-*      ---------
-*
-*      00 00 00 00 00 00 00 00 00 /.../ 00 00 d0 d1 d2 d3 d4 d5
-*
-*      PKCS1Padding
-*      ------------
-*
-*      d0 d1 d2 d3 d4 d5 00 p0 p1 /.../ p2 p3 p4 p5 p6 p7 02 00
-*                            \------------  ------------/
-*                                         \/
-*                             Minimum 8 bytes pad length
-*/
-{
-var a = new Array(); // The usual Alice and Bob stuff
-var sl = s.length; // Plaintext string length
-var i, j, k; // The usual Fortran index stuff
-var padtype; // Type of padding to do
-var encodingtype; // Type of output encoding
-var rpad; // Random pad
-var al; // Array length
-var result = ""; // Cypthertext result
-var block; // Big integer block to encrypt
-var crypt; // Big integer result
-var text; // Text result
-/*
-* Figure out the padding type.
-*/
-if (typeof(pad) == 'string') {
-    if (pad == RSAAPP.NoPadding) {
-        padtype = 1;
-    } else if (pad == RSAAPP.PKCS1Padding) {
-        padtype = 2;
-    } else {
-        padtype = 0;
-    }
-} else {
-    padtype = 0;
-}
-/*
-* Determine encoding type.
-*/
-if (typeof(encoding) == 'string' && encoding == RSAAPP.RawEncoding) {
-    encodingtype = 1;
-} else {
-    encodingtype = 0;
-}
-
-/*
-* If we're not using Dave's padding method, we need to truncate long
-* plaintext blocks to the correct length for the padding method used:
-*
-*       NoPadding    - key length
-*       PKCS1Padding - key length - 11
-*/
-if (padtype == 1) {
-    if (sl > key.chunkSize) {
-        sl = key.chunkSize;
-    }
-} else if (padtype == 2) {
-    if (sl > (key.chunkSize - 11)) {
-        sl = key.chunkSize - 11;
-    }
-}
-/*
-* Convert the plaintext string to an array of characters so that we can work
-* with individual characters.
-*
-* Note that, if we're talking to a real crypto library at the other end, we
-* reverse the plaintext order to preserve big-endian order.
-*/
-i = 0;
-
-if (padtype == 2) {
-    j = sl - 1;
-} else {
-    j = key.chunkSize - 1;
-}
-
-while (i < sl) {
-    if (padtype) {
-        a[j] = s.charCodeAt(i);
-    } else {
-        a[i] = s.charCodeAt(i);
-    }
-
-    i++;
-    j--;
-}
-/*
-* Now is the time to add the padding.
-*
-* If we're doing PKCS1v1.5 padding, we pick up padding where we left off and
-* pad the remainder of the block.  Otherwise, we pad at the front of the
-* block.  This gives us the correct padding for big-endian blocks.
-*
-* The padding is either a zero byte or a randomly-generated non-zero byte.
-*/
-if (padtype == 1) {
-    i = 0;
-}
-
-j = key.chunkSize - (sl % key.chunkSize);
-
-while (j > 0) {
-    if (padtype == 2) {
-        rpad = Math.floor(Math.random() * 256);
-
-        while (!rpad) {
-            rpad = Math.floor(Math.random() * 256);
-        }
-
-        a[i] = rpad;
-    } else {
-        a[i] = 0;
-    }
-
-    i++;
-    j--;
-}
-/*
-* For PKCS1v1.5 padding, we need to fill in the block header.
-*
-* According to RFC 2313, a block type, a padding string, and the data shall
-* be formatted into the encryption block:
-*
-*      EncrBlock = 00 || BlockType || PadString || 00 || Data
-*
-* The block type shall be a single octet indicating the structure of the
-* encryption block. For this version of the document it shall have value 00,
-* 01, or 02. For a private-key operation, the block type shall be 00 or 01.
-* For a public-key operation, it shall be 02.
-*
-* The padding string shall consist of enough octets to pad the encryption
-* block to the length of the encryption key.  For block type 00, the octets
-* shall have value 00; for block type 01, they shall have value FF; and for
-* block type 02, they shall be pseudorandomly generated and nonzero.
-*
-* Note that in a previous step, we wrote padding bytes into the first three
-* bytes of the encryption block because it was simpler to do so.  We now
-* overwrite them.
-*/
-if (padtype == 2) {
-    a[sl] = 0;
-    a[key.chunkSize - 2] = 2;
-    a[key.chunkSize - 1] = 0;
-}
-/*
-* Carve up the plaintext and encrypt each of the resultant blocks.
-*/
-al = a.length;
-
-for (i = 0; i < al; i += key.chunkSize) {
-    /*
-  * Get a block.
-  */
-    block = new BigInt();
-
-    j = 0;
-
-    for (k = i; k < (i + key.chunkSize); ++j) {
-        block.digits[j] = a[k++];
-        block.digits[j] += a[k++] << 8;
-    }
-    /*
-  * Encrypt it, convert it to text, and append it to the result.
-  */
-    crypt = key.barrett.powMod(block, key.e);
-    if (encodingtype == 1) {
-        text = biToBytes(crypt);
-    } else {
-        text = (key.radix == 16) ? biToHex(crypt) : biToString(crypt, key.radix);
-    }
-    result += text;
-}
-/*
-* Return the result, removing the last space.
-*/
-//result = (result.substring(0, result.length - 1));
-return result;
-}
-
-/*****************************************************************************/
-
-function decryptedString(key, c)
-/*
-* key                                   The previously-built RSA key whose
-*                                       private key component is to be used
-*                                       to decrypt the cyphertext string.
-*
-* c                                     The cyphertext string that is to be
-*                                       decrypted, using the RSA assymmetric
-*                                       encryption method.
-*
-* returns                               The plaintext block that results from
-*                                       decrypting the cyphertext string c
-*                                       with the RSA key.
-*
-* This routine is the complementary decryption routine that is meant to be
-* used for JavaScript decryption of cyphertext blocks that were encrypted
-* using the OHDave padding method of the encryptedString routine (in this
-* module).  It can also decrypt cyphertext blocks that were encrypted by
-* RSAEncode (in CryptoFuncs.pm or CryptoFuncs.php) so that encrypted
-* messages can be sent of insecure links (e.g. HTTP) to a Web page.
-*
-* It accepts a cyphertext string that is to be decrypted with the public key
-* component of the previously-built RSA key using the RSA assymmetric
-* encryption method.  Multiple cyphertext blocks are broken apart, if they
-* are found in c, and each block is decrypted.  All of the decrypted blocks
-* are concatenated back together to obtain the original plaintext string.
-*
-* This routine assumes that the plaintext was padded to the same length as
-* the encryption key with zeros.  Therefore, it removes any zero bytes that
-* are found at the end of the last decrypted block, before it is appended to
-* the decrypted plaintext string.
-*
-* Note that the encryptedString routine (in this module) works fairly quickly
-* simply by virtue of the fact that the public key most often chosen is quite
-* short (e.g. 0x10001).  This routine does not have that luxury.  The
-* decryption key that it must employ is the full key length.  For long keys,
-* this can result in serious timing delays (e.g. 7-8 seconds to decrypt using
-* 2048 bit keys on a reasonably fast machine, under the Firefox Web browser).
-*
-* If you intend to send encrypted messagess to a JavaScript program running
-* under a Web browser, you might consider using shorter keys to keep the
-* decryption times low.  Alternately, a better scheme is to generate a random
-* key for use by a symmetric encryption algorithm and transmit it to the
-* other end, after encrypting it with encryptedString.  The other end can use
-* a real crypto library (e.g. OpenSSL or Microsoft) to decrypt the key and
-* then use it to encrypt all of the messages (with a symmetric encryption
-* algorithm such as Twofish or AES) bound for the JavaScript program.
-* Symmetric decryption is orders of magnitude faster than asymmetric and
-* should yield low decryption times, even when executed in JavaScript.
-*
-* Also note that only the OHDave padding method (e.g. zeros) is supported by
-* this routine *AND* that this routine expects little-endian cyphertext, as
-* created by the encryptedString routine (in this module) or the RSAEncode
-* routine (in either CryptoFuncs.pm or CryptoFuncs.php).  You can use one of
-* the real crypto libraries to create cyphertext that can be decrypted by
-* this routine, if you reverse the plaintext byte order first and then
-* manually pad it with zero bytes.  The plaintext should then be encrypted
-* with the NoPadding flag or its equivalent in the crypto library of your
-* choice.
-*/
-{
-var blocks = c.split(" "); // Multiple blocks of cyphertext
-var b; // The usual Alice and Bob stuff
-var i, j; // The usual Fortran index stuff
-var bi; // Cyphertext as a big integer
-var result = ""; // Plaintext result
-/*
-* Carve up the cyphertext into blocks.
-*/
-for (i = 0; i < blocks.length; ++i) {
-    /*
-  * Depending on the radix being used for the key, convert this cyphertext
-  * block into a big integer.
-  */
-    if (key.radix == 16) {
-        bi = biFromHex(blocks[i]);
-    } else {
-        bi = biFromString(blocks[i], key.radix);
-    }
-    /*
-  * Decrypt the cyphertext.
-  */
-    b = key.barrett.powMod(bi, key.d);
-    /*
-  * Convert the decrypted big integer back to the plaintext string.  Since
-  * we are using big integers, each element thereof represents two bytes of
-  * plaintext.
-  */
-    for (j = 0; j <= biHighIndex(b); ++j) {
-        result += String.fromCharCode(b.digits[j] & 255, b.digits[j] >> 8);
-    }
-}
-/*
-* Remove trailing null, if any.
-*/
-if (result.charCodeAt(result.length - 1) == 0) {
-    result = result.substring(0, result.length - 1);
-}
-/*
-* Return the plaintext.
-*/
-return (result);
-}
-
-var rsa = function(arg) {
-setMaxDigits(130);
-var PublicExponent = "10001";
-var modulus = "be44aec4d73408f6b60e6fe9e3dc55d0e1dc53a1e171e071b547e2e8e0b7da01c56e8c9bcf0521568eb111adccef4e40124b76e33e7ad75607c227af8f8e0b759c30ef283be8ab17a84b19a051df5f94c07e6e7be5f77866376322aac944f45f3ab532bb6efc70c1efa524d821d16cafb580c5a901f0defddea3692a4e68e6cd";
-var key = new RSAKeyPair(PublicExponent, "", modulus);
-return encryptedString(key, arg);
-};
-
-function getpwd(p) {
-rsaPwd = rsa(p);
-return rsaPwd
-}

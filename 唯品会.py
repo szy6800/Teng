@@ -17,4 +17,4 @@ def get_js_function(js_path, func_name, *func_args, **kwargs):
 
 
 if __name__ == '__main__':
-    print(get_js_function('tengxun_comment.js.', 'getpwd', 'apple'))
+    print(get_js_function('tengxun_comment.js.', 'aa'))

@@ -1,218 +1,266 @@
+C:\Users\12895\AppData\Local\Programs\Python\Python39\python.exe D:/Te/Teng/liepin/liepin/start_liepin.py
+2022-08-18 10:28:03 [scrapy.utils.log] INFO: Scrapy 2.6.1 started (bot: liepin)
+2022-08-18 10:28:03 [scrapy.utils.log] INFO: Versions: lxml 4.8.0.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.2.0, Python 3.9.0b1 (tags/v3.9.0b1:97fe9cf, May 19 2020, 09:02:07) [MSC v.1924 64 bit (AMD64)], pyOpenSSL 22.0.0 (OpenSSL 1.1.1m  14 Dec 2021), cryptography 36.0.1, Platform Windows-10-10.0.22000-SP0
+2022-08-18 10:28:03 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'liepin',
+ 'COOKIES_ENABLED': False,
+ 'DOWNLOAD_DELAY': 0.4,
+ 'NEWSPIDER_MODULE': 'liepin.spiders',
+ 'SPIDER_MODULES': ['liepin.spiders']}
+2022-08-18 10:28:03 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2022-08-18 10:28:03 [scrapy.extensions.telnet] INFO: Telnet Password: f66aa5cbf0cf81f0
+2022-08-18 10:28:03 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+['125.117.212.120:61241', '121.29.83.62:52001', '121.233.60.207:50555', '115.226.156.138:28444', '121.29.83.147:52001', '121.29.83.219:52001', '115.208.43.159:45555', '27.156.197.196:36333', '119.112.84.61:48095', '125.117.144.17:33622', '183.166.119.154:44602', '113.76.193.65:49577', '122.230.41.187:12488', '27.150.87.147:11053', '42.86.93.54:39349', '115.226.130.56:40613', '36.27.186.48:61241', '125.125.16.186:45555', '122.241.216.70:14509', '114.102.60.202:23777', '183.155.109.118:62562', '125.112.207.111:41550', '183.155.91.8:41550', '121.233.226.39:41643', '125.117.140.144:46264', '117.94.180.34:48481', '60.182.197.249:61241', '121.207.93.68:25872', '113.231.36.11:48307', '117.94.116.177:19156', '42.84.162.88:48095', '114.239.151.251:15361', '115.211.228.25:46264', '120.38.215.241:55974', '117.94.122.84:19156', '221.229.71.215:21173', '115.226.147.28:14509', '101.205.33.11:16523', '112.85.88.37:40490', '117.69.50.123:50735', '117.80.158.232:52845', '175.150.96.160:52954', '115.210.66.133:61241', '123.169.38.217:28334', '117.69.245.108:18220', '121.230.88.222:49305', '119.116.79.197:45350', '49.85.162.254:46585', '114.239.144.74:20842', '115.226.146.196:47205', '183.164.240.99:29220', '183.155.91.18:33622', '42.63.168.57:24297', '119.5.74.36:16523', '42.177.48.3:39349', '125.112.207.43:61241', '125.117.214.11:41550', '117.94.245.8:48481', '123.188.33.155:56533', '27.158.1.134:43181', '60.182.196.247:46264', '36.22.77.240:62562', '27.159.142.41:42402', '183.154.55.250:41550', '114.231.82.125:47668', '218.74.81.172:41494', '49.85.189.249:49305', '61.174.239.128:14728', '115.226.150.112:40613', '113.195.0.205:15854', '27.156.199.134:38845', '222.79.55.11:57689', '114.231.82.144:47668', '175.147.100.116:58653', '182.204.177.226:30182', '49.85.163.240:46585', '114.233.71.10:19156', '113.239.152.100:63078', '49.85.163.75:46585', '60.184.199.44:41494', '125.125.154.117:45555', '113.237.4.2:55046', '113.239.157.9:63078']
+2022-08-18 10:28:04 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'liepin.middlewares.RandomIPMiddleware',
+ 'liepin.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-08-18 10:28:04 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-08-18 10:28:04 [scrapy.middleware] INFO: Enabled item pipelines:
+['liepin.pipelines.LiepinPipeline']
+2022-08-18 10:28:04 [scrapy.core.engine] INFO: Spider opened
+https://www.liepin.com/zhaopin/?headId=e305e6c88ef64ef81821659a5f0e00a8&ckId=79rhndaqlt2jkzahwagommtvsb4t8ri9&oldCkId=d28dc535e6275a5b17c972484f600af8&fkId=yf3vj3vib1wep2eoex69irq566wy6t88&skId=6t7wxnbldwkofbyn6odg3cm7ft0v8sl9&sfrom=search_job_pc&industry=10$500&dq=060020&currentPage=0&scene=page
+2022-08-18 10:28:04 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-08-18 10:28:04 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2022-08-18 10:28:04 [lpjob1] INFO: 使用代理[60.184.199.44:41494]访问[https://www.liepin.com/zhaopin/?headId=e305e6c88ef64ef81821659a5f0e00a8&ckId=79rhndaqlt2jkzahwagommtvsb4t8ri9&oldCkId=d28dc535e6275a5b17c972484f600af8&fkId=yf3vj3vib1wep2eoex69irq566wy6t88&skId=6t7wxnbldwkofbyn6odg3cm7ft0v8sl9&sfrom=search_job_pc&industry=10$500&dq=060020&currentPage=0&scene=page]
+2022-08-18 10:28:07 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.liepin.com/zhaopin/?headId=e305e6c88ef64ef81821659a5f0e00a8&ckId=79rhndaqlt2jkzahwagommtvsb4t8ri9&oldCkId=d28dc535e6275a5b17c972484f600af8&fkId=yf3vj3vib1wep2eoex69irq566wy6t88&skId=6t7wxnbldwkofbyn6odg3cm7ft0v8sl9&sfrom=search_job_pc&industry=10$500&dq=060020&currentPage=0&scene=page> (failed 1 times): Connection was refused by other side: 10061: 由于目标计算机积极拒绝，无法连接。.
+2022-08-18 10:28:07 [lpjob1] INFO: 使用代理[183.166.119.154:44602]访问[https://www.liepin.com/zhaopin/?headId=e305e6c88ef64ef81821659a5f0e00a8&ckId=79rhndaqlt2jkzahwagommtvsb4t8ri9&oldCkId=d28dc535e6275a5b17c972484f600af8&fkId=yf3vj3vib1wep2eoex69irq566wy6t88&skId=6t7wxnbldwkofbyn6odg3cm7ft0v8sl9&sfrom=search_job_pc&industry=10$500&dq=060020&currentPage=0&scene=page]
+2022-08-18 10:28:28 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.liepin.com/zhaopin/?headId=e305e6c88ef64ef81821659a5f0e00a8&ckId=79rhndaqlt2jkzahwagommtvsb4t8ri9&oldCkId=d28dc535e6275a5b17c972484f600af8&fkId=yf3vj3vib1wep2eoex69irq566wy6t88&skId=6t7wxnbldwkofbyn6odg3cm7ft0v8sl9&sfrom=search_job_pc&industry=10$500&dq=060020&currentPage=0&scene=page> (failed 2 times): TCP connection timed out: 10060: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。.
+2022-08-18 10:28:28 [lpjob1] INFO: 使用代理[101.205.33.11:16523]访问[https://www.liepin.com/zhaopin/?headId=e305e6c88ef64ef81821659a5f0e00a8&ckId=79rhndaqlt2jkzahwagommtvsb4t8ri9&oldCkId=d28dc535e6275a5b17c972484f600af8&fkId=yf3vj3vib1wep2eoex69irq566wy6t88&skId=6t7wxnbldwkofbyn6odg3cm7ft0v8sl9&sfrom=search_job_pc&industry=10$500&dq=060020&currentPage=0&scene=page]
+2022-08-18 10:28:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.liepin.com/zhaopin/?headId=e305e6c88ef64ef81821659a5f0e00a8&ckId=79rhndaqlt2jkzahwagommtvsb4t8ri9&oldCkId=d28dc535e6275a5b17c972484f600af8&fkId=yf3vj3vib1wep2eoex69irq566wy6t88&skId=6t7wxnbldwkofbyn6odg3cm7ft0v8sl9&sfrom=search_job_pc&industry=10$500&dq=060020&currentPage=0&scene=page> (referer: None)
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>【南京招聘信息_南京人才网招聘信息】-猎聘</title>
+    <meta name="keywords" content="南京招聘信息,南京人才信息,南京人才招聘信息">
+    <meta name="description" content="猎聘南京招聘信息提供真实的南京人才招聘信息，南京招聘信息有超过10000多高薪人才招聘信息职位任你选，找南京招聘信息就来南京人才网招聘信息频道。">
+
+
+  <meta name="applicable-device" content="pc">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <link rel=dns-prefetch href="//concat.lietou-static.com" />
+    <link rel=dns-prefetch href="//image0.lietou-static.com" />
+    <!-- 使360浏览器 默认启用极速内核 -->
+    <meta name="renderer" content="webkit">
+    <link rel="preconnect" href="//concat.lietou-static.com" />
+    <link rel="preconnect" href="//image0.lietou-static.com" />
+    <link rel="icon" href="//concat.lietou-static.com/fe-www-pc/v6/static/images/favicon.e6edbc00.ico" type="image/x-icon"/>
+    <script crossorigin="anonymous"  src="//concat.lietou-static.com/fe-www-pc/v6/static/js/jquery-1.7.1.min.99a28ce2.js"></script>
+    <script src="//concat.lietou-static.com/fe-lib-pc/v5/femonitor/0.9.0/femonitor.min.8503c6bc.js"></script>
+    <script src="//concat.lietou-static.com/fe-www-pc/v6/static/js/es6-proxy-polyfill.ab42dd25.js"></script>
+    <!--[if lte IE 9]>
+    <script src="//concat.lietou-static.com/fe-c-pc/v6/static/js/html5shiv.js"></script>
+    <script src="//concat.lietou-static.com/fe-c-pc/v6/static/js/unpack_files/console-polyfill.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="//concat.lietou-static.com/fe-www-pc/v6/css/common.02be0291.css"/>
+    <script>
+        /*@cc_on document.write("<script src=\"//concat.lietou-static.com/fe-lib-pc/v5/ietip/index.download.qa.38e4a2d5.js\"><\/script>")@*/
+        if (window.msCrypto) {
+            document.write("<script src=\"//concat.lietou-static.com/fe-lib-pc/v5/ietip/index.download.qa.38e4a2d5.js\"><\/script>")
+        }
+    </script>
+
+  <!-- 待服务端联调时开启 -->
+  <link rel="stylesheet" href="//concat.lietou-static.com/fe-www-pc/v6/css/pages/search-jobs.94f73fae.css" />
 </head>
-<!--搜索结果-->
-<div class="container_div2_div_ul2 clearL " id="list">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="jtgs_table" >
-	<tr class="zb_table_tr" style="text-align:left">
-	    <td>单位</td>
-	    <td>标题</td>
-	    <td align="center">文件售卖截止时间</td>
-	</tr>
-			<tr style="width:100%;" class="_data_tr_flag &nbsp;" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('874483')">
-			<td align="left">安徽移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this">2022年马鞍山移动和县四处委托加盟店招商项目_重发公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag jtgs_table_td_bg" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('874377')">
-			<td align="left">福建移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this">（平和县不动产登记信息系统网络等级保护服务类采购项目）招募文件_采购公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag &nbsp;" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('874374')">
-			<td align="left">甘肃移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this">中国移动甘肃公司2022年数据安全合规性评估服务采购项目_比选公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag jtgs_table_td_bg" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('873783')">
-			<td align="left">安徽移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this">淮南数据中心维护支撑用房电子档案制作采购项目_询价公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag &nbsp;" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('874558')">
-			<td align="left">重庆移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this">2023年应急通信方舱维保服务采购_比选公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag jtgs_table_td_bg" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('874321')">
-			<td align="left">西藏移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this">中国移动西藏公司拉萨分公司2022年绿色植物租赁项目_比选公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag &nbsp;" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('873208')">
-			<td align="left">中移金科</td>
-			<td style="width:70%" align="left">
-				<a href="#this">智慧中台能力聚合网关项目_招标公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag jtgs_table_td_bg" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('873932')">
-			<td align="left">福建移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this">南平分公司建瓯市GA局车辆卡口采购项目_询价公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag &nbsp;" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('874250')">
-			<td align="left">重庆移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this" title="2022-2023年主城片区（城一、城二、城三、巴南、长寿、綦江、万盛）搬运服务项目_询价公告">2022-2023年主城片区（城一、城二、城三、巴南、长寿、綦江、万盛）搬运服务...</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag jtgs_table_td_bg" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('874061')">
-			<td align="left">甘肃移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this">甘肃移动2022-2023年全省办公类电子设备维保服务项目采购_比选公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag &nbsp;" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('874196')">
-			<td align="left">重庆移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this">2022年永川、黔江外市电施工引入项目及水土B栋改造及搬迁施工_比选公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag jtgs_table_td_bg" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('873258')">
-			<td align="left">北京移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this">中国移动北京公司2022年度党建工作成效调研支撑服务项目_比选公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag &nbsp;" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('873979')">
-			<td align="left">浙江移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this" title="中国移动浙江公司2022-2023年全省食品日用品采购项目--温州分公司2022年中秋食品采购（二）_比选公告">中国移动浙江公司2022-2023年全省食品日用品采购项目--温州分公司2022...</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag jtgs_table_td_bg" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('873636')">
-			<td align="left">福建移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this">漳州分公司2022至2023年全区员工食堂服务商采购项目_比选公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag &nbsp;" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('874291')">
-			<td align="left">甘肃移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this">陇南分公司2022-2024年全市车辆维修服务采购项目_比选公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag jtgs_table_td_bg" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('873487')">
-			<td align="left">山西移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this">中国移动山西公司2022年运城分公司公交车广告的采购项目_比选公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag &nbsp;" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('873630')">
-			<td align="left">云南移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this">中国移动云南公司红河分公司2022年互联网医院软件项目（公开比选部分）_比选公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag jtgs_table_td_bg" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('873959')">
-			<td align="left">铁通公司</td>
-			<td style="width:70%" align="left">
-				<a href="#this" title="中移铁通有限公司山西分公司2022-2023年临汾分公司车辆定点维修保养服务采购项目_比选公告">中移铁通有限公司山西分公司2022-2023年临汾分公司车辆定点维修保养服务采购...</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:00</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag &nbsp;" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('874305')">
-			<td align="left">吉林移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this" title="中国移动吉林公司2022年广告媒介投放（第一批）采购-户外-白城分公司(三次)_比选公告">中国移动吉林公司2022年广告媒介投放（第一批）采购-户外-白城分公司(三次)_...</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:30</td>
-		</tr>
-		<tr style="width:100%;" class="_data_tr_flag jtgs_table_td_bg" onmousemove="cursorOver(this)" onmouseout="cursorOut(this)" onclick="selectResult('874304')">
-			<td align="left">吉林移动</td>
-			<td style="width:70%" align="left">
-				<a href="#this">中国移动吉林公司吉林市分公司2022年办公车辆清洗服务公开比选项目_比选公告</a>
-			</td>
-			<td style="width:20%;" >2022-08-08 18:30</td>
-		</tr>
-</table>
-</div>
-<div class="da_content_div_bg1">
-<div class="black" style="vertical-align:middle;">
-	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-	<input type="hidden" id="totalRecordNum" name="page.totalRecordNum" value="302"/>
-		<tbody>
-			<tr>
-				<td align="right" id="pageid2" width="70%">
-					<table cellspacing="0" cellpadding="1" border="0">
-						<tbody style="width:500px">
-							<tr>
-								<td>
-										<a class="link" href="JavaScript:void(0);" onclick="gotoPage(1);"><span border="0" alt="首页">首页</span></a>
-									&nbsp;
-								</td>
-								<td>
-										<a class="link" href="JavaScript:void(0);" onclick="gotoPage(3);"><span border="0" alt="上一页">上一页</span></a>
-								</td>
-								<td>
-														<a onclick="gotoPage(2);"  class=" ">2</a>
-														<a onclick="gotoPage(3);"  class=" ">3</a>
-														<a onclick="gotoPage(4);"  class="current">4</a>
-														<a onclick="gotoPage(5);"  class=" ">5</a>
-														<a onclick="gotoPage(6);"  class=" ">6</a>
-								</td>
 
-								<td>
-										<a class="link" href="JavaScript:void(0);" onclick="gotoPage(5);"><span border="0" alt="下一页">下一页</span></a>
-								</td>
-								<td>
-									&nbsp;
-										<a class="link" href="JavaScript:void(0);" onclick="gotoPage(16);"><span border="0" alt="尾页">尾页</span></a>
-								</td>
-								<td>
-									&nbsp;&nbsp;<span border="0">共302条数据/16页</span>&nbsp;&nbsp;
-								</td>
-								<td>
-									<span border="0">跳转至<input id="pageNumber" style="width:20px;margin-bottom:2px;" onkeypress="if (event.keyCode == 13) jumpToPage();">页</span>
-								</td>
-								<td>
-									<input type="button" onclick="jumpToPage()" value="GO" style="padding:0px 10px;"/>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
+<body>
+  <!-- header -->
 
-<script language="JavaScript">
-	function gotoPage(pageNo){
-		document.getElementsByName('page.currentPage')[0].value = pageNo;
-		document.getElementsByName('page.perPageSize')[0].value = $("#perPageSize").val();
-		doSearchByPage(pageNo,20);
-	}
-	function jumpToPage() {
-		var pageNumber = $('#pageNumber').val();
-		var totalPages = 16;
-		if (pageNumber >= 1 && pageNumber <= totalPages) gotoPage(pageNumber);
-	}
-</script></div>
+    <section id='lp-seo-header-container'><header id="framework-pc-header-container"><nav class="header-content-box"><a id="header-logo-box" href="https://www.liepin.com" title="猎聘"><img src="" title="猎聘" alt=""/></a><a id="header-city-box" href="https://www.liepin.com/citylist/" title="城市切换"><div class="header-city-box"><svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M5 .25a3.65 3.65 0 012.646 1.152 4.033 4.033 0 011.104 2.79c0 .531-.073.98-.236 1.409a4.093 4.093 0 01-.747 1.228l-.179.2-2.326 2.528L2.428 7.04a7.282 7.282 0 01-.36-.413 3.863 3.863 0 01-.475-.785 4.076 4.076 0 01-.343-1.649c0-1.088.422-2.075 1.104-2.79A3.65 3.65 0 015 .25zm0 1.5a2.24 2.24 0 00-1.59.66 2.243 2.243 0 000 3.18 2.244 2.244 0 003.179 0A2.246 2.246 0 005 1.75z" fill="#FFF" stroke="#FFF" stroke-width="0.5" opacity="0.4"></path></svg><span>全国</span><svg width="6" height="3" viewBox="0 0 6 3" xmlns="http://www.w3.org/2000/svg"><path d="M3.283 2.717L5.317.683A.4.4 0 005.034 0H.966a.4.4 0 00-.283.683l2.034 2.034a.4.4 0 00.566 0z" fill="#FFF" fill-rule="evenodd"></path></svg></div></a><ul class="header-nav-menu"><li class="header-menu-item header-nav-menu-item"><a id="header-nav-menu-home" href="https://www.liepin.com">首页</a></li><li class="header-menu-item header-nav-menu-item"><a id="header-nav-menu-job" href="https://www.liepin.com/zhaopin/?init=1">职位</a></li><li class="header-menu-item header-nav-menu-item"><a id="header-nav-menu-campus" href="https://www.liepin.com/campus/?t=1" class="ant-dropdown-trigger"><span>校园</span></a></li><li class="header-menu-item header-nav-menu-item"><a id="header-nav-menu-community" href="https://blade.liepin.com">社区</a></li><li class="header-menu-item header-nav-menu-item"><a id="header-nav-menu-resume-template" href="https://www.liepin.com/resume/template/home/">简历模板</a></li><li class="header-menu-item header-nav-menu-item"><a id="header-nav-menu-resume-optimization" href="https://vas.liepin.com/v/view-intro?utm_content=pcjuhexiala&amp;imscid=R000014437" target="_blank" class="ant-dropdown-trigger"><span>简历优化</span></a></li><li class="header-menu-item header-nav-menu-item download-app-item"><span id="header-nav-menu-download-app">猎聘APP</span><div id="fix-header-download-app-modal"><img src="" alt=""/></div></li></ul><div class="header-quick-menu-box"><ul class="header-quick-menu-not-login"><li class="header-menu-item header-quick-menu-not-login-item"><a id="header-quick-menu-hunter" target="_blank" href="https://h.liepin.com/#sfrom=click-pc_homepage-front_navigation-hunter_new">我是猎头</a></li><li class="header-menu-item header-quick-menu-not-login-item"><a id="header-quick-menu-recruiter" target="_blank" data-selector="c-logout" data-backurl="https://lpt.liepin.com/user/login#sfrom=click-pc_homepage-front_navigation-ecomphr_new" href="javascript:void(0);">我是招聘方</a><svg width="28" height="14" viewBox="0 0 28 14" xmlns="http://www.w3.org/2000/svg" class="recruiter-min-logo"><g fill="none" fill-rule="evenodd"><path d="M4 0h23a1 1 0 011 1v9a4 4 0 01-4 4H1a1 1 0 01-1-1V4a4 4 0 014-4z" fill="#FF6400" fill-rule="nonzero"></path><text font-family="PingFangSC-Medium, PingFang SC" font-size="10" font-weight="400" fill="#FFF"><tspan x="2" y="10.5">NEW</tspan></text></g></svg></li><li class="header-menu-item header-quick-menu-not-login-item"><span id="header-quick-menu-login">登录/注册</span></li></ul></div></nav></header></section>
+
+  <!-- 搜索区域 -->
+  <div class="common-page-container" id="lp-search-job-box"></div>
+  <section id="lp-sider-bar-container"></section>
+
+  <!-- 内链和友链 -->
+
+    <section class="common-page-container">
+        <div class="seo-common-hot-links">
+            <div class="common-hot-links-container" data-selector="common-hot-links-container">
+                <ul class="common-hot-links-tab" data-selector="common-hot-links-tab">
+                    <li class="hot-links-tab-active">热门职位</li>
+                    <li>推荐职位</li>
+                    <li>热门行业</li>
+                    <li>周边城市</li>
+                    <li>热门城市</li>
+                    <li>其他公司</li>
+                    <li>相关公司</li>
+                    <li>手机版</li>
+                </ul>
+                <div class="common-hot-links-content hot-links-content-active" data-selector="common-hot-links-content">
+                    <a href="https://www.liepin.com/city-nj/zp2ddhs/" target="_blank" title="南京2D动画师招聘">南京2D动画师招聘</a><a href="https://www.liepin.com/city-nj/zp2dcjyhsjs/" target="_blank" title="南京2D场景原画设计师招聘">南京2D场景原画设计师招聘</a><a href="https://www.liepin.com/city-nj/zp2dcjyh/" target="_blank" title="南京2D场景原画招聘">南京2D场景原画招聘</a><a href="https://www.liepin.com/city-nj/zp2dchangjingyuanhuashi/" target="_blank" title="南京2D场景原画师招聘">南京2D场景原画师招聘</a><a href="https://www.liepin.com/city-nj/zp2dchangjingyuanhuashejishi/" target="_blank" title="南京2D场景原画设计师招聘">南京2D场景原画设计师招聘</a><a href="https://www.liepin.com/city-nj/zp2dchangjingyuanhua/" target="_blank" title="南京2D场景原画招聘">南京2D场景原画招聘</a><a href="https://www.liepin.com/city-nj/zp2dchangjingshejishi/" target="_blank" title="南京2D场景设计师招聘">南京2D场景设计师招聘</a><a href="https://www.liepin.com/city-nj/zp2dchangjingsheji/" target="_blank" title="南京2D场景设计招聘">南京2D场景设计招聘</a><a href="https://www.liepin.com/city-nj/zp2dchangjingmeishu/" target="_blank" title="南京2D场景美术招聘">南京2D场景美术招聘</a><a href="https://www.liepin.com/city-nj/zp2dchangjinghouqi/" target="_blank" title="南京2D场景后期招聘">南京2D场景后期招聘</a><a href="https://www.liepin.com/city-nj/zp2dchangjing/" target="_blank" title="南京2D场景招聘">南京2D场景招聘</a><a href="https://www.liepin.com/city-nj/zp2500083500kefu/" target="_blank" title="南京2500-3500客服招聘">南京2500-3500客服招聘</a><a href="https://www.liepin.com/city-nj/zp24xiaoshijiankong/" target="_blank" title="南京24小时监控招聘">南京24小时监控招聘</a><a href="https://www.liepin.com/city-nj/zp2015shixi/" target="_blank" title="南京2015实习招聘">南京2015实习招聘</a><a href="https://www.liepin.com/city-nj/zp2015jieguanpeisheng/" target="_blank" title="南京2015届管培生招聘">南京2015届管培生招聘</a><a href="https://www.liepin.com/city-nj/zp2015jiedazhuansheng/" target="_blank" title="南京2015届大专生招聘">南京2015届大专生招聘</a><a href="https://www.liepin.com/city-nj/zp1jishugongchengshi/" target="_blank" title="南京1技术工程师招聘">南京1技术工程师招聘</a><a href="https://www.liepin.com/city-nj/zp1haodianyunying/" target="_blank" title="南京1号店运营招聘">南京1号店运营招聘</a><a href="https://www.liepin.com/city-nj/zp1haodiandianchang/" target="_blank" title="南京1号店店长招聘">南京1号店店长招聘</a><a href="https://www.liepin.com/city-nj/zp1dui1zixunshi/" target="_blank" title="南京1对1咨询师招聘">南京1对1咨询师招聘</a><a href="https://www.liepin.com/city-nj/zp1688yyzy/" target="_blank" title="南京1688运营专员招聘">南京1688运营专员招聘</a><a href="https://www.liepin.com/city-nj/zp1688yyzl/" target="_blank" title="南京1688运营助理招聘">南京1688运营助理招聘</a><a href="https://www.liepin.com/city-nj/zp1688yyzg/" target="_blank" title="南京1688运营主管招聘">南京1688运营主管招聘</a><a href="https://www.liepin.com/city-nj/zp1688yy/" target="_blank" title="南京1688运营招聘">南京1688运营招聘</a><a href="https://www.liepin.com/city-nj/zp1688cxtyy/" target="_blank" title="南京1688诚信通运营招聘">南京1688诚信通运营招聘</a><a href="https://www.liepin.com/city-nj/zp15nianbiyesheng/" target="_blank" title="南京15年毕业生招聘">南京15年毕业生招聘</a><a href="https://www.liepin.com/city-nj/zp15jiexushuichi/" target="_blank" title="南京15届蓄水池招聘">南京15届蓄水池招聘</a><a href="https://www.liepin.com/city-nj/zp15jieshixisheng/" target="_blank" title="南京15届实习生招聘">南京15届实习生招聘</a><a href="https://www.liepin.com/city-nj/zp12345kefu/" target="_blank" title="南京12345客服招聘">南京12345客服招聘</a><a href="https://www.liepin.com/city-nj/zp12306kefu/" target="_blank" title="南京12306客服招聘">南京12306客服招聘</a>
+                </div>
+                <div class="common-hot-links-content" data-selector="common-hot-links-content">
+                    <a href="https://www.liepin.com/city-nj/career/hangong/" target="_blank" title="南京焊工招聘">南京焊工招聘</a><a href="https://www.liepin.com/city-nj/career/huoyundaili/" target="_blank" title="南京货运代理招聘">南京货运代理招聘</a><a href="https://www.liepin.com/city-nj/career/360330/" target="_blank" title="南京运维开发招聘">南京运维开发招聘</a><a href="https://www.liepin.com/city-nj/career/yingjianceshi/" target="_blank" title="南京硬件测试工程师招聘">南京硬件测试工程师招聘</a><a href="https://www.liepin.com/city-nj/career/shujuzhili/" target="_blank" title="南京数据治理招聘">南京数据治理招聘</a><a href="https://www.liepin.com/city-nj/career/150130/" target="_blank" title="南京契约管理招聘">南京契约管理招聘</a><a href="https://www.liepin.com/city-nj/career/guolugcs/" target="_blank" title="南京锅炉工程师招聘">南京锅炉工程师招聘</a><a href="https://www.liepin.com/city-nj/career/jijinjingli/" target="_blank" title="南京基金经理招聘">南京基金经理招聘</a><a href="https://www.liepin.com/city-nj/career/shouyin/" target="_blank" title="南京收银招聘">南京收银招聘</a><a href="https://www.liepin.com/city-nj/career/BaoXianYeWuJingLi/" target="_blank" title="南京保险业务经理招聘">南京保险业务经理招聘</a><a href="https://www.liepin.com/city-nj/career/xianxiatuozhanyy/" target="_blank" title="南京线下拓展运营招聘">南京线下拓展运营招聘</a><a href="https://www.liepin.com/city-nj/career/biaodinggongchengshi/" target="_blank" title="南京标定工程师招聘">南京标定工程师招聘</a><a href="https://www.liepin.com/city-nj/career/80063/" target="_blank" title="南京电脑操作/打字/录入员招聘">南京电脑操作/打字/录入员招聘</a><a href="https://www.liepin.com/city-nj/career/110406/" target="_blank" title="南京仪器/仪表/计量招聘">南京仪器/仪表/计量招聘</a><a href="https://www.liepin.com/city-nj/career/zhipianren/" target="_blank" title="南京制片人招聘">南京制片人招聘</a><a href="https://www.liepin.com/city-nj/career/170208/" target="_blank" title="南京暖通工程师招聘">南京暖通工程师招聘</a><a href="https://www.liepin.com/city-nj/career/170198/" target="_blank" title="南京开发报建招聘">南京开发报建招聘</a><a href="https://www.liepin.com/city-nj/career/touziyinhang/" target="_blank" title="南京投资银行业务招聘">南京投资银行业务招聘</a><a href="https://www.liepin.com/city-nj/career/baoxianchanpinkaifadf/" target="_blank" title="南京产品开发/项目策划招聘">南京产品开发/项目策划招聘</a><a href="https://www.liepin.com/city-nj/career/wuyepinzhiguanli/" target="_blank" title="南京物业品质管理招聘">南京物业品质管理招聘</a><a href="https://www.liepin.com/city-nj/career/peixunzhiwei/" target="_blank" title="南京其他教育/培训职位招聘">南京其他教育/培训职位招聘</a><a href="https://www.liepin.com/city-nj/career/erpyingyong/" target="_blank" title="南京ERP应用招聘">南京ERP应用招聘</a><a href="https://www.liepin.com/city-nj/career/c2/" target="_blank" title="南京C++招聘">南京C++招聘</a><a href="https://www.liepin.com/city-nj/career/qtcaiwushenjishuiwuzw/" target="_blank" title="南京其他财务/审计/税务职位招聘">南京其他财务/审计/税务职位招聘</a><a href="https://www.liepin.com/city-nj/career/yixuebianji/" target="_blank" title="南京医学编辑招聘">南京医学编辑招聘</a><a href="https://www.liepin.com/city-nj/career/renliziyuanguwen/" target="_blank" title="南京人力资源顾问招聘">南京人力资源顾问招聘</a><a href="https://www.liepin.com/city-nj/career/sheyingshexiang/" target="_blank" title="南京摄影摄像招聘">南京摄影摄像招聘</a><a href="https://www.liepin.com/city-nj/career/sem/" target="_blank" title="南京SEM招聘">南京SEM招聘</a><a href="https://www.liepin.com/city-nj/career/youxichs/" target="_blank" title="南京游戏策划师招聘">南京游戏策划师招聘</a><a href="https://www.liepin.com/city-nj/career/c3/" target="_blank" title="南京C#招聘">南京C#招聘</a>
+                </div>
+                <div class="common-hot-links-content" data-selector="common-hot-links-content">
+                    <a href="https://www.liepin.com/city-nj/industry/shineisheji/" target="_blank" title="南京规划/设计/装潢招聘">南京规划/设计/装潢招聘</a><a href="https://www.liepin.com/city-nj/industry/yuancailiao/" target="_blank" title="南京原材料加工招聘">南京原材料加工招聘</a><a href="https://www.liepin.com/city-nj/industry/meiti/" target="_blank" title="南京影视文化招聘">南京影视文化招聘</a><a href="https://www.liepin.com/city-nj/industry/yingjian/" target="_blank" title="南京计算机/网络设备招聘">南京计算机/网络设备招聘</a><a href="https://www.liepin.com/city-nj/industry/nengyuan/" target="_blank" title="南京能源/水利招聘">南京能源/水利招聘</a><a href="https://www.liepin.com/city-nj/industry/yinhang/" target="_blank" title="南京银行招聘">南京银行招聘</a><a href="https://www.liepin.com/city-nj/industry/zupingfuwu/" target="_blank" title="南京租赁服务招聘">南京租赁服务招聘</a><a href="https://www.liepin.com/city-nj/industry/bangongshebei/" target="_blank" title="南京办公设备招聘">南京办公设备招聘</a><a href="https://www.liepin.com/city-nj/industry/waibaofuwu/" target="_blank" title="南京外包服务招聘">南京外包服务招聘</a><a href="https://www.liepin.com/city-nj/industry/gongyipinzhubao/" target="_blank" title="南京珠宝/玩具/工艺品招聘">南京珠宝/玩具/工艺品招聘</a><a href="https://www.liepin.com/city-nj/industry/jiancerenzheng/" target="_blank" title="南京检测/认证招聘">南京检测/认证招聘</a><a href="https://www.liepin.com/city-nj/industry/guanggaohuizhan/" target="_blank" title="南京广告/市场/会展招聘">南京广告/市场/会展招聘</a><a href="https://www.liepin.com/city-nj/industry/jiadian/" target="_blank" title="南京家具/家电招聘">南京家具/家电招聘</a><a href="https://www.liepin.com/city-nj/industry/jijingzhengquan/" target="_blank" title="南京基金/证券/投资招聘">南京基金/证券/投资招聘</a><a href="https://www.liepin.com/city-nj/industry/yiliao/" target="_blank" title="南京医疗/保健/美容招聘">南京医疗/保健/美容招聘</a><a href="https://www.liepin.com/city-nj/industry/jiaoyu/" target="_blank" title="南京教育培训招聘">南京教育培训招聘</a><a href="https://www.liepin.com/city-nj/industry/fangchanfuwu/" target="_blank" title="南京房地产服务招聘">南京房地产服务招聘</a><a href="https://www.liepin.com/city-nj/industry/naiyongxiaofei/" target="_blank" title="南京服装纺织招聘">南京服装纺织招聘</a><a href="https://www.liepin.com/city-nj/industry/huanbao/" target="_blank" title="南京环保招聘">南京环保招聘</a><a href="https://www.liepin.com/city-nj/industry/caijueyelian/" target="_blank" title="南京采掘/冶炼/矿产招聘">南京采掘/冶炼/矿产招聘</a><a href="https://www.liepin.com/city-nj/industry/qiche/" target="_blank" title="南京汽车/摩托车招聘">南京汽车/摩托车招聘</a><a href="https://www.liepin.com/city-nj/industry/yiliaoshebei/" target="_blank" title="南京医疗器械招聘">南京医疗器械招聘</a><a href="https://www.liepin.com/city-nj/industry/xintuodanbao/" target="_blank" title="南京信托/担保/拍卖招聘">南京信托/担保/拍卖招聘</a><a href="https://www.liepin.com/city-nj/industry/kuaijishenji/" target="_blank" title="南京会计/审计招聘">南京会计/审计招聘</a><a href="https://www.liepin.com/city-nj/industry/zhiyao/" target="_blank" title="南京制药/生物工程招聘">南京制药/生物工程招聘</a><a href="https://www.liepin.com/city-nj/industry/huagong/" target="_blank" title="南京石油/化工招聘">南京石油/化工招聘</a><a href="https://www.liepin.com/city-nj/industry//" target="_blank" title="南京招聘">南京招聘</a><a href="https://www.liepin.com/city-nj/industry/ruanjian/" target="_blank" title="南京计算机软件招聘">南京计算机软件招聘</a><a href="https://www.liepin.com/city-nj/industry/zhengfu/" target="_blank" title="南京政务/公共服务招聘">南京政务/公共服务招聘</a><a href="https://www.liepin.com/city-nj/industry/dianzi/" target="_blank" title="南京电子/芯片/半导体招聘">南京电子/芯片/半导体招聘</a>
+                </div>
+                <div class="common-hot-links-content" data-selector="common-hot-links-content">
+                    <a href="https://www.liepin.com/city-suzhou/" target="_blank" title="苏州招聘">苏州招聘</a><a href="https://www.liepin.com/city-xuzhou/" target="_blank" title="徐州招聘">徐州招聘</a><a href="https://www.liepin.com/city-changzhou/" target="_blank" title="常州招聘">常州招聘</a><a href="https://www.liepin.com/city-nantong/" target="_blank" title="南通招聘">南通招聘</a><a href="https://www.liepin.com/city-lianyungang/" target="_blank" title="连云港招聘">连云港招聘</a><a href="https://www.liepin.com/city-huaian/" target="_blank" title="淮安招聘">淮安招聘</a><a href="https://www.liepin.com/city-yancheng/" target="_blank" title="盐城招聘">盐城招聘</a><a href="https://www.liepin.com/city-yangzhou/" target="_blank" title="扬州招聘">扬州招聘</a><a href="https://www.liepin.com/city-zhenjiang/" target="_blank" title="镇江招聘">镇江招聘</a><a href="https://www.liepin.com/city-taizhou1/" target="_blank" title="泰州招聘">泰州招聘</a><a href="https://www.liepin.com/city-suqian/" target="_blank" title="宿迁招聘">宿迁招聘</a><a href="https://www.liepin.com/city-wuxi/" target="_blank" title="无锡招聘">无锡招聘</a>
+                </div>
+                <div class="common-hot-links-content" data-selector="common-hot-links-content">
+                    <a href="https://www.liepin.com/city-bj/" target="_blank" title="北京招聘网">北京招聘网</a><a href="https://www.liepin.com/city-sh/" target="_blank" title="上海招聘网">上海招聘网</a><a href="https://www.liepin.com/city-gz/" target="_blank" title="广州招聘网">广州招聘网</a><a href="https://www.liepin.com/city-xiamen/" target="_blank" title="厦门招聘网">厦门招聘网</a><a href="https://www.liepin.com/city-hz/" target="_blank" title="杭州招聘网">杭州招聘网</a><a href="https://www.liepin.com/city-zhengzhou/" target="_blank" title="郑州招聘网">郑州招聘网</a><a href="https://www.liepin.com/city-nj/" target="_blank" title="南京招聘网">南京招聘网</a><a href="https://www.liepin.com/city-tj/" target="_blank" title="天津招聘网">天津招聘网</a><a href="https://www.liepin.com/city-cq/" target="_blank" title="重庆招聘网">重庆招聘网</a><a href="https://www.liepin.com/city-cd/" target="_blank" title="成都招聘网">成都招聘网</a><a href="https://www.liepin.com/city-suzhou/" target="_blank" title="苏州招聘网">苏州招聘网</a><a href="https://www.liepin.com/city-shangqiu/" target="_blank" title="商丘招聘网">商丘招聘网</a><a href="https://www.liepin.com/city-dl/" target="_blank" title="大连招聘网">大连招聘网</a><a href="https://www.liepin.com/city-jinan/" target="_blank" title="济南招聘网">济南招聘网</a><a href="https://www.liepin.com/city-ningbo/" target="_blank" title="宁波招聘网">宁波招聘网</a><a href="https://www.liepin.com/city-wuxi/" target="_blank" title="无锡招聘网">无锡招聘网</a><a href="https://www.liepin.com/city-qingdao/" target="_blank" title="青岛招聘网">青岛招聘网</a><a href="https://www.liepin.com/city-shenyang/" target="_blank" title="沈阳招聘网">沈阳招聘网</a><a href="https://www.liepin.com/city-taizhou/" target="_blank" title="台州招聘网">台州招聘网</a><a href="https://www.liepin.com/city-xian/" target="_blank" title="西安招聘网">西安招聘网</a><a href="https://www.liepin.com/city-wuhan/" target="_blank" title="武汉招聘网">武汉招聘网</a>
+                </div>
+                <div class="common-hot-links-content" data-selector="common-hot-links-content">
+                    <a href="https://www.liepin.com/company/gs55896389/" target="_blank" title="南京海航光电科技有限公司">南京海航光电科技有限公司</a><a href="https://www.liepin.com/company/gs55895113/" target="_blank" title="江苏青柠生物科技研发有限公司">江苏青柠生物科技研发有限公司</a><a href="https://www.liepin.com/company/gs55895093/" target="_blank" title="南京华中芯电子科技有限公司">南京华中芯电子科技有限公司</a><a href="https://www.liepin.com/company/gs55894305/" target="_blank" title="南京奇元科技有限公司">南京奇元科技有限公司</a><a href="https://www.liepin.com/company/gs55888933/" target="_blank" title="江苏南材院环境科技有限公司">江苏南材院环境科技有限公司</a><a href="https://www.liepin.com/company/gs55888145/" target="_blank" title="南京谷律生物医药有限公司">南京谷律生物医药有限公司</a><a href="https://www.liepin.com/company/gs55887517/" target="_blank" title="南京大研中医药信息技术有限公司">南京大研中医药信息技术有限公司</a><a href="https://www.liepin.com/company/gs55887493/" target="_blank" title="南京国为通信有限责任公司">南京国为通信有限责任公司</a><a href="https://www.liepin.com/company/gs55887489/" target="_blank" title="江苏宸游云科技有限公司">江苏宸游云科技有限公司</a><a href="https://www.liepin.com/company/gs55885121/" target="_blank" title="南京小青叶信息科技有限公司">南京小青叶信息科技有限公司</a><a href="https://www.liepin.com/company/gs55883949/" target="_blank" title="南京咏诚口才艺术培训有限公司">南京咏诚口才艺术培训有限公司</a><a href="https://www.liepin.com/company/gs55883309/" target="_blank" title="南京鼎科生物科技有限公司">南京鼎科生物科技有限公司</a><a href="https://www.liepin.com/company/gs55879977/" target="_blank" title="南京东润贸易有限公司">南京东润贸易有限公司</a><a href="https://www.liepin.com/company/gs55878473/" target="_blank" title="南京名膜天下科技有限公司">南京名膜天下科技有限公司</a><a href="https://www.liepin.com/company/gs55875985/" target="_blank" title="南京中骏达盛机电设备科技有限公司">南京中骏达盛机电设备科技有限公司</a><a href="https://www.liepin.com/company/gs55875969/" target="_blank" title="安迪苏营养健康制品(南京)有限公司">安迪苏营养健康制品(南京)有限公司</a><a href="https://www.liepin.com/company/gs55873357/" target="_blank" title="南京三效信息技术有限公司">南京三效信息技术有限公司</a><a href="https://www.liepin.com/company/gs55873349/" target="_blank" title="南京博宏信息科技有限公司">南京博宏信息科技有限公司</a><a href="https://www.liepin.com/company/gs55873301/" target="_blank" title="南京晶皓杰供应链管理有限公司">南京晶皓杰供应链管理有限公司</a><a href="https://www.liepin.com/company/gs55871713/" target="_blank" title="鼓楼区哆唻梦宠物生活馆">鼓楼区哆唻梦宠物生活馆</a><a href="https://www.liepin.com/company/gs55871009/" target="_blank" title="南京战刀科技发展有限公司">南京战刀科技发展有限公司</a><a href="https://www.liepin.com/company/gs55870345/" target="_blank" title="南京智慧路信息科技有限公司">南京智慧路信息科技有限公司</a><a href="https://www.liepin.com/company/gs55870065/" target="_blank" title="塞伯睿机器人技术(南京)有限公司">塞伯睿机器人技术(南京)有限公司</a><a href="https://www.liepin.com/company/gs55869949/" target="_blank" title="南京市江北新区念水堂瑜伽馆">南京市江北新区念水堂瑜伽馆</a><a href="https://www.liepin.com/company/gs55868817/" target="_blank" title="南京英思力艺术文化培训有限公司">南京英思力艺术文化培训有限公司</a><a href="https://www.liepin.com/company/gs55868477/" target="_blank" title="国检公信(北京)检验认证有限公司江苏分公司">国检公信(北京)检验认证有限公司江苏分公司</a><a href="https://www.liepin.com/company/gs55858149/" target="_blank" title="南京卡勤化工科技有限公司">南京卡勤化工科技有限公司</a><a href="https://www.liepin.com/company/gs55858141/" target="_blank" title="江苏登科聚氨酯材料有限公司">江苏登科聚氨酯材料有限公司</a><a href="https://www.liepin.com/company/gs55857281/" target="_blank" title="南京华瑞宝鼎人力资源管理有限公司">南京华瑞宝鼎人力资源管理有限公司</a><a href="https://www.liepin.com/company/gs55855557/" target="_blank" title="南京扬光光电技术有限公司">南京扬光光电技术有限公司</a>
+                </div>
+                <div class="common-hot-links-content" data-selector="common-hot-links-content">
+                    <a href="https://www.liepin.com/company/7931298/" target="_blank" title="南京车益通信息科技有限公司">南京车益通信息科技有限公司</a><a href="https://www.liepin.com/company/7931297/" target="_blank" title="南京双诚科技实业有限公司">南京双诚科技实业有限公司</a><a href="https://www.liepin.com/company/7931295/" target="_blank" title="浙商证券江苏分公司">浙商证券江苏分公司</a><a href="https://www.liepin.com/company/8541404/" target="_blank" title="江苏苏世嘉华软件技术有限公司">江苏苏世嘉华软件技术有限公司</a><a href="https://www.liepin.com/company/7931254/" target="_blank" title="天亿">天亿</a><a href="https://www.liepin.com/company/7931222/" target="_blank" title="南京金夫人美容健身有限公司">南京金夫人美容健身有限公司</a><a href="https://www.liepin.com/company/8083618/" target="_blank" title="江苏苏商建设总承包有限公司">江苏苏商建设总承包有限公司</a><a href="https://www.liepin.com/company/7931198/" target="_blank" title="南京康乾钢材贸易有限公司">南京康乾钢材贸易有限公司</a><a href="https://www.liepin.com/company/7931186/" target="_blank" title="飞龙消防技术有限公司">飞龙消防技术有限公司</a><a href="https://www.liepin.com/company/8083635/" target="_blank" title="江苏高科应用科学研究所有限公司">江苏高科应用科学研究所有限公司</a><a href="https://www.liepin.com/company/7931133/" target="_blank" title="江苏国贸国际大酒店有限公司">江苏国贸国际大酒店有限公司</a><a href="https://www.liepin.com/company/8083672/" target="_blank" title="江苏圣彤软件有限公司">江苏圣彤软件有限公司</a><a href="https://www.liepin.com/company/7931120/" target="_blank" title="南京杰佳工贸有限公司">南京杰佳工贸有限公司</a><a href="https://www.liepin.com/company/7931115/" target="_blank" title="南京三五〇三投资发展有限公司">南京三五〇三投资发展有限公司</a><a href="https://www.liepin.com/company/7931102/" target="_blank" title="江苏惠尔物流有限公司">江苏惠尔物流有限公司</a><a href="https://www.liepin.com/company/7931072/" target="_blank" title="南京三商电脑软件开发有限公司">南京三商电脑软件开发有限公司</a><a href="https://www.liepin.com/company/7931055/" target="_blank" title="南京天成金盾科技发展有限公司">南京天成金盾科技发展有限公司</a><a href="https://www.liepin.com/company/7931035/" target="_blank" title="江苏年瑞电子科技有限公司">江苏年瑞电子科技有限公司</a><a href="https://www.liepin.com/company/7931019/" target="_blank" title="南京建立创纬电子科技有限公司">南京建立创纬电子科技有限公司</a><a href="https://www.liepin.com/company/7931017/" target="_blank" title="南京鼎正置业有限公司">南京鼎正置业有限公司</a><a href="https://www.liepin.com/company/7931007/" target="_blank" title="江苏达科信息科技有限公司">江苏达科信息科技有限公司</a>
+                </div>
+                <div class="common-hot-links-content" data-selector="common-hot-links-content">
+                    <a href="https://m.liepin.com/nj/zhaopin/" target="_blank" title="南京招聘">南京招聘</a>
+                </div>
+            </div>
+
+            <div class="common-current-position">
+                <div class="row-label">当前位置：</div>
+                <div class="row-content" >
+
+                        <a href="https://www.liepin.com/city-nj/">南京招聘网</a> <span>></span>
+
+                        <a href="https://www.liepin.com/city-nj/zhaopin/?scene=seo">南京招聘信息</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script crossorigin="anonymous" src="//concat.lietou-static.com/fe-www-pc/v6/js/polyfill-vendors.1af22a1b.js"></script>
+    <script crossorigin="anonymous" src="//concat.lietou-static.com/fe-www-pc/v6/js/react-vendors.48290758.js"></script>
+    <script crossorigin="anonymous" src="//concat.lietou-static.com/fe-www-pc/v6/js/runtime.24948c05.js"></script>
+    <script crossorigin="anonymous" src="//concat.lietou-static.com/fe-www-pc/v6/js/common.44e6d6ea.js"></script>
+
+  <script crossorigin="anonymous" src="https://concat.lietou-static.com/fe-www-pc/v6/js/pages/search-jobs.40ff15ed.js"></script>
+  <!-- footer -->
+
+    <script src="//concat.lietou-static.com/fe-footer-pc/v6/footer-pc.js"></script>
+
+  <!-- imc -->
+
+    <script>
+        (function () {
+            var imEntryScript = '<script crossOrigin="anonymous" src="//concat.lietou-static.com/fe-imc-pc/v6/latest/entry.js?q='.concat(
+                Math.floor(Date.now() / 180000),
+                '"><\/script>'
+            );
+            document.write(imEntryScript);
+        })();
+    </script>
+
+  <!-- tlog -->
+
+    <script crossorigin="anonymous" src="//concat.lietou-static.com/fe-lib-pc/v6/tlog/2.0.10/tlog.min.js"></script>
+
+
+
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+            "appid": "1586030202028057",
+            "@id": "https://www.liepin.com/city-nj/zhaopin/?scene=seo",
+            "title": "【南京招聘信息_南京人才网招聘信息】-猎聘",
+            "description": "猎聘南京招聘信息提供真实的南京人才招聘信息，南京招聘信息有超过10000多高薪人才招聘信息职位任你选，找南京招聘信息就来南京人才网招聘信息频道。",
+            "upDate": "",
+            "data": {
+                "WebPage": {
+                    "headline": "【南京招聘信息_南京人才网招聘信息】-猎聘",
+                    "pcUrl": "https://www.liepin.com/city-nj/zhaopin/?scene=seo",
+                    "wapUrl": "https://m.liepin.com/nj/zhaopin/?scene=seo"
+                }
+            }
+        }
+    </script>
+
+
+    <script>var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?a2647413544f5a04f00da7eee0d5e200";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();</script>
+    <script type="text/javascript">
+        (function () {
+            var dlog_js = document.createElement("script");
+            dlog_js.src = "//static3.lietou-static.com/dlog.js?v=2&q=" + parseInt('' + new Date() / 6E5);
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(dlog_js, s);
+        })();
+    </script>
+
+
+    <!--百度推送-->
+    <script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            } else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>0
+    <!--    <script src="https://jspassport.ssl.qhimg.com/11.0.1.js?4cc89993e2a252b7fd4d5d5c9d350c50" id="sozz"></script>-->
+
+</body>
+</html>
+2022-08-18 10:28:28 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-08-18 10:28:28 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 2,
+ 'downloader/exception_type_count/twisted.internet.error.ConnectionRefusedError': 1,
+ 'downloader/exception_type_count/twisted.internet.error.TCPTimedOutError': 1,
+ 'downloader/request_bytes': 5625,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 8661,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'httpcompression/response_bytes': 36406,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/INFO': 13,
+ 'response_received_count': 1,
+ 'retry/count': 2,
+ 'retry/reason_count/twisted.internet.error.ConnectionRefusedError': 1,
+ 'retry/reason_count/twisted.internet.error.TCPTimedOutError': 1,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ '开始时间：': '2022-08-18 10:28:04',
+ '结束时间：': '2022-08-18 10:28:28',
+ '运行耗时：': '共耗时===>0时:00分:24秒'}
+2022-08-18 10:28:28 [scrapy.core.engine] INFO: Spider closed (finished)
+
+Process finished with exit code 0

@@ -20,8 +20,9 @@ class LpjobSpider(scrapy.Spider):
     custom_settings = {
         'COOKIES_ENABLED': False,
         'DEFAULT_REQUEST_HEADERS': {
-            "Cookie": "gr_user_id=b21ede8f-e4bd-4638-bf5f-6a6306453010; __uuid=1654585870293.02; __gc_id=f8062ff6c43c443c86e564440b0133a4; need_bind_tel=false; new_user=false; c_flag=762cd6f483231d222d74912fdc67da8d; __s_bid=f255f61873c258e5ccc43dd6a9e8a14be406; imClientId=669dfff6133fba4e7674d3815bdeee65; imId=669dfff6133fba4e91362c0e3c63f8af; imClientId_0=669dfff6133fba4e7674d3815bdeee65; imId_0=669dfff6133fba4e91362c0e3c63f8af; access_system=C; _fecdn_=0; __tlog=1659197855877.02%7C00000000%7C00000000%7C00000000%7C00000000; inited_user=83fc4fabea08a638acf3441819698d09; user_roles=0; user_photo=5f8fa3a6f6d1ab58476f322808u.png; user_name=%E7%9F%B3%E5%BC%A0%E6%AF%85; Hm_lvt_a2647413544f5a04f00da7eee0d5e200=1658888610,1659065044,1659146166,1659197923; imApp_0=1; fe_im_connectJson_0=%7B%220_f8b0ac45bac241ec1a667e00ad0d9493%22%3A%7B%22socketConnect%22%3A%221%22%2C%22connectDomain%22%3A%22liepin.com%22%7D%7D; UniqueKey=f8b0ac45bac241ec1a667e00ad0d9493; lt_auth=vr4KPCQMnV2q5HiKgGFfta8fjN6hAzrI9HtcgRsF1dfvWvWw4PjrQwqFr7YCxAMhl098dcULN7X3NOH2yXFL7UEUwGqklICxvf%2Bk1X4eTeRnHuyflMXuqsjQQ5wtrXg6ykpgn2si; Hm_lpvt_a2647413544f5a04f00da7eee0d5e200=1659198037; fe_im_socketSequence_new_0=5_3_1; fe_im_opened_pages=1659197923361; __session_seq=15; __uv_seq=20",
-            "Host": "www.liepin.com",
+            "Cookie": 'inited_user=83fc4fabea08a638acf3441819698d09; gr_user_id=b21ede8f-e4bd-4638-bf5f-6a6306453010; __uuid=1654585870293.02; __gc_id=f8062ff6c43c443c86e564440b0133a4; need_bind_tel=false; new_user=false; c_flag=762cd6f483231d222d74912fdc67da8d; __s_bid=f255f61873c258e5ccc43dd6a9e8a14be406; imClientId=669dfff6133fba4e7674d3815bdeee65; imId=669dfff6133fba4e91362c0e3c63f8af; imClientId_0=669dfff6133fba4e7674d3815bdeee65; imId_0=669dfff6133fba4e91362c0e3c63f8af; city_site=hz; access_system=C; __tlog=1660787197040.38|00000000|00000000|00000000|00000000; Hm_lvt_a2647413544f5a04f00da7eee0d5e200=1660554306,1660701748,1660716854,1660787197; acw_tc=276077d516607871977498965e11d418a38d272aebcd03569439a030a91287; UniqueKey=f8b0ac45bac241ec1a667e00ad0d9493; lt_auth=s7lebiQMnV2q5HiKgGFfta8fjN6hAzrI9HtcgRsF1dfvWvWw4PjrQwqFr7YCxAMhkBJ8dsULN7b+MuD5y3FM60oVwGmklICxv/2k2XgeTuZnHuyflMXuqsjQQ5wtrXg6ykpgn2si; user_roles=0; user_photo=5f8fa3a6f6d1ab58476f322808u.png; user_name=石张毅; inited_user=83fc4fabea08a638acf3441819698d09; imApp_0=1; fe_im_connectJson_0={"0_f8b0ac45bac241ec1a667e00ad0d9493":{"socketConnect":"1","connectDomain":"liepin.com"}}; __session_seq=13; __uv_seq=13; Hm_lpvt_a2647413544f5a04f00da7eee0d5e200=1660787481; fe_im_opened_pages=_1660787239786_1660787332452_1660787414310_1660787481358; fe_im_socketSequence_new_0=9_9_2',
+            "Origin": "https://www.liepin.com",
+
         }
     }
 
@@ -32,13 +33,13 @@ class LpjobSpider(scrapy.Spider):
 
         # self.result = dbz()
     def start_requests(self):
-        for i in self.ind[5:6]:
+        for i in self.ind[14:15]:
             # 行业链接
             ind_code = i['code']
-            # 北京 010  上海020 天津030  重庆040 #广州050020 # 深圳050090 #苏州060080
-            city_code = '060080'
+            # 北京 010  上海020 天津030  重庆040 #广州050020 # 深圳050090 #苏州060080 #南京060020
+            city_code = '060020'
             job_indu = i['small_type']
-            for pages in range(0,10):
+            for pages in range(0,1):
                 url = 'https://www.liepin.com/zhaopin/?headId=e305e6c88ef64ef81821659a5f0e00a8&ckId=79rhndaqlt2jkzahwagommtvsb4t8ri9&oldCkId=d28dc535e6275' \
                       'a5b17c972484f600af8&fkId=yf3vj3vib1wep2eoex69irq566wy6t88&skId=6t7wxnbldwkofbyn6odg3cm7ft0v8sl9&sfrom=search_job_pc&industry=' \
                       '10${}&dq={}&currentPage={}&scene=page'.format(ind_code,city_code,pages)
@@ -46,6 +47,7 @@ class LpjobSpider(scrapy.Spider):
                 yield scrapy.Request(url, callback=self.parse, dont_filter=True,meta={'job_indu':job_indu},)
 
     def parse(self, response, *args, **kwargs):
+
         count_list = response.xpath('//*[@class="left-list-box"]/ul/li')
         if count_list is []:
             return
