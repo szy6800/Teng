@@ -53,7 +53,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'liepin.middlewares.RandomUserAgentMiddleware': 543,
-   'liepin.middlewares.RandomIPMiddleware': 542,
+   # 'liepin.middlewares.RandomIPMiddleware': 542,
 }
 
 # Enable or disable extensions
@@ -65,7 +65,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'liepin.pipelines.LiepinPipeline': 300,
+   # 'liepin.pipelines.LiepinPipeline': 300,
    # 'liepin.pipelines.LiepincPipeline': 299,
 }
 
