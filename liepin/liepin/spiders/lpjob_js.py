@@ -51,12 +51,11 @@ class LpjobSpider(scrapy.Spider):
                 dont_filter=True)
 
     def parse(self, response, *args, **kwargs):
-        print(response.text)
-        # json_text = json.loads(response.text)
-        # count_list = json_text['data']['rows']
-        # print(count_list)
-    #     for count in count_list:
-    #         item = LiepinJOBItem()
+        json_text = json.loads(response.text)
+        count_list = json_text['data']['rows']
+        print(count_list)
+        for count in count_list:
+            item = LiepinJOBItem()
     #         link = count.xpath('.//*[@data-nick="job-detail-job-info"]/@href').get()
     #         # print(link)
     #         item['link'] = re.findall('https://www.liepin.com/.*?\?', link)[0]

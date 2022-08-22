@@ -54,7 +54,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'gansuxinwen.middlewares.RandomUserAgentMiddleware': 543,
-   # 'gansuxinwen.middlewares.RandomIPMiddleware': 541,
+   'gansuxinwen.middlewares.RandomIPMiddleware': 541,
 }
 
 # Enable or disable extensions
@@ -65,6 +65,7 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+
 ITEM_PIPELINES = {
    'gansuxinwen.pipelines.GansuxinwenPipeline': 300,
 }
@@ -120,7 +121,5 @@ PROXY_REDIS_IP = '123.56.87.41'
 PROXY_REDIS_PORT = 6379
 PROXY_REDIS_DB = 0
 PROXY_REDIS_PASSWD = '$SMe9ndaZQw$4bJ2'
-
-
 
 
