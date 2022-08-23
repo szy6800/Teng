@@ -33,7 +33,7 @@ class LpjobSpider(scrapy.Spider):
         self.ind = liepin_ind()
 
     def start_requests(self):
-        for i in self.ind[25:26]:
+        for i in self.ind[33:34]:
             # 行业链接
             ind_code = i['code']
             # 北京 010  上海020 天津030  重庆040 #广州050020 # 深圳050090 #苏州060080 #南京060020
