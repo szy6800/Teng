@@ -95,7 +95,7 @@ MYSQL_PORT = 3306
 MYSQL_USER = 'root'
 MYSQL_PASSWD = 'Lxp.138927!asd'
 MYSQL_DB = 'crawler2022'
-MYSQL_CHARSET = 'utf8'
+MYSQL_CHARSET = 'utf8mb4'
 
 
 
