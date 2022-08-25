@@ -17,4 +17,8 @@ def get_js_function(js_path, func_name, *func_args, **kwargs):
 
 
 if __name__ == '__main__':
-    print(get_js_function('tengxun_comment.js.', 'aa'))
+    data = {'code': 1, 'description': 'null', 'secretKey': 'KutfPuU4C3LaKFXeEM1fgp2V',
+            'result': 'v+9DORl2Szmes/mgp9M/HVCkpp3CRdfZipTZiz1mXfamU8Dj7W…SlJ8mLLuO7wB/sD6B0jiLeXJY33aMvkPZgDkWoMoASFqfG8A=',
+            'success': 'true'}
+
+    print(get_js_function('tengxun_comment.js.','success',data))

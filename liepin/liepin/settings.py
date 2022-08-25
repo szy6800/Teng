@@ -28,8 +28,7 @@ LOG_LEVEL = 'WARNING'
 # 启用后，当从相同的网站获取数据时，Scrapy将会等待一个随机的值，延迟时间为0.5到1.5之间的一个随机值乘以DOWNLOAD_DELAY
 RANDOMIZE_DOWNLOAD_DELAY = True
 
-DOWNLOAD_DELAY = 0.4
-
+DOWNLOAD_DELAY = 0.3
 
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
@@ -59,6 +58,7 @@ DEFAULT_REQUEST_HEADERS = {
 DOWNLOADER_MIDDLEWARES = {
    'liepin.middlewares.RandomUserAgentMiddleware': 543,
    # 'liepin.middlewares.RandomIPMiddleware': 542,
+   'liepin.middlewares.IPProxyDownloadMiddleware': 542,
 }
 
 # Enable or disable extensions

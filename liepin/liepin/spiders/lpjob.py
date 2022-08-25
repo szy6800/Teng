@@ -13,7 +13,7 @@ import scrapy
 class LpjobSpider(scrapy.Spider):
     name = 'lpjob'
     custom_settings = {
-        'DOWNLOAD_DELAY':'5',
+        'DOWNLOAD_DELAY':'1',
         'COOKIES_ENABLED': False,
         'DEFAULT_REQUEST_HEADERS': {
             'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9', 'cache-control': 'no-cache',
@@ -28,8 +28,8 @@ class LpjobSpider(scrapy.Spider):
     def start_requests(self):
 
         url = 'https://httpbin.org/get'
-        yield scrapy.Request(url, callback=self.parse, dont_filter=True, meta={'proxy': 'http://27.128.225.108:22022'})
+        yield scrapy.Request(url, callback=self.parse, dont_filter=True)
 
     def parse(self, response, *args, **kwargs):
         print(response.text)
-        yield scrapy.Request(response.url, callback=self.parse,dont_filter=True, meta={'proxy': 'http://27.128.225.108:22022'})
+        yield scrapy.Request(response.url, callback=self.parse, dont_filter=True)

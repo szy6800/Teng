@@ -224,6 +224,6 @@ class RandomIPMiddleware(object):
 
 class IPProxyDownloadMiddleware(object):
     def process_request(self, request, spider):
-        proxy = "http://tps154.kdlapi.com:15818"
+        proxy = "http://27.128.225.108:22022"
         request.meta['proxy'] = proxy
 
