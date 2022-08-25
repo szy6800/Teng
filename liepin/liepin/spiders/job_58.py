@@ -89,6 +89,7 @@ class Job58Spider(scrapy.Spider):
         item['job_desc'] = ''.join(response.xpath('//*[@class="des"]//text()').getall())
         # 公司item
         company_item = response.meta['company_item']
+
         company_item['comp_desc'] = ''.join(response.xpath('//*[@class="comIntro"]//text()').getall())
         # 福利
         company_item['welfare'] = '|'.join(response.xpath('//*[@class="pos_welfare"]/span/text()').getall())
@@ -141,6 +142,11 @@ class Job58Spider(scrapy.Spider):
         company_item['man_range'] = jsonpath.jsonpath(json_text, '$..businessScope')[0]
 
         company_item['comp_ind'] = jsonpath.jsonpath(json_text, '$..industryText')[0]
+        #1
+        company_item['fig_stage'] = ''
+        company_item['num_of_peo'] = ''
+        company_item['link'] = response.url
+        company_item['logo'] = ''
 
         cid = company_item['name'] + company_item['comp_code']
         company_item['cid'] = hashlib.md5(cid.encode(encoding='utf-8')).hexdigest()
