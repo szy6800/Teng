@@ -2,6 +2,7 @@
 #
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import base64
 import random
 
 from scrapy import signals
@@ -219,3 +220,10 @@ class RandomIPMiddleware(object):
         # 对当前reque加上代理
         request.meta['proxy'] = 'https://' + ip
         return request
+
+
+class IPProxyDownloadMiddleware(object):
+    def process_request(self, request, spider):
+        proxy = "http://tps154.kdlapi.com:15818"
+        request.meta['proxy'] = proxy
+

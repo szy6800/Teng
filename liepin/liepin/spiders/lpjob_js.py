@@ -33,7 +33,7 @@ class LpjobSpider(scrapy.Spider):
         self.ind = liepin_ind()
 
     def start_requests(self):
-        for i in self.ind[6:7]:
+        for i in self.ind[19:20]:
             # 行业链接
             ind_code = i['code']
             # 北京 010  上海020 天津030  重庆040 #广州050020 # 深圳050090 #苏州060080 #南京060020 #杭州070020
@@ -49,7 +49,7 @@ class LpjobSpider(scrapy.Spider):
                     headers={'Content-Type': 'application/json'},
                     callback=self.parse,
                     dont_filter=True,
-                    meta={'job_indu':job_indu})
+                    meta={'job_indu':job_indu, 'proxy': 'http://27.128.225.108:22022'})
 
     def parse(self, response, *args, **kwargs):
         json_text = json.loads(response.text)

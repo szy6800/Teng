@@ -103,24 +103,29 @@ class Job58Spider(scrapy.Spider):
         company_item = response.meta['company_item']
         item = response.meta['item']
         json_text = json.loads(response.text)
-        js_data  = jsonpath.jsonpath(json_text, '$..syncId')
-        company_item['name'] = js_data['aliasName']
+        # 公司名字
+        company_item['name'] = jsonpath.jsonpath(json_text, '$..entName')
         # 社会统一代码
-        company_item['comp_code'] = js_data['bussiness']['creditCode']
+        company_item['comp_code'] = jsonpath.jsonpath(json_text, '$..creditCode')
         # 登记机关
-        company_item['reg_au'] = js_data['bussiness']['orgApprovedInstitute']
+        company_item['reg_au'] = jsonpath.jsonpath(json_text, '$..orgApprovedInstitute')
         # 法人代表
-        company_item['legal_peo'] = js_data['bussiness']['legalPersonName']
+        company_item['legal_peo'] = jsonpath.jsonpath(json_text, '$..legalPersonName')
         # 经营状态
-        company_item['status'] = js_data['bussiness']['regStatus']
+        company_item['status'] = jsonpath.jsonpath(json_text, '$..legalPersonName')
         # 所在地
-        company_item['locations'] = ''
+        company_item['locations'] =jsonpath.jsonpath(json_text, '$..cityfullName')
         # 企业类型
-        company_item['comp_type'] = js_data['bussiness']['companyType']
-        lng = response.xpath('//*[@id="location"]/@value').get()
+        company_item['comp_type'] = jsonpath.jsonpath(json_text, '$..companyType')
 
-        company_item['lng'] = ''
-        company_item['lat'] = ''
+        lng = jsonpath.jsonpath(json_text, '$..companyType')
+        if lng is None:
+            company_item['lng'] = ''
+            company_item['lat'] = ''
+        else:
+            company_item['lng'] =''
+            company_item['lat'] = ''
+
         # 公司官网
         company_item['comp_website'] = ''
         company_item['comp_addr'] = response.xpath("//*[contains(text(),'职位地址：')]/following::span[1]/text()").get()
