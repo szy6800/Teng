@@ -30,5 +30,9 @@ def liepin_ind():
     return ind_list
 
 
+# 58同城
+def ind_58():
+    ind_list = []
+    return ind_list
 
 
