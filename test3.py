@@ -1,14 +1,3 @@
-ls = 'eq54325trrtertebrw'
-print(len(ls))
-num = 0
-for i in ls:
-    num = num+1
-print(num)
-
-print('dsasda', end='\t')
-
-def inde():
-    print('这是一个函数')
-    return '312'
-res = inde()
-print(res)
+l1 = ['1','2','3']
+a = ['dassda'+'{}'.format(i) for i in range(1,10)]
+print(a)
