@@ -7,3 +7,4 @@ if __name__ == '__main__':
     # execute(["scrapy", "crawl", "gs_ccgp"])
     execute(["scrapy", "crawl", "ebnew"])
     # execute(["scrapy", "crawl", "cncecyc"])
+    # execute(["scrapy", "crawl", "gs_bui"])

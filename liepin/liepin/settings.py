@@ -58,7 +58,7 @@ DEFAULT_REQUEST_HEADERS = {
 DOWNLOADER_MIDDLEWARES = {
    'liepin.middlewares.RandomUserAgentMiddleware': 543,
    # 'liepin.middlewares.RandomIPMiddleware': 542,
-   # 'liepin.middlewares.IPProxyDownloadMiddleware': 542,
+   'liepin.middlewares.IPProxyDownloadMiddleware': 542,
 }
 
 # Enable or disable extensions

@@ -25,7 +25,7 @@ class GsCcgpSpider(scrapy.Spider):
         'DEFAULT_REQUEST_HEADERS': {
             "Cache-Control": "no-cache",
             "Connection": "keep-alive",
-            "Cookie": '4hP44ZykCTt5S=5Jqk4uTfMdcm21mdg5zxMeKWfjJwK.e6UwVuKMpIp5VOTIyDDDL24XeK7YE4ALfgFWJOY24nBRSVBlK_eog07kG; JSESSIONID=3A06B61E6B057534985E9AA3FB5B39B0.tomcat4; 4hP44ZykCTt5T=jV1nGgXB70GU1_r.vwRXqpNU75.2zclESH.4S6iA7OW.qyIVW31ORVqECPTFpEEYG.wqQdnUfJ9jKzj4b21op.mTbveMtGnSV4_KmxjaKRHgcZxN1As1ecIcKvE3bUYg8Bifxa.LhlqbaTAHNHTY5FKIhERl8y0HbwO4y1uLBsRyE5IDQd20wVWmlEFDD.MsPLDeBlXswd3QOrWYbzxHgFnAI5pb5Aq9lDcqT7RXJ3L4LRGiCzzsmn3.TEK9d_QtI8mx2eNh5vwAKwvVGFXV.ueGxOarCtvFpNOWpbDf.dxy0A1PVDlfB4MnL.HVWPOgIMylaKjzpMgzlht9sHIgnxd1qlrgdGmPFKrb7I6mVg5cNi_nlQEB.pKap2t6kiKwBV5NIlQrC67RHaH7.m.LZD2KashS23JRZ1d.0uD7BVL',
+            "Cookie": '4hP44ZykCTt5S=5Jqk4uTfMdcm21mdg5zxMeKWfjJwK.e6UwVuKMpIp5VOTIyDDDL24XeK7YE4ALfgFWJOY24nBRSVBlK_eog07kG; JSESSIONID=6A764516960DD9335ADC19BE0E8D76C4.tomcat2; 4hP44ZykCTt5T=feh_DBoWyuXiHXIB.SJIL8Ip3MeWcjVaUDK1vm2rNJBCw6aZY8aQLyDbCdCb4t97y8gv7CcGEmOiO4R8_z01vavwXbXk0znhH5jEi9d.D6_6nHZ091cOrjHRuvapXaWbvaR8edHnrWRjFtzeV4M_VWKDSozHv3L9A7Jx_0V0gVJj75.Ysz7gt4oThm9yEyTA79A1qnjtRTV5NKqehHrg6BCKBQLx7MyZkGPb3p054OHhCqUe9B7WbbIersqyzoM5mS26J3cKi9UomE6LGUYNUbrOb4RPpGXd_FAd8APnSr4eeRTlBvI7V40WFqIppBCGF4uPVRjFMIoXpbrxnnNCoqEt92Fzs7GTmCat_OGVsna',
             "Host": "www.ccgp-gansu.gov.cn",
             "Pragma": "no-cache",
             "Referer": "http://www.ccgp-gansu.gov.cn/web/doSearchmxarticlelssj.action?limit=20&start=120",
@@ -37,10 +37,10 @@ class GsCcgpSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(GsCcgpSpider, self).__init__()
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=3)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
 
     def start_requests(self):
-        for i in range(0,60,20):
+        for i in range(100,130,20):
 
             url = f"http://www.ccgp-gansu.gov.cn/web/doSearchmxarticlelssj.action?limit=20&start={i}"
             # url = f'http://www.ccgp-gansu.gov.cn/web/doSearchmxarticlelssj.action?limit=20&start={i}'
