@@ -25,7 +25,7 @@ class GsCcgpSpider(scrapy.Spider):
         'DEFAULT_REQUEST_HEADERS': {
             "Cache-Control": "no-cache",
             "Connection": "keep-alive",
-            "Cookie": '4hP44ZykCTt5S=5Jqk4uTfMdcm21mdg5zxMeKWfjJwK.e6UwVuKMpIp5VOTIyDDDL24XeK7YE4ALfgFWJOY24nBRSVBlK_eog07kG; JSESSIONID=6A764516960DD9335ADC19BE0E8D76C4.tomcat2; 4hP44ZykCTt5T=feh_DBoWyuXiHXIB.SJIL8Ip3MeWcjVaUDK1vm2rNJBCw6aZY8aQLyDbCdCb4t97y8gv7CcGEmOiO4R8_z01vavwXbXk0znhH5jEi9d.D6_6nHZ091cOrjHRuvapXaWbvaR8edHnrWRjFtzeV4M_VWKDSozHv3L9A7Jx_0V0gVJj75.Ysz7gt4oThm9yEyTA79A1qnjtRTV5NKqehHrg6BCKBQLx7MyZkGPb3p054OHhCqUe9B7WbbIersqyzoM5mS26J3cKi9UomE6LGUYNUbrOb4RPpGXd_FAd8APnSr4eeRTlBvI7V40WFqIppBCGF4uPVRjFMIoXpbrxnnNCoqEt92Fzs7GTmCat_OGVsna',
+            "Cookie": '4hP44ZykCTt5S=5Jqk4uTfMdcm21mdg5zxMeKWfjJwK.e6UwVuKMpIp5VOTIyDDDL24XeK7YE4ALfgFWJOY24nBRSVBlK_eog07kG; JSESSIONID=D5EC4F3B455D88BF91205F55437DD7C6.tomcat2; 4hP44ZykCTt5T=rJ_yeYYBujv85g0wbx7LxsOrXRmV_1Mjulv0kKsva_oiKLgiufOV2NysFycsHrNQcAypyBlM4yB39IGkWu36JCriqfEUmG5V_xXMT5hFn44CffGdn57zH68JlUKn2iPWkaCIUWi_mWqF7NQ4C2ZcTjX.OPLV2PWStGuQNaQBynw2Y7.QSAcjGANS.Fp2Xb3Qzq1ynWmaIeA7tHkqAfYRUBwnIKbGDP.DMDaoJ9RjyDj6tq8P6jM5Q6gGOrJEFe8PwaSE.DEwYW6HUselDzPuJZ.kTvtrDIAxO_D4VOhlFdsmoVPVMgjl_4IDB4P0NyGkGIkSORwnA..HRuKiPpyabdNMCOELPjwEq3udxWUcwedqAoyjbs2Th6fAAzHu_2Hy589hMzDoTUXxibtE06cZ7EIn8XcPKw22xopRt8m9BH7',
             "Host": "www.ccgp-gansu.gov.cn",
             "Pragma": "no-cache",
             "Referer": "http://www.ccgp-gansu.gov.cn/web/doSearchmxarticlelssj.action?limit=20&start=120",
@@ -40,7 +40,7 @@ class GsCcgpSpider(scrapy.Spider):
         self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
 
     def start_requests(self):
-        for i in range(100,130,20):
+        for i in range(0,130,20):
 
             url = f"http://www.ccgp-gansu.gov.cn/web/doSearchmxarticlelssj.action?limit=20&start={i}"
             # url = f'http://www.ccgp-gansu.gov.cn/web/doSearchmxarticlelssj.action?limit=20&start={i}'

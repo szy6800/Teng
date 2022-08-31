@@ -25,8 +25,8 @@ class GsBuiSpider(scrapy.Spider):
         self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
 
     def start_requests(self):
-        for i in range(36752,36845):
-            url = 'http://61.178.200.57:8003/bidder/announcement/lookAnnouncementInfoPage?annId={}&annKind=1'.format(i)
+        for i in range(36950,36960):
+            url = 'http://61.178.200.57:8003/bidder/announcement/lookAnnouncementInfoPage?annId={}&annKind=2'.format(i)
             yield scrapy.Request(url=url, callback=self.parse, dont_filter=True)
     #
     def parse(self, response, *args, **kwargs):
