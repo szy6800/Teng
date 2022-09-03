@@ -25,7 +25,7 @@ class GsCcgpSpider(scrapy.Spider):
         'DEFAULT_REQUEST_HEADERS': {
             "Cache-Control": "no-cache",
             "Connection": "keep-alive",
-            "Cookie": '4hP44ZykCTt5S=5Jqk4uTfMdcm21mdg5zxMeKWfjJwK.e6UwVuKMpIp5VOTIyDDDL24XeK7YE4ALfgFWJOY24nBRSVBlK_eog07kG; JSESSIONID=D5EC4F3B455D88BF91205F55437DD7C6.tomcat2; 4hP44ZykCTt5T=rJ_yeYYBujv85g0wbx7LxsOrXRmV_1Mjulv0kKsva_oiKLgiufOV2NysFycsHrNQcAypyBlM4yB39IGkWu36JCriqfEUmG5V_xXMT5hFn44CffGdn57zH68JlUKn2iPWkaCIUWi_mWqF7NQ4C2ZcTjX.OPLV2PWStGuQNaQBynw2Y7.QSAcjGANS.Fp2Xb3Qzq1ynWmaIeA7tHkqAfYRUBwnIKbGDP.DMDaoJ9RjyDj6tq8P6jM5Q6gGOrJEFe8PwaSE.DEwYW6HUselDzPuJZ.kTvtrDIAxO_D4VOhlFdsmoVPVMgjl_4IDB4P0NyGkGIkSORwnA..HRuKiPpyabdNMCOELPjwEq3udxWUcwedqAoyjbs2Th6fAAzHu_2Hy589hMzDoTUXxibtE06cZ7EIn8XcPKw22xopRt8m9BH7',
+            "Cookie": '4hP44ZykCTt5S=5Jqk4uTfMdcm21mdg5zxMeKWfjJwK.e6UwVuKMpIp5VOTIyDDDL24XeK7YE4ALfgFWJOY24nBRSVBlK_eog07kG; JSESSIONID=31F4FD507D25D67AA9D3B9D696DF1D34.tomcat2; 4hP44ZykCTt5T=i60VNhK07fCG1lxQzJZRAFmvO4RsF.XvuI3zQD2hsc5ZljnxBf6vbCZm2DDKoRD8_9Xpa0nz.Fq77ygI.lvQuaTLuTXyiKE2Rd3.LSJs_Y_iYwG4IGhXJj_KRxYAnNvU3gS0fU9fe5gv_9.e8ZiQfsiJuerk.TVBLhITONGw1bRRZEsD6igzlvjgKUrgQXJLJSkhZ_rq.DqcgIIH9UhXusSqKPxusPBa8YW9a3zNKgROBUsLJdc8isp63RYv3pUvzGjtTs.gWyx7SPVwZDtkhbpPW2G.ugFKGztvPgVF_Nu7WiBdl_YfCQhZ6mR_O9LN8dvp7tn2d4JdJcfXWEExFrR3B_nl5NXe3zItYQGGzsOyHkepqmpx7PA0Uu5JOjhnHgZyE0bQNGagg_gSJ7Hqqq',
             "Host": "www.ccgp-gansu.gov.cn",
             "Pragma": "no-cache",
             "Referer": "http://www.ccgp-gansu.gov.cn/web/doSearchmxarticlelssj.action?limit=20&start=120",
@@ -40,7 +40,7 @@ class GsCcgpSpider(scrapy.Spider):
         self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
 
     def start_requests(self):
-        for i in range(0,130,20):
+        for i in range(0,150,20):
 
             url = f"http://www.ccgp-gansu.gov.cn/web/doSearchmxarticlelssj.action?limit=20&start={i}"
             # url = f'http://www.ccgp-gansu.gov.cn/web/doSearchmxarticlelssj.action?limit=20&start={i}'
@@ -81,7 +81,7 @@ class GsCcgpSpider(scrapy.Spider):
                 continue
             yield scrapy.Request(item['link'], callback=self.parse_info, meta={'item': copy.deepcopy(item)},
                                  dont_filter=True)
-    #
+
     def parse_info(self, response):
         if response.status != 200:
             return

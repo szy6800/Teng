@@ -33,11 +33,11 @@ class LpjobSpider(scrapy.Spider):
         self.ind = liepin_ind()
 
     def start_requests(self):
-        for i in self.ind[20:21]:
+        for i in self.ind[11:12]:
             # 行业链接
             ind_code = i['code']
-            # 北京 010  上海020 天津030  重庆040 #广州050020 # 深圳050090 #苏州060080 #南京060020 #杭州070020 #大连210040 #成都280020 #武汉170020
-            city_code = '170020'
+            # 北京 010  上海020 天津030  重庆040 #广州050020 # 深圳050090 #苏州060080 #南京060020 #杭州070020 #大连210040 #成都280020 #武汉170020 # 西安 270020
+            city_code = '270020'
             job_indu = i['small_type']
             for i in range(0,10):
                 data = {"data":{"mainSearchPcConditionForm":{"city":city_code,"dq":city_code,"pubTime":"","currentPage":f'{i}',"pageSize":'40',"key":"","workYearCode":"0","compId":"","compName":"","compTag":"","industry":f"10${ind_code}","salary":"","jobKind":"","compScale":"","compKind":"","compStage":"","eduLevel":""},"passThroughForm":{"ckId":"djeop3vgn5cdv8b26z839jw4o5ze6hqa","scene":"page","skId":"kccoiw63x88gfq7kaybm12mufpmkkn1b",                                                                                                                                                                                                                                                                                                               "fkId":"ahsgpbkabqodk63sr7tbs2ap2o0ur068","sfrom":"search_job_pc"}}}
@@ -98,6 +98,7 @@ class LpjobSpider(scrapy.Spider):
             yield scrapy.Request(item['link'], callback=self.parse_info, meta={'item': copy.deepcopy(item),
                                                      'company_item': copy.deepcopy(company_item)},
                                  dont_filter=True)
+
 
     def parse_info(self, response):
         # print(response.text)
@@ -194,6 +195,5 @@ class LpjobSpider(scrapy.Spider):
         # print(company_item)
         yield item
         yield company_item
-
 
 
