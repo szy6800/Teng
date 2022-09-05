@@ -20,10 +20,9 @@ class IndParkSpider(scrapy.Spider):
         self.ind = ind()
 
     def start_requests(self):
-        for ind in self.ind[0:1]:
-            for i in range(55,56):
-                url = f'https://y.qianzhan.com/system/GetTableData2?page={i}&pageSize=50&queryStr=&level=1&NodeType=2&Node1={ind}&Node2=&Node3=&Node4=&match=0&agg=1&sort=&way=desc'
-                yield scrapy.Request(url=url, callback=self.parse, dont_filter=True, meta={'industry':ind})
+        for i in range(100, 101):
+            url = f'https://y.qianzhan.com/system/GetTableData2?page={i}&pageSize=50&queryStr=&level=1&NodeType=0&Node1=&Node2=&Node3=&Node4=&match=0&agg=0&sort=&way=desc'
+            yield scrapy.Request(url=url, callback=self.parse, dont_filter=True, meta={'industry':ind})
 
     def parse(self, response, *args, **kwargs):
         json_text = json.loads(response.text)
@@ -34,7 +33,8 @@ class IndParkSpider(scrapy.Spider):
             item['title'] = count['y_name']
             link = count['y_uid']
             item['link'] = f'https://y.qianzhan.com/yuanqu/item/{link}.html'
-            item['industry'] = response.meta['industry']
+            # item['industry'] = response.meta['industry']
+            item['industry'] = '全部'
             item['purchase'] = str(count['y_buyed'])
             item['province'] = count['y_province']
             item['city'] = count['y_city']
