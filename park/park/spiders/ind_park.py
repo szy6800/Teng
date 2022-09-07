@@ -20,8 +20,8 @@ class IndParkSpider(scrapy.Spider):
         self.ind = ind()
 
     def start_requests(self):
-        for i in range(100, 101):
-            url = f'https://y.qianzhan.com/system/GetTableData2?page={i}&pageSize=50&queryStr=&level=1&NodeType=0&Node1=&Node2=&Node3=&Node4=&match=0&agg=0&sort=&way=desc'
+        for i in range(30, 60):
+            url = f'https://y.qianzhan.com/system/GetTableData2?page={i}&pageSize=50&queryStr=&level=1&NodeType=0&Node1=61&Node2=&Node3=&Node4=&match=0&agg=1&sort=&way=desc'
             yield scrapy.Request(url=url, callback=self.parse, dont_filter=True, meta={'industry':ind})
 
     def parse(self, response, *args, **kwargs):
