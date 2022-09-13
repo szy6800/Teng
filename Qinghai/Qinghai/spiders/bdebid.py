@@ -71,6 +71,7 @@ class BdebidSpider(scrapy.Spider):
 
     @staticmethod
     def parse_info(response):
+
         if response.status != 200:
             return
         item = response.meta['item']

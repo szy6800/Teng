@@ -56,6 +56,7 @@ class CnenergynewsSpider(scrapy.Spider):
         # print(url)
         yield scrapy.Request(url=url, callback=self.parse, dont_filter=True)
 
+
     def parse(self, response, *args):
         res = re.findall('\[.*?\]',response.text)[0]
         json_text = json.loads(res)

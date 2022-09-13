@@ -54,44 +54,44 @@ class QhHousePipeline:
     def error(self, reason):
         print('error------', reason)
 
-    # def insert(self, cursor, item):
-    #
-    #     # 唯一id查询 执行sql语句
-    #     cursor.execute(self.query_sql.format(item['check_md5']))
-    #
-    #     # 查看这个数据是否存在,不存在就插入
-    #     if cursor.fetchone():
-    #         print(f"标题 {item['name']} ==== {item['check_md5']} 已存在！！！")
-    #     else:
-    #         cursor.execute(self.insert_sql.format(
-    #             # item['id'],
-    #             item['check_md5'],
-    #             item['url'],
-    #             item['name'],
-    #             item['house_type'],
-    #             item['area_range'],
-    #             item['nsale_time'],
-    #             item['address'],
-    #             item['features'],
-    #             item['price'],
-    #             item['lastmodifydate'],
-    #             item['detail_id'],
-    #             item['lng'],
-    #             item['lat'],
-    #             item['developers'],
-    #             item['disrictname'],
-    #             item['units'],
-    #             item['housecnt'],
-    #             item['availablecnt'],
-    #             item['soldcnt'],
-    #             item['unavailablecnt'],
-    #             item['signcnt'],
-    #             item['salesname'],
-    #         ))
-    #         # cursor.execute(self.qcinsert_sql.format(
-    #         #     item['url_md5'],
-    #         # ))
-    #         print(f"新增房屋==== {item['check_md5']} ======{item['name']}")
+    def insert(self, cursor, item):
+
+        # 唯一id查询 执行sql语句
+        cursor.execute(self.query_sql.format(item['check_md5']))
+
+        # 查看这个数据是否存在,不存在就插入
+        if cursor.fetchone():
+            print(f"标题 {item['name']} ==== {item['check_md5']} 已存在！！！")
+        else:
+            cursor.execute(self.insert_sql.format(
+                # item['id'],
+                item['check_md5'],
+                item['url'],
+                item['name'],
+                item['house_type'],
+                item['area_range'],
+                item['nsale_time'],
+                item['address'],
+                item['features'],
+                item['price'],
+                item['lastmodifydate'],
+                item['detail_id'],
+                item['lng'],
+                item['lat'],
+                item['developers'],
+                item['disrictname'],
+                item['units'],
+                item['housecnt'],
+                item['availablecnt'],
+                item['soldcnt'],
+                item['unavailablecnt'],
+                item['signcnt'],
+                item['salesname'],
+            ))
+            # cursor.execute(self.qcinsert_sql.format(
+            #     item['url_md5'],
+            # ))
+            print(f"新增房屋==== {item['check_md5']} ======{item['name']}")
 
 #插入语句更新
     def update(self, cursor, item):

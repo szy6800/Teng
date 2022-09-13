@@ -64,7 +64,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   # 'qh_house.pipelines.QhHousePipeline': 300,
+   'qh_house.pipelines.QhHousePipeline': 300,
    # 'qh_house.pipelines.QhbuildingPipeline': 300,
    # 'qh_house.pipelines.QhfloorPipeline': 300,
 }

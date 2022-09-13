@@ -18,7 +18,7 @@ class HouseSpider(scrapy.Spider):
         super(HouseSpider, self).__init__()
 
     def start_requests(self):
-        for i in range(1000,1043):
+        for i in range(0,200):
             url = 'https://www.chinabdc.cn/Tool/Config/QueryMethodName?methodName=GetNHouseList&pageIndex={}&pageCount=10&filter_property=%7B%22mode%22:%22AND%22,%22data%22:[]%7D'.format(i)
             yield scrapy.Request(url, callback=self.parse)
 
