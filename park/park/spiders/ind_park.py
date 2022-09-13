@@ -20,13 +20,12 @@ class IndParkSpider(scrapy.Spider):
         self.ind = ind()
 
     def start_requests(self):
-        for i in range(30, 60):
-            url = f'https://y.qianzhan.com/system/GetTableData2?page={i}&pageSize=50&queryStr=&level=1&NodeType=0&Node1=61&Node2=&Node3=&Node4=&match=0&agg=1&sort=&way=desc'
+        for i in range(0, 30):# 3101
+            url = f'https://y.qianzhan.com/system/GetTableData2?page=1&pageSize=20&queryStr=&level=1&NodeType=1&Node1=3101&Node2=&Node3=&Node4=&match=0&agg=1&sort=&way=desc'
             yield scrapy.Request(url=url, callback=self.parse, dont_filter=True, meta={'industry':ind})
 
     def parse(self, response, *args, **kwargs):
         json_text = json.loads(response.text)
-
         count_list = json_text['list']
         for count in count_list:
             item = dict()

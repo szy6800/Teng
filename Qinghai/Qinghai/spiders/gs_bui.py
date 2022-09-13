@@ -22,10 +22,10 @@ class GsBuiSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(GsBuiSpider, self).__init__()
         self.t = Times()
-        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=2)
+        self.c_time = datetime.datetime.utcnow() - datetime.timedelta(days=7)
 
     def start_requests(self):
-        for i in range(36960,37100):
+        for i in range(37500,37900):
             url = 'http://61.178.200.57:8003/bidder/announcement/lookAnnouncementInfoPage?annId={}&annKind=2'.format(i)
             yield scrapy.Request(url=url, callback=self.parse, dont_filter=True)
     #

@@ -54,7 +54,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'gansuxinwen.middlewares.RandomUserAgentMiddleware': 543,
-   'gansuxinwen.middlewares.RandomIPMiddleware': 541,
+   # 'gansuxinwen.middlewares.RandomIPMiddleware': 541,
 }
 
 # Enable or disable extensions
